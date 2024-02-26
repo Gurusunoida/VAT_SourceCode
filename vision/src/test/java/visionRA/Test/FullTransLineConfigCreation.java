@@ -2,7 +2,9 @@ package visionRA.Test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -56,11 +58,11 @@ public class FullTransLineConfigCreation {
 		Thread.sleep(2000);// --- Add in Trans line Config
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
-				.sendKeys("GP1020224");
+				.sendKeys("VAT_3_070224");
 		Thread.sleep(2000);// -- Trans Line ID send Key--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
-				.sendKeys("GP1020224");
+				.sendKeys("VAT_3_070224");
 		Thread.sleep(2000);// -- Trans Line Description--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]"))
@@ -151,10 +153,10 @@ public class FullTransLineConfigCreation {
 		Thread.sleep(2000);// --Business Line --//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/input[1]"))
-				.sendKeys("VAT15");// --Business Line ID--//
+				.sendKeys("VAT_01");// --Business Line ID--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/input[1]"))
-				.sendKeys("VAT15");// --Business Line Description--//
+				.sendKeys("VAT_01");// --Business Line Description--//
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]"))
@@ -410,7 +412,13 @@ public class FullTransLineConfigCreation {
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
 				.sendKeys("1234567890");// -- max fee amount--//
 		Thread.sleep(2000);
-		//driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/input[1]")).clear();
+		Actions actions = new Actions(driver);				
+        WebElement element = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+        actions.moveToElement(element);
+        WebElement FromAmount = driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/input[1]"));
+        actions.scrollToElement(FromAmount);
+        actions.perform();
+        Thread.sleep(5000);
 		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/input[1]")).click();
 		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/input[1]")).sendKeys("100");
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();

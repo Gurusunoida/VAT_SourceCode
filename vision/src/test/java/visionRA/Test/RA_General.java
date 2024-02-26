@@ -26,7 +26,7 @@ public class RA_General {
 		}
 
    @Test(dataProvider = "loginCredentials")
-   public void RA_Login(String username, String password) throws InterruptedException {
+   public void VAT_RA_Login(String username, String password) throws InterruptedException {
        driver.findElement(By.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]")).sendKeys(username);
        Thread.sleep(2000);
        driver.findElement(By.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]")).sendKeys(password);
