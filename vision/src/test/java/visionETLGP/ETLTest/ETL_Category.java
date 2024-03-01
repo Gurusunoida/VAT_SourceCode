@@ -728,34 +728,41 @@ public class ETL_Category {
 			Thread.sleep(5000);
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]")).click();
 			Thread.sleep(1000);
+			//-- Category Dropdown
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]")).click();
-			Thread.sleep(3000);//-- Category Dropdown
+			Thread.sleep(3000);
+			//--Category Click
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
-			Thread.sleep(3000);//--Category Click
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 			Thread.sleep(1000);
+			//--Filter Click
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]")).click();
-			Thread.sleep(3000);//--Filter Click
+			Thread.sleep(3000);
+			//--Record Indicator
 			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
-			Thread.sleep(1000);//--Record Indicator
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("Active");
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 			Thread.sleep(2000);
+			//--Filter Click
 			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
-			Thread.sleep(1000);//--Filter Click
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).clear();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("Act");
 			Thread.sleep(2000);
+			//--Filter Click
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).click();
-			Thread.sleep(1000);//--Filter Click
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[contains(text(),'Begins With...')]")).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 			Thread.sleep(2000);
+			//--Filter Click
 			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
-			Thread.sleep(1000);//--Filter Click
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).clear();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("ive");
@@ -766,19 +773,55 @@ public class ETL_Category {
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 			Thread.sleep(2000);
+			//-FILTER CLICK
 			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
-			Thread.sleep(2000);//-FILTER CLICK
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).clear();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("Delete");
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
 			Thread.sleep(2000);
+			//--Equal 
 			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
-			Thread.sleep(1000);//--Equal 
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 			Thread.sleep(3000);
 }
+		@Test(priority = 22, dataProvider = "getUserNameList")
+		public void ETL_CT_022(String loginName, String loginPwd) throws InterruptedException {
+			driver.findElement(By.xpath(
+					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+					.sendKeys(loginName);
+			driver.findElement(By.xpath(
+					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+					.sendKeys(loginPwd);
+			driver.findElement(By
+					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+					.click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]")).click();
+			Thread.sleep(1000);
+			//-- Category Dropdown
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]")).click();
+			Thread.sleep(3000);
+			//--Category Click
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+			Thread.sleep(3000);
+			WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[5]"));
+			Actions actionsClick = new Actions(driver);
+			actionsClick.moveToElement(elementToHoverM).perform();
+			WebElement Category = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[6]/div[2]/a[2]/i[1]"));
+			Category.click();
+			Thread.sleep(2000);
+			WebElement CATDescription = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"));
+			CATDescription.clear();
+			CATDescription.sendKeys("VAT_01");
+			Thread.sleep(100);
+			//--Modify click
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+			Thread.sleep(3000);
+		}
 	@DataProvider(name = "getUserNameList")
 	public Object[][] getUserNameList() {
 		Object[][] loginDetails = new Object[1][2];

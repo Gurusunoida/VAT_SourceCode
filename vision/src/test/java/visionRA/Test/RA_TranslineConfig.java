@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TranslineConfig {
+public class RA_TranslineConfig {
 	WebDriver driver;
 
 	@Parameters("ApplicationURL")

@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class FullTransLineConfigCreation {
+public class RA_FullTransLineConfigCreation {
 	WebDriver driver;
 
 	@Parameters("ApplicationURL")

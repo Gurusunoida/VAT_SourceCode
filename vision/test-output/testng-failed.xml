@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http:http://10.16.1.58:4230//"/>
+  <parameter name="ApplicationURL" value="http://10.16.1.58:4230/"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="visionETLGP.ETLTest.ETLFeedConfiguration">
+      <class name="visionETLGP.ETLTest.ETLConnector">
         <methods>
-          <include name="ETL_FC_018"/>
           <include name="BrowserOpening"/>
           <include name="closeDriver"/>
+          <include name="ETL_CC_008" invocation-numbers="0"/>
         </methods>
-      </class> <!-- visionETLGP.ETLTest.ETLFeedConfiguration -->
+      </class> <!-- visionETLGP.ETLTest.ETLConnector -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

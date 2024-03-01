@@ -4,7 +4,7 @@
 	<parameter name="ApplicationURL" value="http://202.83.25.244:8001/" />
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="visionRA.Test.VarianceFlagging" />
+			<class name="visionRA.Test.RA_VarianceFlagging" />
 		</classes>
 	</test> <!--
 	Test -->
