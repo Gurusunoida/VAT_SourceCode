@@ -1,8 +1,16 @@
 package visionETLGP.ETLTest;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -31,22 +39,375 @@ public class ETL_General {
 			driver.quit();
 		}
 	}
-	  @Test(dataProvider = "loginCredentials")
-	  public void RA_Login(String username, String password) throws InterruptedException {
+//	  @Test(dataProvider = "loginCredentials", priority = 0)
+//	  public void RA_Login(String username, String password) throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys(username);
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys(password);
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//	  }
+//	  @Test( priority = 1)
+//	  public void ETL_DC_010() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			driver.findElement(
+//					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//					.click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//					.click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Filter icon--//	
+//			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+//			WebElement elementToHoverRemove = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/a[1]/span[1]/i[1]"));
+//			Actions actionsClick = new Actions(driver);
+//			actionsClick.moveToElement(elementToHoverRemove).perform();
+//			Thread.sleep(3000);	
+//	  }
+//	  @Test( priority = 2)
+//	  public void ETL_DC_015() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			//--User Profile--//
+//			driver.findElement(By.xpath("//i[contains(text(),'person')]")).click();
+//			Thread.sleep(2000);
+//			//-- Selecting Colour Theme--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/app-top-bar[1]/nav[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/ul[1]/li[1]/a[1]/div[1]/span[1]")).click();
+//			//-- ETL-Connector Click--//
+//			driver.findElement(
+//					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//					.click();
+//			Thread.sleep(1000);
+//			//-- Connector Dropdown Click--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Connector Dropdown Select--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//	  }
+//	@Test( priority = 3)///------- Popup should ask while moving from etl connector to Script--///////
+//	  public void ETL_DC_016() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			//-- ETL-Connector Click--//
+//			driver.findElement(
+//					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//					.click();
+//			Thread.sleep(1000);
+//			//-- Connector Dropdown Click--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Connector Dropdown Select--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Add in Connector--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			//-- Country Dropdown Click--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Country Select--//
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			Thread.sleep(2000);
+//			//--LE-Book Dropdown--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- LE-Book Select--//
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//--COnnector ID Sendkeys--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
+//					.sendKeys("VAT_ETL2603");
+//			Thread.sleep(2000);
+//			//-- Connector Description--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
+//					.sendKeys("VAT_ETL2603");
+//			//-- Endpoint type Dropdown--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]/span[2]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Endpoint type Select--//
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
+//			Thread.sleep(2000);
+//			// --Connector Type Dropdown--///
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/span[2]"))
+//					.click();
+//			Thread.sleep(2000);
+//			 // -- Connector type dropdown Select--//
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();
+//			Thread.sleep(2000);
+//			// --DB Type Dropdown--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//					.click();
+//			// --DB Type Select--//
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]")).click();
+//			Thread.sleep(2000);
+//			//-- IP --//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[2]/input[1]"))
+//					.sendKeys("10.16.1.38");
+//			//-- Port--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[3]/input[1]"))
+//					.sendKeys("52866");
+//			Thread.sleep(2000);
+//			//--Left top Three dot for Selcting Connector--//
+//			driver.findElement(By.xpath("//i[@id='viewList']")).click();
+//			Thread.sleep(2000);
+//			// -- Connector Script Click--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[2]/li[1]/ul[1]/li[2]/a[1]/span[1]"))
+//					.click();
+//			Thread.sleep(3000);
+//	  }
+//	@Test( priority = 4)
+//	  public void ETL_DC_017() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			//-- ETL-Connector Click--//
+//			driver.findElement(
+//					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//					.click();
+//			Thread.sleep(1000);
+//			//-- Connector Dropdown Click--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//-- Connector Dropdown Select--//
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//					.click();
+//			Thread.sleep(2000);
+//			//--- Page nation Click--//
+//			Select select = new Select(driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
+//			select.selectByIndex(0);
+//			Thread.sleep(2000);
+//			//-- Autorenew--//
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(3000);
+//	}
+//	@Test( priority = 5)
+//	  public void ETL_DC_018() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			WebElement elementToHoverReferesh = driver.findElement(By.xpath("//i[contains(text(),'history')]"));
+//			Actions actionsReferesh = new Actions(driver);
+//			actionsReferesh.moveToElement(elementToHoverReferesh).perform();
+//			WebElement AutoReferesh = driver.findElement(By.xpath("//i[contains(text(),'history')]"));
+//			AutoReferesh.click();
+//			Thread.sleep(3000);
+//	}
+//	@Test( priority = 6)
+//	  public void ETL_DC_019() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			//--Feed configuration click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
+//			Thread.sleep(2000);
+//			//--Feed configuration Dropdown click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//--Feed configuration Dropdown Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//--Chevon right--//
+//			driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
+//			driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
+//			WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/div[1]/span[1]"));
+//			Actions actionsClick = new Actions(driver);
+//			actionsClick.moveToElement(elementToHover).perform();
+//			Thread.sleep(2000);
+//			WebElement Edit = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[2]/a[1]/i[1]"));
+//			Edit.click();
+//			Thread.sleep(2000);
+//			//-- Nav Back --//
+//			driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
+//			Thread.sleep(4000);
+//	}
+//	@Test( priority = 7)
+//	  public void ETL_DC_009() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			//--Feed configuration click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
+//			Thread.sleep(2000);
+//			//--Feed configuration Dropdown click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//--Feed configuration Dropdown Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+//			//-- Filter column click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Column select--//
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//			//-- Value send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("abchjvasc");
+//			//-- Apply click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//			Thread.sleep(2000);
+//			//-- Take screenshot and save it to a file--//
+//	        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//	        //-- save the screenshot --//
+//	        File destinationFile = new File("ETL_DC_009.png");
+//	        // Move the screenshot file to the specified destination
+//	        try {
+//	            org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+//	            System.out.println(" ETL_DC_009 Screenshot saved to: " + destinationFile.getAbsolutePath());
+//	        } catch (IOException e) {
+//	            System.out.println("ETL_DC_009 Failed to save screenshot: " + e.getMessage());
+//	        }	
+//	}
+//	@Test( priority = 8)
+//	  public void ETL_DC_013() throws InterruptedException {
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//			.sendKeys("RA");
+//			driver.findElement(By.xpath(
+//					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//					.sendKeys("Vision@123");
+//			driver.findElement(By
+//					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//					.click();
+//			Thread.sleep(5000);
+//			//--Feed configuration click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
+//			Thread.sleep(2000);
+//			//--Feed configuration Dropdown click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//--Feed configuration Dropdown Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Take screenshot and save it to a file--//
+//	        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//	        //-- save the screenshot --//
+//	        File destinationFile = new File("ETL_DC_013.png");
+//	        // Move the screenshot file to the specified destination
+//	        try {
+//	            org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+//	            System.out.println(" ETL_DC_013 Screenshot saved to: " + destinationFile.getAbsolutePath());
+//	        } catch (IOException e) {
+//	            System.out.println("ETL_DC_013 Failed to save screenshot: " + e.getMessage());
+//	        }		
+//	}
+	@Test( priority = 9)
+	  public void ETL_DC_014() throws InterruptedException {
 			driver.findElement(By.xpath(
 					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys(username);
+			.sendKeys("RA");
 			driver.findElement(By.xpath(
 					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys(password);
+					.sendKeys("Vision@123");
 			driver.findElement(By
 					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 					.click();
 			Thread.sleep(5000);
-	  }
+			//--Feed configuration click--//
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
+			Thread.sleep(2000);
+			//--Feed configuration Dropdown click--//
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]/span[1]")).click();
+			Thread.sleep(2000);
+			//--Feed configuration Dropdown Select--//
+			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+			Thread.sleep(2000);
+			WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[19]/td[8]/div[1]/span[1]"));
+			Actions actionsHover = new Actions(driver);
+			actionsHover.moveToElement(elementToHover).perform();
+			WebElement Details = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[19]/td[9]/div[2]/a[4]/i[1]"));
+			actionsHover.moveToElement(Details).perform();
+			Thread.sleep(4000);
+	}
 	  @DataProvider(name = "loginCredentials")
 	  public Object[][] provideLoginData() {
-	      // You can define multiple sets of valid and invalid login credentials
 	      return new Object[][] {
 	          {"RA", "Vision@123"},
 	          {"RA", "vision@123"},

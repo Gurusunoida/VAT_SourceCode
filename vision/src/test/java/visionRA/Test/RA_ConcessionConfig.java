@@ -70,8 +70,83 @@ public class RA_ConcessionConfig {
 //		driver.findElement(By.xpath("//body[1]/div[2]/div[2]/div[1]/mat-datepicker-content[1]/mat-calendar[1]/div[1]/mat-month-view[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]")).click();
 //		Thread.sleep(5000);
 //	}
+	@Test(dataProvider = "loginCredentials", priority = 5)
+	public void CON_DC_005(String username, String password) throws InterruptedException {
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+				.sendKeys(username);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+				.sendKeys(password);
+		Thread.sleep(2000);
+		driver.findElement(By
+				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+				.click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+				.click();
+		Thread.sleep(2000);// -- Master Configuration tab Click
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+				.click();
+		Thread.sleep(2000);// -- MAster Config Dropdown Click
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[5]/a[1]/span[1]")).click();
+		Thread.sleep(2000);//-- Concession Config Click--//
+		WebElement elementToHoverC = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[8]/span[1]/span[1]"));
+		Actions actionsClickC = new Actions(driver);
+		actionsClickC.moveToElement(elementToHoverC).perform();
+		WebElement Edit = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[9]/div[2]/a[2]/i[1]"));
+		Edit.click();
+		Thread.sleep(2000);
+		
+		
+	}
+	
+//	@Test(dataProvider = "loginCredentials", priority = 6) 
+//	public void CON_DC_006(String username, String password) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(username);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(password);
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- Master Configuration tab Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- MAster Config Dropdown Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[5]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(5000);// -- Concession Config Click--//
+//		//-- Add Button--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[1]/div[1]/a[1]/span[1]/i[1]")).click();
+//		WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/input[1]"));
+//		Actions actionsClick = new Actions(driver);
+//		actionsClick.moveToElement(elementToHover).perform();
+//		Thread.sleep(5000);
+//		//-- Concession Type Dropdown--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//-- Concession Type Select Slab--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
+//		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/span[1]"));
+//		Actions actionsClick1 = new Actions(driver);
+//		actionsClick1.moveToElement(elementToHoverM).perform();
+//		Thread.sleep(5000);
+//}
+//	
 //
-//	@Test(dataProvider = "loginCredentials", priority = 2) 
+//	@Test(dataProvider = "loginCredentials", priority = 7) 
 //	public void CON_DC_007(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
@@ -131,44 +206,44 @@ public class RA_ConcessionConfig {
 //				.click();
 //		Thread.sleep(4000);// -- Modify Button--//
 //	}
-	@Test(dataProvider = "loginCredentials", priority = 3)
-	public void CON_DC_008(String username, String password) throws InterruptedException {
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(username);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(password);
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);// -- Master Configuration tab Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);// -- MAster Config Dropdown Click
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[5]/a[1]/span[1]")).click();
-		Thread.sleep(2000);//-- Concession Config Click--//
-		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/span[1]"));
-				Actions actionsClick = new Actions(driver);
-				actionsClick.moveToElement(elementToHoverM).perform();
-				WebElement Copy = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[2]/a[1]/i[1]"));
-				Copy.click();
-				Thread.sleep(3000);
-		//-- COncession ID--//
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]")).clear();
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT2802");
-		//-- Description--//
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]")).sendKeys("New");
-		//-- Save Button--//
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
-		Thread.sleep(3000);
-	}
+//	@Test(dataProvider = "loginCredentials", priority = 8)
+//	public void CON_DC_008(String username, String password) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(username);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(password);
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- Master Configuration tab Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- MAster Config Dropdown Click
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[5]/a[1]/span[1]")).click();
+//		Thread.sleep(2000);//-- Concession Config Click--//
+//		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/span[1]"));
+//				Actions actionsClick = new Actions(driver);
+//				actionsClick.moveToElement(elementToHoverM).perform();
+//				WebElement Copy = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[2]/a[1]/i[1]"));
+//				Copy.click();
+//				Thread.sleep(3000);
+//		//-- COncession ID--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]")).clear();
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT2802");
+//		//-- Description--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]")).sendKeys("New");
+//		//-- Save Button--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-concession[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+//		Thread.sleep(3000);
+//	}
 
 	@DataProvider(name = "loginCredentials")
 	public Object[][] getUserNameList() {

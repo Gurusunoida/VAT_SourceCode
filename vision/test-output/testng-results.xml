@@ -1,114 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-01T11:13:39 IST" name="Suite" finished-at="2024-03-01T11:14:22 IST" duration-ms="43453">
+  <suite started-at="2024-04-22T13:54:46 IST" name="Suite" finished-at="2024-04-22T13:55:08 IST" duration-ms="22133">
     <groups>
     </groups>
-    <test started-at="2024-03-01T11:13:39 IST" name="Test" finished-at="2024-03-01T11:14:22 IST" duration-ms="43453">
-      <class name="visionETLGP.ETLTest.ETLConnector">
-        <test-method is-config="true" signature="BrowserOpening(java.lang.String)[pri:0, instance:visionETLGP.ETLTest.ETLConnector@38af9828]" started-at="2024-03-01T11:13:39 IST" name="BrowserOpening" finished-at="2024-03-01T11:13:45 IST" duration-ms="6287" status="PASS">
+    <test started-at="2024-04-22T13:54:46 IST" name="Test" finished-at="2024-04-22T13:55:08 IST" duration-ms="22133">
+      <class name="visionETLGP.ETLTest.ETL_General">
+        <test-method is-config="true" signature="BrowserOpening(java.lang.String)[pri:0, instance:visionETLGP.ETLTest.ETL_General@38af9828]" started-at="2024-04-22T13:54:46 IST" name="BrowserOpening" finished-at="2024-04-22T13:54:50 IST" duration-ms="4466" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[http://10.16.1.58:4230/]]>
+                <![CDATA[http://202.83.25.244:9010/]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserOpening -->
-        <test-method signature="ETL_CC_008(java.lang.String,java.lang.String)[pri:8, instance:visionETLGP.ETLTest.ETLConnector@38af9828]" started-at="2024-03-01T11:13:45 IST" name="ETL_CC_008" data-provider="getUserNameList" finished-at="2024-03-01T11:14:22 IST" duration-ms="36376" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[RA]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Vision@123]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//i[contains(text(),'fullscreen')]"}
-  (Session info: chrome=122.0.6261.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [acb4476d9da88e0ce884a852f6ccaebc, findElement {using=xpath, value=//i[contains(text(),'fullscreen')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59671}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59671/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: acb4476d9da88e0ce884a852f6ccaebc]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//i[contains(text(),'fullscreen')]"}
-  (Session info: chrome=122.0.6261.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [acb4476d9da88e0ce884a852f6ccaebc, findElement {using=xpath, value=//i[contains(text(),'fullscreen')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59671}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59671/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: acb4476d9da88e0ce884a852f6ccaebc
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-at visionETLGP.ETLTest.ETLConnector.ETL_CC_008(ETLConnector.java:313)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="ETL_DC_014()[pri:9, instance:visionETLGP.ETLTest.ETL_General@38af9828]" started-at="2024-04-22T13:54:50 IST" name="ETL_DC_014" finished-at="2024-04-22T13:55:08 IST" duration-ms="17264" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ETL_CC_008 -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:visionETLGP.ETLTest.ETLConnector@38af9828]" started-at="2024-03-01T11:14:22 IST" name="closeDriver" finished-at="2024-03-01T11:14:22 IST" duration-ms="683" status="PASS">
+        </test-method> <!-- ETL_DC_014 -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:visionETLGP.ETLTest.ETL_General@38af9828]" started-at="2024-04-22T13:55:08 IST" name="closeDriver" finished-at="2024-04-22T13:55:08 IST" duration-ms="337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- visionETLGP.ETLTest.ETLConnector -->
+      </class> <!-- visionETLGP.ETLTest.ETL_General -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

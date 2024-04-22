@@ -70,110 +70,109 @@ public class ETLConnector {
 //		select.selectByIndex(2);
 //	}
 //
-//	@Test(priority = 2, dataProvider = "getUserNameList")
-//	public void ETL_CC_002(String loginName, String loginPwd) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(loginName);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(loginPwd);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(
-//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-//				.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-//		Thread.sleep(2000);
-//		Select select = new Select(driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
-//		select.selectByIndex(0);
-//		Thread.sleep(1000);
-//		select.selectByIndex(2);
-//	}
+////	@Test(priority = 2, dataProvider = "getUserNameList")////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_002(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(1000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
+////		Thread.sleep(2000);
+////		Select select = new Select(driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
+////		select.selectByIndex(0);
+////		Thread.sleep(1000);
+////		select.selectByIndex(2);
+////	}
 //
-//	@Test(priority = 3, dataProvider = "getUserNameList")
-//	public void ETL_CC_003(String loginName, String loginPwd) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(loginName);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(loginPwd);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(
-//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.linkText("file_copy")).click();
-//		Thread.sleep(5000);
-//		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
-//		Thread.sleep(5000);
-//	}
+////	@Test(priority = 3, dataProvider = "getUserNameList")////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_003(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.linkText("file_copy")).click();
+////		Thread.sleep(5000);
+////		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
+////		Thread.sleep(5000);
+////	}
 //
-//	@Test(priority = 4, dataProvider = "getUserNameList")
-//	public void ETL_CC_004(String loginName, String loginPwd) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(loginName);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(loginPwd);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(
-//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.linkText("visibility")).click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[3]/i[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[4]/i[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[3]"))
-//				.click();
-//
-//	}
+////	@Test(priority = 4, dataProvider = "getUserNameList")////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_004(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.linkText("visibility")).click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[3]/i[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[4]/i[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[3]"))
+////				.click();
+////	}
 //
 //@Test(priority=5,dataProvider="getUserNameList" )
 //public void ETL_CC_005(String loginName, String loginPwd) throws InterruptedException {
@@ -191,17 +190,17 @@ public class ETLConnector {
 //	Thread.sleep(2000);
 //	driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 //	Thread.sleep(2000);
-//	driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
+//	driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
 //	driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("Semi");
 //	Thread.sleep(2000);
 //	driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 //	Thread.sleep(2000);
-//	WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/span[1]"));
+//	WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/span[1]"));
 //    // Create an instance of Actions class
 //    Actions actions = new Actions(driver);
 //    // Perform mouse hover action on the element
 //    actions.moveToElement(elementToHover).perform();
-//    WebElement edit = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[2]/a[2]/i[1]"));
+//    WebElement edit = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
 //    edit.click();
 //    Thread.sleep(2000);
 //    driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]")).clear();
@@ -210,111 +209,111 @@ public class ETLConnector {
 //    driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
 //    Thread.sleep(4000);
 //}	
-//	@Test(priority = 6, dataProvider = "getUserNameList")
-//	public void ETL_CC_006(String loginName, String loginPwd) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(loginName);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(loginPwd);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(
-//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.linkText("file_copy")).click();
-//		Thread.sleep(5000);
-//		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
-//		Thread.sleep(5000);
-//	}
+////	@Test(priority = 6, dataProvider = "getUserNameList")////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_006(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.linkText("file_copy")).click();
+////		Thread.sleep(5000);
+////		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
+////		Thread.sleep(5000);
+////	}
 //
-//	@Test(priority = 7, dataProvider = "getUserNameList") // NOT CLEARED BUG
-//	public void ETL_CC_007(String loginName, String loginPwd) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(loginName);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(loginPwd);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(
-//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-//				.click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.linkText("share")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.linkText("fullscreen_exit")).click();
-//		Thread.sleep(3000);
-//	}
-
-	@Test(priority = 8, dataProvider = "getUserNameList") // NOT CLEARED BUG
-	public void ETL_CC_008(String loginName, String loginPwd) throws InterruptedException {
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);// --LOGIN CLICK
-		driver.findElement(
-				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-				.click();
-		Thread.sleep(2000); // --NAVIGATES TO SINGLE CLICK
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);// --NAVIGATES TO CONNECTOR
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.linkText("file_copy")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-		Thread.sleep(4000);
-		driver.findElement(By.linkText("file_copy")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-		Thread.sleep(3000);
-	}
+////	@Test(priority = 7, dataProvider = "getUserNameList") ////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_007(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.linkText("share")).click();
+////		Thread.sleep(1000);
+////		driver.findElement(By.linkText("fullscreen_exit")).click();
+////		Thread.sleep(3000);
+////	}
+//
+////	@Test(priority = 8, dataProvider = "getUserNameList")////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_008(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);// --LOGIN CLICK
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(2000); // --NAVIGATES TO SINGLE CLICK
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);// --NAVIGATES TO CONNECTOR
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+////				.click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.linkText("file_copy")).click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
+////		Thread.sleep(4000);
+////		driver.findElement(By.linkText("file_copy")).click();
+////		Thread.sleep(3000);
+////		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
+////		Thread.sleep(3000);
+////	}
 //
 //	@Test(priority = 9, dataProvider = "getUserNameList")
 //	public void ETL_CC_009(String loginName, String loginPwd) throws InterruptedException {
@@ -360,7 +359,7 @@ public class ETLConnector {
 //		Thread.sleep(3000);
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"))
-//				.sendKeys("MJTEST0905");
+//				.sendKeys("VAT0204_1");
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]"))
@@ -372,15 +371,15 @@ public class ETLConnector {
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[2]/ng-select[1]/div[1]/span[2]"))
 //				.click();
 //		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//span[contains(text(),'PL SQL')]")).click();
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]")).click();
 //		Thread.sleep(3000);
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"))
-//				.sendKeys("MJ0055");
+//				.sendKeys("VAT0204_1");
 //		Thread.sleep(100);
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[5]/div[1]/textarea[1]"))
-//				.sendKeys("SelectMJ00050");
+//				.sendKeys("Select * from VAT_02");
 //		Thread.sleep(100);
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
@@ -390,37 +389,37 @@ public class ETLConnector {
 //		Thread.sleep(3000);
 //	}
 //
-//	@Test(priority = 10, dataProvider = "getUserNameList")
-//	public void ETL_CC_010(String loginName, String loginPwd) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(loginName);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(loginPwd);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(
-//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-//				.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-//				.click();
-//		Thread.sleep(3000);// --ETLConnector
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-//				.click();
-//		Thread.sleep(5000);// --Next page Arrow
-//		driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.cssSelector(
-//				"body.sidebar-mini.body-background:nth-child(2) app-main-container.ng-star-inserted:nth-child(3) div.wrapper.ng-star-inserted div.main-panel.ps-container.content-area_bound:nth-child(3) div.content-area:nth-child(2) app-connector.ng-tns-c296-5.ng-star-inserted:nth-child(2) div.card-body.material-table.p-0.ng-tns-c296-5 div.row.m-0.ng-tns-c296-5 div.col-sm-12.col-md-12.col-lg-12.col-xl-12.h-100.p-0.ng-tns-c296-5 div.material-table.dashboard-bg-white.b-radius-12.h-100.m-0.ng-tns-c296-5 app-smart-table.ng-tns-c285-6.ng-tns-c296-5.ng-star-inserted div.table-responsive.ng-tns-c285-6 perfect-scrollbar.ng-tns-c285-6.ng-star-inserted div.ps.ps--active-y div.ps-content table.inlineEditTable tbody.ng-tns-c285-6.ng-star-inserted:nth-child(2) tr.ng-tns-c285-6.ng-star-inserted:nth-child(3) td.ng-tns-c285-6.ng-star-inserted:nth-child(7) div.tr-edit-icons.row.a1.ng-tns-c285-6.ng-star-inserted a.modal-trigger.waves-effect.btn-flat.nopadding.pr-2.ng-tns-c285-6.ng-star-inserted:nth-child(3) > i.material-icons.ng-tns-c285-6"))
-//				.click();
-//		Thread.sleep(2000);
-//	}
+////	@Test(priority = 10, dataProvider = "getUserNameList")////////-------- Not Required( Button is Removed)------////////
+////	public void ETL_CC_010(String loginName, String loginPwd) throws InterruptedException {
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+////				.sendKeys(loginName);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+////				.sendKeys(loginPwd);
+////		driver.findElement(By
+////				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+////				.click();
+////		Thread.sleep(5000);
+////		driver.findElement(
+////				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+////				.click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+////				.click();
+////		Thread.sleep(3000);// --ETLConnector
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+////				.click();
+////		Thread.sleep(5000);// --Next page Arrow
+////		driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
+////		Thread.sleep(2000);
+////		driver.findElement(By.cssSelector(
+////				"body.sidebar-mini.body-background:nth-child(2) app-main-container.ng-star-inserted:nth-child(3) div.wrapper.ng-star-inserted div.main-panel.ps-container.content-area_bound:nth-child(3) div.content-area:nth-child(2) app-connector.ng-tns-c296-5.ng-star-inserted:nth-child(2) div.card-body.material-table.p-0.ng-tns-c296-5 div.row.m-0.ng-tns-c296-5 div.col-sm-12.col-md-12.col-lg-12.col-xl-12.h-100.p-0.ng-tns-c296-5 div.material-table.dashboard-bg-white.b-radius-12.h-100.m-0.ng-tns-c296-5 app-smart-table.ng-tns-c285-6.ng-tns-c296-5.ng-star-inserted div.table-responsive.ng-tns-c285-6 perfect-scrollbar.ng-tns-c285-6.ng-star-inserted div.ps.ps--active-y div.ps-content table.inlineEditTable tbody.ng-tns-c285-6.ng-star-inserted:nth-child(2) tr.ng-tns-c285-6.ng-star-inserted:nth-child(3) td.ng-tns-c285-6.ng-star-inserted:nth-child(7) div.tr-edit-icons.row.a1.ng-tns-c285-6.ng-star-inserted a.modal-trigger.waves-effect.btn-flat.nopadding.pr-2.ng-tns-c285-6.ng-star-inserted:nth-child(3) > i.material-icons.ng-tns-c285-6"))
+////				.click();
+////		Thread.sleep(2000);
+////	}
 //	@Test(priority=11,dataProvider="getUserNameList" )
 //	public void ETL_CC_011(String loginName, String loginPwd) throws InterruptedException {
 //		driver.findElement(By.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]")).sendKeys(loginName);
@@ -528,7 +527,7 @@ public class ETLConnector {
 //		Thread.sleep(3000);//--End Point type Select
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--Connector Type Dropdown
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();
 //		Thread.sleep(3000);//--Select Connector type
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--DB Type Dropdown
@@ -554,23 +553,23 @@ public class ETLConnector {
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--Country Dropdown
 //		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-//		Thread.sleep(3000);//--Select Country
+//		Thread.sleep(1000);//--Select Country
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(3000);//--LE Book Dropdown
+//		Thread.sleep(1000);//--LE Book Dropdown
 //		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-//		Thread.sleep(3000);//--Select LE Book
+//		Thread.sleep(1000);//--Select LE Book
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("TEST290124");
 //		Thread.sleep(1000);//--Connector ID Send Keys
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]")).sendKeys("DUMMYTEST290124");
 //		Thread.sleep(1000);//-- Description Send Keys
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--End Point Type Dropdown
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-//		Thread.sleep(3000);//--End Point type Select
+//		driver.findElement(By.xpath("//span[contains(text(),'Source & Destination')]")).click();
+//		Thread.sleep(1000);//--End Point type Select
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--Connector Type Dropdown
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-//		Thread.sleep(3000);//--Select Connector type
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
+//		Thread.sleep(1000);//--Select Connector type
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--DB Type Dropdown
 //		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
@@ -617,7 +616,7 @@ public class ETLConnector {
 //		Thread.sleep(3000);//--End Point type Select
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--Connector Type Dropdown
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();
 //		Thread.sleep(3000);//--Select Connector type
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 //		Thread.sleep(3000);//--DB Type Dropdown
@@ -648,7 +647,7 @@ public class ETLConnector {
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]")).click();
 //		Thread.sleep(3000);//--Filter Click
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[6]/span[1]")).click();
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[5]/span[1]")).click();
 //		Thread.sleep(1000);//--Record Indicator
 //		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("approved");
 //		Thread.sleep(1000);
@@ -690,8 +689,6 @@ public class ETLConnector {
 //		Thread.sleep(1000);//--Equal 
 //		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 //		Thread.sleep(3000);
-//
-//		
 //	}
 //	@Test(priority=18,dataProvider="getUserNameList" )
 //	public void ETL_CC_018(String loginName, String loginPwd) throws InterruptedException {
@@ -935,13 +932,13 @@ public class ETLConnector {
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
 //				.click();// -- Filter Colum Click--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[5]/span[1]")).click();
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]")).click();
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-//				.sendKeys("Acti");
+//				.sendKeys("Act");
 //		Thread.sleep(1000);// -- Filter Value Send Keys--//
 //		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-//		Thread.sleep(3000);// -- Apply Button--//
+//		Thread.sleep(5000);// -- Apply Button--//
 //	}
 //
 //	@Test(priority = 22, dataProvider = "getUserNameList")
@@ -1131,7 +1128,7 @@ public class ETLConnector {
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/ng-select[1]/div[1]"))
 //				.click();//-- Connector ID Dropdown--//
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[35]/span[1]")).click();//-- Connector ID Dropdown Select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();//-- Connector ID Dropdown Select--//
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]"))
 //				.sendKeys("VATT");//-- Querry ID Send Keys--//
@@ -1146,7 +1143,7 @@ public class ETLConnector {
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/textarea[1]"))
 //				.sendKeys(
-//						"SELECT '#COUNTRY#' COUNTRY,'#LE_BOOK#' LE_BOOK,'BLSLCS0043' BUSINESS_LINE_ID,'#VBD_DD-MON-YYYY_ETL_AE01#' FEED_DATE ");//-- Querry Send Keys--//
+//						"Select * from Vision_users");//-- Querry Send Keys--//
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
 //				.click();//-- Validate--//
@@ -1180,17 +1177,19 @@ public class ETLConnector {
 //				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 //				.click();
 //		Thread.sleep(3000);// --Drop down of Connector
-//		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/span[1]"));
+//		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[5]/div[1]/span[1]"));
 //				Actions actionsClick = new Actions(driver);
 //				actionsClick.moveToElement(elementToHoverM).perform();
-//				WebElement Connector = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[2]/a[2]/i[1]"));
+//				WebElement Connector = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[6]/div[2]/a[2]/i[1]"));
 //				Connector.click();//-- Edit --//
 //				Thread.sleep(2000);
 //		WebElement Description = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"));
 //		Description.clear();//-- Description Clear--//
 //		Description.sendKeys("VAT2702");
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+//		Thread.sleep(2000);
 //		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]")).click();
-//		Thread.sleep(1000);//-- Modify Button--//
+//		Thread.sleep(2000);//-- Modify Button--//
 //	}
 //	@Test(priority = 26, dataProvider = "getUserNameList")
 //	public void ETL_CC_029(String loginName, String loginPwd) throws InterruptedException {
@@ -1264,7 +1263,172 @@ public class ETLConnector {
 //		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]")).click();
 //		Thread.sleep(2000);	
 //	}
-
+//	@Test(priority = 28, dataProvider = "getUserNameList")
+//	public void ETL_CC_034(String loginName, String loginPwd) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(
+//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// --ETL Connector click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		//-- ETL- Connector drop down click--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		//-- Filter click in Connector--//
+//		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+//		Thread.sleep(2000);
+//		//-- Filter column dropdown click--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//-- Column Select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
+//		//--Value sendkeys--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("United");
+//		//-- Apply Button--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(3000);
+//		//-- Filter click in Connector--//
+//		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+//		//--Value sendkeys--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).clear();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("abcd");
+//		//-- Apply Button--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(3000);
+//	}
+//	@Test(priority = 29, dataProvider = "getUserNameList")
+//	public void ETL_CC_031(String loginName, String loginPwd) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(
+//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// --ETL Connector click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/span[1]/span[1]"));
+//		Actions actionsClick = new Actions(driver);
+//		actionsClick.moveToElement(elementToHoverM).perform();
+//		WebElement Query = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[8]/div[2]/a[2]/i[1]"));
+//		Query.click();
+//		Thread.sleep(2000);
+//		WebElement SelectQuery = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/textarea[1]"));
+//		SelectQuery.click();
+//		SelectQuery.clear();
+//		SelectQuery.sendKeys("Select * from Vision_users");
+//		Thread.sleep(2000);
+//		//Validate Button--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+//		Thread.sleep(3000);
+//		//--Modify Button--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]")).click();
+//		Thread.sleep(3000);
+//	}
+//	@Test(priority = 30, dataProvider = "getUserNameList")
+//	public void ETL_CC_032(String loginName, String loginPwd) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(
+//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//				.click();
+//		Thread.sleep(3000);// --ETL Connector click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(3000);// --Drop down of Connector
+//		WebElement elementToHoverM = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/span[1]"));
+//		Actions actionsClick = new Actions(driver);
+//		actionsClick.moveToElement(elementToHoverM).perform();
+//		WebElement ConnectorScript = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[2]/a[2]/i[1]"));
+//		ConnectorScript.click();//-- Edit --//
+//		Thread.sleep(2000);
+//		//driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]")).clear();
+//		WebElement ScriptDes = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"));
+//		ScriptDes.clear();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/label[1]/a[1]/i[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+//		Thread.sleep(4000);
+//	}
+	@Test(priority = 31, dataProvider = "getUserNameList")
+	public void ETL_CC_023(String loginName, String loginPwd) throws InterruptedException {
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+				.sendKeys(loginName);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+				.sendKeys(loginPwd);
+		driver.findElement(By
+				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+				.click();
+		Thread.sleep(5000);
+		// --ETL Connector click--//
+		driver.findElement(
+				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+				.click();
+		Thread.sleep(2000);
+		// --ETL Connector Dropdown click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+				.click();
+		Thread.sleep(3000);
+		//-- Dropdown Select to Connector Query--//
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]/span[1]")).click();
+		Thread.sleep(3000);
+		//-- Query Edit Click--//
+		WebElement elementToHoverQuery = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/span[1]"));
+		Actions actionsClick = new Actions(driver);
+		actionsClick.moveToElement(elementToHoverQuery).perform();
+		WebElement QueryEdit = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/div[2]/a[2]/i[1]"));
+		QueryEdit.click();
+		Thread.sleep(2000);
+		WebElement Query = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/textarea[1]"));
+		Query.clear();
+		Query.sendKeys("Select * from VAT_02");
+		Thread.sleep(4000);
+	}
 	@DataProvider(name = "getUserNameList")
 	public Object[][] getUserNameList() {
 		Object[][] loginDetails = new Object[1][2];

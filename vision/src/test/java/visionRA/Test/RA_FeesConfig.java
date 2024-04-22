@@ -71,6 +71,7 @@ public class RA_FeesConfig {
 //				.click();// -- Effective date Select--//
 //		Thread.sleep(5000);
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 2)
 //	public void VAT_FEE_DC_002(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -127,6 +128,7 @@ public class RA_FeesConfig {
 //				.click();
 //		Thread.sleep(2000);// -- Fee Type dropdown Select--//
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 3)
 //	public void VAT_FEE_DC_002_01(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -158,19 +160,28 @@ public class RA_FeesConfig {
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
 //		Thread.sleep(2000);// -- Fees Config Button Click--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);//--- Fees BAsis dropdown--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);// --- Fees BAsis dropdown--//
 //		driver.findElement(By.xpath("//span[contains(text(),'Percentage')]")).click();
-//		Thread.sleep(2000);//--- Fees BAsis dropdown Select--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);//--- Fees BAsis dropdown--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();
-//		Thread.sleep(2000);//--- Fees BAsis dropdown Select--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);//--- Fees BAsis dropdown--//
+//		Thread.sleep(2000);// --- Fees BAsis dropdown Select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);// --- Fees BAsis dropdown--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
+//				.click();
+//		Thread.sleep(2000);// --- Fees BAsis dropdown Select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);// --- Fees BAsis dropdown--//
 //		driver.findElement(By.xpath("//span[contains(text(),'Unit x Sub Count')]")).click();
-//		Thread.sleep(2000);//--- Fees BAsis dropdown Select--//
+//		Thread.sleep(2000);// --- Fees BAsis dropdown Select--//
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 4)
 //	public void VAT_FEE_DC_003(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -202,19 +213,31 @@ public class RA_FeesConfig {
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
 //		Thread.sleep(2000);// -- Fees Config Button Click--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);//-- Tier Range type drop down--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-//		Thread.sleep(2000);//-- Tier Range type drop down Select--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);//-- Tier Range type drop down--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();
-//		Thread.sleep(2000);//-- Tier Range type drop down Select--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);//-- Tier Range type drop down--//
-//		driver.findElement(By.xpath("//span[contains(text(),'Tenor based on duration (End Date-Start Date)')]")).click();
-//		Thread.sleep(2000);//-- Tier Range type drop down Select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);// -- Tier Range type drop down--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- Tier Range type drop down Select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);// -- Tier Range type drop down--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
+//				.click();
+//		Thread.sleep(2000);// -- Tier Range type drop down Select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);// -- Tier Range type drop down--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Tenor based on duration (End Date-Start Date)')]"))
+//				.click();
+//		Thread.sleep(2000);// -- Tier Range type drop down Select--//
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 5)
 //	public void VAT_FEE_DC_004(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -246,7 +269,7 @@ public class RA_FeesConfig {
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
 //		Thread.sleep(2000);// -- Fees Config Button Click--//
-//		
+//
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/a[2]/div[1]"))
 //				.click();// -- add button--//
@@ -357,6 +380,7 @@ public class RA_FeesConfig {
 //				.click();// -- fee basis select--//
 //		Thread.sleep(2000);
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 6)
 //	public void VAT_FEE_DC_005(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -513,6 +537,7 @@ public class RA_FeesConfig {
 //				.sendKeys("1234567890");// -- max fee amount--//
 //		Thread.sleep(2000);
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 7)
 //	public void VAT_FEE_DC_006(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -668,21 +693,23 @@ public class RA_FeesConfig {
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
 //				.sendKeys("1234567890");// -- max fee amount--//
 //		Thread.sleep(3000);
-//		 Actions actions = new Actions(driver);
-//	        WebElement element = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-//	        actions.moveToElement(element);
-//	        WebElement FromAmount = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
-//	        actions.scrollToElement(FromAmount);
-//	        actions.perform();
-//	        Thread.sleep(5000);
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();
-//	        driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();//-- From Amount Clear--//
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).sendKeys("123456");//---From Account Sendkeys--//
+//		Actions actions = new Actions(driver);
+//		WebElement element = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions.moveToElement(element);
+//		WebElement FromAmount = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
+//		actions.scrollToElement(FromAmount);
+//		actions.perform();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();// -- From Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).sendKeys("123456");// ---From Account Sendkeys--//
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();//-- To Amount Clear--//
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("3456789");//---To Account Sendkeys--//
-//		Thread.sleep(3000);	
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();// -- To Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("3456789");// ---To Account Sendkeys--//
+//		Thread.sleep(3000);
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 8)
 //	public void VAT_FEE_DC_007(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -726,12 +753,16 @@ public class RA_FeesConfig {
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
 //		Thread.sleep(2000); // -- Channel type dropdown--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]")).click();// --- Channel type select--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]"))
+//				.click();// --- Channel type select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
 //		Thread.sleep(2000); // -- Channel type dropdown--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]")).click();// --- Channel type select--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]"))
+//				.click();// --- Channel type select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
@@ -743,9 +774,8 @@ public class RA_FeesConfig {
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
 //		Thread.sleep(2000);// channel code dropdown--//
-//		driver.findElement(By.xpath(
-//				"//span[contains(text(),'Internet Banking')]"))
-//				.click();// -- channel code dropdown select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Internet Banking')]")).click();// -- channel code dropdown
+//																							// select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
@@ -762,12 +792,14 @@ public class RA_FeesConfig {
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
 //		Thread.sleep(2000);// --buusiness vertical dropdown--//
-//		driver.findElement(By.xpath("//span[contains(text(),'Premier Banking')]")).click();// -- business vertical select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Premier Banking')]")).click();// -- business vertical
+//																							// select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();
 //		Thread.sleep(2000);// --buusiness vertical dropdown--//
-//		driver.findElement(By.xpath("//span[contains(text(),'Corporate Banking')]")).click();// -- business vertical select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Corporate Banking')]")).click();// -- business vertical
+//																								// select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]"))
 //				.click();// --customer id click--//
@@ -779,13 +811,13 @@ public class RA_FeesConfig {
 //				.click();// --customer id click--//
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//td[contains(text(),'100009')]")).click();// -- customer id
-//																								// select--//
+//																				// select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]"))
 //				.click();// --customer id click--//
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//td[contains(text(),'100013')]")).click();// -- customer id
-//																								// select--//
+//																				// select--//
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[6]/div[1]/input[1]"))
@@ -824,18 +856,20 @@ public class RA_FeesConfig {
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[9]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();// -- product description dropdown--//
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]")).click();// -- product
-//																										// description
-//																										// dropdown
-//																										// select--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]"))
+//				.click();// -- product
+//		// description
+//		// dropdown
+//		// select--//
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[9]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 //				.click();// -- product description dropdown--//
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//span[contains(text(),'03009 - Education Loan')]")).click();// -- product
-//																										// description
-//																										// dropdown
-//																										// select--//
+//																									// description
+//																									// dropdown
+//																									// select--//
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath(
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[18]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
@@ -912,39 +946,44 @@ public class RA_FeesConfig {
 //				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
 //				.sendKeys("1234567890");// -- max fee amount--//
 //		Thread.sleep(3000);
-//		 Actions actions = new Actions(driver);
-//	        WebElement element = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-//	        actions.moveToElement(element);
-//	        WebElement FromAmount = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
-//	        actions.scrollToElement(FromAmount);
-//	        actions.perform();
-//	        Thread.sleep(5000);
-//	        driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();//-- From Amount Clear--//
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).sendKeys("123456");//---From Account Sendkeys--//
+//		Actions actions = new Actions(driver);
+//		WebElement element = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions.moveToElement(element);
+//		WebElement FromAmount = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
+//		actions.scrollToElement(FromAmount);
+//		actions.perform();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();// -- From Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).sendKeys("123456");// ---From Account Sendkeys--//
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();//-- To Amount Clear--//
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("3456789");//---To Account Sendkeys--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();// -- To Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("3456789");// ---To Account Sendkeys--//
 //		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/input[1]")).clear();
 //		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/input[1]")).sendKeys("25");
 //		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[1]/div[2]/a[1]/div[1]")).click();
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[1]/div[2]/a[1]/div[1]"))
+//				.click();
 //		Actions actions1 = new Actions(driver);
-//        WebElement element1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-//        actions1.moveToElement(element1);
-//        WebElement FromAmount1 = driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]"));
-//        actions.scrollToElement(FromAmount1);
-//        actions.perform();
-//        Thread.sleep(5000);
-//        driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]")).clear();//-- From Amount Clear--//
-//	driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]")).sendKeys("3456789");//---From Account Sendkeys--//
-//	Thread.sleep(2000);
-//	driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();//-- To Amount Clear--//
-//	driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("4567890");//---To Account Sendkeys--//
-//	driver.findElement(By.xpath("//tbody/tr[2]/td[3]/input[1]")).clear();
-//	driver.findElement(By.xpath("//tbody/tr[2]/td[3]/input[1]")).sendKeys("50");
-//	 Thread.sleep(5000);	
+//		WebElement element1 = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions1.moveToElement(element1);
+//		WebElement FromAmount1 = driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]"));
+//		actions.scrollToElement(FromAmount1);
+//		actions.perform();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]")).clear();// -- From Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]")).sendKeys("3456789");// ---From Account Sendkeys--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();// -- To Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("4567890");// ---To Account Sendkeys--//
+//		driver.findElement(By.xpath("//tbody/tr[2]/td[3]/input[1]")).clear();
+//		driver.findElement(By.xpath("//tbody/tr[2]/td[3]/input[1]")).sendKeys("50");
+//		Thread.sleep(5000);
 //	}
-//	@Test(dataProvider = "loginCredentials", priority = 9)//-- Unable to Proceed further to amount is clearing--//
+//
+//	@Test(dataProvider = "loginCredentials", priority = 9) // -- Unable to Proceed further to amount is clearing--//
 //	public void VAT_FEE_DC_013(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
@@ -975,39 +1014,53 @@ public class RA_FeesConfig {
 //		Thread.sleep(3000);
 //		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
 //		Thread.sleep(2000);// -- Fees Config Button Click--//
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();//-- Fee Tyype dropdown--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
+//				.click();// -- Fee Tyype dropdown--//
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]")).click();//-- Fee Tyype dropdown Select--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]"))
+//				.click();// -- Fee Tyype dropdown Select--//
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]")).click();///-- Add button in fee config--//
-//		 Actions actions = new Actions(driver);
-//	        WebElement element = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-//	        actions.moveToElement(element);						
-//	        WebElement FromAmount = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
-//	        actions.scrollToElement(FromAmount);
-//	        actions.perform();
-//	        driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();//-- From Amount Clear--//
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).sendKeys("123456");//---From Account Sendkeys--//
-//			Thread.sleep(5000);
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("100000");//-- To Amount--//
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[4]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();//--Fee Basis dropdown--//
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();//--Fee Basis dropdown Select--//
-//			Thread.sleep(5000);
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("100000");//-- To Amount--//
-//			Thread.sleep(3000);
-//			driver.findElement(By.xpath("//tbody/tr[1]/td[5]/input[1]")).sendKeys("25");//--Fee amount / Percentage--//
-//			Thread.sleep(4000);
-//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[1]/div[2]/a[1]/div[1]")).click();//--- Add in fee config records--//
-//			Thread.sleep(3000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]"))
+//				.click();/// -- Add button in fee config--//
+//		Actions actions = new Actions(driver);
+//		WebElement element = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions.moveToElement(element);
+//		WebElement FromAmount = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
+//		actions.scrollToElement(FromAmount);
+//		actions.perform();
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).clear();// -- From Amount Clear--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]")).sendKeys("123456");// ---From Account Sendkeys--//
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("100000");// -- To Amount--//
+//		Thread.sleep(4000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[4]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();// --Fee
+//																												// Basis
+//																												// dropdown--//
+//		Thread.sleep(4000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]"))
+//				.click();// --Fee Basis dropdown Select--//
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("100000");// -- To Amount--//
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[5]/input[1]")).sendKeys("25");// --Fee amount / Percentage--//
+//		Thread.sleep(4000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[1]/div[2]/a[1]/div[1]"))
+//				.click();// --- Add in fee config records--//
+//		Thread.sleep(3000);
 ////			   WebElement element1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
 ////		        actions.moveToElement(element1);						
 ////		        WebElement FromAmount1 = driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]"));
 ////		        actions.scrollToElement(FromAmount1);
 ////		        actions.perform();
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 10)
 //	public void VAT_FEE_DC_024(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -1041,11 +1094,14 @@ public class RA_FeesConfig {
 //		Thread.sleep(5000);
 //		driver.findElement(By.xpath("//tbody/tr[1]/td[33]/div[1]/div[1]/a[3]//i[conitains(text(),'delete')]")).click();
 //		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]")).click();
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]"))
+//				.click();
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
 //		Thread.sleep(3000);
 //	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 11)
 //	public void VAT_FEE_DC_015(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -1081,11 +1137,11 @@ public class RA_FeesConfig {
 //		Thread.sleep(2000);// -- Edit Buttom--//
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
-//				.click();//-- Fee Type dropdown--//
+//				.click();// -- Fee Type dropdown--//
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]"))
-//				.click();//-- Fee Type dropdown Select--//
+//				.click();// -- Fee Type dropdown Select--//
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]"))
 //				.click();
@@ -1095,21 +1151,170 @@ public class RA_FeesConfig {
 //		Thread.sleep(3000);
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]"))
-//				.click();//-- Add Row--//
-//		Thread.sleep(2000);		
-//		
+//				.click();// -- Add Row--//
+//		Thread.sleep(2000);
+//
 //		Actions actions = new Actions(driver);
-//		WebElement scroll = driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		WebElement scroll = driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
 //		actions.moveToElement(scroll);
-//		WebElement Target = driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/input[1]"));
+//		WebElement Target = driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/input[1]"));
 //		actions.scrollToElement(Target);
 //		actions.perform();
 //		Target.click();
 //		Target.sendKeys("25");
 //		Thread.sleep(3000);
 //	}
-	@Test(dataProvider = "loginCredentials", priority = 12)
-	public void VAT_FEE_DC_016(String username, String password) throws InterruptedException {
+//
+//	@Test(dataProvider = "loginCredentials", priority = 12)
+//	public void VAT_FEE_DC_016(String username, String password) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(username);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(password);
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- Master Configuration tab Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- MAster Config Dropdown Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(5000);// --- TransLine Config
+//		WebElement elementToHoverM = driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[5]"));
+//		Actions actionsClick = new Actions(driver);
+//		actionsClick.moveToElement(elementToHoverM).perform();
+//		WebElement FeesConfig = driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/a[1]/i[1]"));
+//		FeesConfig.click();
+//		Thread.sleep(2000);// -- Edit Buttom--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]"))
+//				.click();
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
+//				.sendKeys("12");
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]"))
+//				.click();
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
+//				.sendKeys("15");
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]"))
+//				.click();
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
+//				.sendKeys("20");
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
+//		Thread.sleep(2000);
+//	}
+//	@Test(dataProvider = "loginCredentials", priority = 13)
+//	public void VAT_FEE_DC_028(String username, String password) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(username);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(password);
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// -- Master Configuration tab Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- MAster Config Dropdown Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// --- TransLine Config
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		//-- Filter click--//
+//		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+//		//column dropdown--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//Column select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]/span[1]")).click();
+//		//-- Value send keys--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+//		//-- Apply button--/
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(3000);
+//	WebElement elementToHoverM = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[2]"));
+//	Actions actionsClick = new Actions(driver);
+//	actionsClick.moveToElement(elementToHoverM).perform();
+//	WebElement TranslineEdit = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"));
+//	TranslineEdit.click();
+//	Thread.sleep(2000);
+//	//-- Business line config click--//
+//	driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
+//	Thread.sleep(2000);
+//	//-- Fees Configuration click--//
+//	driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
+//	//-- Fee type click--//
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//	Thread.sleep(2000);
+//	//--Range select in fee type--//
+//	driver.findElement(By.xpath("//span[contains(text(),'Range')]")).click();
+//	//-- Add row--//
+//	driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/a[2]/div[1]")).click();
+//	Actions actions = new Actions(driver);
+//	WebElement elementTarget = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//	actions.moveToElement(elementTarget);
+//	WebElement Target = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/input[1]"));
+//	actions.scrollToElement(Target);
+//	actions.perform();
+//	Target.click();
+//	Target.clear();
+//	Target.sendKeys("100000");
+//	driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).click();
+//	driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).clear();
+//	driver.findElement(By.xpath("//tbody/tr[1]/td[3]/input[1]")).sendKeys("1000");
+//	//apply button--//
+//	driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//	Actions actions1 = new Actions(driver);
+//	WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//	actions1.moveToElement(elementTarget1);
+//	WebElement Target1 = driver.findElement(By.xpath("//div[contains(text(),'* To Amount must be greater than From Amount')]"));
+//	actions1.scrollToElement(Target1);
+//	actions1.perform();
+//	Target.click();
+//	WebElement ToAmount_text=driver.findElement(By.xpath("//div[contains(text(),'* To Amount must be greater than From Amount')]"));
+//	String proftext = ToAmount_text.getText();
+//	System.out.println(proftext);
+//	Thread.sleep(3000);
+//	}
+	@Test(dataProvider = "loginCredentials", priority = 14)
+	public void VAT_FEE_DC_029(String username, String password) throws InterruptedException {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1121,42 +1326,57 @@ public class RA_FeesConfig {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
+		// -- Master Configuration tab Click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
 				.click();
-		Thread.sleep(2000);// -- Master Configuration tab Click
+		Thread.sleep(2000);
+		// -- MAster Config Dropdown Click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 				.click();
-		Thread.sleep(2000);// -- MAster Config Dropdown Click
+		Thread.sleep(2000);
+		// --- TransLine Config
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
-		Thread.sleep(5000);// --- TransLine Config
-		WebElement elementToHoverM = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[5]"));
-		Actions actionsClick = new Actions(driver);
-		actionsClick.moveToElement(elementToHoverM).perform();
-		WebElement FeesConfig = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/a[1]/i[1]"));
-		FeesConfig.click();
-		Thread.sleep(2000);// -- Edit Buttom--//
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]")).click();
-		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]")).sendKeys("12");
+		Thread.sleep(3000);
+		//-- Filter click--//
+		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+		//column dropdown--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]")).click();
-		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]")).sendKeys("15");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/a[2]/div[1]")).click();
-		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]")).sendKeys("20");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[3]/button[1]")).click();
-		Thread.sleep(2000);
-		
+		//Column select--//
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]/span[1]")).click();
+		//-- Value send keys--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+		//-- Apply button--/
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(3000);
+	WebElement elementToHoverM = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[2]"));
+	Actions actionsClick = new Actions(driver);
+	actionsClick.moveToElement(elementToHoverM).perform();
+	WebElement TranslineEdit = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"));
+	TranslineEdit.click();
+	Thread.sleep(2000);
+	//-- Business line config click--//
+	driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
+	Thread.sleep(2000);
+	//-- Fees Configuration click--//
+	driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
+	//-- Fee type click--//
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+	Thread.sleep(2000);
+	//--Range select in fee type--//
+	driver.findElement(By.xpath("//span[contains(text(),'Range')]")).click();
+	//-- Add row--//
+	driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/a[2]/div[1]")).click();
+	//--Apply button--//
+	driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+	//-- Filter click--//
+	driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+	Thread.sleep(3000);
 	}
 
 	@DataProvider(name = "loginCredentials")
