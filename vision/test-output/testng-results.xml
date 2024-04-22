@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-22T13:54:46 IST" name="Suite" finished-at="2024-04-22T13:55:08 IST" duration-ms="22133">
+  <suite started-at="2024-04-22T15:28:43 IST" name="Suite" finished-at="2024-04-22T15:29:15 IST" duration-ms="31795">
     <groups>
     </groups>
-    <test started-at="2024-04-22T13:54:46 IST" name="Test" finished-at="2024-04-22T13:55:08 IST" duration-ms="22133">
-      <class name="visionETLGP.ETLTest.ETL_General">
-        <test-method is-config="true" signature="BrowserOpening(java.lang.String)[pri:0, instance:visionETLGP.ETLTest.ETL_General@38af9828]" started-at="2024-04-22T13:54:46 IST" name="BrowserOpening" finished-at="2024-04-22T13:54:50 IST" duration-ms="4466" status="PASS">
+    <test started-at="2024-04-22T15:28:43 IST" name="Test" finished-at="2024-04-22T15:29:15 IST" duration-ms="31795">
+      <class name="visionETLGP.ETLTest.ETLConnector">
+        <test-method is-config="true" signature="BrowserOpening(java.lang.String)[pri:0, instance:visionETLGP.ETLTest.ETLConnector@38af9828]" started-at="2024-04-22T15:28:43 IST" name="BrowserOpening" finished-at="2024-04-22T15:28:48 IST" duration-ms="4261" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserOpening -->
-        <test-method signature="ETL_DC_014()[pri:9, instance:visionETLGP.ETLTest.ETL_General@38af9828]" started-at="2024-04-22T13:54:50 IST" name="ETL_DC_014" finished-at="2024-04-22T13:55:08 IST" duration-ms="17264" status="PASS">
+        <test-method signature="ETL_CC_024(java.lang.String,java.lang.String)[pri:32, instance:visionETLGP.ETLTest.ETLConnector@38af9828]" started-at="2024-04-22T15:28:48 IST" name="ETL_CC_024" data-provider="getUserNameList" finished-at="2024-04-22T15:29:15 IST" duration-ms="27099" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[RA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Vision@123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ETL_DC_014 -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:visionETLGP.ETLTest.ETL_General@38af9828]" started-at="2024-04-22T13:55:08 IST" name="closeDriver" finished-at="2024-04-22T13:55:08 IST" duration-ms="337" status="PASS">
+        </test-method> <!-- ETL_CC_024 -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:visionETLGP.ETLTest.ETLConnector@38af9828]" started-at="2024-04-22T15:29:15 IST" name="closeDriver" finished-at="2024-04-22T15:29:15 IST" duration-ms="355" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- visionETLGP.ETLTest.ETL_General -->
+      </class> <!-- visionETLGP.ETLTest.ETLConnector -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -4,13 +4,13 @@
   <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="visionETLGP.ETLTest.ETL_General">
+      <class name="visionETLGP.ETLTest.ETLConnector">
         <methods>
-          <include name="closeDriver"/>
           <include name="BrowserOpening"/>
-          <include name="ETL_DC_014"/>
+          <include name="ETL_CC_023" invocation-numbers="0"/>
+          <include name="closeDriver"/>
         </methods>
-      </class> <!-- visionETLGP.ETLTest.ETL_General -->
+      </class> <!-- visionETLGP.ETLTest.ETLConnector -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
