@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [TranslineConfiguration]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="ParallelTest(Transline)(failed)">
+    <classes>
+      <class name="visionRA.Test.RA_TranslineConfig">
+        <methods>
+          <include name="VAT_TAS_DC_001"/>
+          <include name="VAT_TAS_DC_002"/>
+          <include name="setUp"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- visionRA.Test.RA_TranslineConfig -->
+    </classes>
+  </test> <!-- ParallelTest(Transline)(failed) -->
+</suite> <!-- Failed suite [TranslineConfiguration] -->

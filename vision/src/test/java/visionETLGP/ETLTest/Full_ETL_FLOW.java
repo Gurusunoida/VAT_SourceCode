@@ -13,8 +13,14 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Full_ETL_FLOW {
-	String Id = "VAT_FLOW16";
+	String Id = "VAT_TEST_AT";
 	WebDriver driver;
+	String IP = "10.16.1.38";
+	int port1 = 52866;
+	String port = Integer.toString(port1);
+	String DBUser = "vision";
+	String DBPwd = "Vision_RA";
+	String DBName = "VISION_RA";
 	
 
 	@Parameters("ApplicationURL")
@@ -97,21 +103,21 @@ public class Full_ETL_FLOW {
 		Thread.sleep(2000);// --DB Type Select--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[2]/input[1]"))
-				.sendKeys("10.16.1.38");
+				.sendKeys(IP);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[3]/input[1]"))
-				.sendKeys("52866");
+				.sendKeys(port);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[4]/input[1]"))
-				.sendKeys("vision");
+				.sendKeys(DBUser);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[5]/input[1]"))
-				.sendKeys("Vision_RA");
+				.sendKeys(DBPwd);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[6]/input[1]"))
-				.sendKeys("VISION_RA");
+				.sendKeys(DBName);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
@@ -215,7 +221,7 @@ public class Full_ETL_FLOW {
 		actions.moveToElement(element);
 		Thread.sleep(5000);
 		WebElement connectorID = driver
-				.findElement(By.xpath("//span[contains(text(),'VAT_FLOW16 - VAT_FLOW16')]"));
+				.findElement(By.xpath("//span[contains(text(),'VAT_TEST_AT - VAT_TEST_AT')]"));
 		actions.scrollToElement(connectorID);
 		actions.perform();
 		Thread.sleep(5000);// -- Connector ID Select--//

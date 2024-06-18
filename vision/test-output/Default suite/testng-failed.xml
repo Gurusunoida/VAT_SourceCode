@@ -3,13 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="visionETLGP.ETLTest.ETLFeedConfiguration">
+      <class name="visionDQ.Test.DQExtractor">
         <methods>
+          <include name="DQ_DE_002"/>
+          <include name="DQ_DE_001"/>
           <include name="BrowserOpening"/>
+          <include name="DQ_DE_014"/>
+          <include name="DQ_DE_006"/>
+          <include name="DQ_DE_005"/>
+          <include name="DQ_DE_007"/>
           <include name="closeDriver"/>
-          <include name="ETL_FC_013"/>
         </methods>
-      </class> <!-- visionETLGP.ETLTest.ETLFeedConfiguration -->
+      </class> <!-- visionDQ.Test.DQExtractor -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,6 +1,12 @@
 package visionETLGP.ETLTest;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ETLLandingPage {
 	WebDriver driver;
+	private Object target_locations;
 
 	@Parameters("ApplicationURL")
 	@BeforeMethod
@@ -988,49 +995,91 @@ public class ETLLandingPage {
 //				.click();
 //		Thread.sleep(4000);
 //	}
-	@Test(priority = 31, dataProvider = "getUserNameList")
-	public void ETL_LP_031(String loginName, String loginPwd) throws InterruptedException {
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(7000);
-		//-- Operation Click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-		Thread.sleep(3000);
-		//-- Date picker close button --Process date--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[6]/div[1]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/span[1]")).click();
-		//-- More Filter arrow click--//
-		driver.findElement(By.xpath("//span[contains(text(),'arrow_drop_down')]")).click();
-		Thread.sleep(2000);
-		//--Select date close click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/span[1]")).click();
-		//-- End date close Click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		//-- Run Button--//
-		driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-		Thread.sleep(2000);
-		//-- Category close--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[1]/a[1]")).click();
-		//--Category Click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		//-- Category Select--//
-		driver.findElement(By.xpath("//div[contains(text(),'DEV_TEST_01 - dev Test 01 desc')]")).click();
-		//-- Run Button--//
-		driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-		Thread.sleep(5000);
-		WebElement Text = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/span[1]"));
-		String Connector = Text.getText();
-		Thread.sleep(2000);
-		System.out.println(Connector);
-	}
+//	@Test(priority = 31, dataProvider = "getUserNameList")
+//	public void ETL_LP_031(String loginName, String loginPwd) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(7000);
+//		//-- Operation Click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//		Thread.sleep(3000);
+//		//-- Date picker close button --Process date--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[6]/div[1]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/span[1]")).click();
+//		//-- More Filter arrow click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'arrow_drop_down')]")).click();
+//		Thread.sleep(2000);
+//		//--Select date close click--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/span[1]")).click();
+//		//-- End date close Click--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/div[1]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		//-- Run Button--//
+//		driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//		Thread.sleep(2000);
+//		//-- Category close--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[1]/a[1]")).click();
+//		//--Category Click--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		//-- Category Select--//
+//		driver.findElement(By.xpath("//div[contains(text(),'DEV_TEST_01 - dev Test 01 desc')]")).click();
+//		//-- Run Button--//
+//		driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//		Thread.sleep(5000);
+//		WebElement Text = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/span[1]"));
+//		String Connector = Text.getText();
+//		Thread.sleep(2000);
+//		System.out.println(Connector);
+//	}
+//	@Test(priority = 32, dataProvider = "getUserNameList")
+//	public void ETL_LP_010(String loginName, String loginPwd) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		//-- Help icon click--//
+//		driver.findElement(By.xpath("//i[contains(text(),'help')]")).click();
+//		 //-- Take screenshot and save it to a file--//
+//		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL_LP_010.png";
+//		//-- save the screenshot --//
+//		File destinationFile = new File(Location);
+//		// Move the screenshot file to the specified destination
+//		try {
+//			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+//			System.out.println(" ETL_LP_010 Screenshot saved to: " + destinationFile.getAbsolutePath());
+//		} catch (IOException e) {
+//			System.out.println("ETL_LP_010 Failed to save screenshot: " + e.getMessage());
+//		}	
+//	}
+//	@Test(priority = 33, dataProvider = "getUserNameList")
+//	public void ETL_LP_050(String loginName, String loginPwd) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		WebElement Login =driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"));
+//		Thread.sleep(2000);
+//			Login.sendKeys(Keys.ENTER);
+//		Thread.sleep(5000);
+//	}
+	
 	@DataProvider(name = "getUserNameList")
 	public Object[][] getUserNameList() {
 		Object[][] loginDetails = new Object[1][2];

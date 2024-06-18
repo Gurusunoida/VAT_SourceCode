@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ReportSuite]" guice-stage="DEVELOPMENT">
+  <parameter name="ApplicationURL" value="http://202.83.25.244:8002/"/>
+  <test thread-count="5" name="RA- Studio-Test(failed)">
+    <classes>
+      <class name="visionSTUDIO.ReportSuite">
+        <methods>
+          <include name="setUp"/>
+          <include name="closeDriver"/>
+          <include name="REP_DC_007" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- visionSTUDIO.ReportSuite -->
+    </classes>
+  </test> <!-- RA- Studio-Test(failed) -->
+</suite> <!-- Failed suite [ReportSuite] -->

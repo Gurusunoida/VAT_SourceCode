@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ETL_CONNECTOR" verbose="1">
+	<parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
+  <test thread-count="5" name="ETL-Connector-Test">
+    <classes>
+      <class name="visionETLGP.ETLTest.ETLConnector"/>
+    </classes>
+  </test> <!-- ETL-Connector-Test -->
+</suite> <!-- ETL_CONNECTOR -->
