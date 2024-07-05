@@ -4,7 +4,9 @@
 	<parameter name="ApplicationURL" value="http://202.83.25.244:8001/" />
   <test thread-count="5" name="Test">
     <classes>
-      <class name="visionRA.Test.RA_VAT"/>
+		<class name="visionRA.Test.RA_TranslineConfig"/>
+		<class name="visionRA.Test.RA_BusinessLineConfig"/>
+     	<class name="visionRA.Test.RA_FeesConfig"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

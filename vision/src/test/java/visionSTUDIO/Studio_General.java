@@ -143,6 +143,7 @@ public class Studio_General {
 		} catch (IOException e) {
 			System.out.println("Studio_General Failed to save screenshot: " + e.getMessage());
 		}
+		
 	}
 
 	@DataProvider(name = "loginCredentials")

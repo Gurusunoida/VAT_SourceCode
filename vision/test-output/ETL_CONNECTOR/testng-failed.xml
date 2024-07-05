@@ -11,7 +11,10 @@
           <include name="ETL_CC_036" invocation-numbers="0"/>
           <include name="ETL_CC_032" invocation-numbers="0"/>
           <include name="closeDriver"/>
-          <include name="ETL_CC_037" invocation-numbers="0"/>
+          <include name="ETL_CC_009" invocation-numbers="0"/>
+          <include name="ETL_CC_017" invocation-numbers="0"/>
+          <include name="ETL_CC_015" invocation-numbers="0"/>
+          <include name="ETL_CC_038" invocation-numbers="0"/>
         </methods>
       </class> <!-- visionETLGP.ETLTest.ETLConnector -->
     </classes>

@@ -190,53 +190,53 @@ public class RA_VarianceFlagging {
 //		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
 //		Thread.sleep(2000);
 //	}
-
-	@Test(dataProvider = "loginCredentials", priority = 3)
-	public void FG_CF_003(String username, String password) throws InterruptedException {
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(username);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(password);
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);// -- Master Configuration tab Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);// -- MAster Config Dropdown Click
-		// -- Variance Flagging click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[7]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(5000);
-		// Add in VAriance flagging
-		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-		Thread.sleep(2000);
-		// Description
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
-				.sendKeys("VAT_12-02");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[6]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'Re-Flagging')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-				.click();
-		Thread.sleep(2000);
-	}
-
+//
+//	@Test(dataProvider = "loginCredentials", priority = 3)
+//	public void FG_CF_003(String username, String password) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(username);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(password);
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- Master Configuration tab Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- MAster Config Dropdown Click
+//		// -- Variance Flagging click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[7]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// Add in VAriance flagging
+//		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//		Thread.sleep(2000);
+//		// Description
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
+//				.sendKeys("VAT_12-02");
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[6]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//span[contains(text(),'Re-Flagging')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//	}
+//
 //	@Test(dataProvider = "loginCredentials", priority = 4)
 //	public void FG_CF_004(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
@@ -732,7 +732,7 @@ public class RA_VarianceFlagging {
 //		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
 //		Thread.sleep(3000);
 //	}
-//	@Test(dataProvider = "loginCredentials", priority = 12)//--Pend--
+//	@Test(dataProvider = "loginCredentials", priority = 12)
 //	public void FG_CF_029(String username, String password) throws InterruptedException {
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
@@ -745,18 +745,21 @@ public class RA_VarianceFlagging {
 //				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 //				.click();
 //		Thread.sleep(5000);
+//		// -- Master Configuration tab Click
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
 //				.click();
-//		Thread.sleep(2000);// -- Master Configuration tab Click
+//		Thread.sleep(2000);
+//		// -- MAster Config Dropdown Click
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 //				.click();
-//		Thread.sleep(2000);// -- MAster Config Dropdown Click
+//		Thread.sleep(2000);
+//		// -- Variance Flagging click--//
 //		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[6]/a[1]"))
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[7]/a[1]/span[1]"))
 //				.click();
-//		Thread.sleep(3000);// -- Variance Flagging click--//
+//		Thread.sleep(3000);
 //		// -- Add in Variance flagging--//
 //		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 //		Thread.sleep(2000);
@@ -764,6 +767,7 @@ public class RA_VarianceFlagging {
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
 //				.sendKeys(VarDesc);
+//		Thread.sleep(3000);
 //		// -- Variance flagging click--//
 //		driver.findElement(By.xpath(
 //				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/span[1]"))
@@ -777,65 +781,86 @@ public class RA_VarianceFlagging {
 //		driver.findElement(By.xpath("//mat-calendar-header/div[1]/div[1]/button[1]/span[1]")).click();
 //		driver.findElement(By.xpath("//div[contains(text(),'2023')]")).click();
 //		driver.findElement(By.xpath("//tbody/tr[2]/td[2]/div[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//div[contains(text(),'DEC')]")).click();
+//		driver.findElement(By.xpath("//div[contains(text(),'30')]")).click();
 //		// -- Business date To Click-//
 //		driver.findElement(By.xpath(
 //				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/app-custom-date-picker[1]/app-regular-datepicker[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]"))
 //				.click();
 //		// --Business date To Select--//
-//		driver.findElement(By.xpath("//mat-calendar-header/div[1]/div[1]/button[2]")).click();
-//		driver.findElement(By.xpath("//div[contains(text(),'29')]")).click();
-//	}
-//	@Test(dataProvider = "loginCredentials", priority = 13)//--Pend--
-//	public void FG_CF_030(String username, String password) throws InterruptedException {
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-//				.sendKeys(username);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-//				.sendKeys(password);
-//		Thread.sleep(2000);
-//		driver.findElement(By
-//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-//				.click();
-//		Thread.sleep(5000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
-//				.click();
-//		Thread.sleep(2000);// -- Master Configuration tab Click
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-//				.click();
-//		Thread.sleep(2000);// -- MAster Config Dropdown Click
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[6]/a[1]"))
-//				.click();
-//		Thread.sleep(3000);// -- Variance Flagging click--//
-//		//-- FIlter click--//
-//		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
-//		//-- Column Click--//
-//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(2000);
-//		//-- Colummn select--//
-//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
-//		//--- Value sendkeys--//
-//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
-//		//-- Apply click--//
-//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-//		Thread.sleep(2000);
-//		//-- View click--//
-//		WebElement elementToHoverM = driver.findElement(By.xpath("//tbody/tr[1]/td[8]/div[1]/span[1]"));
+//		driver.findElement(By.xpath("//div[contains(text(),'21')]")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
+//		Thread.sleep(4000);
+//		WebElement elementToHoverM = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/input[1]"));
 //		Actions actionsClick = new Actions(driver);
 //		actionsClick.moveToElement(elementToHoverM).perform();
-//		WebElement View = driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/a[1]/i[1]"));
-//		View.click();
-//		Thread.sleep(2000);
-//		WebElement elementToHoverM1 = driver.findElement(By.xpath("//tbody/tr[1]/td[8]/input[1]"));
-//		Actions actionsClick1 = new Actions(driver);
-//		actionsClick1.moveToElement(elementToHoverM1).perform();
-//		WebElement AmountLCY = driver.findElement(By.xpath("//tbody/tr[1]/td[8]/input[1]"));
-//		AmountLCY.click();
-//		Thread.sleep(2000);
+//		WebElement Variance_LCY = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/input[1]"));
+//		Variance_LCY.click();
+//		actionsClick.moveToElement(Variance_LCY).perform();
+//		Thread.sleep(2000);	
 //	}
+	@Test(dataProvider = "loginCredentials", priority = 13)//--Pend--
+	public void FG_CF_030(String username, String password) throws InterruptedException {
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+				.sendKeys(username);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+				.sendKeys(password);
+		Thread.sleep(2000);
+		driver.findElement(By
+				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+				.click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+				.click();
+		Thread.sleep(2000);// -- Master Configuration tab Click
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+				.click();
+		Thread.sleep(2000);// -- MAster Config Dropdown Click
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[7]/a[1]/span[1]"))
+				.click();
+		Thread.sleep(3000);// -- Variance Flagging click--//
+		//-- FIlter click--//
+		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+		//-- Column Click--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(2000);
+		//-- Colummn select--//
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
+		//--- Value sendkeys--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+		//-- Apply click--//
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(2000);
+		//-- View click--//
+		WebElement elementToHoverM = driver.findElement(By.xpath("//tbody/tr[1]/td[8]/div[1]/span[1]"));
+		Actions actionsClick = new Actions(driver);
+		actionsClick.moveToElement(elementToHoverM).perform();
+		WebElement View = driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/a[1]/i[1]"));
+		View.click();
+		Thread.sleep(2000);
+		WebElement elementToHoverM1 = driver.findElement(By.xpath("//tbody/tr[1]/td[8]/input[1]"));
+		Actions actionsClick1 = new Actions(driver);
+		actionsClick1.moveToElement(elementToHoverM1).perform();
+		WebElement AmountLCY = driver.findElement(By.xpath("//tbody/tr[1]/td[8]/input[1]"));
+		AmountLCY.click();
+		Thread.sleep(2000);
+		//-- Audit details click--//
+		driver.findElement(By.xpath("//i[contains(text(),'content_paste_search')]")).click();
+		Thread.sleep(2000);
+		WebElement elementToHoverM2 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]"));
+		Actions actionsClick2 = new Actions(driver);
+		actionsClick2.moveToElement(elementToHoverM2).perform();
+		WebElement Amount_LCY = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]"));
+		Amount_LCY.click();
+		Thread.sleep(3000);	
+	}
 	@DataProvider(name = "loginCredentials")
 	public Object[][] getUserNameList() {
 		Object[][] loginDetails = new Object[1][2];

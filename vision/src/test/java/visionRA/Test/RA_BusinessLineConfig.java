@@ -1015,26 +1015,43 @@ Thread.sleep(2000);
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
 		Thread.sleep(2000);
-		// -- Edit Button in Manin screen of Trans Line--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"))
-				.click();
+		//-- Filter click--//
+		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+		//-- COlumn click--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(2000);
+		//-- COlumn select--//
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
+		//-- Criteria click--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
+		//-- Value send keys--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+		//-- Apply Click--//
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(2000);
+		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'VAT / VAT')]"));
+		Actions actionsClick = new Actions(driver);
+		actionsClick.moveToElement(elementToHoverM).perform();
+		WebElement BusinessEdit = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
+		BusinessEdit.click();
 		Thread.sleep(2000);
 		// -- Business Line Config in Add--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[contains(text(),'Details')]")).click();
-		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'Recon Rule')]"));
-		Actions actionsClick = new Actions(driver);
-		actionsClick.moveToElement(elementToHoverM).perform();
+		WebElement elementToHoverRe = driver.findElement(By.xpath("//span[contains(text(),'Recon Rule')]"));
+		Actions actionsClickRe1 = new Actions(driver);
+		actionsClickRe1.moveToElement(elementToHoverRe).perform();
 		WebElement Edit = driver.findElement(By.xpath("//span[contains(text(),'Recon Rule')]"));
 		Edit.click();
 		Thread.sleep(2000);
 		WebElement Recon = driver.findElement(By.xpath(
 				"//tbody/tr[1]/td[1]/input[1]"));
 		Recon.click();
+		Recon.sendKeys("1");
 		Recon.clear();
-		Recon.sendKeys("4");
+		Recon.sendKeys("2");
 		Thread.sleep(3000);
 	}
 
@@ -1110,8 +1127,8 @@ Thread.sleep(2000);
 		System.out.println(proftext);
 	}
 
-	@Test(dataProvider = "loginCredentials", priority = 14)
-	public void VAT_BUS_DC_019(String username, String password) throws InterruptedException {
+	@Test(dataProvider = "loginCredentials", priority = 15)
+	public void VAT_BUS_DC_012(String username, String password) throws InterruptedException {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1122,7 +1139,7 @@ Thread.sleep(2000);
 		driver.findElement(By
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		// -- Master Configuration tab Click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
@@ -1150,7 +1167,7 @@ Thread.sleep(2000);
 		// -- Value send keys--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys("VAT");
+				.sendKeys("BUS_TEST");
 		// -- Apply button--/
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(3000);
@@ -1161,18 +1178,12 @@ Thread.sleep(2000);
 		WebElement TranslineEdit = driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"));
 		TranslineEdit.click();
+		Thread.sleep(3000);
 		// -- Business line config click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(2000);
-		// --Recon rule Click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Recon Rule')]")).click();
-		Thread.sleep(2000);
-		// -- Rule priority--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/input[1]")).clear();
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/input[1]")).sendKeys("3");
-		Thread.sleep(3000);
+		
 	}
-
 	@DataProvider(name = "loginCredentials")
 	public Object[][] getUserNameList() {
 		Object[][] loginDetails = new Object[1][2];

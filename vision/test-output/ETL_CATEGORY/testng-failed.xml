@@ -6,7 +6,7 @@
     <classes>
       <class name="visionETLGP.ETLTest.ETL_Category">
         <methods>
-          <include name="ETL_CT_022" invocation-numbers="0"/>
+          <include name="ETL_CT_021" invocation-numbers="0"/>
           <include name="BrowserOpening"/>
           <include name="closeDriver"/>
         </methods>

@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.SkipException;
@@ -27,7 +28,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ETLConnector {
 	WebDriver driver;
-	String Connector_SendKeys = "VAT_Auto_test1";
+	String Connector_SendKeys = "VAT_Auto_test2";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");
@@ -83,6 +84,9 @@ public class ETLConnector {
 		select.selectByIndex(0);
 		Thread.sleep(1000);
 		select.selectByIndex(2);
+		
+		
+	   
 	}
 
 	@Test(priority = 2, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
@@ -1775,7 +1779,7 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/label[1]/a[1]/i[1]"))
 				.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
 				.click();
@@ -2093,10 +2097,10 @@ public class ETLConnector {
 		WebElement Connector = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
 		Connector.click();
 		Thread.sleep(2000);
-		// -- Test Connection Button--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-				.click();
+//		// -- Test Connection Button--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+//				.click();
 		// -- Modify Button--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]"))
@@ -2105,7 +2109,7 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[4]"))
 				.click();
-		// -- No CLick--//
+		// -- Yes CLick--//
 		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
 		Thread.sleep(3000);
 		WebElement Reject = driver.findElement(By.xpath("//div[contains(text(),'Approved')]"));
@@ -2298,6 +2302,7 @@ public class ETLConnector {
 			System.out.println("ETL_CC_037 Failed to save screenshot: " + e.getMessage());
 		}
 	}
+
 	@Test(priority = 38, dataProvider = "getUserNameList")
 	public void ETL_CC_038(String loginName, String loginPwd) throws InterruptedException, AWTException {
 		driver.findElement(By.xpath(
@@ -2372,9 +2377,7 @@ public class ETLConnector {
 		WebElement Upload = driver.findElement(By.xpath("//span[contains(text(),'file_upload')]"));
 		Upload.click();
 		Thread.sleep(2000);
-
 		Robot robot = new Robot();
-
 		robot.delay(1000);
 		StringSelection stringSelection = new StringSelection(FilePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
@@ -2386,105 +2389,119 @@ public class ETLConnector {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
-		//-- Delimeter sendkeys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys(",");
+		// -- Delimeter sendkeys--//
+		driver.findElement(
+				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+				.sendKeys(",");
 		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
 		Thread.sleep(2000);
 		// -- Add in Semi structure data--//
-				driver.findElement(By.xpath(
-						"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-						.click();
-				// -- FIle upload--//
-				WebElement Upload1 = driver.findElement(By.xpath("//tbody/tr[2]/td[7]/div[1]/div[1]/a[1]/span[1]"));
-				Upload1.click();
-				Thread.sleep(2000);
-				Robot robot1 = new Robot();
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+				.click();
+		// -- FIle upload--//
+		WebElement Upload1 = driver.findElement(By.xpath("//tbody/tr[2]/td[7]/div[1]/div[1]/a[1]/span[1]"));
+		Upload1.click();
+		Thread.sleep(2000);
+		Robot robot1 = new Robot();
 
-				robot1.delay(1000);
-				StringSelection stringSelection1 = new StringSelection(FilePath);
-				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection1, null);
-				robot1.keyPress(KeyEvent.VK_CONTROL);
-				robot1.keyPress(KeyEvent.VK_V);
-				robot1.keyRelease(KeyEvent.VK_V);
-				robot1.keyRelease(KeyEvent.VK_CONTROL);
-				robot1.delay(1000);
-				robot1.keyPress(KeyEvent.VK_ENTER);
-				robot1.keyRelease(KeyEvent.VK_ENTER);
-				Thread.sleep(3000);
-				//-- Delimeter sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys(",");
-				driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-				Thread.sleep(2000);
-				// -- Add in Semi structure data--//
-				driver.findElement(By.xpath(
-						"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-						.click();
-				// -- FIle upload--//
-				WebElement Upload2 = driver.findElement(By.xpath("//tbody/tr[3]/td[7]/div[1]/div[1]/a[1]/span[1]"));
-				Actions actions = new Actions(driver);
-				WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-				actions.moveToElement(elementTarget);
-				WebElement Target = Upload2;
-				actions.scrollToElement(Target);
-				actions.perform();
-				Target.click();
-				Thread.sleep(2000);
-				Robot robot2 = new Robot();
+		robot1.delay(1000);
+		StringSelection stringSelection1 = new StringSelection(FilePath);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection1, null);
+		robot1.keyPress(KeyEvent.VK_CONTROL);
+		robot1.keyPress(KeyEvent.VK_V);
+		robot1.keyRelease(KeyEvent.VK_V);
+		robot1.keyRelease(KeyEvent.VK_CONTROL);
+		robot1.delay(1000);
+		robot1.keyPress(KeyEvent.VK_ENTER);
+		robot1.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(3000);
+		// -- Delimeter sendkeys--//
+		driver.findElement(
+				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+				.sendKeys(",");
+		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+		Thread.sleep(3000);
+		// -- Add in Semi structure data--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+				.click();
+		// -- FIle upload--//
+		WebElement Upload2 = driver.findElement(By.xpath("//tbody/tr[3]/td[7]/div[1]/div[1]/a[1]/span[1]"));
+		Actions actions = new Actions(driver);
+		WebElement elementTarget = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		actions.moveToElement(elementTarget);
+		WebElement Target = Upload2;
+		actions.scrollToElement(Target);
+		actions.perform();
+		Target.click();
+		Thread.sleep(2000);
+		Robot robot2 = new Robot();
 
-				robot2.delay(1000);
-				StringSelection stringSelection2 = new StringSelection(FilePath);
-				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection2, null);
-				robot2.keyPress(KeyEvent.VK_CONTROL);
-				robot2.keyPress(KeyEvent.VK_V);
-				robot2.keyRelease(KeyEvent.VK_V);
-				robot2.keyRelease(KeyEvent.VK_CONTROL);
-				robot2.delay(1000);
-				robot2.keyPress(KeyEvent.VK_ENTER);
-				robot2.keyRelease(KeyEvent.VK_ENTER);
-				Thread.sleep(3000);
-				//-- Delimeter sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys(",");
-				driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-				Thread.sleep(2000);
-				// -- Add in Semi structure data--//
-				driver.findElement(By.xpath(
-						"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-						.click();
-				// -- FIle upload--//
-				WebElement Upload3 = driver.findElement(By.xpath("//tbody/tr[4]/td[7]/div[1]/div[1]/a[1]/span[1]"));
-				Actions actions1 = new Actions(driver);
-				WebElement elementTarget1 = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-				actions1.moveToElement(elementTarget1);
-				WebElement Target1 = Upload3;
-				actions1.scrollToElement(Target1);
-				actions1.perform();
-				Target1.click();
-				Thread.sleep(2000);
-				Thread.sleep(2000);
-				Robot robot3 = new Robot();
-				robot1.delay(1000);
-				StringSelection stringSelection3 = new StringSelection(FilePath);
-				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection3, null);
-				robot3.keyPress(KeyEvent.VK_CONTROL);
-				robot3.keyPress(KeyEvent.VK_V);
-				robot3.keyRelease(KeyEvent.VK_V);
-				robot3.keyRelease(KeyEvent.VK_CONTROL);
-				robot3.delay(1000);
-				robot3.keyPress(KeyEvent.VK_ENTER);
-				robot3.keyRelease(KeyEvent.VK_ENTER);
-				Thread.sleep(3000);
-				//-- Delimeter sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys(",");
-				driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-				Thread.sleep(2000);
-				driver.findElement(By.xpath("//tbody/tr[3]/td[1]/input[1]")).click();
-				Thread.sleep(2000);
-				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/i[1]")).click();
-				driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-				Thread.sleep(3000);
-				//-- Save click--//
-				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
-				Thread.sleep(3000);
+		robot2.delay(1000);
+		StringSelection stringSelection2 = new StringSelection(FilePath);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection2, null);
+		robot2.keyPress(KeyEvent.VK_CONTROL);
+		robot2.keyPress(KeyEvent.VK_V);
+		robot2.keyRelease(KeyEvent.VK_V);
+		robot2.keyRelease(KeyEvent.VK_CONTROL);
+		robot2.delay(1000);
+		robot2.keyPress(KeyEvent.VK_ENTER);
+		robot2.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(3000);
+		// -- Delimeter sendkeys--//
+		driver.findElement(
+				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+				.sendKeys(",");
+		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+		Thread.sleep(2000);
+		// -- Add in Semi structure data--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+				.click();
+		// -- FIle upload--//
+		WebElement Upload3 = driver.findElement(By.xpath("//tbody/tr[4]/td[7]/div[1]/div[1]/a[1]/span[1]"));
+		Actions actions1 = new Actions(driver);
+		WebElement elementTarget1 = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		actions1.moveToElement(elementTarget1);
+		WebElement Target1 = Upload3;
+		actions1.scrollToElement(Target1);
+		actions1.perform();
+		Target1.click();
+		Thread.sleep(2000);
+		Thread.sleep(2000);
+		Robot robot3 = new Robot();
+		robot1.delay(1000);
+		StringSelection stringSelection3 = new StringSelection(FilePath);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection3, null);
+		robot3.keyPress(KeyEvent.VK_CONTROL);
+		robot3.keyPress(KeyEvent.VK_V);
+		robot3.keyRelease(KeyEvent.VK_V);
+		robot3.keyRelease(KeyEvent.VK_CONTROL);
+		robot3.delay(1000);
+		robot3.keyPress(KeyEvent.VK_ENTER);
+		robot3.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(3000);
+		// -- Delimeter sendkeys--//
+		driver.findElement(
+				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+				.sendKeys(",");
+		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//tbody/tr[3]/td[1]/input[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/i[1]"))
+				.click();
+		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+		Thread.sleep(3000);
+		// -- Save click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
+		Thread.sleep(3000);
 	}
 
 	@DataProvider(name = "getUserNameList")

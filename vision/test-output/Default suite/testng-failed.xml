@@ -3,18 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="visionDQ.Test.DQExtractor">
+      <class name="visionRA.Test.RA_TranslineConfig">
         <methods>
-          <include name="DQ_DE_002"/>
-          <include name="DQ_DE_001"/>
-          <include name="BrowserOpening"/>
-          <include name="DQ_DE_014"/>
-          <include name="DQ_DE_006"/>
-          <include name="DQ_DE_005"/>
-          <include name="DQ_DE_007"/>
+          <include name="setUp"/>
           <include name="closeDriver"/>
+          <include name="VAT_TAS_DC_031"/>
         </methods>
-      </class> <!-- visionDQ.Test.DQExtractor -->
+      </class> <!-- visionRA.Test.RA_TranslineConfig -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

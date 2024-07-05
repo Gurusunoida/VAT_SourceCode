@@ -4,7 +4,11 @@
 	<parameter name="ApplicationURL" value="http://202.83.25.244:9010/" />
   <test thread-count="5" name="Test">
     <classes>
-      <class name="visionETLGP.ETLTest.CategoryCreation"/>
+     <class name="visionETLGP.ETLTest.ETLConnector"/>
+     <class name="visionETLGP.ETLTest.ETL_Category"/>
+     <class name="visionETLGP.ETLTest.ETLFeedConfiguration"/>
+     <class name="visionETLGP.ETLTest.ETLLandingPage"/>
+     <class name="visionETLGP.ETLTest.ETL_General"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

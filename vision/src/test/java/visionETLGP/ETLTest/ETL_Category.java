@@ -21,7 +21,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ETL_Category {
 	WebDriver driver;
-	String CATEGORY = "VAT_CAT1";
+	String CATEGORY = "VAT_CATAUTO_2";
 
 	@Parameters("ApplicationURL")
 	@BeforeMethod
@@ -483,11 +483,11 @@ public class ETL_Category {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-		Thread.sleep(2000);// --Add Category
+		Thread.sleep(3000);// --Add Category
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
 				.click();
-		Thread.sleep(5000);// --Add Drop Down Country
+		Thread.sleep(3000);// --Add Drop Down Country
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
 		Thread.sleep(2000);// --choose Country
 		driver.findElement(By.xpath(
@@ -707,7 +707,7 @@ public class ETL_Category {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(3000);
 		// --Add Drop Down Country--//
@@ -1145,7 +1145,7 @@ public class ETL_Category {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 		Thread.sleep(1000);
 		// --Filter Click--//
