@@ -2,6 +2,7 @@ package visionETLGP.ETLTest;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -21,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ETL_Category {
 	WebDriver driver;
-	String CATEGORY = "VAT_CATAUTO_2";
+	String CATEGORY = "VAT_CATAUTO_6";
 
 	@Parameters("ApplicationURL")
 	@BeforeMethod
@@ -57,13 +58,7 @@ public class ETL_Category {
 				.click();
 		Thread.sleep(3000);
 		// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
 		Thread.sleep(3000);// -- Chevon Right Button--//
@@ -102,19 +97,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// -- Autoreferesh--//
 		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
@@ -133,19 +117,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// -- Filter click--//
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
@@ -175,20 +148,9 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(3000);
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+				Thread.sleep(2000);	
 		// --Add Category--//
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(2000);
@@ -231,19 +193,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// --Add Category--//
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
@@ -303,19 +254,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(1000);
-		// -- Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// -- Page nation click--//
 		driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
@@ -345,17 +285,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// Element To Hover//
 		WebElement elementToHover = driver.findElement(By.xpath(
@@ -386,19 +317,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(1000);
-		// -- Category Select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
 		Thread.sleep(3000);
@@ -429,17 +349,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]"))
@@ -470,17 +381,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(3000);// --Add Category
@@ -560,19 +462,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
 		// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// --Filter Icon
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
@@ -604,19 +495,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// --Filter Icon--//
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
@@ -640,19 +520,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// --Filter Icon--//
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
@@ -694,19 +563,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(3000);
@@ -773,19 +631,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(3000);
@@ -850,19 +697,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
 		Thread.sleep(3000);
@@ -880,19 +716,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
 		Select select = new Select(driver.findElement(By.xpath(
@@ -921,20 +746,9 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(1000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(1000);
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+		Thread.sleep(2000);
 		// --Filter--//
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 		Thread.sleep(1000);
@@ -1051,18 +865,9 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(1000);// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);// --Category Click
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 		Thread.sleep(1000);// --Add filter
 		driver.findElement(By.xpath(
@@ -1094,18 +899,9 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(1000);// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);// --Category Click
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
 		Select select = new Select(driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
@@ -1132,19 +928,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(1000);
-		// -- Category Dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 		Thread.sleep(1000);
@@ -1235,20 +1020,9 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(1000);
 		// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+		Thread.sleep(4000);
 		// -- Filter click--//
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 		Thread.sleep(3000);
@@ -1294,17 +1068,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+		// -- Category Dropdown
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(2000);// --Add Category
@@ -1336,7 +1101,7 @@ public class ETL_Category {
 		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL_CT_023.png";
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\Category\\ETL_CT_023.png";
 		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
@@ -1361,19 +1126,8 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(1000);
 		// -- Category Dropdown
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// --Category Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		// -- Filter click--//
 		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
@@ -1415,6 +1169,7 @@ public class ETL_Category {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
 				.click();
+		Thread.sleep(2000);
 		// -- Nav Back--//
 		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
 		Thread.sleep(3000);
@@ -1424,7 +1179,6 @@ public class ETL_Category {
 	@DataProvider(name = "getUserNameList")
 	public Object[][] getUserNameList() {
 		Object[][] loginDetails = new Object[1][2];
-
 		loginDetails[0][0] = "RA";
 		loginDetails[0][1] = "Vision@123";
 		return loginDetails;

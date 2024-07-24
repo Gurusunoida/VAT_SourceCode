@@ -6,15 +6,39 @@
     <classes>
       <class name="visionETLGP.ETLTest.ETLConnector">
         <methods>
-          <include name="ETL_CC_035" invocation-numbers="0"/>
+          <include name="ETL_CC_024"/>
+          <include name="ETL_CC_025"/>
+          <include name="ETL_CC_022"/>
+          <include name="ETL_CC_023"/>
+          <include name="ETL_CC_001" invocation-numbers="0"/>
+          <include name="ETL_CC_020"/>
+          <include name="ETL_CC_021"/>
+          <include name="ETL_CC_009"/>
+          <include name="ETL_CC_028"/>
+          <include name="ETL_CC_029"/>
+          <include name="ETL_CC_026"/>
+          <include name="ETL_CC_027"/>
+          <include name="ETL_CC_005"/>
           <include name="BrowserOpening"/>
-          <include name="ETL_CC_036" invocation-numbers="0"/>
-          <include name="ETL_CC_032" invocation-numbers="0"/>
+          <include name="ETL_CC_035"/>
+          <include name="ETL_CC_013"/>
+          <include name="ETL_CC_036"/>
+          <include name="ETL_CC_014"/>
+          <include name="ETL_CC_033"/>
+          <include name="ETL_CC_011"/>
+          <include name="ETL_CC_034"/>
+          <include name="ETL_CC_012"/>
+          <include name="ETL_CC_031"/>
+          <include name="ETL_CC_032"/>
+          <include name="ETL_CC_030"/>
+          <include name="ETL_CC_019"/>
+          <include name="ETL_CC_017"/>
+          <include name="ETL_CC_018"/>
+          <include name="ETL_CC_037"/>
+          <include name="ETL_CC_015"/>
+          <include name="ETL_CC_038"/>
+          <include name="ETL_CC_016"/>
           <include name="closeDriver"/>
-          <include name="ETL_CC_009" invocation-numbers="0"/>
-          <include name="ETL_CC_017" invocation-numbers="0"/>
-          <include name="ETL_CC_015" invocation-numbers="0"/>
-          <include name="ETL_CC_038" invocation-numbers="0"/>
         </methods>
       </class> <!-- visionETLGP.ETLTest.ETLConnector -->
     </classes>

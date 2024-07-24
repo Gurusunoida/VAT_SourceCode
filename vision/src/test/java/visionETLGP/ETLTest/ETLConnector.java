@@ -7,6 +7,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -28,7 +29,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ETLConnector {
 	WebDriver driver;
-	String Connector_SendKeys = "VAT_Auto_test2";
+	String Connector_SendKeys = "VAT_Auto_test4";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");
@@ -82,11 +83,8 @@ public class ETLConnector {
 		Select select = new Select(driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
 		select.selectByIndex(0);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		select.selectByIndex(2);
-		
-		
-	   
 	}
 
 	@Test(priority = 2, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
@@ -119,7 +117,7 @@ public class ETLConnector {
 		Select select = new Select(driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
 		select.selectByIndex(0);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		select.selectByIndex(2);
 		throw new SkipException("Skip");
 	}
@@ -184,7 +182,7 @@ public class ETLConnector {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.linkText("visibility")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[3]/i[1]"))
 				.click();
@@ -253,7 +251,7 @@ public class ETLConnector {
 		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL_CC_005.png";
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\Connector\\ETL_CC_005.png";
 		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// -- Move the screenshot file to the specified destination--//
@@ -292,7 +290,7 @@ public class ETLConnector {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.linkText("file_copy")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
@@ -328,9 +326,9 @@ public class ETLConnector {
 		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("share")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.linkText("fullscreen_exit")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		throw new SkipException("Skip");
 	}
 
@@ -398,7 +396,7 @@ public class ETLConnector {
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
 				.click();
 		Thread.sleep(3000);// --NAVIGATES TO CONNECTOR--//
-		driver.findElement(By.linkText("ETL Connector Script")).click();
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.linkText("add")).click();
 		Thread.sleep(3000);
@@ -443,11 +441,11 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"))
 				.sendKeys(Connector_SendKeys);
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[5]/div[1]/textarea[1]"))
 				.sendKeys("Select * from VAT_02");
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
 				.click();
@@ -476,7 +474,7 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
 				.click();
-		Thread.sleep(3000);// --ETLConnector
+		Thread.sleep(2000);// --ETLConnector
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
 				.click();
@@ -1152,7 +1150,7 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
 				.click();
-		Thread.sleep(100);// --ETL Connector click
+		Thread.sleep(1000);// --ETL Connector click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
@@ -1164,13 +1162,13 @@ public class ETLConnector {
 				.click();
 		Thread.sleep(1000);// --choose country
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-		Thread.sleep(100);// --Country click
+		Thread.sleep(1000);// --Country click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]"))
 				.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
-		Thread.sleep(100);// --LE book click
+		Thread.sleep(1000);// --LE book click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
 				.sendKeys("Vatvul26");
@@ -1178,29 +1176,29 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
 				.sendKeys("Vat26!@<>");
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]"))
 				.click();
-		Thread.sleep(100);// --End point Click
+		Thread.sleep(1000);// --End point Click
 		driver.findElement(By.xpath("//span[contains(text(),'Source & Destination')]")).click();
-		Thread.sleep(100);// --Choose end point
+		Thread.sleep(1000);// --Choose end point
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 				.click();
-		Thread.sleep(100);// --Connector type
+		Thread.sleep(1000);// --Connector type
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		Thread.sleep(100);// --Choose connector type
+		Thread.sleep(1000);// --Choose connector type
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/ng-select[1]/div[1]"))
 				.click();
-		Thread.sleep(100);// --Date base connect
+		Thread.sleep(1000);// --Date base connect
 		driver.findElement(By.xpath("//span[contains(text(),'MSSQL')]")).click();
 		Thread.sleep(1000);// --DB
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[2]/input[1]"))
 				.sendKeys("10.16.1.38");
-		Thread.sleep(100);// --DB IP
+		Thread.sleep(1000);// --DB IP
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[3]/input[1]"))
 				.sendKeys("52866");
@@ -1208,15 +1206,15 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[4]/input[1]"))
 				.sendKeys("Vision");
-		Thread.sleep(100);// --Db name
+		Thread.sleep(1000);// --Db name
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[5]/input[1]"))
 				.sendKeys("Vision_RA");
-		Thread.sleep(100);// --Db password
+		Thread.sleep(1000);// --Db password
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[6]/input[1]"))
 				.sendKeys("VISION_RA");
-		Thread.sleep(100);// --
+		Thread.sleep(1000);// --
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
 				.click();
@@ -1298,13 +1296,13 @@ public class ETLConnector {
 				.click();
 		Thread.sleep(1000);// --choose country
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-		Thread.sleep(100);// --Country click
+		Thread.sleep(1000);// --Country click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]"))
 				.click();
 		Thread.sleep(1000);// --- Le Book--///
 		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
-		Thread.sleep(100);// --LE book click
+		Thread.sleep(1000);// --LE book click
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
 				.sendKeys("Vatvul26");
@@ -1312,23 +1310,23 @@ public class ETLConnector {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
 				.sendKeys("Vat26!@<>");// -- Id Send Keys--//
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]"))
 				.click();
-		Thread.sleep(100);// --End point Click
+		Thread.sleep(1000);// --End point Click
 		driver.findElement(By.xpath("//span[contains(text(),'Source & Destination')]")).click();
-		Thread.sleep(100);// --Choose end point
+		Thread.sleep(1000);// --Choose end point
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
 				.click();
-		Thread.sleep(100);// --Connector type
+		Thread.sleep(1000);// --Connector type
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		Thread.sleep(100);// --Choose connector type
+		Thread.sleep(1000);// --Choose connector type
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/ng-select[1]/div[1]"))
 				.click();
-		Thread.sleep(100);// --Date base connect
+		Thread.sleep(1000);// --Date base connect
 		driver.findElement(By.xpath("//span[contains(text(),'MSSQL')]")).click();
 		Thread.sleep(1000);// --DB
 		driver.findElement(By.xpath(
@@ -1776,14 +1774,10 @@ public class ETLConnector {
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"));
 		ScriptDes.clear();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/label[1]/a[1]/i[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-				.click();
-		Thread.sleep(4000);
+		//-Save--//
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		
+		Thread.sleep(4000);;
 	}
 
 	@Test(priority = 31, dataProvider = "getUserNameList")
@@ -1826,7 +1820,7 @@ public class ETLConnector {
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/textarea[1]"));
 		Query.clear();
 		Query.sendKeys("Select * from VAT_02");
-		Thread.sleep(4000);
+		Thread.sleep(4000);;
 	}
 
 	@Test(priority = 32, dataProvider = "getUserNameList")
@@ -1907,9 +1901,10 @@ public class ETLConnector {
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[2]/input[1]"))
 				.click();
 		// -- Take screenshot and save it to a file--//
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\Connector\\ETL_CC_024.png";
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// -- save the screenshot --//
-		File destinationFile = new File("ETL_CC_024.png");
+		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
 		try {
 			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
@@ -2071,7 +2066,7 @@ public class ETLConnector {
 		// --Value sendkeys--//
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys("VAT1604");
+				.sendKeys("VAT_FLOW16");
 		// --Add Filter--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]"))
@@ -2157,7 +2152,7 @@ public class ETLConnector {
 		// --Value sendkeys--//
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys("VAT");
+				.sendKeys("VAT_FLOW16");
 		// -- Apply Button--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(3000);
@@ -2195,7 +2190,7 @@ public class ETLConnector {
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		// -- Location for screenshot--//
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL_CC_036.png";
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\Connector\\ETL_CC_036.png";
 		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
@@ -2291,7 +2286,7 @@ public class ETLConnector {
 		Thread.sleep(2000);
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL_CC_037.png";
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\Connector\\ETL_CC_037.png";
 		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination

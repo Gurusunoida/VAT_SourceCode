@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Profile_setup]" guice-stage="DEVELOPMENT">
+  <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="visionETLGP.ETLTest.ETL_ProfileSetup">
+        <methods>
+          <include name="ETL_PS_021"/>
+          <include name="ETL_PS_041"/>
+          <include name="ETL_PS_029"/>
+          <include name="ETL_PS_040"/>
+          <include name="ETL_PS_023"/>
+          <include name="BrowserOpening"/>
+          <include name="ETL_PS_042"/>
+          <include name="ETL_PS_020"/>
+          <include name="ETL_PS_022"/>
+          <include name="ETL_PS_027"/>
+          <include name="ETL_PS_024"/>
+          <include name="ETL_PS_026"/>
+          <include name="ETL_PS_028"/>
+          <include name="ETL_PS_025"/>
+          <include name="BackToNormal_Profile_setup" invocation-numbers="0"/>
+          <include name="ETL_PS_032"/>
+          <include name="ETL_PS_010" invocation-numbers="0"/>
+          <include name="ETL_PS_030"/>
+          <include name="ETL_PS_018"/>
+          <include name="ETL_PS_034"/>
+          <include name="ETL_PS_012"/>
+          <include name="ETL_PS_031"/>
+          <include name="ETL_PS_033"/>
+          <include name="ETL_PS_011" invocation-numbers="0"/>
+          <include name="ETL_PS_038"/>
+          <include name="ETL_PS_016"/>
+          <include name="ETL_PS_035"/>
+          <include name="ETL_PS_013"/>
+          <include name="ETL_PS_037"/>
+          <include name="ETL_PS_015"/>
+          <include name="closeDriver"/>
+          <include name="ETL_PS_039"/>
+          <include name="ETL_PS_017"/>
+          <include name="ETL_PS_036"/>
+          <include name="ETL_PS_014"/>
+          <include name="ETL_PS_019"/>
+        </methods>
+      </class> <!-- visionETLGP.ETLTest.ETL_ProfileSetup -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Profile_setup] -->

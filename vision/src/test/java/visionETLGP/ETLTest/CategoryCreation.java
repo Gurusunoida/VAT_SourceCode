@@ -3,54 +3,21 @@ package visionETLGP.ETLTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CategoryCreation {
+public class CategoryCreation extends  BaseClass {
 	WebDriver driver;
 	String str = "VAT_Category_";
 	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void BrowserOpening(String applicationURL) throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
 
 	@Test(priority = 1) // -- Feed Configuration--//
 	public void FullETL9() throws InterruptedException {
-		for (int i = 73; i <= 100; i++) {
-	        String Id = str + i;
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys("RA");
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys("Vision@123");
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]/b[1]")).click();
-		Thread.sleep(3000);//-- Category Dropdown
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
-		Thread.sleep(3000); 
+		driver.findElement(By.xpath("//i[contains(text(),'category')]")).click();
 		//-- Add ---//
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(2000);
@@ -64,9 +31,9 @@ public class CategoryCreation {
 		//-- Le book select--//
 		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
 		//-- Category ID send Keys--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")).sendKeys(Id);
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]")).sendKeys("abc");
 		//--Description--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]")).sendKeys(Id);
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]")).sendKeys("abc");
 		//-- save Click--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
 		Thread.sleep(2000);
@@ -109,6 +76,5 @@ public class CategoryCreation {
 				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/app-top-bar[1]/nav[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/ul[1]/li[2]/button[1]")).click();
 				Thread.sleep(6000);
 		
-		    }
 	}
 }

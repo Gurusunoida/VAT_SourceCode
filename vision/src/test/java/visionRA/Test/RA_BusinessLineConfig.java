@@ -1182,7 +1182,6 @@ Thread.sleep(2000);
 		// -- Business line config click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(2000);
-		
 	}
 	@DataProvider(name = "loginCredentials")
 	public Object[][] getUserNameList() {
