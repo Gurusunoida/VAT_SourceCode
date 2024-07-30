@@ -7,7 +7,7 @@
       <class name="visionETLGP.ETLTest.ETLLandingPage">
         <methods>
           <include name="BrowserOpening"/>
-          <include name="ETL_LP_048" invocation-numbers="0"/>
+          <include name="ETL_LP_033" invocation-numbers="0"/>
           <include name="closeDriver"/>
         </methods>
       </class> <!-- visionETLGP.ETLTest.ETLLandingPage -->

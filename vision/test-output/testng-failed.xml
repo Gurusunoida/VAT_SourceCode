@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:8001/"/>
+<suite name="Failed suite [ETL_CATEGORY]" guice-stage="DEVELOPMENT">
+  <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
   <listeners>
-    <listener class-name="visionRA.Test.ListenersRA"/>
+    <listener class-name="visionETLGP.ETLTest.ListenersETL"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Category-Test(failed)">
     <classes>
-      <class name="visionRA.Test.RA_BusinessLineConfig">
+      <class name="visionETLGP.ETLTest.ETL_Category">
         <methods>
+          <include name="BrowserOpening"/>
+          <include name="ETL_CT_023" invocation-numbers="0"/>
+          <include name="ETL_CT_024" invocation-numbers="0"/>
           <include name="closeDriver"/>
-          <include name="setUp"/>
-          <include name="VAT_BUS_DC_004" invocation-numbers="0"/>
         </methods>
-      </class> <!-- visionRA.Test.RA_BusinessLineConfig -->
+      </class> <!-- visionETLGP.ETLTest.ETL_Category -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Category-Test(failed) -->
+</suite> <!-- Failed suite [ETL_CATEGORY] -->

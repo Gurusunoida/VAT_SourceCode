@@ -547,7 +547,7 @@ public class RA_FeesConfig {
 		Thread.sleep(2000); 
 		// -- posting currency select--//
 		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
 				.click();
 		Thread.sleep(2000);
 		// -- currency conversion type --//
@@ -586,6 +586,13 @@ public class RA_FeesConfig {
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[5]/div[1]/input[1]"))
 				.sendKeys("200");
 		Thread.sleep(2000);
+		Actions actions1 = new Actions(driver);
+		WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		actions1.moveToElement(elementTarget1);
+		WebElement Target1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+		actions1.scrollToElement(Target1);
+		actions1.perform();
+		Target1.click();
 		// -- round of basis dropdown--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[6]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
@@ -745,9 +752,16 @@ public class RA_FeesConfig {
 		Thread.sleep(2000);
 		// -- transaction currency select--//
 		driver.findElement(By.xpath(
-				"//span[contains(text(),'AED')]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"))
 				.click();
 		Thread.sleep(2000);
+		Actions actions1 = new Actions(driver);
+		WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		actions1.moveToElement(elementTarget1);
+		WebElement Target1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+		actions1.scrollToElement(Target1);
+		actions1.perform();
+		Target1.click();
 		// -- posting currency--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
@@ -755,7 +769,7 @@ public class RA_FeesConfig {
 		Thread.sleep(2000); 
 		// -- posting currency select--//
 		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
 				.click();
 		Thread.sleep(2000);
 		// -- currency conversion type --//
@@ -968,9 +982,16 @@ public class RA_FeesConfig {
 		Thread.sleep(2000);
 		// -- transaction currency select--//
 		driver.findElement(By.xpath(
-				"//span[contains(text(),'AED')]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"))
 				.click();
 		Thread.sleep(2000);
+		Actions actions1 = new Actions(driver);
+		WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		actions1.moveToElement(elementTarget1);
+		WebElement Target1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+		actions1.scrollToElement(Target1);
+		actions1.perform();
+		Target1.click();
 		// -- posting currency--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
@@ -978,7 +999,7 @@ public class RA_FeesConfig {
 		Thread.sleep(2000); 
 		// -- posting currency select--//
 		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
 				.click();
 		Thread.sleep(2000);
 		// -- currency conversion type --//
@@ -1206,9 +1227,16 @@ public class RA_FeesConfig {
 		Thread.sleep(2000);
 		// -- transaction currency select--//
 		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"))
 				.click();
 		Thread.sleep(2000);
+		Actions actions1 = new Actions(driver);
+		WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		actions1.moveToElement(elementTarget1);
+		WebElement Target1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+		actions1.scrollToElement(Target1);
+		actions1.perform();
+		Target1.click();
 		// -- posting currency--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
@@ -1216,7 +1244,7 @@ public class RA_FeesConfig {
 		Thread.sleep(2000); 
 		// -- posting currency select--//
 		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]"))
+				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
 				.click();
 		Thread.sleep(2000);
 		// -- currency conversion type --//
@@ -1309,10 +1337,10 @@ public class RA_FeesConfig {
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/div[1]/div[2]/a[1]/div[1]"))
 				.click();
-		Actions actions1 = new Actions(driver);
+		Actions actions11 = new Actions(driver);
 		WebElement element1 = driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-		actions1.moveToElement(element1);
+		actions11.moveToElement(element1);
 		WebElement FromAmount1 = driver.findElement(By.xpath("//tbody/tr[2]/td[2]/input[1]"));
 		actions.scrollToElement(FromAmount1);
 		actions.perform();
@@ -1326,7 +1354,7 @@ public class RA_FeesConfig {
 		driver.findElement(By.xpath("//tbody/tr[2]/td[3]/input[1]")).sendKeys("50");
 		Thread.sleep(5000);
 	}
-
+	
 	@Test(dataProvider = "loginCredentials", priority = 8) // -- Unable to Proceed further to amount is clearing--//
 	public void VAT_FEE_DC_013(String username, String password) throws InterruptedException {
 		driver.findElement(By.xpath(
@@ -1438,7 +1466,7 @@ public class RA_FeesConfig {
 		Thread.sleep(4000);
 		// --Fee Basis dropdown Select--//
 		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[6]/span[1]"))
+				"//span[contains(text(),'Percentage')]"))
 				.click();
 		Thread.sleep(5000);
 		// -- To Amount--//
@@ -1773,7 +1801,7 @@ public class RA_FeesConfig {
 		Thread.sleep(2000);
 		 //-- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\VAT_FEE_DC_028.png";
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FeesConfig\\VAT_FEE_DC_028.png";
 		//-- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
@@ -2195,27 +2223,37 @@ public class RA_FeesConfig {
 				Thread.sleep(3000);
 				//-- Add CLick--//
 				driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+				Thread.sleep(2000);
 				//-- Fee type dropdown--//
-				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
 				Thread.sleep(2000);
 				//-- Fee type flat select--//
 				driver.findElement(By.xpath("//span[contains(text(),'Flat')]")).click();
 				//-- Fee basis dropdown--//
-				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]")).click();
+				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]")).click();
 				Thread.sleep(2000);
 				//-- Fee basis select Percentage---//
 				driver.findElement(By.xpath("//span[contains(text(),'Percentage')]")).click();
 				//-- Standard click--//
 				driver.findElement(By.xpath("//span[contains(text(),'Standard')]")).click();
-				//-- Add row click--//
-				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/a[1]/div[1]")).click();
 				Thread.sleep(2000);
+				//-- Add row click--//
+				driver.findElement(By.xpath("//div[@class='addRow']")).click();
+				Thread.sleep(2000);
+				Actions actions = new Actions(driver);
+				WebElement elementTarget = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+				actions.moveToElement(elementTarget);
+				WebElement Target = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]"));
+				actions.scrollToElement(Target);
+				actions.perform();
+				Target.click();
 				//-- Fee amount/percentage send keys--//
 				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("123");
 				//-- Apply Click--//
 				driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-				//-- Save click--//
-				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[1]/button[1]")).click();
+				Thread.sleep(2000);
+				//-- Modify click--//
+				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]")).click();
 				Thread.sleep(2000);
 				//-- Preferential click--//
 				driver.findElement(By.xpath("//span[contains(text(),'Preferential')]")).click();
@@ -2228,6 +2266,13 @@ public class RA_FeesConfig {
 				Thread.sleep(2000);
 				//-- Channel type select-- Mobile banking--//
 				driver.findElement(By.xpath("//span[contains(text(),'Mobile Banking')]")).click();
+				Actions actions1 = new Actions(driver);
+				WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+				actions1.moveToElement(elementTarget1);
+				WebElement Target1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]"));
+				actions1.scrollToElement(Target1);
+				actions1.perform();
+				Target1.click();
 				//-- Fee amount/percentage send keys--//
 				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("123");
 				//-- Apply click--//
@@ -2241,7 +2286,7 @@ public class RA_FeesConfig {
 				Thread.sleep(2000);
 				//-- Take screenshot and save it to a file--//
 				File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\VAT_FEE_DC_037.png";
+				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FeesConfig\\VAT_FEE_DC_037.png";
 				//-- save the screenshot --//
 				File destinationFile = new File(Location);
 				// Move the screenshot file to the specified destination
@@ -2314,6 +2359,13 @@ public class RA_FeesConfig {
 				Thread.sleep(3000);
 				//-- Standard add row--//
 				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/a[2]/div[1]")).click();
+				Actions actions = new Actions(driver);
+				WebElement elementTarget = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+				actions.moveToElement(elementTarget);
+				WebElement Target = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+				actions.scrollToElement(Target);
+				actions.perform();
+				Target.click();
 				//-- Fee amount/percentage send keys--//
 				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("123");
 				//-- Apply click--//
@@ -2333,6 +2385,13 @@ public class RA_FeesConfig {
 				Thread.sleep(2000);
 				//-- Channel type select-- Mobile banking--//
 				driver.findElement(By.xpath("//span[contains(text(),'Mobile Banking')]")).click();
+				Actions actions1 = new Actions(driver);
+				WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+				actions1.moveToElement(elementTarget1);
+				WebElement Target1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]"));
+				actions1.scrollToElement(Target1);
+				actions1.perform();
+				Target1.click();
 				//-- Fee amount/percentage send keys--//
 				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("123");
 				//-- Apply click--//
@@ -2343,7 +2402,7 @@ public class RA_FeesConfig {
 				Thread.sleep(2000);
 				//-- Take screenshot and save it to a file--//
 				File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\VAT_FEE_DC_039.png";
+				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FeesConfig\\VAT_FEE_DC_039.png";
 				//-- save the screenshot --//
 				File destinationFile = new File(Location);
 				// Move the screenshot file to the specified destination

@@ -54,7 +54,12 @@
 			    <artifactId>extentreports</artifactId>
 			    <version>5.1.2</version>
 			</dependency>
-	</dependencies>
+			<dependency>
+				<groupId>VAT_report</groupId>
+				<artifactId>Extend_report</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+  </dependencies>
 
 	<build>
 		<plugins>

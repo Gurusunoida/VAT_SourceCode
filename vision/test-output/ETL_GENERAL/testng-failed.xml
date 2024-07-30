@@ -7,9 +7,8 @@
       <class name="visionETLGP.ETLTest.ETL_General">
         <methods>
           <include name="closeDriver"/>
-          <include name="ETL_DC_016"/>
-          <include name="ETL_DC_020"/>
           <include name="BrowserOpening"/>
+          <include name="ETL_DC_043"/>
         </methods>
       </class> <!-- visionETLGP.ETLTest.ETL_General -->
     </classes>

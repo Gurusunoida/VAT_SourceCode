@@ -22,9 +22,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class RA_TranslineConfig {
 	WebDriver driver;
 	String Transline_ID = "VAT_Auto";
-	String Transline_ID1 = "VAT_auto1";
+	String Transline_ID1 = "VAT_01";
 	String Transline_DESC= "VAT_Desc";
-	String Transline_ID2 = "VAT_auto2";
+	String Transline_ID2 = "VAT_02";
 	String Transline_DESC2= "VAT_Desc2";
 	String Transline_DESC1= "VAT_Desc1";
 	String Filter_Branchoperation = "Branch Operation";
@@ -51,14 +51,14 @@ public class RA_TranslineConfig {
 		}
 	}
 	@Test( priority = 1)
-	public void VAT_TAS_DC_001() throws InterruptedException {
+	public void VAT_TAS_DC_001(String username, String password) throws InterruptedException {
 	
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys("RA");
+				.sendKeys(username);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys("Vision@123");
+				.sendKeys(password);
 		Thread.sleep(2000);
 		driver.findElement(By
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
@@ -1216,7 +1216,7 @@ public class RA_TranslineConfig {
 		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
 		//save button click--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		WebElement Transline_save_Text=driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String proftext = Transline_save_Text.getText();
 		System.out.printf("-VAT_TAS_DC_024",proftext);
@@ -1300,7 +1300,7 @@ public class RA_TranslineConfig {
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
 		//save button--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		WebElement Transline_save_Text=driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String proftext = Transline_save_Text.getText();
 		System.out.printf("VAT_TAS_DC_025-" ,proftext);
@@ -1498,7 +1498,7 @@ public class RA_TranslineConfig {
 		Thread.sleep(3000);
 		//-- Take screenshot and save it to a file--//
 				File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\VAT_TAS_DC_029.png";
+				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\Transline\\VAT_TAS_DC_029.png";
 				//-- save the screenshot --//
 				File destinationFile = new File(Location);
 				// Move the screenshot file to the specified destination
@@ -1571,7 +1571,7 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);
 		 //-- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\VAT_TAS_DC_031.png";
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\Transline\\VAT_TAS_DC_031.png";
 		//-- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
