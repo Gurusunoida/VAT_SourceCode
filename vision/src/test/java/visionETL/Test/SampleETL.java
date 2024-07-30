@@ -1,4 +1,4 @@
-package visionETL.ETLTest;
+package visionETL.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;

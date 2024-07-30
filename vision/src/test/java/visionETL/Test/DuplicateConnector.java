@@ -1,4 +1,4 @@
-package visionETL.ETLTest;
+package visionETL.Test;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -15,29 +15,24 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ETLConnector {
-	
+public class DuplicateConnector {
 	WebDriver driver;
-	String Connector_SendKeys = "VAT_Auto_test4";
+	String Connector_SendKeys = "VAT_Auto_test3";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");
 
-	
-	
 	@Parameters("ApplicationURL")
 	@BeforeMethod
 	public void BrowserOpening(String applicationURL) throws InterruptedException {
@@ -265,6 +260,7 @@ public class ETLConnector {
 		} catch (IOException e) {
 			System.out.println("ETL_CC_005 Failed to save screenshot: " + e.getMessage());
 		}
+		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
 		Thread.sleep(4000);
 	}
 
@@ -402,7 +398,7 @@ public class ETLConnector {
 		Thread.sleep(3000);// --NAVIGATES TO CONNECTOR--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.linkText("add")).click();
+		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(3000);
 		// -- Country Click--//
 		driver.findElement(By.xpath(
@@ -1400,7 +1396,7 @@ public class ETLConnector {
 																											// Select---//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"))
-				.sendKeys("VAt");// -- Script ID Sendkeys--//
+				.sendKeys("VAtT");// -- Script ID Sendkeys--//
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[2]"))
@@ -1418,7 +1414,7 @@ public class ETLConnector {
 																						// Select---//
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"))
-				.sendKeys("VAT!@<>");// --Script Description --//
+				.sendKeys("VAT!@<>,");// --Script Description --//
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[5]/div[1]/textarea[1]"))
 				.sendKeys("VTA!2<>");// --Script--//
@@ -1480,7 +1476,7 @@ public class ETLConnector {
 																													// Select--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]"))
-				.sendKeys("VATT");// -- Querry ID Send Keys--//
+				.sendKeys("VATT123");// -- Querry ID Send Keys--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"))
 				.sendKeys("VAR!#<>");// -- Description Send Keys--//
@@ -1574,14 +1570,24 @@ public class ETLConnector {
 		Thread.sleep(3000);// --Drop down of Connector
 		WebElement elementToHoverM = driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[6]/span[1]/span[1]"));
+		//-- Filter click--//
+		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+		//-- Column click--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(2000);
+		WebElement elementToHoverM1 = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/span[1]"));
 		Actions actionsClick = new Actions(driver);
-		actionsClick.moveToElement(elementToHoverM).perform();
+		actionsClick.moveToElement(elementToHoverM1).perform();
 		WebElement ConnectorScript = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/div[2]/a[2]/i[1]"));
+				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[7]/div[2]/a[2]/i[1]"));
 		ConnectorScript.click();// -- Edit --//
 		Thread.sleep(2000);
 		WebElement ScriptDes = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"));
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[1]/textarea[1]"));
 		ScriptDes.clear();
 		ScriptDes.sendKeys("VAT27");
 		driver.findElement(By.xpath(
@@ -1824,7 +1830,7 @@ public class ETLConnector {
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/textarea[1]"));
 		Query.clear();
 		Query.sendKeys("Select * from VAT_02");
-		Thread.sleep(4000);;
+		Thread.sleep(4000);
 	}
 
 	@Test(priority = 32, dataProvider = "getUserNameList")
@@ -2090,16 +2096,16 @@ public class ETLConnector {
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(3000);
 		// -- Edit CLick--//
-		WebElement elementToHoverConnector = driver.findElement(By.xpath("//span[contains(text(),'VAT_FLOW1604')]"));
+		WebElement elementToHoverConnector = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/div[1]/span[1]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverConnector).perform();
 		WebElement Connector = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
 		Connector.click();
 		Thread.sleep(2000);
-//		// -- Test Connection Button--//
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-//				.click();
+		// -- Test Connection Button--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		// -- Modify Button--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]"))
@@ -2437,7 +2443,6 @@ public class ETLConnector {
 		Target.click();
 		Thread.sleep(2000);
 		Robot robot2 = new Robot();
-
 		robot2.delay(1000);
 		StringSelection stringSelection2 = new StringSelection(FilePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection2, null);
@@ -2510,5 +2515,4 @@ public class ETLConnector {
 		loginDetails[0][1] = "Vision@123";
 		return loginDetails;
 	}
-
 }

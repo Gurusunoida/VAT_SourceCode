@@ -1,4 +1,4 @@
-package visionETL.ETLTest;
+package visionETL.Test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

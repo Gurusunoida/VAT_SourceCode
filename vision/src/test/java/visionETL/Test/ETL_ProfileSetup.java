@@ -1,4 +1,4 @@
-package visionETL.ETLTest;
+package visionETL.Test;
 
 import java.io.File;
 import java.io.IOException;
