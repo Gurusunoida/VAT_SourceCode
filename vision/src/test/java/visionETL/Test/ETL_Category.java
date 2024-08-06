@@ -15,30 +15,37 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class ETL_Category {
-	WebDriver driver;
-	String CATEGORY = "VAT_CATAUTO_6";
-
-	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void BrowserOpening(String applicationURL) throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+@Listeners(ListenersETL.class)
+public class ETL_Category extends BaseClass{
+	
+	String CATEGORY = "VAT_CATAUTO_13";
+	String ChannelType = "VATChannel1";
+	 @DataProvider(name = "getUserNameList")
+	    public Object[][] getUserNameList() {
+	        return new Object[][] {
+	            {"RA", "Vision@123"},
+	        };
+	    }
+//	@BeforeMethod
+//	public void BrowserOpening(String applicationURL) throws InterruptedException {
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver();
+//		//driver.get(applicationURL);
+//	}
+//
+//	@AfterMethod
+//	public void closeDriver() {
+//		if (driver != null) {
+//			driver.quit();
+//		}
+//	}
 
 	@Test(priority = 1, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
 																			//////// Removed)------////////
@@ -84,9 +91,14 @@ public class ETL_Category {
 				.click();
 		Thread.sleep(2000);
 	}
-
+	
 	@Test(priority = 2, dataProvider = "getUserNameList")
+	@TestDescription(" Referesh button performs the action")
 	public void ETL_CT_002(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_002";
+        String notes = "Referesh button performs the action";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -106,7 +118,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 3, dataProvider = "getUserNameList")
+	@TestDescription(" Filter Operation Should filter Correctly, Filter tick is verified")
 	public void ETL_CT_003(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_003";
+        String notes = "Filter Operation Should filter Correctly, Filter tick is verified";
+        ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -137,7 +154,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 4, dataProvider = "getUserNameList")
+	@TestDescription(" Pop-up should show to fill all the mandatory details")
 	public void ETL_CT_004(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_004";
+        String notes = "Pop-up should show to fill all the mandatory details";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -182,7 +204,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 5, dataProvider = "getUserNameList")
+	@TestDescription("The Entered details should be save and displayed in records") 
 	public void ETL_CT_005(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_005";
+        String notes = "The Entered details should be save and displayed in records";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -243,7 +270,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 6, dataProvider = "getUserNameList")
+	@TestDescription("The viewed page should be same while coming back ")
 	public void ETL_CT_006(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_006";
+        String notes = "The viewed page should be same while coming back ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -275,6 +307,10 @@ public class ETL_Category {
 	@Test(priority = 7, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
 																			//////// Removed)------////////
 	public void ETL_CT_007(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_007";
+        String notes = "";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -306,7 +342,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 8, dataProvider = "getUserNameList")
+	@TestDescription("All the records in category should be selected")
 	public void ETL_CT_008(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_008";
+        String notes = "All the records in category should be selected";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -338,7 +379,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 9, dataProvider = "getUserNameList")
+	@TestDescription(" It should display 10 records in one page")
 	public void ETL_CT_009(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_009";
+        String notes = "It should display 10 records in one page";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -369,7 +415,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 10, dataProvider = "getUserNameList")
+	@TestDescription(" The created Record should be rejected by clicking the reject button")
 	public void ETL_CT_010(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_010";
+        String notes = "The created Record should be rejected by clicking the reject button";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		String Reject_ID = "VAT_Reject";
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
@@ -451,7 +502,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 11, dataProvider = "getUserNameList")
+	@TestDescription(" Entered filter operation Should get reset")
 	public void ETL_CT_011(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_011";
+        String notes = "Entered filter operation Should get reste";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -484,7 +540,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 12, dataProvider = "getUserNameList")
+	@TestDescription(" Pop-up should show to fill all the mandatory details in Column and Value")
 	public void ETL_CT_012(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_012";
+        String notes = "Pop-up should show to fill all the mandatory details in Column and Value";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -509,7 +570,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 13, dataProvider = "getUserNameList")
+	@TestDescription(" Entered filter operation Should get Removed")
 	public void ETL_CT_013(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_013";
+        String notes = "Entered filter operation Should get Removed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -552,7 +618,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 14, dataProvider = "getUserNameList")
+	@TestDescription(" The Record Should be be Cleared ")
 	public void ETL_CT_014(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_014";
+        String notes = "The Record Should be be Cleared ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -620,7 +691,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 15, dataProvider = "getUserNameList")
+	@TestDescription(" Pop-up is displaying")
 	public void ETL_CT_015(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_015";
+        String notes = "Pop-up is displaying";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -686,7 +762,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 16, dataProvider = "getUserNameList")
+	@TestDescription("Record is Reloading")
 	public void ETL_CT_016(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_016";
+        String notes = "Record is Reloading";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -705,37 +786,39 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 17, dataProvider = "getUserNameList")
+	@TestDescription(" Every records in all pages should be selected")
 	public void ETL_CT_017(String loginName, String loginPwd) throws InterruptedException {
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		// -- Category Dropdown
-				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
-		Select select = new Select(driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
-		select.selectByIndex(0);
-		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
-		Thread.sleep(3000);
-		select.selectByIndex(1);
-		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
-		Thread.sleep(3000);
-		select.selectByIndex(2);
-		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
-		Thread.sleep(3000);
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_017";
+        String notes = "Every records in all pages should be selected";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        driver.findElement(By.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]")).sendKeys(loginName);
+    	driver.findElement(By.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]")).sendKeys(loginPwd);
+    	driver.findElement(By.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]")).click();
+    	Thread.sleep(5000);
+    	driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]")).click();
+    	Thread.sleep(3000);
+    	driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
+    	Select select = new Select(driver.findElement(By.xpath(
+    			"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
+    	select.selectByIndex(0);
+    	driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
+    	Thread.sleep(3000);
+    	select.selectByIndex(1);
+    	driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
+    	Thread.sleep(3000);
+    	select.selectByIndex(2);
+    	driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
+    	Thread.sleep(3000);
 	}
 
 	@Test(priority = 18, dataProvider = "getUserNameList")
+	@TestDescription(" Filter Operation Should filter Correctly")
 	public void ETL_CT_018(String loginName, String loginPwd) throws InterruptedException {
-
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_018";
+        String notes = "Filter Operation Should filter Correctly";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -853,8 +936,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 19, dataProvider = "getUserNameList")
+	@TestDescription("Filter should be performed and reload should takes place (Filter should remain the same result)")
 	public void ETL_CT_019(String loginName, String loginPwd) throws InterruptedException {
-
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_019";
+        String notes = "Filter should be performed and reload should takes place (Filter should remain the same result)";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -887,9 +974,13 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 20, dataProvider = "getUserNameList")
+	@TestDescription(" Each page record to be reloaded while clicking the Button")
 	public void ETL_CT_020(String loginName, String loginPwd) throws InterruptedException {
-
-		driver.findElement(By.xpath(
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_020";
+        String notes = "Each page record to be reloaded while clicking the Button";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
 		driver.findElement(By.xpath(
@@ -899,9 +990,10 @@ public class ETL_Category {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(5000);
-		// -- Category Dropdown
-				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
-		Thread.sleep(4000);
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/p[1]"))
+				.click();
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
 		Select select = new Select(driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
@@ -917,7 +1009,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 21, dataProvider = "getUserNameList")
+	@TestDescription(" The filter function should performs correctly while the conditions like contains,  begins, equal and end")
 	public void ETL_CT_021(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_021";
+        String notes = "The filter function should performs correctly while the conditions like contains,  begins, equal and end";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1009,7 +1106,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 22, dataProvider = "getUserNameList")
+	@TestDescription(" Edited Record Should be saved")
 	public void ETL_CT_022(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_022";
+        String notes = "Edited Record Should be saved";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1056,7 +1158,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 23, dataProvider = "getUserNameList")
+	@TestDescription(" Page is displayed for adding but channel type is not displaying")
 	public void ETL_CT_023(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_023";
+        String notes = "Page is displayed for adding but channel type is not displaying";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		String Reject_ID = "VAT_Reject";
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
@@ -1087,11 +1194,11 @@ public class ETL_Category {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]"))
-				.sendKeys("VAT_test1");
+				.sendKeys(ChannelType);
 		Thread.sleep(2000);// --Send keys For Category ID
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"))
-				.sendKeys("VAT_test1");
+				.sendKeys(ChannelType);
 		Thread.sleep(2000);// --Send Keys for description
 		// -- Save click--//
 		driver.findElement(By.xpath(
@@ -1115,7 +1222,12 @@ public class ETL_Category {
 	}
 
 	@Test(priority = 24, dataProvider = "getUserNameList")
+	@TestDescription(" All the records are displaying ( But Filter is applied)")
 	public void ETL_CT_024(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Category";
+		String testCaseId = "ETL_CT_024";
+        String notes = "All the records are displaying ( But FIlter is applied)";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1173,14 +1285,5 @@ public class ETL_Category {
 		// -- Nav Back--//
 		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
 		Thread.sleep(3000);
-
-	}
-
-	@DataProvider(name = "getUserNameList")
-	public Object[][] getUserNameList() {
-		Object[][] loginDetails = new Object[1][2];
-		loginDetails[0][0] = "RA";
-		loginDetails[0][1] = "Vision@123";
-		return loginDetails;
 	}
 }

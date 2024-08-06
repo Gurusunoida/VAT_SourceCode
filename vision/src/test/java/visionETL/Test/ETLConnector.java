@@ -26,36 +26,50 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+
+import visionETL.Test.TestDescription;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ETLConnector {
+public class ETLConnector extends BaseClass{
 	
-	WebDriver driver;
-	String Connector_SendKeys = "VAT_Auto_test4";
+	
+	String Connector_SendKeys = "VAT_Auto_test13";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");
 
 	
 	
+//	@BeforeMethod
+//	public void BrowserOpening(String applicationURL) throws InterruptedException {
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver();
+//		//driver.get(applicationURL);
+//	}
+//
+//	@AfterMethod
+//	public void closeDriver() {
+//		if (driver != null) {
+//			driver.quit();
+//		}
+//	}
+	 @DataProvider(name = "getUserNameList")
+	    public Object[][] getUserNameList() {
+	        return new Object[][] {
+	            {"RA", "Vision@123"},
+	        };
+	    }
+	
 	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void BrowserOpening(String applicationURL) throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
-
 	@Test(priority = 1, dataProvider = "getUserNameList")
+	 @TestDescription(" Page navigation issue observed in the ETL connector")
 	public void ETL_CC_001(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_001";
+        String notes = "Page_nation Issue";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -92,7 +106,7 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 2, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
-																			//////// Removed)------////////
+	@TestDescription("")																	//////// Removed)------////////
 	public void ETL_CC_002(String loginName, String loginPwd) throws InterruptedException {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
@@ -202,7 +216,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 5, dataProvider = "getUserNameList")
+	@TestDescription(" Semi Structure data Popup for Navback")
 	public void ETL_CC_005(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_005";
+        String notes = "Semi Structure data Popup";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -305,6 +324,10 @@ public class ETLConnector {
 	@Test(priority = 7, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
 																			//////// Removed)------////////
 	public void ETL_CC_007(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_007";
+        String notes = "";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -381,7 +404,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 9, dataProvider = "getUserNameList")
+	@TestDescription(" The updated record should get saved")
 	public void ETL_CC_009(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_009";
+        String notes = "The updated record should be get saved ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -461,6 +489,10 @@ public class ETLConnector {
 	@Test(priority = 10, dataProvider = "getUserNameList", enabled = false) //////// -------- Not Required( Button is
 																			//////// Removed)------////////
 	public void ETL_CC_010(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_010";
+        String notes = "";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -493,7 +525,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 11, dataProvider = "getUserNameList")
+	@TestDescription(" Selecting records should properly selected by clicking ")
 	public void ETL_CC_011(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_011";
+        String notes = "Selecting records should properly selected by clicking ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -533,7 +570,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 12, dataProvider = "getUserNameList")
+	@TestDescription(" Selecting records should properly selected by clicking ")
 	public void ETL_CC_012(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_012";
+        String notes = "Selecting records should properly selected by clicking ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -573,7 +615,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 13, dataProvider = "getUserNameList")
+	@TestDescription("Selecting records should properly selected by clicking ")
 	public void ETL_CC_013(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_013";
+        String notes = "Selecting records should properly selected by clicking ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -613,7 +660,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 14, dataProvider = "getUserNameList")
+	@TestDescription(" The empty manditary feeds are highlighted and says to be added ")
 	public void ETL_CC_014(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_014";
+        String notes = "The empty manditary feeds are highlighted and says to be added ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -683,7 +735,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 15, dataProvider = "getUserNameList")
+	@TestDescription(" Popup Should display that wrong DB is entered")
 	public void ETL_CC_015(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_015";
+        String notes = "Popup Should display that wrong DB is entered";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -770,7 +827,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 16, dataProvider = "getUserNameList")
+	@TestDescription("Popup is displaying to enter the SERVICE_NAME in CONNECT_DATA")
 	public void ETL_CC_016(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_016";
+        String notes = "Popup is displaying to enter the SERVICE_NAME in CONNECT_DATA";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -854,7 +916,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 17, dataProvider = "getUserNameList")
+	@TestDescription("The filter function should performs correctly while the conditions like contains,  begins, equal and end") 
 	public void ETL_CC_017(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_017";
+        String notes = "The filter function should performs correctly while the conditions like contains,  begins, equal and end";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -948,7 +1015,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 18, dataProvider = "getUserNameList")
+	@TestDescription("The filter function should performs correctly while the conditions like contains,  begins, equal and end")
 	public void ETL_CC_018(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_018";
+        String notes = "The filter function should performs correctly while the conditions like contains,  begins, equal and end";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1042,7 +1114,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 19, dataProvider = "getUserNameList")
+	@TestDescription("The filter function should performs correctly while the conditions like contains,  begins, equal and end")
 	public void ETL_CC_019(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_019";
+        String notes = "The filter function should performs correctly while the conditions like contains,  begins, equal and end";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1136,7 +1213,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 20, dataProvider = "getUserNameList")
+	@TestDescription(" Special Characters are not Allowed")
 	public void ETL_CC_020(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_020";
+        String notes = "Special Characters are not Allowed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1230,7 +1312,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 21, dataProvider = "getUserNameList")
+	@TestDescription(" The Filter function should Filter the Successful record")
 	public void ETL_CC_021(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_021";
+        String notes = "The Filter function should Filter the Successful record";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1270,7 +1357,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 22, dataProvider = "getUserNameList")
+	@TestDescription("Create a new Connector by giving Db details and press back without giving test connection popup appears that form is not saved ")
 	public void ETL_CC_022(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_022";
+        String notes = "Create a new Connector by giving Db details and press back without giving test connection popup appears that form is not saved ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1348,7 +1440,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 23, dataProvider = "getUserNameList")
+	@TestDescription(" Special Characters are not allowed")
 	public void ETL_CC_026(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_026";
+        String notes = "Special Characters are not allowed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1429,7 +1526,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 24, dataProvider = "getUserNameList")
+	@TestDescription(" Special Characters are not allowed")
 	public void ETL_CC_027(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_027";
+        String notes = "Special Characters are not allowed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1503,7 +1605,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 25, dataProvider = "getUserNameList")
+	@TestDescription(" Edited Record Saved successfully")
 	public void ETL_CC_028(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_028";
+        String notes = "Edited Record Saved successfully";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1549,7 +1656,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 26, dataProvider = "getUserNameList")
+	@TestDescription("Edited Record Saved successfully")
 	public void ETL_CC_029(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_029";
+        String notes = "Edited Record Saved successfully";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1591,7 +1703,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 27, dataProvider = "getUserNameList")
+	@TestDescription(" Edited Record Saved successfully")
 	public void ETL_CC_030(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_030";
+        String notes = "Edited Record Saved successfully";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1633,7 +1750,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 28, dataProvider = "getUserNameList")
+	@TestDescription("Click on Filter in ETL Connector and Filter the Country( Put Random Keys)")
 	public void ETL_CC_034(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_034";
+        String notes = "Click on Filter in ETL Connector and Filter the Country( Put Random Keys)";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1691,7 +1813,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 29, dataProvider = "getUserNameList")
+	@TestDescription(" After Changing the query Validation should be done")
 	public void ETL_CC_031(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_031";
+        String notes = "After Changing the query Validation should be done";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1715,19 +1842,38 @@ public class ETLConnector {
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]/span[1]"))
 				.click();
 		Thread.sleep(2000);
+		//-- Filter click--//
+		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+		Thread.sleep(2000);
+		//-- Column click-//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(2000);
+		//-- Column select--//
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
+		//-- Criteria click--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(2000);
+		//-- Criteria select--//
+		driver.findElement(By.xpath("//span[contains(text(),'Equals...')]")).click();
+		//-- Value send keys--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT_FLOW16");
+		//-- Apply click--//
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(2000);
 		WebElement elementToHoverM = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/span[1]/span[1]"));
+				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
 		WebElement Query = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[8]/div[2]/a[2]/i[1]"));
+				"//i[contains(text(),'mode_edit')]"));
 		Query.click();
 		Thread.sleep(2000);
-		WebElement SelectQuery = driver.findElement(By.xpath(
+		WebElement SelectQuery = driver.findElement(By.xpath(	
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/textarea[1]"));
 		SelectQuery.click();
+		Thread.sleep(2000);
 		SelectQuery.clear();
-		SelectQuery.sendKeys("Select * from Vision_users");
+		SelectQuery.sendKeys("Select * from Vat_02");
 		Thread.sleep(2000);
 		// Validate Button--//
 		driver.findElement(By.xpath(
@@ -1739,10 +1885,37 @@ public class ETLConnector {
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]"))
 				.click();
 		Thread.sleep(3000);
+		SelectQuery.click();
+		Thread.sleep(2000);
+		SelectQuery.clear();
+		SelectQuery.sendKeys("Select * from Vat_02");
+		Thread.sleep(2000);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\Connector\\ETL_CC_031.png";
+		// -- save the screenshot --//
+		File destinationFile = new File(Location);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+			System.out.println(" ETL_CC_031 Screenshot saved to: " + destinationFile.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("ETL_CC_031 Failed to save screenshot: " + e.getMessage());
+		}
+		// Validate Button--//
+		driver.findElement(By.xpath(
+				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
+		Thread.sleep(3000);
 	}
 
 	@Test(priority = 30, dataProvider = "getUserNameList")
+	@TestDescription(" Popup should display that the Field is Mandatory( As Description is Mandatory Field)")
 	public void ETL_CC_032(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_032";
+        String notes = "Popup should display that the Field is Mandatory( As Description is Mandatory Field)";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1785,7 +1958,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 31, dataProvider = "getUserNameList")
+	@TestDescription(" The modify key should be disabled untile the validate is selected")
 	public void ETL_CC_023(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_023";
+        String notes = "The modify key should be disabled untile the validate is selected";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1828,7 +2006,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 32, dataProvider = "getUserNameList")
+	@TestDescription("The all \\\"db\\\" should be in capital form like \\\"DB\\\"")
 	public void ETL_CC_024(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_024";
+        String notes = "The all \"db\" should be in capital form like \"DB\"";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1919,7 +2102,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 33, dataProvider = "getUserNameList")
+	@TestDescription("The Space Between the line and entered text should be same in all fields")
 	public void ETL_CC_025(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_025";
+        String notes = "The Space Between the line and entered text should be same in all fields";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1999,7 +2187,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 34, dataProvider = "getUserNameList")
+	@TestDescription("Decription is mandatory popup should show")
 	public void ETL_CC_033(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_033";
+        String notes = "Decription is mandatory popup should show";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -2031,7 +2224,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 35, dataProvider = "getUserNameList")
+	@TestDescription("Description - After click on Reject previous state of record should be displayed")
 	public void ETL_CC_035(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_035";
+        String notes = "After click on Reject previous state of record should be displayed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -2096,10 +2294,10 @@ public class ETLConnector {
 		WebElement Connector = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
 		Connector.click();
 		Thread.sleep(2000);
-//		// -- Test Connection Button--//
-//		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-//				.click();
+		// -- Test Connection Button--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		// -- Modify Button--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[2]"))
@@ -2117,7 +2315,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 36, dataProvider = "getUserNameList")
+	@TestDescription("Description - After click on Reject previous state of record should be displayed")
 	public void ETL_CC_036(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_036";
+        String notes = "After click on Reject previous state of record should be displayed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -2207,7 +2410,12 @@ public class ETLConnector {
 	}
 
 	@Test(priority = 37, dataProvider = "getUserNameList")
+	@TestDescription("Description - Modified record should be changed , if we further modify Testconnection should be enabled")
 	public void ETL_CC_037(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Connector";
+		String testCaseId = "ETL_CC_037";
+        String notes = "Modified record should be changed , if we further modify Testconnection should be enabled";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -2302,213 +2510,218 @@ public class ETLConnector {
 		}
 	}
 
-	@Test(priority = 38, dataProvider = "getUserNameList")
-	public void ETL_CC_038(String loginName, String loginPwd) throws InterruptedException, AWTException {
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		// --ETL Connector click--//
-		driver.findElement(
-				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
-				.click();
-		Thread.sleep(2000);
-		// --ETL Connector Dropdown click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- ETL Connector click--//
-		driver.findElement(By.xpath(
-				"//body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- Add--//
-		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-		// --Country click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		// -- Country Select--//
-		driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-		// -- Le book dropdown--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		// -- Le book select--//
-		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
-		// -- Connector ID sendkeys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
-				.sendKeys("VAT_SEMI");
-		// -- Description sendkeys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
-				.sendKeys("VAT_SEMI");
-		// -- End point type click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		// -- End point type select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Source & Destination')]")).click();
-		// -- Connector type click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		// -- Connector select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Semi Structured Data')]")).click();
-		Thread.sleep(5000);
-		// -- Add in Semi structure data--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-				.click();
-		// -- FIle upload--//
-		WebElement Upload = driver.findElement(By.xpath("//span[contains(text(),'file_upload')]"));
-		Upload.click();
-		Thread.sleep(2000);
-		Robot robot = new Robot();
-		robot.delay(1000);
-		StringSelection stringSelection = new StringSelection(FilePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.delay(1000);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3000);
-		// -- Delimeter sendkeys--//
-		driver.findElement(
-				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(",");
-		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-		Thread.sleep(2000);
-		// -- Add in Semi structure data--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-				.click();
-		// -- FIle upload--//
-		WebElement Upload1 = driver.findElement(By.xpath("//tbody/tr[2]/td[7]/div[1]/div[1]/a[1]/span[1]"));
-		Upload1.click();
-		Thread.sleep(2000);
-		Robot robot1 = new Robot();
+//	@Test(priority = 38, dataProvider = "getUserNameList")
+//	@TestDescription("Description - Semi Structure Connector- Records should be added successfully")
+//	public void ETL_CC_038(String loginName, String loginPwd) throws InterruptedException, AWTException {
+//		String ScreenName = "Connector";
+//		String testCaseId = "ETL_CC_038";
+//        String notes = "Semi Structure Connector- Records should be added succesfully";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// --ETL Connector click--//
+//		driver.findElement(
+//				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// --ETL Connector Dropdown click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]/b[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- ETL Connector click--//
+//		driver.findElement(By.xpath(
+//				"//body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- Add--//
+//		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//		// --Country click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- Country Select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//		// -- Le book dropdown--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- Le book select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
+//		// -- Connector ID sendkeys--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.sendKeys("VAT_SEMI");
+//		// -- Description sendkeys--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
+//				.sendKeys("VAT_SEMI");
+//		// -- End point type click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- End point type select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Source & Destination')]")).click();
+//		// -- Connector type click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[7]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- Connector select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Semi Structured Data')]")).click();
+//		Thread.sleep(5000);
+//		// -- Add in Semi structure data--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+//				.click();
+//		// -- FIle upload--//
+//		WebElement Upload = driver.findElement(By.xpath("//span[contains(text(),'file_upload')]"));
+//		Upload.click();
+//		Thread.sleep(2000);
+//		Robot robot = new Robot();
+//		robot.delay(1000);
+//		StringSelection stringSelection = new StringSelection(FilePath);
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+//		robot.keyPress(KeyEvent.VK_CONTROL);
+//		robot.keyPress(KeyEvent.VK_V);
+//		robot.keyRelease(KeyEvent.VK_V);
+//		robot.keyRelease(KeyEvent.VK_CONTROL);
+//		robot.delay(1000);
+//		robot.keyPress(KeyEvent.VK_ENTER);
+//		robot.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(3000);
+//		// -- Delimeter sendkeys--//
+//		driver.findElement(
+//				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(",");
+//		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+//		Thread.sleep(2000);
+//		// -- Add in Semi structure data--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+//				.click();
+//		// -- FIle upload--//
+//		WebElement Upload1 = driver.findElement(By.xpath("//tbody/tr[2]/td[7]/div[1]/div[1]/a[1]/span[1]"));
+//		Upload1.click();
+//		Thread.sleep(2000);
+//		Robot robot1 = new Robot();
+//
+//		robot1.delay(1000);
+//		StringSelection stringSelection1 = new StringSelection(FilePath);
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection1, null);
+//		robot1.keyPress(KeyEvent.VK_CONTROL);
+//		robot1.keyPress(KeyEvent.VK_V);
+//		robot1.keyRelease(KeyEvent.VK_V);
+//		robot1.keyRelease(KeyEvent.VK_CONTROL);
+//		robot1.delay(1000);
+//		robot1.keyPress(KeyEvent.VK_ENTER);
+//		robot1.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(3000);
+//		// -- Delimeter sendkeys--//
+//		driver.findElement(
+//				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(",");
+//		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+//		Thread.sleep(3000);
+//		// -- Add in Semi structure data--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+//				.click();
+//		// -- FIle upload--//
+//		WebElement Upload2 = driver.findElement(By.xpath("//tbody/tr[3]/td[7]/div[1]/div[1]/a[1]/span[1]"));
+//		Actions actions = new Actions(driver);
+//		WebElement elementTarget = driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions.moveToElement(elementTarget);
+//		WebElement Target = Upload2;
+//		actions.scrollToElement(Target);
+//		actions.perform();
+//		Target.click();
+//		Thread.sleep(2000);
+//		Robot robot2 = new Robot();
+//
+//		robot2.delay(1000);
+//		StringSelection stringSelection2 = new StringSelection(FilePath);
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection2, null);
+//		robot2.keyPress(KeyEvent.VK_CONTROL);
+//		robot2.keyPress(KeyEvent.VK_V);
+//		robot2.keyRelease(KeyEvent.VK_V);
+//		robot2.keyRelease(KeyEvent.VK_CONTROL);
+//		robot2.delay(1000);
+//		robot2.keyPress(KeyEvent.VK_ENTER);
+//		robot2.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(3000);
+//		// -- Delimeter sendkeys--//
+//		driver.findElement(
+//				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(",");
+//		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+//		Thread.sleep(2000);
+//		// -- Add in Semi structure data--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+//				.click();
+//		// -- FIle upload--//
+//		WebElement Upload3 = driver.findElement(By.xpath("//tbody/tr[4]/td[7]/div[1]/div[1]/a[1]/span[1]"));
+//		Actions actions1 = new Actions(driver);
+//		WebElement elementTarget1 = driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions1.moveToElement(elementTarget1);
+//		WebElement Target1 = Upload3;
+//		actions1.scrollToElement(Target1);
+//		actions1.perform();
+//		Target1.click();
+//		Thread.sleep(2000);
+//		Thread.sleep(2000);
+//		Robot robot3 = new Robot();
+//		robot1.delay(1000);
+//		StringSelection stringSelection3 = new StringSelection(FilePath);
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection3, null);
+//		robot3.keyPress(KeyEvent.VK_CONTROL);
+//		robot3.keyPress(KeyEvent.VK_V);
+//		robot3.keyRelease(KeyEvent.VK_V);
+//		robot3.keyRelease(KeyEvent.VK_CONTROL);
+//		robot3.delay(1000);
+//		robot3.keyPress(KeyEvent.VK_ENTER);
+//		robot3.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(3000);
+//		// -- Delimeter sendkeys--//
+//		driver.findElement(
+//				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(",");
+//		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//tbody/tr[3]/td[1]/input[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/i[1]"))
+//				.click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+//		Thread.sleep(3000);
+//		// -- Save click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//	}
 
-		robot1.delay(1000);
-		StringSelection stringSelection1 = new StringSelection(FilePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection1, null);
-		robot1.keyPress(KeyEvent.VK_CONTROL);
-		robot1.keyPress(KeyEvent.VK_V);
-		robot1.keyRelease(KeyEvent.VK_V);
-		robot1.keyRelease(KeyEvent.VK_CONTROL);
-		robot1.delay(1000);
-		robot1.keyPress(KeyEvent.VK_ENTER);
-		robot1.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3000);
-		// -- Delimeter sendkeys--//
-		driver.findElement(
-				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(",");
-		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-		Thread.sleep(3000);
-		// -- Add in Semi structure data--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-				.click();
-		// -- FIle upload--//
-		WebElement Upload2 = driver.findElement(By.xpath("//tbody/tr[3]/td[7]/div[1]/div[1]/a[1]/span[1]"));
-		Actions actions = new Actions(driver);
-		WebElement elementTarget = driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-		actions.moveToElement(elementTarget);
-		WebElement Target = Upload2;
-		actions.scrollToElement(Target);
-		actions.perform();
-		Target.click();
-		Thread.sleep(2000);
-		Robot robot2 = new Robot();
-
-		robot2.delay(1000);
-		StringSelection stringSelection2 = new StringSelection(FilePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection2, null);
-		robot2.keyPress(KeyEvent.VK_CONTROL);
-		robot2.keyPress(KeyEvent.VK_V);
-		robot2.keyRelease(KeyEvent.VK_V);
-		robot2.keyRelease(KeyEvent.VK_CONTROL);
-		robot2.delay(1000);
-		robot2.keyPress(KeyEvent.VK_ENTER);
-		robot2.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3000);
-		// -- Delimeter sendkeys--//
-		driver.findElement(
-				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(",");
-		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-		Thread.sleep(2000);
-		// -- Add in Semi structure data--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/i[1]"))
-				.click();
-		// -- FIle upload--//
-		WebElement Upload3 = driver.findElement(By.xpath("//tbody/tr[4]/td[7]/div[1]/div[1]/a[1]/span[1]"));
-		Actions actions1 = new Actions(driver);
-		WebElement elementTarget1 = driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-		actions1.moveToElement(elementTarget1);
-		WebElement Target1 = Upload3;
-		actions1.scrollToElement(Target1);
-		actions1.perform();
-		Target1.click();
-		Thread.sleep(2000);
-		Thread.sleep(2000);
-		Robot robot3 = new Robot();
-		robot1.delay(1000);
-		StringSelection stringSelection3 = new StringSelection(FilePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection3, null);
-		robot3.keyPress(KeyEvent.VK_CONTROL);
-		robot3.keyPress(KeyEvent.VK_V);
-		robot3.keyRelease(KeyEvent.VK_V);
-		robot3.keyRelease(KeyEvent.VK_CONTROL);
-		robot3.delay(1000);
-		robot3.keyPress(KeyEvent.VK_ENTER);
-		robot3.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(3000);
-		// -- Delimeter sendkeys--//
-		driver.findElement(
-				By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(",");
-		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//tbody/tr[3]/td[1]/input[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/i[1]"))
-				.click();
-		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		Thread.sleep(3000);
-		// -- Save click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-				.click();
-		Thread.sleep(3000);
-	}
-
-	@DataProvider(name = "getUserNameList")
-	public Object[][] getUserNameList() {
-		Object[][] loginDetails = new Object[1][2];
-		loginDetails[0][0] = "RA";
-		loginDetails[0][1] = "Vision@123";
-		return loginDetails;
-	}
+//	@DataProvider(name = "getUserNameList")
+//	public Object[][] getUserNameList() {
+//		Object[][] loginDetails = new Object[1][2];
+//		loginDetails[0][0] = "RA";
+//		loginDetails[0][1] = "Vision@123";
+//		return loginDetails;
+//	}
 
 }

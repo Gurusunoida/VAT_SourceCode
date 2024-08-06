@@ -18,24 +18,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class RA_FeesConfig {
-	WebDriver driver;
+public class RA_FeesConfig extends BaseClass {
+	
 	String VAT = "VAT1604";
-
-	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void setUp(String applicationURL) throws InterruptedException {
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
 	public void VAT_FEE_DC_001(String username, String password) throws InterruptedException {
@@ -2254,7 +2239,7 @@ public class RA_FeesConfig {
 				Thread.sleep(2000);
 				//-- Modify click--//
 				driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]")).click();
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 				//-- Preferential click--//
 				driver.findElement(By.xpath("//span[contains(text(),'Preferential')]")).click();
 				Thread.sleep(2000);

@@ -11,23 +11,23 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class RA_MasterConfiguration {
+public class RA_MasterConfiguration extends BaseClass {
 	WebDriver driver;
 
-	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void setUp(String applicationURL) throws InterruptedException {
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
+//	@Parameters("ApplicationURL")
+//	@BeforeMethod
+//	public void setUp(String applicationURL) throws InterruptedException {
+//		driver = new ChromeDriver();
+//		driver.get(applicationURL);
+//		driver.manage().window().maximize();
+//	}
+//
+//	@AfterMethod
+//	public void closeDriver() {
+//		if (driver != null) {
+//			driver.quit();
+//		}
+//	}
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
 	public void RA_MC_001(String username, String password) throws InterruptedException {

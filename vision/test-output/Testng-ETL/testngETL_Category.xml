@@ -3,11 +3,11 @@
 <suite name="ETL_CATEGORY">
 	<parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
 	<listeners>
-		<listener class-name="visionETLGP.ETLTest.ListenersETL"></listener>
+		<listener class-name="visionETL.Test.ListenersETL"></listener>
 	</listeners>
   <test thread-count="5" name="Category-Test">
     <classes>
-      <class name="visionETLGP.ETLTest.ETL_Category"/>
+      <class name="visionETL.Test.ETL_Category"/>
     </classes>
   </test> <!-- Category-Test -->
 </suite> <!-- ETL_CATEGORY -->

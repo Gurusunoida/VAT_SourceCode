@@ -4,7 +4,7 @@
 	<parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
   <test thread-count="5" name="ETL-General-Test">
     <classes>
-      <class name="visionETLGP.ETLTest.ETL_General"/>
+      <class name="visionETL.Test.ETL_General"/>
     </classes>
   </test> <!-- ETL-General-Test -->
 </suite> <!-- ETL_GENERAL -->

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:8001/"/>
-  <test thread-count="5" name="Test(failed)">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
+  <listeners>
+    <listener class-name="visionETL.Test.New_class"/>
+  </listeners>
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="visionRA.Test.RA_Teller_counter">
+      <class name="visionETL.Test.ETLConnector">
         <methods>
-          <include name="closeDriver"/>
-          <include name="TEL_DC_006"/>
-          <include name="TEL_DC_005"/>
-          <include name="TEL_DC_004"/>
-          <include name="TEL_DC_001" invocation-numbers="0"/>
-          <include name="TEL_DC_003" invocation-numbers="0"/>
-          <include name="TEL_DC_011"/>
+          <include name="ETL_CC_031" invocation-numbers="0"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- visionRA.Test.RA_Teller_counter -->
+      </class> <!-- visionETL.Test.ETLConnector -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

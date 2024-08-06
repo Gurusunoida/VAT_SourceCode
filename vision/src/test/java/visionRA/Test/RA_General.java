@@ -16,22 +16,22 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class RA_General {
+public class RA_General extends BaseClass{
 	String VarDesc = "VAT";
 	WebDriver driver;
-	 @Parameters("ApplicationURL")
-   @BeforeMethod
-   public void setUp(String applicationURL) throws InterruptedException {
-       driver = new ChromeDriver();
-       driver.get(applicationURL);
-       driver.manage().window().maximize();
-   }
-	 @AfterMethod
-		public void closeDriver() {
-			if (driver != null) {
-				driver.quit();
-			}
-		}
+//	 @Parameters("ApplicationURL")
+//   @BeforeMethod
+//   public void setUp(String applicationURL) throws InterruptedException {
+//       driver = new ChromeDriver();
+//       driver.get(applicationURL);
+//       driver.manage().window().maximize();
+//   }
+//	 @AfterMethod
+//		public void closeDriver() {
+//			if (driver != null) {
+//				driver.quit();
+//			}
+//		}
 
    @Test(dataProvider = "loginCredentials", priority = 1)
    public void VAT_RA_Login(String username, String password) throws InterruptedException {
@@ -142,7 +142,7 @@ public class RA_General {
 
    @DataProvider(name = "loginCredentials")
    public Object[][] provideLoginData() {
-       // You can define multiple sets of valid and invalid login credentials
+       //-- You can define multiple sets of valid and invalid login credentials--//
        return new Object[][] {
            {"RA", "Vision@123"},
            {"RA", "vis@123"},

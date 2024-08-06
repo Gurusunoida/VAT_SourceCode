@@ -3,18 +3,20 @@
 <suite name="Failed suite [ETL_CATEGORY]" guice-stage="DEVELOPMENT">
   <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
   <listeners>
-    <listener class-name="visionETLGP.ETLTest.ListenersETL"/>
+    <listener class-name="visionETL.Test.ListenersETL"/>
   </listeners>
   <test thread-count="5" name="Category-Test(failed)">
     <classes>
-      <class name="visionETLGP.ETLTest.ETL_Category">
+      <class name="visionETL.Test.ETL_Category">
         <methods>
+          <include name="ETL_CT_002"/>
           <include name="BrowserOpening"/>
-          <include name="ETL_CT_023" invocation-numbers="0"/>
-          <include name="ETL_CT_024" invocation-numbers="0"/>
+          <include name="ETL_CT_003"/>
           <include name="closeDriver"/>
+          <include name="ETL_CT_004"/>
+          <include name="ETL_CT_005"/>
         </methods>
-      </class> <!-- visionETLGP.ETLTest.ETL_Category -->
+      </class> <!-- visionETL.Test.ETL_Category -->
     </classes>
   </test> <!-- Category-Test(failed) -->
 </suite> <!-- Failed suite [ETL_CATEGORY] -->

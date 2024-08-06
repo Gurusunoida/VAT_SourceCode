@@ -2,7 +2,7 @@ package visionRA.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -17,10 +17,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import visionETL.Test.ListenersETL;
 
-public class RA_TranslineConfig {
-	WebDriver driver;
+
+
+public class RA_TranslineConfig  extends BaseClass{
 	String Transline_ID = "VAT_Auto";
 	String Transline_ID1 = "VAT_01";
 	String Transline_DESC= "VAT_Desc";
@@ -36,23 +37,14 @@ public class RA_TranslineConfig {
 	String Transline_ID3 = "VAT_Duplicate";
 	String Transline_DESC3= "VAT_Desc3";
 
-	@Parameters("ApplicationURL")
-	@BeforeMethod 
-	public void setUp() throws InterruptedException {
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver!= null) {
-			driver.quit();
-		}
-	}
-	@Test( priority = 1)
-	public void VAT_TAS_DC_001(String username, String password) throws InterruptedException {
 	
+	@Test(dataProvider = "loginCredentials", priority = 1)
+	@TestDescription("Proper Trans line configuration has to be selected with all promt has to be shown in the screen")
+	public void VAT_TAS_DC_001(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_001";
+        String notes = "Proper Trans line configuration has to be selected with all promt has to be shown in the screen";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -82,7 +74,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test( priority = 2)
+	@TestDescription("Proper screen for feeding the data has to be populated")
 	public void VAT_TAS_DC_002() throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_002";
+        String notes = "Proper screen for feeding the data has to be populated";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys("RA");
@@ -159,7 +156,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 3)
+	@TestDescription("proper dropdown of column,criteria,value & addding of extra  filtration")
 	public void VAT_TAS_DC_003(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_003";
+	    String notes = "proper dropdown of column,criteria,value & addding of extra  filtration";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -205,7 +207,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 4)
+	@TestDescription("refresh the whole screen")
 	public void VAT_TAS_DC_004(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_004";
+	    String notes = "refresh the whole screen";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -238,7 +245,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 5)
+	@TestDescription("Proper drop down of country Name")
 	public void VAT_TAS_DC_005(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_005";
+	    String notes = "Proper drop down of country Name";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -276,7 +288,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 6)
+	@TestDescription("Proper drop down of Le book")
 	public void VAT_TAS_DC_006(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_006";
+	    String notes = "Proper drop down of Le book";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -314,7 +331,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 7)
+	@TestDescription("successfully  accepting Alpha Numerical")
 	public void VAT_TAS_DC_008(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_008";
+	    String notes = "successfully  accepting Alpha Numerical";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -352,7 +374,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 8)
+	@TestDescription("Proper drop down of Product line")
 	public void VAT_TAS_DC_009(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_009";
+	    String notes = "Proper drop down of Product line";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -378,7 +405,7 @@ public class RA_TranslineConfig {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		// --- Add in Trans line Config--//
 		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 		Thread.sleep(2000);
@@ -393,7 +420,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 9)
+	@TestDescription("Proper drop down of  Trans line type & group")
 	public void VAT_TAS_DC_010(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_010";
+	    String notes = "Proper drop down of  Trans line type & group";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -441,7 +473,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 10)
+	@TestDescription("Proper drop down of Business vertical")
 	public void VAT_TAS_DC_011(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_011";
+	    String notes = "Proper drop down of Business vertical";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -499,7 +536,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(3000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 11)
+	@TestDescription("Successfully requirement is fulfilled")
 	public void VAT_TAS_DC_012(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_012";
+	    String notes = "Successfully requirement is fulfilled";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -539,7 +581,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 12)   ///////---- Fail Backend data shoulld be added----//////
+	@TestDescription("Successfully able to select  extraction day")
 	public void VAT_TAS_DC_013(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_013";
+	    String notes = "Successfully able to select  extraction day";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -576,7 +623,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);	
 	}
 	@Test(dataProvider = "loginCredentials", priority = 13)
+	@TestDescription("Proper drop down of  product type")
 	public void VAT_TAS_DC_015(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_015";
+	    String notes = "Proper drop down of  product type";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -658,7 +710,12 @@ public class RA_TranslineConfig {
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 14)
+	@TestDescription("Proper drop down of  product  Discription")
 	public void VAT_TAS_DC_016(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_016";
+	    String notes = "Proper drop down of  product  Discription";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -745,7 +802,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(3000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 15)
+	@TestDescription("Proper drop down of  Currency")
 	public void VAT_TAS_DC_017(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_001";
+	    String notes = "Proper drop down of  Currency";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -838,7 +900,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(3000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 16)
+	@TestDescription("Data should not be changed when we click on to No in notification button ")
 	public void VAT_TAS_DC_019(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_019";
+	    String notes = "Data should not be changed when we click on to No in notification button ";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -917,7 +984,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);	
 	}
 	@Test(dataProvider = "loginCredentials", priority = 17)
+	@TestDescription("The record count should be correct while filtering ")
 	public void VAT_TAS_DC_023(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_023";
+	    String notes = "The record count should be correct while filtering ";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -983,7 +1055,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(3000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 18)
+	@TestDescription("Popup sholud display that invalid Transline Description")
 	public void VAT_TAS_DC_026(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_026";
+	    String notes = "Popup sholud display that invalid Transline Description";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1079,7 +1156,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(3000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 19)
+	@TestDescription("Validate Alpha Numerical ")
 	public void VAT_TAS_DC_007(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_007";
+	    String notes = "Validate Alpha Numerical ";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1124,7 +1206,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(4000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 20)
+	@TestDescription("When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ")
 	public void VAT_TAS_DC_024(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_024";
+	    String notes = "When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1223,7 +1310,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);	
 	}
 	@Test(dataProvider = "loginCredentials", priority = 21)
+	@TestDescription("If the changes is applyed the header should show the related type what have mentioned (product / service)")
 	public void VAT_TAS_DC_025(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_025";
+	    String notes = "If the changes is applyed the header should show the related type what have mentioned (product / service)";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1307,7 +1399,12 @@ public class RA_TranslineConfig {
 		Thread.sleep(2000);	
 	}
 	@Test(dataProvider = "loginCredentials", priority = 22)
+	@TestDescription("Duplicate Key Should Popup")
 	public void VAT_TAS_DC_028(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_001";
+	    String notes = "Duplicate Key Should Popup";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1382,7 +1479,12 @@ public class RA_TranslineConfig {
 		System.out.printf("VAT_TAS_DC_028-",proftext);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 23)
+	@TestDescription("In Line trigger should pop that data is Duplicate. after changing the Trigger should disappear")
 	public void VAT_TAS_DC_029(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_029";
+	    String notes = "In Line trigger should pop that data is Duplicate. after changing the Trigger should disappear";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);
@@ -1510,7 +1612,12 @@ public class RA_TranslineConfig {
 				}	
 	}
 	@Test(dataProvider = "loginCredentials", priority = 24)
+	@TestDescription("Duplicate Key Should Popup")
 	public void VAT_TAS_DC_031(String username, String password) throws InterruptedException {
+		String ScreenName = "Transline Configuration";
+		String testCaseId = "TAS_DC_031";
+	    String notes = "Duplicate Key Should Popup";
+	    ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(username);

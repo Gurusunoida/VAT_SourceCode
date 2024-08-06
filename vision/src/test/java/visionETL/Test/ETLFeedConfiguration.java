@@ -19,31 +19,40 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ETLFeedConfiguration {
-	WebDriver driver;
+public class ETLFeedConfiguration extends BaseClass {
 	String ValueKey = "vatMJ";
 	String TEST_SOURCE_SETUP = "TEST_source_setup";
 	String ValueKey1 = "VAT_NormalDataTransformation";
 	String TEST_MATERIALIZED_SETUP = "TEST_MATERIALIZED_SETUP";
 
-	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void BrowserOpening(String applicationURL) throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
-
+//	@Parameters("ApplicationURL")
+//	@BeforeMethod
+//	public void BrowserOpening(String applicationURL) throws InterruptedException {
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver();
+//		driver.get(applicationURL);
+//		driver.manage().window().maximize();
+//	}
+//
+//	@AfterMethod
+//	public void closeDriver() {
+//		if (driver != null) {
+//			driver.quit();
+//		}
+//	}
+	 @DataProvider(name = "getUserNameList")
+	    public Object[][] getUserNameList() {
+	        return new Object[][] {
+	            {"RA", "Vision@123"},
+	        };
+	    }
 	@Test(priority = 1, dataProvider = "getUserNameList")
+	 @TestDescription("The Filter function should Filter the Successful record ")
 	public void ETL_FC_013(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_013";
+        String notes = "The Filter function should Filter the Successful record";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -80,8 +89,13 @@ public class ETLFeedConfiguration {
 	}
 
 	@Test(priority = 2, dataProvider = "getUserNameList")
+	 @TestDescription("The Filter function Should show the Filtered value")
 	public void ETL_FC_014(String loginName, String loginPwd) throws InterruptedException {
-		driver.findElement(By.xpath(
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_014";
+        String notes = "The Filter function Should show the Filtered value";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
 		driver.findElement(By.xpath(
@@ -116,8 +130,13 @@ public class ETLFeedConfiguration {
 	}
 
 	@Test(priority = 3, dataProvider = "getUserNameList")
+	 @TestDescription("if the character is above 10 the alert appers ")
 	public void ETL_FC__015(String loginName, String loginPwd) throws InterruptedException {
 		String Feed_name = "TEST_ASDFGHJ";
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_015";
+        String notes = "if the character is above 10 the alert appers ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -141,7 +160,12 @@ public class ETLFeedConfiguration {
 	}
 
 	@Test(priority = 4, dataProvider = "getUserNameList")
+	 @TestDescription("The entered feed  should disappear while returning") 
 	public void ETL_FC_016(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_016";
+        String notes = "The entered feed  should disappear while returning";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -192,7 +216,12 @@ public class ETLFeedConfiguration {
 	}
 
 	@Test(priority = 5, dataProvider = "getUserNameList")
+	 @TestDescription("It should display that the \\\"Field is mandatory\\\"")
 	public void ETL_FC_017(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_017";
+        String notes = "It should display that the \"Field is mandatory\"";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -231,7 +260,12 @@ public class ETLFeedConfiguration {
 	}
 
 		@Test(priority = 6, dataProvider = "getUserNameList")
+		 @TestDescription("The entered record should be saved")
 		public void ETL_FC_018(String loginName, String loginPwd) throws InterruptedException {
+			String ScreenName = "FeedConfiguration";
+			String testCaseId = "ETL_FC_018";
+	        String notes = "The entered record should be saved";
+	        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 			driver.findElement(By.xpath(
 					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 					.sendKeys(loginName);
@@ -293,7 +327,7 @@ public class ETLFeedConfiguration {
 			actionsRClick.moveToElement(elementToHoverReject).perform();
 			//-- Particular Feed Click--//
 			WebElement Reject = driver.findElement(By.xpath(
-					"//i[normalize-space()='do_not_disturb_alt']"));
+					"//i[contains(text(),'do_not_disturb_alt')]"));
 			Reject.click();
 			driver.findElement(By.xpath("//button[normalize-space()='Yes']")).click();
 			Thread.sleep(2000);
@@ -301,7 +335,12 @@ public class ETLFeedConfiguration {
 			
 		}
 	@Test(priority = 7, dataProvider = "getUserNameList")
+	 @TestDescription("Display 10 records in one page")
 	public void ETL_FC_019(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_019";
+        String notes = " Display 10 records in one page";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -328,7 +367,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 8, dataProvider = "getUserNameList", enabled = false)
+	 @TestDescription("Maximize Button should work and can view the record in maximize page") 
 	public void ETL_FC_020(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_020";
+        String notes = "Maximize Button should work and can view the record in maximize page";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -348,7 +392,12 @@ public class ETLFeedConfiguration {
 		driver.findElement(By.xpath("//i[contains(text(),'fullscreen')]")).click();
 	}
 	@Test(priority = 9, dataProvider = "getUserNameList")
+	 @TestDescription("The filter function should performs correctly while the conditions like contains,  begins, equal and end")
 	public void ETL_FC_023(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_023";
+        String notes = "The filter function should performs correctly while the conditions like contains,  begins, equal and end";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -411,7 +460,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 10, dataProvider = "getUserNameList")
+	 @TestDescription("Popup should display that Invalid Description")
 	public void ETL_FC_024(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_024";
+        String notes = "Popup should display that Invalid Description";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -462,7 +516,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 11, dataProvider = "getUserNameList")
+	 @TestDescription("The Transformation should be in Fullscreen mode and if we want to Navigate to other page (Connector Page, Category) Click and move")
 	public void ETL_FC_025(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_025";
+        String notes = "The Transformation should be in Fullscreen mode and if we want to Navigate to other page (Connector Page, Category) Click and move";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -518,6 +577,10 @@ public class ETLFeedConfiguration {
 	}
 	@Test(priority = 13, dataProvider = "getUserNameList", enabled = false)///------ Not Required Max is Removed---////
 	public void ETL_FC_022(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_022";
+        String notes = "";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -552,8 +615,13 @@ public class ETLFeedConfiguration {
 		Thread.sleep(2000);
 	}
 	@Test(priority = 12, dataProvider = "getUserNameList")
+	 @TestDescription("The users feed ID should get saved .")
 	public void ETL_FC_009(String loginName, String loginPwd) throws InterruptedException {
 		String FeedID = "VAT00001";
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_009";
+        String notes = "The users feed ID should get saved .";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -639,7 +707,12 @@ public class ETLFeedConfiguration {
         }
 	}
 	@Test(priority = 14, dataProvider = "getUserNameList")
+	 @TestDescription("Inline Trigger should appear that mandatory field is required")
 	public void ETL_FC_033(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_033";
+        String notes = "Inline Trigger should appear that mandatory field is required";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -663,6 +736,7 @@ public class ETLFeedConfiguration {
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
 		//-- Value sendkeys--//
 		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT_01");
+		Thread.sleep(2000);
 		//-- Apply --//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(2000);
@@ -709,7 +783,12 @@ public class ETLFeedConfiguration {
 //		Thread.sleep(2000);
 	}
 	@Test(priority = 15, dataProvider = "getUserNameList")
+	 @TestDescription("Inline trigger has to be performed in all the feeds  in the screen")
 	public void ETL_FC_034(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_034";
+        String notes = "Inline trigger has to be performed in all the feeds  in the screen";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -733,15 +812,16 @@ public class ETLFeedConfiguration {
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]/span[1]")).click();
 		//-- Value sendkeys--//
 		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT_01");
-		//-- Add filter click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
-		//-- Column click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		//-- Add filter click--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
+//		//-- Column click--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//-- Record Indicator click--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]/span[1]")).click();
+//		//--- Value send keys--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("App");
 		Thread.sleep(2000);
-		//-- Record Indicator click--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]/span[1]")).click();
-		//--- Value send keys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("App");
 		//-- Apply --//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(2000);
@@ -766,7 +846,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(2000);
 	}
 	@Test(priority = 16, dataProvider = "getUserNameList")
+	 @TestDescription("No trigger has to be applied  while using / symbol")
 	public void ETL_FC_035(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_035";
+        String notes = "No trigger has to be applied  while using / symbol";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -815,7 +900,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 17, dataProvider = "getUserNameList")
+	 @TestDescription("Required detail filter need to be added")
 	public void ETL_FC_036(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_036";
+        String notes = "Required detail filter need to be added";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -872,7 +962,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 18, dataProvider = "getUserNameList")
+	 @TestDescription("Click on Edit in Approved Records and click on Modify the Record will move to Modify pending then Publish the Record")
 	public void ETL_FC_037(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_037";
+        String notes = "Click on Edit in Approved Records and click on Modify the Record will move to Modify pending then Publish the Record";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -927,7 +1022,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(2000);
 	}
 	@Test(priority = 19, dataProvider = "getUserNameList")
+	 @TestDescription("The Target Table Column should be displayed")
 	public void ETL_FC_038(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_038";
+        String notes = "The Target Table Column should be displayed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -983,7 +1083,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);	
 	}
 	@Test(priority = 20, dataProvider = "getUserNameList")
+	 @TestDescription("Publish of Record should takes place")
 	public void ETL_FC_030(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_030";
+        String notes = "Publish of Record should takes place";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1028,7 +1133,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 21, dataProvider = "getUserNameList")
+	 @TestDescription("Trigger should popup that Invalid Description")
 	public void ETL_FC_031(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_031";
+        String notes = "Trigger should popup that Invalid Description";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1079,7 +1189,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(5000);
 	}
 	@Test(priority = 22, dataProvider = "getUserNameList")
+	 @TestDescription("Help icon should elaborate")
 	public void ETL_FC_029(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_029";
+        String notes = "Help icon should elaborate";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1137,7 +1252,12 @@ public class ETLFeedConfiguration {
         }	
 	}
 	@Test(priority = 23, dataProvider = "getUserNameList")
+	 @TestDescription("Data has to be processed correctly")
 	public void ETL_FC_028(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_028";
+        String notes = "Data has to be processed correctly";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1188,7 +1308,12 @@ public class ETLFeedConfiguration {
 				Thread.sleep(2000);
 			    }
 	@Test(priority = 24, dataProvider = "getUserNameList")
+	@TestDescription("Ensure the content is clear and easily understandable for users.")
 	public void ETL_FC_001(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_001";
+        String notes = "Ensure the content is clear and easily understandable for users.";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1231,7 +1356,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 	}
 	@Test(priority = 25, dataProvider = "getUserNameList")
+	@TestDescription("The info bar should be clear readable ")
 	public void ETL_FC_002(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_002";
+        String notes = "The info bar should be clear readable ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1273,7 +1403,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(2000);
 	}
 	@Test(priority = 26, dataProvider = "getUserNameList")//////------ Pending Scroll not interactable---------------///////////
+	@TestDescription("The alignment needs to be clear for the user.")
 	public void ETL_FC_003(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_003";
+        String notes = "The alignment needs to be clear for the user.";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1333,7 +1468,12 @@ public class ETLFeedConfiguration {
 		 Thread.sleep(4000);
 	}
 	@Test(priority = 27, dataProvider = "getUserNameList")
+	@TestDescription("The delete function should be processed correctly")
 	public void ETL_FC_012(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_012";
+        String notes = "The delete function should be processed correctly";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1405,7 +1545,12 @@ public class ETLFeedConfiguration {
 		Thread.sleep(2000);
 	}
 	@Test(priority = 28, dataProvider = "getUserNameList")
+	@TestDescription("The Table connection should be unlinked")
 	public void ETL_FC_026(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_026";
+        String notes = "The Table connection should be unlinked";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1467,7 +1612,12 @@ public class ETLFeedConfiguration {
 		}
 	}
 	@Test(priority = 29, dataProvider = "getUserNameList")//-- Fail--//
+	@TestDescription("Create a Record without saving click back Button, Popup should display ")
 	public void ETL_FC_041(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_041";
+        String notes = "Create a Record without saving click back Button, Popup should display ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1509,7 +1659,12 @@ public class ETLFeedConfiguration {
 	}
 	@SuppressWarnings("unlikely-arg-type")
 	@Test(priority = 30, dataProvider = "getUserNameList")
+	@TestDescription("Create a Record and Add Connector( Source Setup), then click on Clear")
 	public void ETL_FC_042(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_042";
+        String notes = "Create a Record and Add Connector( Source Setup), then click on Clear";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1595,7 +1750,12 @@ public class ETLFeedConfiguration {
         
 	}
 	@Test(priority = 31, dataProvider = "getUserNameList")
+	@TestDescription("Drag and drop of column should takes place")
 	public void ETL_FC_043(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_043";
+        String notes = "Drag and drop of column should takes place";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1668,6 +1828,7 @@ public class ETLFeedConfiguration {
 		Thread.sleep(3000);
 		// --Filter send keys, Search click--//
 		driver.findElement(By.xpath("//input[@id='filter']")).click();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='filter']")).sendKeys("Error_codes");
 		driver.findElement(By.xpath("//i[contains(text(),'search')]")).click();
 		Thread.sleep(3000);
@@ -1702,8 +1863,13 @@ public class ETLFeedConfiguration {
 					System.out.println("ETL_FC_043 Failed to save screenshot: " + e.getMessage());
 				}	
 	}
-	@Test(priority = 32, dataProvider = "getUserNameList")
+	@Test(priority = 32, dataProvider = "getUserNameList")//-- Fail--//
+	@TestDescription("When add is clicked the feed approval should not show ")
 	public void ETL_FC_044(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_044";
+        String notes = "When add is clicked the feed approval should not show ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1762,7 +1928,12 @@ public class ETLFeedConfiguration {
 				}	
 	}
 	@Test(priority = 33, dataProvider = "getUserNameList")  //---Fail Testcases After fix it will get pass--//	
+	@TestDescription("While click on back filtered results should be displayed")
 	public void ETL_FC_046(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_046";
+        String notes = "While click on back filtered results should be displayed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1810,7 +1981,12 @@ public class ETLFeedConfiguration {
 		Feed_edit.click();
 	}
 	@Test(priority = 34, dataProvider = "getUserNameList") 
+	@TestDescription("Create a Feed and mouse hover onn record indicator")
 	public void ETL_FC_049(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_049";
+        String notes = "Create a Feed and mouse hover onn record indicator";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1845,7 +2021,12 @@ public class ETLFeedConfiguration {
 		}	
 	}
 	@Test(priority = 35, dataProvider = "getUserNameList") 
+	@TestDescription("If the Start date is set as Today's date and saved, It cant be edited further")
 	public void ETL_FC_050(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "FeedConfiguration";
+		String testCaseId = "ETL_FC_050";
+        String notes = "If the Start date is set as Today's date and saved, It cant be edited further";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
@@ -1906,13 +2087,5 @@ public class ETLFeedConfiguration {
 		} catch (IOException e) {
 			System.out.println("ETL_FC_050 Failed to save screenshot: " + e.getMessage());
 		}	
-	}
-	@DataProvider(name = "getUserNameList")
-	public Object[][] getUserNameList() {
-		Object[][] loginDetails = new Object[1][2];
-
-		loginDetails[0][0] = "RA";
-		loginDetails[0][1] = "Vision@123";
-		return loginDetails;
 	}
 }
