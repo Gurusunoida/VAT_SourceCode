@@ -1,0 +1,10 @@
+<configuration>
+    <theme>standard</theme>
+    <encoding>utf-8</encoding>
+    <protocol>http</protocol>
+    <title>My Project Report</title>
+    <reportName>Automation Test Report</reportName>
+    <documentTitle>Test Report</documentTitle>
+    <css>src/main/resources/assets/custom.css</css>
+    <!-- No need to specify the JS file if not used -->
+</configuration>

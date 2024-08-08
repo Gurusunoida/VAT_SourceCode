@@ -9,7 +9,7 @@
     <classes>
       <class name="visionETL.Test.ETLConnector">
         <methods>
-          <include name="ETL_CC_031" invocation-numbers="0"/>
+          <include name="ETL_CC_001" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

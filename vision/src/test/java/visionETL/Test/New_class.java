@@ -16,6 +16,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +26,7 @@ import java.util.UUID;
 
 public class New_class implements ITestListener {
 
-    private static final String REPORTS_PATH = System.getProperty("user.dir") + "\\Reports\\ETL_Report_Dummy.html";
+    private static final String REPORTS_PATH = System.getProperty("user.dir") + "\\Reports\\Dummy.html";
     private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + "\\Screenshots\\";
 
     private ExtentSparkReporter reporter;
@@ -35,11 +38,25 @@ public class New_class implements ITestListener {
     public void onStart(ITestContext context) {
         System.out.println("Execution of ETL_Application started");
         reporter = new ExtentSparkReporter(REPORTS_PATH);
+
+        //-- Update our custom CSS file --//
+        try {
+            String Customcss = readCSSFile("src/main/resources/static/assets/custom.css");
+            reporter.config().setCss(Customcss);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
         reporter.config().setDocumentTitle("VAT_Report_ETL");
         reporter.config().setReportName("ETL_Report");
         extent = new ExtentReports();
         extent.attachReporter(reporter);
         extent.setSystemInfo("Testing", "QA");
+    }
+
+    private String readCSSFile(String filePath) throws IOException {
+        Path path = Paths.get(filePath);
+        return new String(Files.readAllBytes(path));
     }
 
     @Override
