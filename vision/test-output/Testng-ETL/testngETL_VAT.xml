@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="classes">
 	<parameter name="ApplicationURL" value="http://202.83.25.244:9010/" />
 	<listeners>
-		<listener class-name="visionETL.Test.New_class"></listener>
+		<listener class-name="visionETL.Test.ListenersETL"></listener>
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>

@@ -16,6 +16,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,21 +26,32 @@ import java.util.UUID;
 
 public class ListenersRA implements ITestListener {
 
-    private static final String REPORTS_PATH = System.getProperty("user.dir") + "\\Reports\\RA_Report_06_08.html";
+    private static final String REPORTS_PATH = System.getProperty("user.dir") + "\\Reports\\DummyRA.html";
     private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + "\\Screenshots\\";
 
     private ExtentSparkReporter reporter;
     private ExtentReports extent;
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
     private Map<String, ExtentTest> classNodes = new HashMap<>();
-    //--pass and fail counts--//
-    private Map<String, Integer> classPassCount = new HashMap<>();
-    private Map<String, Integer> classFailCount = new HashMap<>();
+    private Map<String, Integer> totalTestCase = new HashMap<>();
+    private Map<String, Integer> passedTestCase = new HashMap<>();
+    private Map<String, Integer> failedTestCase = new HashMap<>();
+    private Map<String, Integer> ignoredTestCase = new HashMap<>();
+    private Map<String, Boolean> classTotal = new HashMap<>();
 
     @Override
     public void onStart(ITestContext context) {
         System.out.println("Execution of RA_Application started");
         reporter = new ExtentSparkReporter(REPORTS_PATH);
+
+        //-- Update our customETL CSS file --//
+        try {
+            String customRAcss = readCSSFile("src/main/resources/static/assets/customRA.css");
+            reporter.config().setCss(customRAcss);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
         reporter.config().setDocumentTitle("VAT_Report_RA");
         reporter.config().setReportName("RA_Report");
         extent = new ExtentReports();
@@ -45,10 +59,21 @@ public class ListenersRA implements ITestListener {
         extent.setSystemInfo("Testing", "QA");
     }
 
+    private String readCSSFile(String filePath) throws IOException {
+        Path path = Paths.get(filePath);
+        return new String(Files.readAllBytes(path));
+    }
+
     @Override
     public void onTestStart(ITestResult result) {
         System.out.println("Execution Test started: " + result.getMethod().getMethodName());
         String className = result.getTestClass().getName();
+        totalTestCase.put(className, totalTestCase.getOrDefault(className, 0) + 1);
+        passedTestCase.putIfAbsent(className, 0);
+        failedTestCase.putIfAbsent(className, 0);
+        ignoredTestCase.putIfAbsent(className, 0);
+        classTotal.putIfAbsent(className, false);
+
         String methodName = result.getMethod().getMethodName();
         Method method = getMethod(result);
         String description = getMethodDescription(method);
@@ -86,10 +111,8 @@ public class ListenersRA implements ITestListener {
         if (currentTest != null) {
             currentTest.log(Status.PASS, "Test Passed");
         }
-
-        // --Update pass count--//
         String className = result.getTestClass().getName();
-        classPassCount.put(className, classPassCount.getOrDefault(className, 0) + 1);
+        passedTestCase.put(className, passedTestCase.get(className) + 1);
     }
 
     @Override
@@ -105,9 +128,8 @@ public class ListenersRA implements ITestListener {
                 currentTest.log(Status.FAIL, "Failed to capture screenshot: " + e.getMessage());
             }
         }
-        //-- Update fail count--//
         String className = result.getTestClass().getName();
-        classFailCount.put(className, classFailCount.getOrDefault(className, 0) + 1);
+        failedTestCase.put(className, failedTestCase.get(className) + 1);
     }
 
     @Override
@@ -117,20 +139,31 @@ public class ListenersRA implements ITestListener {
         if (currentTest != null) {
             currentTest.log(Status.SKIP, "Skipped TestCase_ID " + result.getName());
         }
+        String className = result.getTestClass().getName();
+        ignoredTestCase.put(className, ignoredTestCase.getOrDefault(className, 0) + 1);
     }
 
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("Execution of RA_Application Completed");
-        // --Create summary report--//
-        ExtentTest summaryTest = extent.createTest("Test Summary");
-        for (Map.Entry<String, Integer> entry : classPassCount.entrySet()) {
-            String className = entry.getKey();
-            int passCount = entry.getValue();
-            int failCount = classFailCount.getOrDefault(className, 0);
-            summaryTest.info(String.format("Class: %s, Pass Count: %d, Fail Count: %d", className, passCount, failCount));
+        // Log the counts to the extent report
+        for (String className : totalTestCase.keySet()) {
+            if (!classTotal.get(className)) {
+                int total = totalTestCase.get(className);
+                int passed = passedTestCase.get(className);
+                int failed = failedTestCase.get(className);
+                int ignored = ignoredTestCase.get(className);
+                
+                ExtentTest classTest = classNodes.get(className);
+                if (classTest != null) {
+                    classTest.info(String.format("Total Tests: %d", total));
+                    classTest.info(String.format("Passed Tests: %d", passed));
+                    classTest.info(String.format("Failed Tests: %d", failed));
+                    classTest.info(String.format("Ignored/Skipped Tests: %d", ignored));
+                }
+                classTotal.put(className, true);
+            }
         }
-
         extent.flush();
     }
 
@@ -153,7 +186,6 @@ public class ListenersRA implements ITestListener {
         if (driver != null) {
             String screenshotPath = captureScreenshot(driver, result.getMethod().getMethodName());
             if (screenshotPath != null) {
-                // Convert to base64 and embed
                 String base64Image = encodeImageToBase64(screenshotPath);
                 String base64String = "data:image/png;base64," + base64Image;
                 ExtentTest currentTest = test.get();
@@ -179,10 +211,11 @@ public class ListenersRA implements ITestListener {
         File destinationFile = new File(SCREENSHOTS_DIR + File.separator + uniqueScreenshotName);
         try {
             org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
-            return destinationFile.getPath(); // --Return relative path--//
+            return destinationFile.getPath(); // Return relative path
         } catch (IOException e) {
             System.err.println("Failed to save screenshot: " + e.getMessage());
             return null;
         }
     }
 }
+

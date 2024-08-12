@@ -1,0 +1,64 @@
+body{
+	background-color: #fff !important;
+}
+
+
+.nav-logo .logo {
+	background-image: url('./RA.png')!important;
+	background-size: cover !important
+}
+
+.header .vheader .nav-logo>a .logo {
+    min-height: 70px !important;
+}
+
+.header .vheader .nav-logo {
+   
+    width: 500px !important;
+     padding: 7px 21px;
+  
+}
+
+.header {
+    background-color: #fff !important;
+}
+
+.vcontainer .main-content {
+    padding: 84px 0 0  !important;
+ 
+}
+
+.header, .header .vheader .nav-left>li>a, .header .vheader .nav-right>li>a {
+    height: 84px !important;
+   
+}
+
+.side-nav {
+    top: 84px !important;
+  }
+  
+  .card .card-body {
+ 
+    min-height: 139px !important;
+}
+
+.card {
+   
+    border: 1px solid #c3c3c3 !important;
+    border-radius: 10px  !important;
+  
+}
+
+
+.card-body > p{
+	font-size: 25px !important;
+	}
+  
+.card-body > h3{
+	font-size: 19px !important;
+	}
+  
+  .card-title{
+	  font-size: 19px !important;
+  }
+ 

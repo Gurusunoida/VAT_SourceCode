@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-08T17:17:05 IST" name="Suite" finished-at="2024-08-08T17:17:20 IST" duration-ms="14499">
+  <suite started-at="2024-08-12T18:35:47 IST" name="Suite" finished-at="2024-08-12T18:35:58 IST" duration-ms="10463">
     <groups>
     </groups>
-    <test started-at="2024-08-08T17:17:05 IST" name="Test" finished-at="2024-08-08T17:17:20 IST" duration-ms="14499">
+    <test started-at="2024-08-12T18:35:47 IST" name="Test" finished-at="2024-08-12T18:35:58 IST" duration-ms="10463">
       <class name="visionETL.Test.ETLConnector">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-08T17:17:06 IST" name="setUp" finished-at="2024-08-08T17:17:09 IST" duration-ms="3387" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-12T18:35:48 IST" name="setUp" finished-at="2024-08-12T18:35:56 IST" duration-ms="7954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="ETL_CC_001(java.lang.String,java.lang.String)[pri:1, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-08T17:17:09 IST" name="ETL_CC_001" data-provider="getUserNameList" finished-at="2024-08-08T17:17:20 IST" duration-ms="10201" status="PASS">
+        <test-method signature="ETL_CC_001(java.lang.String,java.lang.String)[pri:1, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-12T18:35:56 IST" name="ETL_CC_001" data-provider="getUserNameList" finished-at="2024-08-12T18:35:56 IST" duration-ms="695" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ETL_CC_001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-08T17:17:20 IST" name="tearDown" finished-at="2024-08-08T17:17:20 IST" duration-ms="470" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-12T18:35:57 IST" name="tearDown" finished-at="2024-08-12T18:35:58 IST" duration-ms="1044" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

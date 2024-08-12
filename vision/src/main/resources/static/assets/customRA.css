@@ -4,7 +4,7 @@ body{
 
 
 .nav-logo .logo {
-	background-image: url('./ETL.png')!important;
+	background-image: url('./RA.png')!important;
 	background-size: cover !important
 }
 
@@ -61,4 +61,20 @@ body{
   .card-title{
 	  font-size: 19px !important;
   }
+   .nav-left .search-box{
+	  display: none !important;
+  }
+   .nav-left > .search-box{
+	  display: none !important;
+  }
+  
+.nav-right li:nth-child(1) {
+    display: none!important;
+}
+.badge {
+    font-size: 100% !important;
+}
+.badge-primary {
+    background-color: #ed0e86 !important;
+}
  

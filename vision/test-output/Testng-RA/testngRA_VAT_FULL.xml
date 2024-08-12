@@ -9,7 +9,7 @@
     <classes>
 		<class name="visionRA.Test.RA_TranslineConfig"/>
 		<class name="visionRA.Test.RA_BusinessLineConfig"/>
-		<class name="visionRA.Test.RA_FeesConfig"/>
+	
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

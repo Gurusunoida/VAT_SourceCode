@@ -61,4 +61,28 @@ body{
   .card-title{
 	  font-size: 19px !important;
   }
- 
+  .nav-left .search-box{
+	  display: none !important;
+  }
+   .nav-left > .search-box{
+	  display: none !important;
+  }
+  
+.nav-right li:nth-child(1) {
+    display: none!important;
+}
+.badge {
+    font-size: 100% !important;
+}
+.badge-primary {
+    background-color: #ed0e86 !important;
+}
+
+#parent-analysis {
+    width: 500px !important; /* Increases the size of the canvas */
+    height: 200px !important;
+}
+
+.chartjs-render-monitor {
+    font-size: 18px !important; /* This might not affect canvas-rendered text */
+}

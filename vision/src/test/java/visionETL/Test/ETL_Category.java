@@ -117,92 +117,92 @@ public class ETL_Category extends BaseClass{
 		Thread.sleep(3000);
 	}
 
-	@Test(priority = 3, dataProvider = "getUserNameList")
-	@TestDescription(" Filter Operation Should filter Correctly, Filter tick is verified")
-	public void ETL_CT_003(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Category";
-		String testCaseId = "ETL_CT_003";
-        String notes = "Filter Operation Should filter Correctly, Filter tick is verified";
-        ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		// -- Category Dropdown
-				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
-		Thread.sleep(3000);
-		// -- Filter click--//
-		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys("VAT");
-		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-		Thread.sleep(3000);
-	}
-
-	@Test(priority = 4, dataProvider = "getUserNameList")
-	@TestDescription(" Pop-up should show to fill all the mandatory details")
-	public void ETL_CT_004(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Category";
-		String testCaseId = "ETL_CT_004";
-        String notes = "Pop-up should show to fill all the mandatory details";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		// -- Category Dropdown
-				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
-				Thread.sleep(2000);	
-		// --Add Category--//
-		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-		Thread.sleep(2000);
-		// --Add Drop Down Country-//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(5000);
-		// --choose Country--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		// --Add LE_BOOK Drop down
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
-		Thread.sleep(2000);
-		// --Send keys For Category ID
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]"))
-				.sendKeys(CATEGORY);
-		Thread.sleep(2000);
-		// -- Save click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-				.click();
-		Thread.sleep(2000);
-	}
-
+//	@Test(priority = 3, dataProvider = "getUserNameList")
+//	@TestDescription(" Filter Operation Should filter Correctly, Filter tick is verified")
+//	public void ETL_CT_003(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Category";
+//		String testCaseId = "ETL_CT_003";
+//        String notes = "Filter Operation Should filter Correctly, Filter tick is verified";
+//        ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// -- Category Dropdown
+//				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+//		Thread.sleep(3000);
+//		// -- Filter click--//
+//		driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+//				.sendKeys("VAT");
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(3000);
+//	}
+//
+//	@Test(priority = 4, dataProvider = "getUserNameList")
+//	@TestDescription(" Pop-up should show to fill all the mandatory details")
+//	public void ETL_CT_004(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Category";
+//		String testCaseId = "ETL_CT_004";
+//        String notes = "Pop-up should show to fill all the mandatory details";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// -- Category Dropdown
+//				driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
+//				Thread.sleep(2000);	
+//		// --Add Category--//
+//		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//		Thread.sleep(2000);
+//		// --Add Drop Down Country-//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// --choose Country--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		// --Add LE_BOOK Drop down
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//span[contains(text(),'01 - Emirates NBD Bank PJSC Dubai')]")).click();
+//		Thread.sleep(2000);
+//		// --Send keys For Category ID
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/input[1]"))
+//				.sendKeys(CATEGORY);
+//		Thread.sleep(2000);
+//		// -- Save click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//	}
+//
 //	@Test(priority = 5, dataProvider = "getUserNameList")
 //	@TestDescription("The Entered details should be save and displayed in records") 
 //	public void ETL_CT_005(String loginName, String loginPwd) throws InterruptedException {

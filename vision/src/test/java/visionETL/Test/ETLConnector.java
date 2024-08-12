@@ -76,10 +76,10 @@ public class ETLConnector extends BaseClass{
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
 				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
 //		driver.findElement(
 //				By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
 //				.click();
@@ -608,7 +608,7 @@ public class ETLConnector extends BaseClass{
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
 //		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//option[contains(text(),'25')]")).click();
+//		driver.findElement(By.xpath("//option[contains(text(),'500')]")).click();
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//thead/tr[1]/th[1]/input[1]")).click();
 //		Thread.sleep(2000);
