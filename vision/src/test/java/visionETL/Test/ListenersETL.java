@@ -1,5 +1,4 @@
 package visionETL.Test;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,13 +21,12 @@ import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class ListenersETL implements ITestListener {
 
-    private static final String REPORTS_PATH = System.getProperty("user.dir") + "\\Reports\\Dummy.html";
-    private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + "\\Screenshots\\";
-
+    private static final String REPORTS_PATH = System.getProperty("user.dir") + File.separator + "Reports" + File.separator + "VAT_ConnectorCategory.html";
+    private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator;
+    private static final String SCREENSHOT_PATH = System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "Screenshot" + File.separator + "ETL" + File.separator;
     private ExtentSparkReporter reporter;
     private ExtentReports extent;
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
@@ -44,24 +42,28 @@ public class ListenersETL implements ITestListener {
         System.out.println("Execution of ETL_Application started");
         reporter = new ExtentSparkReporter(REPORTS_PATH);
 
-        //-- Update our customETL CSS file --//
         try {
             String customETLcss = readCSSFile("src/main/resources/static/assets/customETL.css");
             reporter.config().setCss(customETLcss);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         reporter.config().setDocumentTitle("VAT_Report_ETL");
         reporter.config().setReportName("ETL_Report");
         extent = new ExtentReports();
         extent.attachReporter(reporter);
-        extent.setSystemInfo("Testing", "QA");
+        extent.setSystemInfo("Date", "05-SEP-2024");
+        extent.setSystemInfo("Version", "v1.1");
+        extent.setSystemInfo("Browser", "Chrome");
+        extent.setSystemInfo("Operating System", "Windows 11");
+        extent.setSystemInfo("Team", "Quality Assurance Team");
+        extent.setSystemInfo("Project", "POM");
     }
 
     private String readCSSFile(String filePath) throws IOException {
         Path path = Paths.get(filePath);
-        return new String(Files.readAllBytes(path));
+        return Files.readString(path);
     }
 
     @Override
@@ -81,7 +83,6 @@ public class ListenersETL implements ITestListener {
         ExtentTest classTest = classNodes.computeIfAbsent(className, k -> extent.createTest(className));
         ExtentTest methodTest = classTest.createNode(fullTestName);
         test.set(methodTest);
-        test.get().info("<b>Description:</b> " + description);
     }
 
     private Method getMethod(ITestResult result) {
@@ -110,6 +111,9 @@ public class ListenersETL implements ITestListener {
         ExtentTest currentTest = test.get();
         if (currentTest != null) {
             currentTest.log(Status.PASS, "Test Passed");
+            if (wasScreenshotCaptured(result)) {
+                attachPreCapturedScreenshot(result, currentTest);
+            }
         }
         String className = result.getTestClass().getName();
         passedTestCase.put(className, passedTestCase.get(className) + 1);
@@ -146,20 +150,23 @@ public class ListenersETL implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("Execution of ETL_Application Completed");
-        // Log the counts to the extent report
         for (String className : totalTestCase.keySet()) {
             if (!classTotal.get(className)) {
                 int total = totalTestCase.get(className);
                 int passed = passedTestCase.get(className);
                 int failed = failedTestCase.get(className);
                 int ignored = ignoredTestCase.get(className);
-                
+
                 ExtentTest classTest = classNodes.get(className);
                 if (classTest != null) {
-                    classTest.info(String.format("Total Tests: %d", total));
-                    classTest.info(String.format("Passed Tests: %d", passed));
-                    classTest.info(String.format("Failed Tests: %d", failed));
-                    classTest.info(String.format("Ignored/Skipped Tests: %d", ignored));
+                    String countDetails = String.format(
+                        "<pre>Total Tests           : %d\n" +
+                        "Passed Tests          : %d\n" +
+                        "Failed Tests          : %d\n" +
+                        "Ignored/Skipped Tests : %d</pre>",
+                        total, passed, failed, ignored
+                    );
+                    classTest.info(countDetails);
                 }
                 classTotal.put(className, true);
             }
@@ -197,25 +204,67 @@ public class ListenersETL implements ITestListener {
     }
 
     private String encodeImageToBase64(String imagePath) throws IOException {
-        File imageFile = new File(imagePath);
-        FileInputStream fileInputStream = new FileInputStream(imageFile);
-        byte[] imageBytes = new byte[(int) imageFile.length()];
-        fileInputStream.read(imageBytes);
-        fileInputStream.close();
+        Path path = Paths.get(imagePath);
+        byte[] imageBytes = Files.readAllBytes(path);
         return Base64.getEncoder().encodeToString(imageBytes);
     }
 
     private String captureScreenshot(WebDriver driver, String screenshotName) {
-        String uniqueScreenshotName = screenshotName + "_" + UUID.randomUUID().toString() + ".png";
-        File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destinationFile = new File(SCREENSHOTS_DIR + File.separator + uniqueScreenshotName);
+        String timestamp = String.valueOf(System.currentTimeMillis());
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String screenshotPath = SCREENSHOTS_DIR + screenshotName + "_" + timestamp + ".png";
+        File destination = new File(screenshotPath);
         try {
-            org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
-            return destinationFile.getPath(); // Return relative path
+            Files.copy(source.toPath(), destination.toPath());
+            return screenshotPath;
         } catch (IOException e) {
-            System.err.println("Failed to save screenshot: " + e.getMessage());
-            return null;
+            e.printStackTrace();
         }
+        return null;
     }
-}
 
+    private boolean wasScreenshotCaptured(ITestResult result) {
+        String methodName = result.getMethod().getMethodName();
+        String screenshotPath = SCREENSHOT_PATH + methodName + ".png";
+        File screenshotFile = new File(screenshotPath);
+        return screenshotFile.exists();
+    }
+
+    private void attachPreCapturedScreenshot(ITestResult result, ExtentTest currentTest) {
+        String methodName = result.getMethod().getMethodName();
+ attachScreenshotWithName(SCREENSHOT_PATH + methodName + ".png", currentTest);
+        
+
+        int screenshotIndex = 1;
+        while (true) {
+            String numberedScreenshotPath = SCREENSHOT_PATH + methodName + "_" + screenshotIndex + ".png";
+            File screenshotFile = new File(numberedScreenshotPath);
+            String screenshotName = screenshotFile.getName();
+            if (screenshotFile.exists()) {
+                attachScreenshotWithName(numberedScreenshotPath, currentTest);
+            } else {
+                break; 
+            }
+            screenshotIndex++;
+        }
+       
+    }
+    private void attachScreenshotWithName(String screenshotPath, ExtentTest currentTest) {
+        File screenshotFile = new File(screenshotPath);
+        String screenshotName = screenshotFile.getName();
+        
+        	if (screenshotFile.exists()) {
+                try {
+                    String base64Image = encodeImageToBase64(screenshotPath);
+                    String base64String = "data:image/png;base64," + base64Image;
+                    currentTest.info("ScreenshotName-"+screenshotName, MediaEntityBuilder.createScreenCaptureFromBase64String(base64String).build());
+                } catch (IOException e) {
+                    currentTest.log(Status.FAIL, "Failed to attach screenshot: " + e.getMessage());
+                }
+            } else {
+                currentTest.info("Screenshot not found: " + screenshotPath);
+            }
+    }
+
+}

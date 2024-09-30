@@ -2,16 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-12T18:35:47 IST" name="Suite" finished-at="2024-08-12T18:35:58 IST" duration-ms="10463">
+  <suite started-at="2024-09-30T12:23:42 IST" name="FeedConfiguration" finished-at="2024-09-30T12:24:37 IST" duration-ms="55069">
     <groups>
     </groups>
-    <test started-at="2024-08-12T18:35:47 IST" name="Test" finished-at="2024-08-12T18:35:58 IST" duration-ms="10463">
-      <class name="visionETL.Test.ETLConnector">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-12T18:35:48 IST" name="setUp" finished-at="2024-08-12T18:35:56 IST" duration-ms="7954" status="PASS">
+    <test started-at="2024-09-30T12:23:42 IST" name="Test" finished-at="2024-09-30T12:24:37 IST" duration-ms="55069">
+      <class name="visionETL.Test.ETLFeedConfiguration">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:visionETL.Test.ETLFeedConfiguration@1283bb96]" started-at="2024-09-30T12:23:42 IST" name="setUp" finished-at="2024-09-30T12:23:47 IST" duration-ms="5125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="ETL_CC_001(java.lang.String,java.lang.String)[pri:1, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-12T18:35:56 IST" name="ETL_CC_001" data-provider="getUserNameList" finished-at="2024-08-12T18:35:56 IST" duration-ms="695" status="PASS">
+        <test-method is-config="true" signature="Connector()[pri:0, instance:visionETL.Test.ETLFeedConfiguration@1283bb96]" started-at="2024-09-30T12:23:47 IST" name="Connector" finished-at="2024-09-30T12:23:47 IST" duration-ms="35" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Connector -->
+        <test-method is-config="true" signature="ETL()[pri:0, instance:visionETL.Test.ETLFeedConfiguration@1283bb96]" started-at="2024-09-30T12:23:47 IST" name="ETL" finished-at="2024-09-30T12:23:47 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ETL -->
+        <test-method is-config="true" signature="setUpLogin()[pri:0, instance:visionETL.Test.ETLFeedConfiguration@1283bb96]" started-at="2024-09-30T12:23:47 IST" name="setUpLogin" finished-at="2024-09-30T12:23:47 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpLogin -->
+        <test-method signature="ETL_FC_027(java.lang.String,java.lang.String)[pri:38, instance:visionETL.Test.ETLFeedConfiguration@1283bb96]" started-at="2024-09-30T12:23:47 IST" name="ETL_FC_027" data-provider="getUserNameList" finished-at="2024-09-30T12:24:37 IST" duration-ms="49285" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,12 +38,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ETL_CC_001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:visionETL.Test.ETLConnector@34a3d150]" started-at="2024-08-12T18:35:57 IST" name="tearDown" finished-at="2024-08-12T18:35:58 IST" duration-ms="1044" status="PASS">
+        </test-method> <!-- ETL_FC_027 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:visionETL.Test.ETLFeedConfiguration@1283bb96]" started-at="2024-09-30T12:24:37 IST" name="tearDown" finished-at="2024-09-30T12:24:37 IST" duration-ms="572" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- visionETL.Test.ETLConnector -->
+      </class> <!-- visionETL.Test.ETLFeedConfiguration -->
     </test> <!-- Test -->
-  </suite> <!-- Suite -->
+  </suite> <!-- FeedConfiguration -->
 </testng-results>

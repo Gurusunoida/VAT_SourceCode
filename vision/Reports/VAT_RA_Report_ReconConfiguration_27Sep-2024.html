@@ -1,0 +1,1010 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>VAT_Report_RA</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css">body{
+background-color: #fff !important;
+}
+.nav-logo .logo {
+background-image: url('./RA.png')!important;
+background-size: cover !important
+}
+.header .vheader .nav-logo>a .logo {
+min-height: 70px !important;
+}
+.header .vheader .nav-logo {
+width: 500px !important;
+padding: 7px 21px;
+}
+.header {
+background-color: #fff !important;
+}
+.vcontainer .main-content {
+padding: 84px 0 0 !important;
+}
+.header, .header .vheader .nav-left>li>a, .header .vheader .nav-right>li>a {
+height: 84px !important;
+}
+.side-nav {
+top: 84px !important;
+}
+.card .card-body {
+min-height: 139px !important;
+}
+.card {
+border: 1px solid #c3c3c3 !important;
+border-radius: 10px !important;
+}
+.card-body > p{
+font-size: 25px !important;
+}
+.card-body > h3{
+font-size: 19px !important;
+}
+.card-title{
+font-size: 19px !important;
+}
+.nav-left .search-box{
+display: none !important;
+}
+.nav-left > .search-box{
+display: none !important;
+}
+.nav-right li:nth-child(1) {
+display: none!important;
+}
+.badge {
+font-size: 100% !important;
+}
+.badge-primary {
+background-color: #ed0e86 !important;
+}
+.header::before {
+content: "QA_VAT_ReportRA";
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+font-size: 29px;
+font-weight: bold;
+color: #ed0e86;
+margin: 0;
+padding: 0;
+z-index: 1;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+border-color: #dfcfd8 !important;
+}
+.test-wrapper .test-list .test-list-wrapper .test-list-item .test-item {
+border-bottom: 1px solid #dfcfd8 !important;
+}
+.vcontainer .main-content {
+padding-top: 10px !important;
+}
+.ne {
+right: 83px !important;
+top: 127px !important;
+}
+.test-wrapper .test-content .test-content-detail {
+padding: 74px 20px !important;
+padding-top: 0px !important;
+}
+@media only screen and (min-width: 992px) {
+.test-wrapper .test-list .test-list-wrapper {
+height: calc(100vh - 106px) !important;
+}
+}
+.test-wrapper .test-list .test-list-tools {
+padding: 5px 15px;
+border-bottom: 1px solid #e9eaec;
+text-align: right;
+display: block;
+margin-top: 20%;
+}
+.container-fluid {
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+margin-top: 6%;
+}
+.side-nav .side-nav-inner .side-nav-menu {
+border-right: 2px solid #bbb4b5 !important;
+}
+.test-wrapper .test-list { /*tests border dark*/
+border-top: 2px solid #bbb4b5 !important;
+border-right: 2px solid #bbb4b5 !important;
+}
+.test-wrapper .test-list .test-list-tools{
+margin-top: 0px !important;
+}
+.vcontainer .main-content .test-wrapper {
+margin-top: 73px !important;
+padding-top: 0px !important;
+padding-right: 0px !important;
+padding-left: 0px !important;
+padding-bottom: 0px !important;
+}
+.side-nav .side-nav-inner{
+border-top: 2px solid #bbb4b5 !important;
+}
+.test-wrapper .test-content{
+border-top: 2px solid #bbb4b5 !important;
+}
+pre, .code-block {
+background-color: #c1c1c1 !important;
+color: #000000 !important;
+}
+.container-fluid{
+margin-top: 74px !important;
+padding: 0px !important;
+border-top: 2px solid #bbb4b5 !important;
+}
+.row{
+padding-top: 24px !important;
+padding-right: 16px !important;
+padding-left: 21px !important;
+padding-bottom: 0px !important;
+}
+.element.style {
+height: 160px !important;
+}
+.badge badge-default{
+display: none !important;
+}
+.uri-anchor{
+display: none !important;
+}
+#parent-analysis {
+display: block;
+width: 352px;
+height: 160px;
+}
+#child-analysis {
+display: block;
+width: 352px;
+height: 160px;
+}
+#events-analysis {
+display: block;
+width: 352px;
+height: 160px;
+}
+li .badge-default {
+display: none !important
+}
+</style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">RA_Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Sept 27, 2024 02:36:50 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">visionRA.Test.RA_ReconConfiguration</p>
+            <p class="text-sm">
+              <span>2:36:59 pm</span> / <span>00:00:33:682</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">visionRA.Test.RA_ReconConfiguration</h5>
+<span class='badge badge-success'>09.27.2024 2:36:59 pm</span>
+<span class='badge badge-danger'>09.27.2024 2:37:33 pm</span>
+<span class='badge badge-default'>00:00:33:682</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          <pre>Total Tests           : 13
+Passed Tests          : 0
+Failed Tests          : 2
+Ignored/Skipped Tests : 11</pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+  <div class="mt-4">  <div class="accordion" role="tablist">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:10:399</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="2"><span>RA_RC_001 - By default First Rule ID should be displayed auomatically.</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:36:59 pm</td>
+        <td>
+          <b>Screen Name:</b> Recon Configuration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:36:59 pm</td>
+        <td>
+          <b>Test Case ID:</b> RA_RC_001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:36:59 pm</td>
+        <td>
+          <b>Description:</b> By default First Rule ID should be displayed auomatically.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:37:10 pm</td>
+        <td>
+          Failed TestCase_ID RA_RC_001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:37:10 pm</td>
+        <td>
+          Exception: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"}
+  (Session info: chrome=128.0.6613.138)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fbe0cd7ef7ccfad0eb4e871f49e45563, findElement {using=xpath, value=//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.138, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54550}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54550/devtoo..., se:cdpVersion: 128.0.6613.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fbe0cd7ef7ccfad0eb4e871f49e45563
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:37:10 pm</td>
+        <td>
+          Screenshot
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+                <a href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVYAAAJNCAIAAABV7bmTAAAAAXNSR0IArs4c6QAAFYRJREFUeJzt3TFsXPdhx/H/sRpePBTHocEpi+lmyFlLDl78OrQgPAQcCQ8xnaUcNXYpSqBAoQQIQKGLR4+cImox6AwJkcFgnCHnxaAW5To0Pi0V0Q48ZLCvgMDXgWhg3ymSdTzq7vT7fAZB+N/hvf8m/b/3f//XapqmAAAAAK+6tUVPAAAAAHgZJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABABAkAAAAAIkgAAAAAEEECAAAAgAgSAAAAAESQAAAAACDCjUVPAAAopZQnT54segrX68YN/+sAgAWzCwAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIjgDb0A8Oobj8efnpw8HAwGg8HZ2dl4PC6lVFXV6XS63e6tbvfv3377O+vri54mAHC9JAAAeGWNRqPDe/cO79/v9/vP/XJd1zvvvbfz/vvtdvulzA4AeNlaTdMseg4AQHny5Mkcr3Z2dra/v39wcHD5g/8LuX379t7eXqfTmeN8Sik3bvjhAQAWTAIAgKUwxwSwv7+/v78/w+L/z6qq2tvb29vbm9eUJAAAWAYSAAAshbkkgEfD4T/u7n6bbf/fRq/Xu394+PrGxlyuJgEAwMJJAACwFK6eAPr9/tbW1lV+/J9WVdXx8XFd11e/lAQAAAsnAQDAUrhiAvjN8fGPt7efsfrvlk7d6m40f/1lWXutXFz+WUoZtv502gxOy9kzLv7Lo6MfbW1dZXoSAAAsAwkAAJbCVRJAv9/f3Nx86kdVKTutzW7zvf7aw9NmOGxGE1/olHa9tlFf3Bq0/uvjpn9enp4RTk5OrrgXQAIAgIWTAABgKcycAB4Nh2/X9Wg0ubYvpWyv9eqLWx+WT4bP/JH/0kbp3C7v9NceHl2cTn9aVdWD09OrnAsgAQDAwkkAALAUZk4AdV2fnk4u2qtS3Snv/rb1+a+bwQtdbbPV3WreulM+Gk9tB+j1elc5aFACAICFW1v0BACA2X3wwQfT6//1Ut0p735QfvWi6/9SykkzuFs+2i8766Wa+Oj09HR/f/9q8wUAFskuAABYCjPsAjh//PiNN9+ceAVAVcq/l51/K0d/6an+b2O9VD8r2/9cDicuUVXVYDDodDozXNMuAABYOLsAAGBV/fTu3elXAO6VnZ+X46us/0sp52X883J8p/xkYnw8HtsIAACryy4AAFgKL7oLYDQabWxsTCSA7bXe/zbjGfb/P9Vmq9tuVROnA1ZVNRwO2+32i17NLgAAWDi7AABgJR0dHk49AlDVF7fmtf6/PBegvrhVffNQgPF4fHjv3rxuAQC8TBIAAKykg8PDiZH3Wz/8sHwy37t8WD55v/XDicHD+/fnexcA4OWQAABg9YzH4+n38/2g+f6wnM33RsNy9oPm+xOD/X7/q/Pz+d4IAHgJJAAAWD2fnpxMjHRLp/9Xf7yOe/XXHvbKxsTg7z777DruBQBcKwkAAFbPw8HkA/9/13r99GJupwB8Xf9i2GtNJoDPT0//wtcBgOUlAQDA6hlMJYC/aW4Om9F13OusjL7bTJ7/PxwOr+NeAMC1kgAAYPWMziaf+X+tXFzf7aYvfjY1AQBg+UkAALB6Rt98HWAp5cvr/Dd9+uLjqQkAAMtPAgAAAIAIEgAArJ52VU2MXOuDANOqqQkAAMtPAgCA1dPpdCZGrvVBgOm+MD0BAGD5SQAAsHo2ut2Jkf9pPe6UyXP756JT2sPWnyYGu1MTAACWnwQAAKvn1tQK/PfNo83WtSzL67WN02byHYTTEwAAlp8EAACr5x82NydGBuWs22xcx716F93TMvkKwOkJAADLTwIAgNVTVVVd1xODw9ZZt8z5Ef1u6TxqfTExWNe14wABYBVJAACwknbee29i5LA52S3vzPcuu+Wde82D594aAFgJraZpFj0HAKA8efLkhb7/1fn5zTfeGI/HXx/cXuuNmvHJ1KP7s9lsddut6uji9OuDVVUNh8N2+4WPHrxx48ZcZgUAzMwuAABYSd9ZX7+9uzsxeHRxutW8NZdXA3RKe6t5a2L9X0rZ3d2dYf0PACwDuwAAYCm86C6AUsr548dvvPnmxEaAqpQ75ScflF+dldHMk1kv1b+Ud++Uj8blmxevqi/+8If1mzdnuKZdAACwcHYBAMCqWr95886dOxOD41Lulo/+tWzNvBegU9o/K9t3p9b/pZS9vb3Z1v8AwDKwCwAAlsIMuwAubW5u9vv9icHLvQC/bX3+6xc8F2Cz1d1q3rpTfjG5+i+l1+tN3+jbswsAABZOAgCApTBzAng0HL5d16PRU7b9b6/16otbB+WTQTl77nW6pbNb3umvPZx+/v/yEYDBYNDpzP7SQQkAABZOAgCApTBzAiil9Pv9ra2tiUMBLlWl7LQ2u833+msPT5vhsJksBRutdl26veZv/6P1n/eaB9Ob/y/X/8fHx3VdzzxDCQAAloEEAABL4SoJoJTym+PjH29vP2X5/v+6pVO3ut9t2q+Viy/LWinl8i//3Rr1m8Gztwn88ujoR1tbV5meBAAAy0ACAIClcMUEcLkXYHt7+6lPBMys3W4fHR1d8ff/SxIAACycNwIAwCuiruvP+v25LNcv9Xq9+V4QAFgsCQAAXh2vb2ycnJzs7+9XVXWV61RVtb+/3+/3X9/YmN/sAIAF8yAAACyFqz8I8HXnjx//9O7dg4ODp54R+AxVVd3e3f2nvb2rHP7/VB4EAICFkwAAYCnMNwFc+ur8/P7HHx8cHPT7/ed+ua7r3Z2d7Z2ddrs995lIAACwDCQAAFgK15EA/mw8Hn96cvLHL74YPHhwNhpdHhnYbrc77fZGt9vr9eq6vuKzA88lAQDAwkkAALAUrjUBLAMJAAAWznGAAAAAEEECAAAAgAgSAAAAAESQAAAAACCCBAAAAAARJAAAAACIIAEAAABAhFbTNIueAwAAAHDt7AIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAiSAAAAAAQQQIAAACACBIAAAAARJAAAAAAIIIEAAAAABEkAAAAAIggAQAAAEAECQAAAAAi/B+5vKoxQhgjXgAAAABJRU5ErkJggg==" data-featherlight="image"><span class="badge badge-gradient-primary">base64 img</span></a>
+          
+    
+
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:11:882</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="3"><span>RA_RC_002 - If the Rule ID is Configured the Seection criteria will be displayed according to the configuration</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:37:18 pm</td>
+        <td>
+          <b>Screen Name:</b> Recon Configuration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:37:18 pm</td>
+        <td>
+          <b>Test Case ID:</b> RA_RC_002
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:37:18 pm</td>
+        <td>
+          <b>Description:</b> If the Rule ID is Configured the Seection criteria will be displayed according to the configuration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:37:29 pm</td>
+        <td>
+          Failed TestCase_ID RA_RC_002
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:37:29 pm</td>
+        <td>
+          Exception: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"}
+  (Session info: chrome=128.0.6613.138)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a7eceea45692b1ea4952fe974ea159d2, findElement {using=xpath, value=//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.138, chrome: {chromedriverVersion: 128.0.6613.137 (fe621c5aa2d..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54599/devtoo..., se:cdpVersion: 128.0.6613.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a7eceea45692b1ea4952fe974ea159d2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:37:30 pm</td>
+        <td>
+          Screenshot
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+                <a href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVYAAAJNCAIAAABV7bmTAAAAAXNSR0IArs4c6QAAG8NJREFUeJzt3UGIZPed2PHfawnrjQL2a6+RyoFYJZlIhQJReQ/ZTg52L0ukDkuyzcKi1gbigRy25UPUDjg7Om3fNCEHtxaSGbMEtxMwrUuodUjcEhh1nEPKOjhtAtqSIVJpA9qS2dWUDNE8Ban+OdTMWBr3jKWZbnX3/j6f05vqV6//7yS9b//f/1+VUgIAAAD4627huAcAAAAAfBIkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEECAAAAgBQkAAAAAEhBAgAAAIAUJAAAAABIQQIAAACAFCQAAAAASEEC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AAAA8EmQAAAAACAFCQAAAABSkAAAAAAgBQkAAAAAUpAAAAAAIAWbAgIAAEAKZgEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAKEgAAAACkIAEAAABAChIAAAAApCABAAAAQAoSAAAAAKQgAQAAAEAK/x8aCTWfFte9dQAAAABJRU5ErkJggg==" data-featherlight="image"><span class="badge badge-gradient-primary">base64 img</span></a>
+          
+    
+
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:006</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="4"><span>RA_RC_003 - If there is no configuration done it will ony show the Alias name</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_003
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:005</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="5"><span>RA_RC_006 - Pop up should display the Table required to run for Recon Engine.</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_006
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:011</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="6"><span>RA_RC_007 - The Configured Tables should display in Left panel</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_007
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:013</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="7"><span>RA_RC_008 - If the Column is changed to Expresssion Table name and Aggregation should be Freezed</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_008
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:011</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="8"><span>RA_RC_009 - Text field should Open and should allow to enter free text</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_009
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:006</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="9"><span>RA_RC_010 - "1.If there is one Table Relationship should not visible 
+ 2.If there is More than one table Relationship should be visible."</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_010
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:004</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="10"><span>RA_RC_011 - By default all the Columns in the Table will be Joined</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_011
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:004</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="11"><span>RA_RC_012 - Text field should Open and should allow to enter free text</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_012
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:004</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="12"><span>RA_RC_013 - If the Rule ID filter is alredy configured it should be displayed, new filter can be added if required</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_013
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:004</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="13"><span>RA_RC_014 - Text field should Open and should allow to enter free text</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_014
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge skip-bg log ">Skip</span></li>
+              <li><span class='badge badge-default'>30:00:007</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="14"><span>RA_RC_015 - Popup should display for save</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:33 pm</td>
+        <td>
+          Skipped TestCase_ID RA_RC_015
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Sept 27, 2024 02:36:50 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Sept 27, 2024 02:37:33 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
+<div>
+<small data-tooltip='15%'><b>2</b> steps failed,
+<b>11</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
+<div>
+<small data-tooltip='16%'><b>4</b> events failed,
+<b data-tooltip='%'>20</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"visionRA.Test.RA_ReconConfiguration":33.682
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>25-SEP-2024</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>v1.1</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Chrome</td>
+</tr>
+<tr>
+<td>Operating System</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>Quality Assurance Team</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>RA(Recon Bug Fix</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 2,
+warningChild: 0,
+skipChild: 11,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 0,
+failEvents: 4,
+warningEvents: 0,
+skipEvents: 11,
+infoEvents: 9
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

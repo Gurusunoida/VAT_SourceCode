@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [LandingPage]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="LandingPage(failed)">
     <classes>
-      <class name="visionETLGP.ETLTest.ETLLandingPage">
+      <class name="visionETL.Test.ETLLandingPage">
         <methods>
-          <include name="BrowserOpening"/>
-          <include name="ETL_LP_033" invocation-numbers="0"/>
-          <include name="closeDriver"/>
+          <include name="ETL_LP_133" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setUpLogin"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- visionETLGP.ETLTest.ETLLandingPage -->
+      </class> <!-- visionETL.Test.ETLLandingPage -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- LandingPage(failed) -->
 </suite> <!-- Failed suite [LandingPage] -->

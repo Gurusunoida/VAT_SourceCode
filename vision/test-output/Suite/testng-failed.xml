@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:8001/"/>
+  <listeners>
+    <listener class-name="visionRA.Test.ListenersRA"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="visionRA.Test.RA_BusinessLineConfig">
+      <class name="visionRA.Test.RA_ReconConfiguration">
         <methods>
-          <include name="VAT_BUS_DC_017" invocation-numbers="0"/>
-          <include name="tearDown"/>
+          <include name="RA_RC_011"/>
           <include name="setUp"/>
+          <include name="setUpLogin"/>
+          <include name="RA_RC_007"/>
+          <include name="RA_RC_009"/>
+          <include name="RA_RC_006"/>
+          <include name="RA_RC_010"/>
+          <include name="RA_RC_015"/>
+          <include name="RA_RC_001" invocation-numbers="0"/>
+          <include name="RA_RC_012"/>
+          <include name="tearDown"/>
+          <include name="RA_RC_003"/>
+          <include name="RA_RC_014"/>
+          <include name="RA_RC_008"/>
+          <include name="RA_RC_002" invocation-numbers="0"/>
+          <include name="RA_RC_013"/>
         </methods>
-      </class> <!-- visionRA.Test.RA_BusinessLineConfig -->
+      </class> <!-- visionRA.Test.RA_ReconConfiguration -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

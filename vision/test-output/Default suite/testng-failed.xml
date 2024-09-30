@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="visionRA.Test.RA_TranslineConfig">
+      <class name="Vision_ETL_v1.ETL_General">
         <methods>
+          <include name="tearDown"/>
+          <include name="ETL_DC_001" invocation-numbers="1 2"/>
           <include name="setUp"/>
-          <include name="closeDriver"/>
-          <include name="VAT_TAS_DC_031"/>
         </methods>
-      </class> <!-- visionRA.Test.RA_TranslineConfig -->
+      </class> <!-- Vision_ETL_v1.ETL_General -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

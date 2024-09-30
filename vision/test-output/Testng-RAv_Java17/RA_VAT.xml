@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" >
+	<parameter name="ApplicationURL" value="http://10.16.1.101:1300" />
+	<listeners>
+		<listener class-name="visionRA.Test.ListenersRA"></listener>
+	</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+     	 <class name="Vision_RA_v1.RA_FeesConfig"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

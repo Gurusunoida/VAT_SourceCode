@@ -1,26 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="classes" name="Failed suite [RA]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:8001/"/>
   <listeners>
     <listener class-name="visionRA.Test.ListenersRA"/>
   </listeners>
   <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="visionRA.Test.RA_FeesConfig">
-        <methods>
-          <include name="VAT_FEE_DC_001" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- visionRA.Test.RA_FeesConfig -->
       <class name="visionRA.Test.RA_BusinessLineConfig">
         <methods>
+          <include name="VAT_BUS_DC_017" invocation-numbers="0"/>
+          <include name="VAT_BUS_DC_014" invocation-numbers="0"/>
+          <include name="setUpLogin"/>
+          <include name="VAT_BUS_DC_016" invocation-numbers="0"/>
+          <include name="VAT_BUS_DC_020" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="VAT_BUS_DC_015" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="VAT_BUS_DC_001" invocation-numbers="0"/>
         </methods>
       </class> <!-- visionRA.Test.RA_BusinessLineConfig -->
+      <class name="visionRA.Test.RA_ReconConfiguration">
+        <methods>
+          <include name="RA_RC_015" invocation-numbers="0"/>
+          <include name="RA_RC_012" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="RA_RC_014" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="setUpLogin"/>
+        </methods>
+      </class> <!-- visionRA.Test.RA_ReconConfiguration -->
+      <class name="visionRA.Test.RA_General">
+        <methods>
+          <include name="setUpLogin"/>
+          <include name="RA_GL_018" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="RA"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- visionRA.Test.RA_General -->
+      <class name="visionRA.Test.RA_TranslineConfig">
+        <methods>
+          <include name="VAT_TAS_DC_002"/>
+          <include name="setUpLogin"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- visionRA.Test.RA_TranslineConfig -->
+      <class name="visionRA.Test.RA_VarianceFlaggingNewScreen">
+        <methods>
+          <include name="FG_CF_058" invocation-numbers="0"/>
+          <include name="setUpLogin"/>
+          <include name="FG_CF_048" invocation-numbers="0"/>
+          <include name="FG_CF_046" invocation-numbers="0"/>
+          <include name="FG_CF_068" invocation-numbers="0"/>
+          <include name="RA"/>
+          <include name="VarianceFlagging"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- visionRA.Test.RA_VarianceFlaggingNewScreen -->
+      <class name="visionRA.Test.RA_AlphaNumTab">
+        <methods>
+          <include name="setUpLogin"/>
+          <include name="tearDown"/>
+          <include name="ALP_NUM_027" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- visionRA.Test.RA_AlphaNumTab -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [RA] -->

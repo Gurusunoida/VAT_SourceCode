@@ -8,68 +8,46 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import Package_PageObject.Login;
 
-
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class ETL_General {
-	WebDriver driver;
+public class ETL_General extends BaseClass{
 	String Category_select = "VAT";
 	String Query_connectorID = "VAT";
+	private Login LoginPage;
+	 @BeforeMethod
+	    public void setUpLogin() {
+	        LoginPage = new Login(driver); 
+	    }
 
-	@Parameters("ApplicationURL")
-	@BeforeMethod
-	public void BrowserOpening(String applicationURL) throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
-	}
 	  @Test(dataProvider = "loginCredentials", priority = 0)
+	  @TestDescription("Login")
 	  public void ETL_DC_001(String username, String password) throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys(username);
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys(password);
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		  String ScreenName = "General_TestCases(All Screen)";
+			String testCaseId = "ETL_DC_001";
+	        String notes = "Provide a visual indicator (e.g., loading animation or message)";
+	        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+	        LoginPage.loginUsername(username);
+	        LoginPage.loginPassword(password);
+	        LoginPage.LoginClick();
 			Thread.sleep(5000);
 	  }
 	  @Test( priority = 1)
+	  @TestDescription("The clear information remove should show in the filter process ")
 	  public void ETL_DC_010() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		  String ScreenName = "General_TestCases(All Screen)";
+			String testCaseId = "ETL_DC_010";
+	        String notes = "The clear information remove should show in the filter process ";
+	        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+	        LoginPage.loginUsername("RA");
+	        LoginPage.loginPassword("Vision@123");
+	        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			driver.findElement(
 					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
@@ -91,16 +69,16 @@ public class ETL_General {
 			Thread.sleep(3000);	
 	  }
 	  @Test( priority = 2)
+	  @TestDescription("The selected theme should remain unchanged even after reloading the page, navigating to the next screen, or logging in again.")
 	  public void ETL_DC_015() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		  String ScreenName = "General_TestCases(All Screen)";
+			String testCaseId = "ETL_DC_015";
+	        String notes = "The selected theme should remain unchanged even after reloading the page, navigating to the next screen, or logging in again.";
+	        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+	        LoginPage.loginUsername("RA");
+	        LoginPage.loginPassword("Vision@123");
+	        LoginPage.LoginClick();
+			Thread.sleep(5000);
 			Thread.sleep(5000);
 			//--User Profile--//
 			driver.findElement(By.xpath("//i[contains(text(),'person')]")).click();
@@ -124,16 +102,16 @@ public class ETL_General {
 			Thread.sleep(2000);
 	  }
 	@Test( priority = 3)///------- Popup should ask while moving from etl connector to Script--///////
+	@TestDescription("An alert message should appear when attempting to move to another screen.")
 	  public void ETL_DC_016() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		 String ScreenName = "General_TestCases(All Screen)";
+			String testCaseId = "ETL_DC_016";
+	        String notes = "An alert message should appear when attempting to move to another screen.";
+	        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+	        LoginPage.loginUsername("RA");
+	        LoginPage.loginPassword("Vision@123");
+	        LoginPage.LoginClick();
+			Thread.sleep(5000);
 			Thread.sleep(5000);
 			//-- ETL-Connector Click--//
 			driver.findElement(
@@ -220,17 +198,16 @@ public class ETL_General {
 			driver.findElement(By.xpath("//i[contains(text(),'Yes')]")).click();
 	  }
 	@Test( priority = 4)
+	@TestDescription("Clicking reload should restore it to its initial stage.")
 	  public void ETL_DC_017() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_017";
+        String notes = "Clicking reload should restore it to its initial stage.";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//-- ETL-Connector Click--//
 			driver.findElement(
 					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
@@ -245,7 +222,7 @@ public class ETL_General {
 			driver.findElement(By.xpath(
 					"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 					.click();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			//--- Page nation Click--//
 			Select select = new Select(driver.findElement(By.xpath(
 					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
@@ -256,17 +233,16 @@ public class ETL_General {
 			Thread.sleep(3000);
 	}
 	@Test( priority = 5)
+	@TestDescription("When the user clicks on \"Auto Refresh,\" the option should be highlighted to indicate that it is active.")
 	  public void ETL_DC_018() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_018";
+        String notes = "When the user clicks on \"Auto Refresh,\" the option should be highlighted to indicate that it is active.";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			WebElement elementToHoverReferesh = driver.findElement(By.xpath("//i[contains(text(),'history')]"));
 			Actions actionsReferesh = new Actions(driver);
 			actionsReferesh.moveToElement(elementToHoverReferesh).perform();
@@ -275,17 +251,16 @@ public class ETL_General {
 			Thread.sleep(3000);
 	}
 	@Test( priority = 6)
+	@TestDescription("The page should remains same")
 	  public void ETL_DC_019() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_019";
+        String notes = "The page should remains same";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(3000);
@@ -304,17 +279,16 @@ public class ETL_General {
 			Thread.sleep(4000);
 	}
 	@Test( priority = 7)
+	@TestDescription("The process should show the clear view of \"no record found\". ")
 	  public void ETL_DC_009() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_009";
+        String notes = "The process should show the clear view of \"no record found\". ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(3000);
@@ -329,7 +303,7 @@ public class ETL_General {
 			//-- Apply click--//
 			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 			Thread.sleep(2000);
-			String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\General\\ETL_DC_009.png";
+			String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_009.png";
 			//-- Take screenshot and save it to a file--//
 	        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	        //-- save the screenshot --//
@@ -343,22 +317,21 @@ public class ETL_General {
 	        }	
 	}
 	@Test( priority = 8)
+	@TestDescription("The \"Rows Per Page\" configuration field should display a single colon.")
 	  public void ETL_DC_013() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_013";
+        String notes = "The \"Rows Per Page\" configuration field should display a single colon.";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(3000);
 			//-- Take screenshot and save it to a file--//
-			String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\General\\ETL_DC_013.png";
+			String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_013.png";
 	        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	        //-- save the screenshot --//
 	        File destinationFile = new File(Location);
@@ -371,17 +344,16 @@ public class ETL_General {
 	        }		
 	}
 	@Test( priority = 9)
+	@TestDescription("The page should not get the flash issue while using ")
 	  public void ETL_DC_014() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_014";
+        String notes = "The page should not get the flash issue while using ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(2000);
@@ -393,17 +365,16 @@ public class ETL_General {
 			Thread.sleep(4000);
 	}
 	@Test( priority = 10)
+	@TestDescription("The text should be properly aligned.")
 	  public void ETL_DC_005() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_005";
+        String notes = "The text should be properly aligned.";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(3000);
@@ -433,7 +404,7 @@ public class ETL_General {
 			Category_click.sendKeys(Category_select);
 			 //-- Take screenshot and save it to a file--//
 			File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\General\\ETL_DC_005.png";
+			String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_005.png";
 			//-- save the screenshot --//
 			File destinationFile = new File(Location);
 			// Move the screenshot file to the specified destination
@@ -464,7 +435,7 @@ public class ETL_General {
 			Query.sendKeys(Query_connectorID);
 			 //-- Take screenshot and save it to a file--//
 			File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\gENERAL\\ETL_DC_005_1.png";
+			String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_005_1.png";
 			//-- save the screenshot --//
 			File destinationFile1 = new File(Location1);
 			// Move the screenshot file to the specified destination
@@ -476,17 +447,16 @@ public class ETL_General {
 			}	
 	}
 	@Test( priority = 11)
+	@TestDescription("All the tabs in the screen can be successfully refreshed")
 	  public void ETL_DC_029() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_029";
+        String notes = "All the tabs in the screen can be successfully refreshed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//-- Operation Click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
 			Thread.sleep(3000);
@@ -495,17 +465,16 @@ public class ETL_General {
 			Thread.sleep(5000);
 	}
 	@Test( priority = 12)
+	@TestDescription("Eod Staus has to be updated ")
 	  public void ETL_DC_032() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_032";
+        String notes = "Eod Staus has to be updated ";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//-- Business date referesh click--//
 			driver.findElement(By.xpath("//span[contains(text(),'refresh')]")).click();
 			Thread.sleep(2000);
@@ -514,17 +483,16 @@ public class ETL_General {
 			Thread.sleep(2000);
 	}
 	@Test( priority = 13)
+	@TestDescription("The record should remains same (If Modified only that data to be changed),The Records gets Rejected")
 	  public void ETL_DC_020() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_020";
+        String notes = "The record should remains same (If Modified only that data to be changed),The Records gets Rejected";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(2000);
@@ -552,25 +520,28 @@ public class ETL_General {
 			WebElement elemet_to_Hover = driver.findElement(By.xpath("//span[@title='MJTEST02']"));
 			Actions action_Reject =  new Actions(driver);
 			action_Reject.moveToElement(elemet_to_Hover).perform();
-			WebElement Reject = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[9]/div[2]/a[3]/i[1]"));
+			WebElement Reject = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[8]/td[9]/div[2]/a[3]/i[1]"));
 			Reject.click();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		      WebElement Popup = driver.findElement(By.xpath("//button[contains(text(),'No')]"));
+		      Actions actions = new Actions(driver);
+		      actions.sendKeys(Keys.SPACE).perform();
+		      actions.sendKeys(Keys.SPACE).perform();
+		      Thread.sleep(2000);
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).sendKeys(Keys.SPACE);
-			driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).sendKeys(Keys.SPACE);
-			Thread.sleep(2000);		
+			
 	}
 	@Test( priority = 14)
+	@TestDescription("Previous filter should get Reset and new filter should be added")
 	  public void ETL_DC_022() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
-			Thread.sleep(5000);
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_022";
+        String notes = "Previous filter should get Reset and new filter should be added";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
+		Thread.sleep(5000);
 			// --ETL Connector click--//
 			driver.findElement(
 					By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]"))
@@ -612,16 +583,15 @@ public class ETL_General {
 			Thread.sleep(3000);	
 	}
 	@Test( priority = 15)
+	@TestDescription("Feed should be successfully completed")
 	  public void ETL_DC_034() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_034";
+        String notes = "Feed should be successfully completed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -690,16 +660,15 @@ public class ETL_General {
 			Thread.sleep(2000);	
 	}
 	@Test( priority = 16)
+	@TestDescription("If the rediness , pre and post is feeded and feed should be give successful status")
 	  public void ETL_DC_035() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_035";
+        String notes = "If the rediness , pre and post is feeded and feed should be give successful status";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -766,7 +735,7 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(11));
+			Thread.sleep(11000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();
@@ -774,16 +743,15 @@ public class ETL_General {
 			Thread.sleep(2000);		
 	}
 	@Test( priority = 17)
+	@TestDescription("If the rediness , pre and post is feeded and if Readiness is error the feed should be given in error status")
 	  public void ETL_DC_036() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_036";
+        String notes = "If the rediness , pre and post is feeded and if Readiness is error the feed should be given in error status";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -853,7 +821,7 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+			Thread.sleep(1000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();
@@ -861,16 +829,15 @@ public class ETL_General {
 			Thread.sleep(2000);		
 	}
 	@Test( priority = 18)
+	@TestDescription("If the rediness , pre and post is feeded and if pre is error the feed should be given in error status")
 	  public void ETL_DC_037() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_037";
+        String notes = "If the rediness , pre and post is feeded and if pre is error the feed should be given in error status";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -940,7 +907,7 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(11));
+			Thread.sleep(1000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();
@@ -948,16 +915,15 @@ public class ETL_General {
 			Thread.sleep(2000);		
 	}
 	@Test( priority = 19)
+	@TestDescription("If the feed is initiated with readiness script the feed should get successful")
 	  public void ETL_DC_039() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_039";
+        String notes = "If the feed is initiated with readiness script the feed should get successful";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -1023,7 +989,7 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+			Thread.sleep(1000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();
@@ -1031,16 +997,15 @@ public class ETL_General {
 			Thread.sleep(2000);		
 	}
 	@Test( priority = 20)
+	@TestDescription("If the feed is initiated with readiness script and if the readiness is error the feed should get error")
 	  public void ETL_DC_040() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_040";
+        String notes = "If the feed is initiated with readiness script and if the readiness is error the feed should get error";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -1109,7 +1074,7 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+			Thread.sleep(1000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();
@@ -1117,16 +1082,15 @@ public class ETL_General {
 			Thread.sleep(2000);		
 	}
 	@Test( priority = 21)
+	@TestDescription("If the feed is initiated with pre script and if the pre script is error the feed should get error")
 	  public void ETL_DC_042() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_042";
+        String notes = "If the feed is initiated with pre script and if the pre script is error the feed should get error";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -1208,25 +1172,23 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+			Thread.sleep(1000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();
 			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);	
-			
+			Thread.sleep(2000);			
 	}
 	@Test( priority = 22 )
+	@TestDescription("If the feed is initiated with post script the feed should get successful")
 	  public void ETL_DC_043() throws InterruptedException {
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-			.sendKeys("RA");
-			driver.findElement(By.xpath(
-					"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-					.sendKeys("Vision@123");
-			driver.findElement(By
-					.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-					.click();
+		String ScreenName = "General_TestCases(All Screen)";
+		String testCaseId = "ETL_DC_043";
+        String notes = "If the feed is initiated with post script the feed should get successful";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+        LoginPage.loginUsername("RA");
+        LoginPage.loginPassword("Vision@123");
+        LoginPage.LoginClick();
 			Thread.sleep(5000);
 			//-- Operation click--//
 			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
@@ -1286,7 +1248,7 @@ public class ETL_General {
 			//-- Details of Feed--//
 			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
 			Status.click();
-			driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+			Thread.sleep(1000);
 			Thread.sleep(5000);
 			String Text = Status.getText();
 			Status .getText();

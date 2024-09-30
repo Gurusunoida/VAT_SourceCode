@@ -1,5 +1,6 @@
 body{
 	background-color: #fff !important;
+	
 }
 
 
@@ -77,4 +78,129 @@ body{
 .badge-primary {
     background-color: #ed0e86 !important;
 }
+
+.header::before {
+    content: "QA_VAT_ReportETL";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 29px;
+    font-weight: bold;
+    color: #ed0e86; 
+    margin: 0; 
+    padding: 0;
+    z-index: 1; 
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-color: #dfcfd8 !important;
+}
+.test-wrapper .test-list .test-list-wrapper .test-list-item .test-item {
+    border-bottom: 1px solid #dfcfd8 !important;
+}
+.vcontainer .main-content {
+    padding-top: 10px !important; 
+}
+.ne {
+    right: 83px !important;
+    top: 127px !important;
+}
+.test-wrapper .test-content .test-content-detail {
+    padding: 74px 20px !important;
+    padding-top: 0px !important;
+}
+@media only screen and (min-width: 992px) {
+    .test-wrapper .test-list .test-list-wrapper {
+        height: calc(100vh - 106px) !important;
+    }
+}
+
+.test-wrapper .test-list .test-list-tools {
+    padding: 5px 15px;
+    border-bottom: 1px solid #e9eaec;
+    text-align: right;
+    display: block;
+    margin-top: 20%;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 6%;
+}
+.side-nav .side-nav-inner .side-nav-menu {
+    border-right: 2px solid #bbb4b5 !important;
+}
+    .test-wrapper .test-list {   /*tests border dark*/
+    border-top: 2px solid #bbb4b5 !important;
+     border-right: 2px solid #bbb4b5 !important;
+    
+}
+.test-wrapper .test-list .test-list-tools{
+	 margin-top: 0px !important;
+}
+.vcontainer .main-content .test-wrapper {
+	margin-top: 73px !important;
+	 padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.side-nav .side-nav-inner{
+	 border-top: 2px solid #bbb4b5 !important;
+}
+
+.test-wrapper .test-content{
+	border-top: 2px solid #bbb4b5 !important;
+}
+pre, .code-block {
+    background-color: #c1c1c1 !important;
+        color: #000000 !important;
+    }
+    
+.container-fluid{
+	margin-top: 74px !important;
+	padding: 0px !important;
+	border-top: 2px solid #bbb4b5 !important; 
+}
+.row{
+	    padding-top: 24px !important;
+    padding-right: 16px !important;
+    padding-left: 21px !important;
+    padding-bottom: 0px !important;
+}
+.element.style {
+    height: 160px !important;
+}
+.badge badge-default{
+	display: none !important;
+}
+
+.uri-anchor{
+	display: none !important;
+}
+#parent-analysis {
+    display: block;
+    width: 352px;
+    height: 160px;
+}
+
+#child-analysis  {
+    display: block;
+    width: 352px;
+    height: 160px;
+}
+
+#events-analysis {
+    display: block;
+    width: 352px;
+    height: 160px;
+}
+li .badge-default {
+	display: none !important
+}
+
 

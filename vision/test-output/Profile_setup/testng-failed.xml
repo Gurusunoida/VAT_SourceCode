@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Profile_setup]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:9010/"/>
+  <parameter name="ApplicationURL" value="http://10.16.1.101:1200/"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="visionETLGP.ETLTest.ETL_ProfileSetup">
+      <class name="visionETL.Test.ETL_ProfileSetup">
         <methods>
-          <include name="BrowserOpening"/>
-          <include name="BackToNormal_Profile_setup" invocation-numbers="0"/>
-          <include name="closeDriver"/>
+          <include name="setUpLogin"/>
+          <include name="tearDown"/>
+          <include name="ETL_PS_051" invocation-numbers="0"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- visionETLGP.ETLTest.ETL_ProfileSetup -->
+      </class> <!-- visionETL.Test.ETL_ProfileSetup -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Profile_setup] -->
