@@ -22,8 +22,8 @@ import Package_PageObject.POM_General;
 
 public class ETL_Category extends BaseClass{
 	
-	String CATEGORY = "VAT_CATAUTO_27";
-	String ChannelType = "VATChannel9";
+	String CATEGORY = "VAT_CATAUTO_30";
+	String ChannelType = "VATChannel11";
 	 private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 		ExtentTest currentTest = test.get();
 	
@@ -59,9 +59,6 @@ public class ETL_Category extends BaseClass{
         LoginPage.LoginClick();
 		Thread.sleep(5000);
 		ETLCategory.Category();
-		Thread.sleep(3000);
-		// -- Category Dropdown
-		driver.findElement(By.xpath("//p[contains(text(),'ETL Category')]")).click();	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[contains(text(),'chevron_right')]")).click();
 		Thread.sleep(3000);// -- Chevon Right Button--//
@@ -125,9 +122,6 @@ public class ETL_Category extends BaseClass{
 		ETL_General.FILTER();
 		Thread.sleep(3000);
 		ETL_General.FilterColumnclick();
-//		driver.findElement(By.xpath(
-//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
-//				.click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
 		Thread.sleep(2000);
@@ -350,9 +344,6 @@ public class ETL_Category extends BaseClass{
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]"))
 				.click();
-//		driver.findElement(By.xpath("//option[contains(text(),'10')]")).click();
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//option[contains(text(),'25')]")).click();
 		Select select = new Select(driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-category[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]")));
 		select.selectByIndex(0);

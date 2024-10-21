@@ -226,4 +226,31 @@ public class RA_FeesPriority extends BaseClass {
 //			System.out.println("Texts are not equal.");
 //		}
 //	}
+	@Test(dataProvider = "loginCredentials", priority = 1)
+	@TestDescription("")
+	public void FEDSFdfsfsdfs(String username, String password) throws InterruptedException {
+		String ScreenName = "FeesPriority";
+		String testCaseId = "";
+		String notes = "" ;
+	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
+	    LoginPage.loginUsername(username);
+        LoginPage.loginPassword(password);
+        LoginPage.LoginClick();
+		Thread.sleep(7000);
+		// -- Master Configuration tab Click--//
+				driver.findElement(By.xpath(
+						"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+						.click();
+				Thread.sleep(4000);
+				// -- Master Config Dropdown Click--//
+				driver.findElement(By.xpath(
+						"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+						.click();
+				Thread.sleep(4000);
+		//--Fees priority click--//
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[8]/a[1]/span[1]")).click();
+		Thread.sleep(5000);
+		
+		
+	}
 }

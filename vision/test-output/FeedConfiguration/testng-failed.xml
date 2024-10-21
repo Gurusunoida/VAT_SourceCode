@@ -5,11 +5,9 @@
     <classes>
       <class name="visionETL.Test.ETLFeedConfiguration">
         <methods>
-          <include name="Connector"/>
-          <include name="setUpLogin"/>
+          <include name="POM_Setup"/>
+          <include name="ETL_FC_032" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="ETL"/>
-          <include name="ETL_FC_027" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- visionETL.Test.ETLFeedConfiguration -->

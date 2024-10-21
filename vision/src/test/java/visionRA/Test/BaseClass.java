@@ -1,6 +1,8 @@
 package visionRA.Test;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -13,10 +15,14 @@ public abstract class BaseClass  {
 
 
 	protected WebDriver driver;
+	public Logger logger;
 
     
     @BeforeMethod
     public void setUp() {
+    	
+    	logger = LogManager.getLogger(this.getClass());
+    	
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://202.83.25.244:8001/");

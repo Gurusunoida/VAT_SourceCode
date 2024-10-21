@@ -8,9 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -30,13 +32,74 @@ public class ETL_General extends BaseClass{
 	  @TestDescription("Login")
 	  public void ETL_DC_001(String username, String password) throws InterruptedException {
 		  String ScreenName = "General_TestCases(All Screen)";
-			String testCaseId = "ETL_DC_001";
-	        String notes = "Provide a visual indicator (e.g., loading animation or message)";
-	        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-	        LoginPage.loginUsername(username);
-	        LoginPage.loginPassword(password);
-	        LoginPage.LoginClick();
+			String baseTestCaseId = "ETL_DC_001";
+			String notes;
+			String testCaseId;
+			// --1st set--//
+			if ("RA".equals(username) && "Vision@123".equals(password)) {
+				testCaseId = baseTestCaseId + "_A"; 
+				notes = "Valid login credentials 'RA'. Testing successful login.";
+			} 
+			//-- 2nd set--//
+			else if ("RA".equals(username) && "vision@123".equals(password)) {
+				testCaseId = baseTestCaseId + "_B"; 
+				notes = "Invalid password case 'RA'. Testing failure message.";
+			}
+			// --3rd set--//
+			else if ("QW".equals(username) && "Vision@123".equals(password)) {
+				Thread.sleep(5000);
+				testCaseId = baseTestCaseId + "_C"; 
+				notes = "Login should fail for username 'QW' with password 'Vision@123'.";
+			} 
+			//-- Default--//
+			else {
+				testCaseId = baseTestCaseId; 
+				notes = "Login test for other credentials.";
+			}
+			ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
+			LoginPage.loginUsername(username);
+			LoginPage.loginPassword(password);
+			LoginPage.LoginClick();
 			Thread.sleep(5000);
+			boolean loginSuccessful;
+			try {
+				loginSuccessful = true;
+			} catch (TimeoutException e) {
+				loginSuccessful = false;
+			}
+
+			if ("QW".equals(username) && "Vision@123".equals(password)) {
+				// --Handle the 3rd set specifically--//
+				WebElement errorText = driver
+						.findElement(By.xpath("//span[contains(text(),'The username and password entered do not match')]"));
+				String loginText = errorText.getText();
+				System.out.println(loginText);
+				if (loginSuccessful) {
+					notes = "Login should fail for username 'QW' with password 'Vision@123', but it passed.";
+					Assert.fail("Login should fail for username 'QW' with password 'Vision@123'.");
+				} else {
+					notes = "Login failed as expected for username 'QW'.";
+				}
+			} else if ("RA".equals(username) && "Vision@123".equals(password)) {
+				notes = "Valid login credentials 'RA'. Testing successful login.";
+				Assert.assertTrue(loginSuccessful, "Login failed for valid credentials.");
+			} else if ("RA".equals(username) && "vision@123".equals(password)) {
+				notes = "Invalid password case 'RA'. Testing failure message.";
+				Assert.fail("Login should fail for username 'RA' with password 'vision@123'.");
+			} else {
+				notes = "Login test for other credentials.";
+			}
+			// --Take screenshot and save it to a file--//
+			File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			String location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_001.png";
+			File destinationFile = new File(location);
+
+			try {
+				org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+				System.out.println("ETL_DC_001 Screenshot saved to: " + destinationFile.getAbsolutePath());
+			} catch (IOException e) {
+				System.out.println("ETL_DC_001 Failed to save screenshot: " + e.getMessage());
+			}
 	  }
 	  @Test( priority = 1)
 	  @TestDescription("The clear information remove should show in the filter process ")

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes">
+<suite name="Suite">
 	<listeners>
 		<listener class-name="visionETL.Test.ListenersETL"></listener>
 	</listeners>
   <test thread-count="1" name="Test">
     <classes>
-     	<class name="Vision_ETL_v1.ETL_General"/>
+     	 <class name="Vision_ETL_v1.ETL_Connector_v1"/>
+     	 <class name="Vision_ETL_v1.ETL_Category_v1"/>
+     	 <class name="Vision_ETL_v1.ETL_FeedConfiguration_v1"/>
+     	 <class name="Vision_ETL_v1.ETL_General_v1"/>
+     	 <class name="Vision_ETL_v1.LandingPage_v1"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

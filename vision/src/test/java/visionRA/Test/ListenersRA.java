@@ -25,7 +25,7 @@ import java.util.Map;
 public class ListenersRA implements ITestListener {
 
 	private static final String REPORTS_PATH = System.getProperty("user.dir") + File.separator + "Reports"
-			+ File.separator + "VAT_RA_Report_ReconConfiguration_27Sep-2024.html";
+			+ File.separator + "VAT_RA_Report.html";
 	private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + File.separator + "Screenshots"
 			+ File.separator;
 	private static final String SCREENSHOT_PATH = System.getProperty("user.dir") + File.separator + "test-output"
@@ -60,7 +60,7 @@ public class ListenersRA implements ITestListener {
 		extent.setSystemInfo("Browser", "Chrome");
 		extent.setSystemInfo("Operating System", "Windows 11");
 		extent.setSystemInfo("Team", "Quality Assurance Team");
-		extent.setSystemInfo("Project", "RA(Recon Bug Fix");
+		extent.setSystemInfo("Project", "RA");
 	}
 
 	private String readCSSFile(String filePath) throws IOException {

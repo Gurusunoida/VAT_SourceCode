@@ -1108,6 +1108,18 @@ Thread.sleep(4000);
 		WebElement BusinessLine = driver.findElement(By.xpath("//p[contains(text(),'- Failed - Invalid ')]"));
 		String proftext = BusinessLine.getText();
 		System.out.println(proftext);
+		//-- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\VAT_BUS_DC_014.png";
+		//-- save the screenshot --//
+		File destinationFile = new File(Location);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+			System.out.println(" VAT_BUS_DC_014 Screenshot saved to: " + destinationFile.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("VAT_BUS_DC_014 Failed to save screenshot: " + e.getMessage());
+		}
 	}
 
 	@Test(dataProvider = "dataProvider1", priority = 12)
@@ -1267,7 +1279,7 @@ Thread.sleep(4000);
 		Thread.sleep(4000);
 		// -- MAster Config Dropdown Click
 		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
 		Thread.sleep(4000);
 		// --- TransLine Config
@@ -1817,9 +1829,10 @@ Thread.sleep(4000);
 		WebElement TranslineEdit = driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"));
 		TranslineEdit.click();
+		Thread.sleep(5000);
 		// -- Business line config click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		// --Recon rule Click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Recon Rule')]")).click();
 		Thread.sleep(2000);
@@ -1878,6 +1891,7 @@ Thread.sleep(4000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"))
 				.click();
+		Thread.sleep(5000);
 		// -- Business Line Config in Add--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(3000);

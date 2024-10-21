@@ -5,13 +5,17 @@
 		<listeners>
 		<listener class-name="visionRA.Test.ListenersRA"></listener>
 	</listeners>
-  <test thread-count="5" name="Test">
+  <test thread-count="2" name="Test">
     <classes>
-	 <class name="visionRA.Test.RA_MasterConfiguration"/>
 	 <class name="visionRA.Test.RA_TranslineConfig"/>
       <class name="visionRA.Test.RA_BusinessLineConfig"/>
       <class name="visionRA.Test.RA_FeesConfig"/>
+      <class name="visionRA.Test.RA_VarianceFlaggingNewScreen"/>
+        <class name="visionRA.Test.RA_FeesPriority"/>
+         <class name="visionRA.Test.RA_AlphaNumTab"/>
+          <class name="visionRA.Test.RA_VisionVariables"/>
       <class name="visionRA.Test.RA_General"/>
+       <class name="visionRA.Test.RA_MasterConfiguration"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

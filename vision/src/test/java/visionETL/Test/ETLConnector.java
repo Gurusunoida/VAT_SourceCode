@@ -29,7 +29,9 @@ import Package_PageObject.POM_ETL;
 
 public class ETLConnector extends BaseClass{
 	
-	String Connector_SendKeys = "VAT_Auto_test28";
+	
+	String Script= "VAT30";
+	String Connector_SendKeys = "VAT_Auto_test30";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");
@@ -1216,14 +1218,14 @@ public class ETLConnector extends BaseClass{
 		Actions actions = new Actions(driver);
 		WebElement elementTarget = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
 		actions.moveToElement(elementTarget);
-		WebElement Target = driver.findElement(By.xpath("//span[contains(text(),'VISION_NCBA_SOURCE - SOURCE & DEST Vision NCBA')]"));
+		WebElement Target = driver.findElement(By.xpath("//span[contains(text(),'VAT_ETL - VAT_ETL4')]"));
 		actions.scrollToElement(Target);
 		actions.perform();
 		Target.click();
 		
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"))
-				.sendKeys("VAtty");// -- Script ID Sendkeys--//
+				.sendKeys(Script);// -- Script ID Sendkeys--//
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[2]"))
@@ -1403,14 +1405,24 @@ public class ETLConnector extends BaseClass{
 		Thread.sleep(5000);
 		ETLConnector.ConnectorQuery();
 		Thread.sleep(3000);// --Drop down of Connector Query
+		//--Filter--//
+		ETL_General.FILTER();
+		ETL_General.FilterColumnclick();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
+		//-- Value send keys--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+		//-- Apply click--//
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(7000);
 		WebElement elementToHoverM = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[7]/span[1]/span[1]"));
+				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[4]/div[1]/span[1]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
 		WebElement ConnectorQuery = driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[8]/div[2]/a[2]/i[1]"));
 		ConnectorQuery.click();// -- Edit --//
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		WebElement QueryDes = driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-manual-query[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[2]/input[1]"));
 		QueryDes.clear();
@@ -2063,11 +2075,11 @@ public class ETLConnector extends BaseClass{
 		// -- Connector ID sendkeys--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
-				.sendKeys("VAT_SEMI");
+				.sendKeys("VAT_SEMI_Upload");
 		// -- Description sendkeys--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
-				.sendKeys("VAT_SEMI");
+				.sendKeys("VAT_SEMI_Upload");
 		// -- End point type click--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-connector[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[5]/ng-select[1]/div[1]/span[2]"))
@@ -2151,7 +2163,6 @@ public class ETLConnector extends BaseClass{
 		Target.click();
 		Thread.sleep(2000);
 		Robot robot2 = new Robot();
-
 		robot2.delay(1000);
 		StringSelection stringSelection2 = new StringSelection(FilePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection2, null);

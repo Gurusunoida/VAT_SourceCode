@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	
+	<Properties>
+		<Property name = "basePath">./logs</Property>/>
+		</Properties>
+
+    <!-- Define the appenders -->
+    <Appenders>  <!-- where to generate Logs-->
+
+      
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Rolling File Appender -->
+        <RollingFile name="File" fileName="logs/VAT_Automation_log.log"
+                     filePattern="logs/automation-log-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %msg%n"/>
+          <SizeBasedTriggerPolicy size = "5000"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <!-- Loggers  what type of logs to generate -->
+    <Loggers>	
+
+        <!-- Root logger configuration -->
+        <Root level="Info">
+          <!--  <AppenderRef ref="Console"/> -->
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>

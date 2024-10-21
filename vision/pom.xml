@@ -35,6 +35,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 			<artifactId>selenium-java</artifactId>
 			<version>4.16.1</version>
 		</dependency>
+    
+		
 
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>

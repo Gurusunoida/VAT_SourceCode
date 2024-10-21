@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class ListenersETL implements ITestListener {
 
-    private static final String REPORTS_PATH = System.getProperty("user.dir") + File.separator + "Reports" + File.separator + "VAT_ConnectorCategory.html";
+    private static final String REPORTS_PATH = System.getProperty("user.dir") + File.separator + "Reports" + File.separator + "VAT_ETL_Report_I&M_18Oct2024.html";
     private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + File.separator + "Screenshots" + File.separator;
     private static final String SCREENSHOT_PATH = System.getProperty("user.dir") + File.separator + "test-output" + File.separator + "Screenshot" + File.separator + "ETL" + File.separator;
     private ExtentSparkReporter reporter;
@@ -39,6 +39,7 @@ public class ListenersETL implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
+    	extent = new ExtentReports();
         System.out.println("Execution of ETL_Application started");
         reporter = new ExtentSparkReporter(REPORTS_PATH);
 
@@ -53,12 +54,15 @@ public class ListenersETL implements ITestListener {
         reporter.config().setReportName("ETL_Report");
         extent = new ExtentReports();
         extent.attachReporter(reporter);
-        extent.setSystemInfo("Date", "05-SEP-2024");
+        extent.setSystemInfo("Date", "02-OCT-2024");
         extent.setSystemInfo("Version", "v1.1");
         extent.setSystemInfo("Browser", "Chrome");
         extent.setSystemInfo("Operating System", "Windows 11");
         extent.setSystemInfo("Team", "Quality Assurance Team");
-        extent.setSystemInfo("Project", "POM");
+        extent.setSystemInfo("Project", "I&M");
+        extent.setSystemInfo("Product", "ETL");
+        extent.setSystemInfo("Info", "ETL-VAT_Report");
+        
     }
 
     private String readCSSFile(String filePath) throws IOException {
@@ -68,6 +72,7 @@ public class ListenersETL implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
+    	
         System.out.println("Execution Test started: " + result.getMethod().getMethodName());
         String className = result.getTestClass().getName();
         totalTestCase.put(className, totalTestCase.getOrDefault(className, 0) + 1);
