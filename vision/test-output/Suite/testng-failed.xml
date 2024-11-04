@@ -3,44 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Vision_ETL_v1.ETL_FeedConfiguration_v1">
+      <class name="Vision_RA.Test.RA_AlphaNumTab">
         <methods>
-          <include name="ETL_FC_043"/>
-          <include name="ETL_FC_041"/>
-          <include name="ETL_FC_029"/>
-          <include name="ETL_FC_026"/>
-          <include name="ETL_FC_049"/>
-          <include name="ETL_FC_002"/>
-          <include name="ETL_FC_024"/>
-          <include name="ETL_FC_046"/>
-          <include name="ETL_FC_003"/>
-          <include name="ETL_FC_025"/>
-          <include name="ETL_FC_044"/>
-          <include name="ETL_FC_001"/>
-          <include name="ETL_FC_023"/>
-          <include name="ETL_FC_042"/>
-          <include name="ETL_FC_028"/>
-          <include name="ETL_FC__015" invocation-numbers="0"/>
-          <include name="ETL_FC_030"/>
-          <include name="ETL_FC_050"/>
-          <include name="ETL_FC_018"/>
-          <include name="ETL_FC_037"/>
-          <include name="ETL_FC_016" invocation-numbers="0"/>
-          <include name="ETL_FC_038"/>
-          <include name="ETL_FC_013" invocation-numbers="0"/>
-          <include name="ETL_FC_035"/>
-          <include name="ETL_FC_014" invocation-numbers="0"/>
-          <include name="ETL_FC_036"/>
-          <include name="ETL_FC_033"/>
-          <include name="ETL_FC_012"/>
-          <include name="ETL_FC_034"/>
-          <include name="ETL_FC_031"/>
-          <include name="tearDown"/>
-          <include name="ETL_FC_019"/>
           <include name="setUp"/>
-          <include name="ETL_FC_017" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="ALP_TAB_002" invocation-numbers="0"/>
+          <include name="AlphaNumTab"/>
+          <include name="setUpLogin"/>
         </methods>
-      </class> <!-- Vision_ETL_v1.ETL_FeedConfiguration_v1 -->
+      </class> <!-- Vision_RA.Test.RA_AlphaNumTab -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -12,9 +12,9 @@ import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import visionRA.Test.BaseClass;
-import visionRA.Test.ListenersRA;
-import visionRA.Test.TestDescription;
+import visionRA.Test_OLD.BaseClass;
+import visionRA.Test_OLD.ListenersRA;
+import visionRA.Test_OLD.TestDescription;
 
 public class RA_FeesConfig extends BaseClass {
 	

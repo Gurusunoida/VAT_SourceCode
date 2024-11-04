@@ -334,8 +334,6 @@ public class ETL_FeedConfiguration_v1 extends BaseClass {
 			Reject.click();
 			driver.findElement(By.xpath("//button[normalize-space()='Yes']")).click();
 			Thread.sleep(2000);
-			
-			
 		}
 	@Test(priority = 7, dataProvider = "getUserNameList")
 	 @TestDescription("Display 10 records in one page")
