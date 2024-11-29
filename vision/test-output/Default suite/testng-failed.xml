@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Vision_ETL_v1.ETL_General">
+      <class name="visionETL.Test.Dummy_ETL">
         <methods>
+          <include name="setUpLogin"/>
+          <include name="Connector"/>
           <include name="tearDown"/>
-          <include name="ETL_DC_001" invocation-numbers="1 2"/>
+          <include name="ETL_CC_001" invocation-numbers="0"/>
+          <include name="ETL"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- Vision_ETL_v1.ETL_General -->
+      </class> <!-- visionETL.Test.Dummy_ETL -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

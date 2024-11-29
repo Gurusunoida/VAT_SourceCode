@@ -111,7 +111,7 @@ public class RA_MasterConfiguration extends BaseClass {
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
 				.click();
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		// -- Add Button--//
 		driver.findElement(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/i[1]"))

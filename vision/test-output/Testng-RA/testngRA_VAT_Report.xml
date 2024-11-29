@@ -3,19 +3,19 @@
 <suite name="Suite">
 		<parameter name="ApplicationURL" value="http://202.83.25.244:8001/"/>
 		<listeners>
-		<listener class-name="visionRA.Test.ListenersRA"></listener>
+		<listener class-name="Vision_RA.Test.ListenersRA"></listener>
 	</listeners>
   <test thread-count="2" name="Test">
     <classes>
-	  <class name="visionRA.Test.RA_TranslineConfig"/>
-      <class name="visionRA.Test.RA_BusinessLineConfig"/>
-      <class name="visionRA.Test.RA_FeesConfig"/>
-      <class name="visionRA.Test.RA_AlphaNumTab"/>
-      <class name="visionRA.Test.RA_ReconConfiguration"/>
-      <class name="visionRA.Test.RA_VarianceFlaggingNewScreen"/>
-      <class name="visionRA.Test.RA_FeesPriority"/>
-      <class name="visionRA.Test.RA_General"/>
-      <class name="visionRA.Test.RA_MasterConfiguration"/>
+	  <class name="Vision_RA.Test.RA_TranslineConfig"/>
+      <class name="Vision_RA.Test.RA_BusinessLineConfig"/>
+      <class name="Vision_RA.Test.RA_FeesConfig"/>
+      <class name="Vision_RA.Test.RA_AlphaNumTab"/>
+      <class name="Vision_RA.Test.RA_ReconConfiguration"/>
+      <class name="Vision_RA.Test.RA_FeesPriority"/>
+      <class name="Vision_RA.Test.RA_General"/>
+      <class name="Vision_RA.Test.RA_MasterConfiguration"/>
+      <class name="Vision_RA.Test.RA_VarianceFlaggingNewScreen"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

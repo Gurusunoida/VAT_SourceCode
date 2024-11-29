@@ -1,5 +1,6 @@
 package Package_PageObject;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,11 +44,13 @@ public class POM_General extends Base_PageObject{
 	}
 	
 	public void ADD() {
-		Add.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].click();", Add);
 	}
 	
 	public void FILTER() {
-		Filter.click();
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].click();", Filter);
 		
 	}
 	

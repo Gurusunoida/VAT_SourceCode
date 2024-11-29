@@ -35,23 +35,6 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		RA_Variance = new  POM_RA(driver);
 	}
 	
-	@BeforeMethod
-	public void setUpLogin() {
-		LoginPage = new Login(driver);
-	}
-
-	
-
-	@BeforeMethod
-	public void RA() {
-		RA_General = new POM_General(driver);
-	}
-	
-	
-	@BeforeMethod
-	public void VarianceFlagging() {
-		RA_Variance = new  POM_RA(driver);
-	}
 	
 	@Test(dataProvider = "loginCredentials", priority = 1)
 	@TestDescription("Buttons should be displayed (Edit,View,Delete). Delete function is newly added.")
@@ -730,6 +713,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[5]/a[1]/span[1]"))
 				.click();
+//	OLD	driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/span[1]")).click();
 		Thread.sleep(4000);
 		RA_General.ADD();
 		//--Description Send keys--//
@@ -813,7 +797,15 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		WebElement Success = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String Text = Success.getText();
 		System.out.println(Text);
-		Assert.assertEquals(Text, "Variance Flagging - Add - Successful"); 
+		Assert.assertEquals(Text, "Variance Flagging - Add - Successful");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//i[contains(text(),'close')]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+		Thread.sleep(3000);
+		//-- Delete Click--//
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-exception[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+		Thread.sleep(3000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 11)
 	@TestDescription("Until User click on to Submit button Approver should not able to Approve and Reject")
@@ -1141,8 +1133,8 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		Thread.sleep(2000);
 		//--- 1st date--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]")).click();
-		//--Trn ccy Dropdown--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+		//--Posting ccy Dropdown--//
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[12]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
 		Thread.sleep(2000);
 		//-- Select--//
 		driver.findElement(By.xpath("//div[contains(text(),'AED')]")).click();
@@ -1182,15 +1174,16 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[contains(text(),'Show Filter')]")).click();
 		Thread.sleep(5000);
-		//--Trn ccy Dropdown--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+		//--Posting ccy Dropdown--//
+				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[12]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
 				Thread.sleep(2000);
 				//-- Select--//
 				driver.findElement(By.xpath("//div[contains(text(),'AED')]")).click();
+				Thread.sleep(2000);
 				Actions actions1 = new Actions(driver);
-				WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+				WebElement elementTarget1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[12]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
 				actions1.moveToElement(elementTarget1);
-				WebElement Target1 = driver.findElement(By.xpath("//div[contains(text(),'EUR')]"));
+				WebElement Target1 = driver.findElement(By.xpath("//div[contains(text(),'USD')]"));
 				actions1.scrollToElement(Target1);
 				actions1.perform();
 				Target1.click();
@@ -1380,7 +1373,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		 String notes = "New column CCY Rates is added in the screen which flows from the backend table" + "," +tCCYRATES ;
 	     ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);       
 	}
-	@Test(dataProvider = "loginCredentials", priority = 17)
+	@Test(dataProvider = "loginCredentials", priority = 17)/////////////------------------Need to change for Different Posting Currency---------- all datas removed------///////
 	@TestDescription("Flagging - 1.If in the particular sheet it contain only Same posting currency -Apply all funtionlity will work 2.If in a particular sheet multiple currency is present - Error message will be thrown")
 	public void FG_CF_058(String username, String password) throws InterruptedException {
 		String ScreenName = "Variance Flagging";
@@ -1499,7 +1492,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		Thread.sleep(2000);
 		// -- Yes Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		Thread.sleep(6000);
+		Thread.sleep(5000);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		WebElement Success = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String Text = Success.getText();
@@ -1517,79 +1510,80 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 				} catch (IOException e) {
 					System.out.println("FG_CF_058 Failed to save screenshot: " + e.getMessage());
 				}
-		// -- SHow filter click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Show Filter')]")).click();
-		Thread.sleep(5000);
-		// --TXN CCY dropdown CLick--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]"))
-				.click();
-		Thread.sleep(2000);
-		// --AED CLick--//
-		driver.findElement(By.xpath("//div[contains(text(),'AED')]")).click();
-		Actions actions11 = new Actions(driver);
-		WebElement elementTarget11 = driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-		actions11.moveToElement(elementTarget11);
-		WebElement Target11 = driver.findElement(By.xpath("//div[contains(text(),'EUR')]"));
-		actions11.scrollToElement(Target11);
-		actions11.perform();
-		Target11.click();
-		// -- Query CLick--//
-		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement modalElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[3]/div[1]")));
-		modalElement.click(); 
-		Thread.sleep(5000);
-		WebElement Next = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[3]/div[1]/span[2]/ul[1]/li[2]/button[1]/i[1]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Next);
-		WebElement Next1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[3]/div[1]/span[2]/ul[1]/li[2]/button[1]/i[1]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Next1);
-		// -- Next page--//
-		Thread.sleep(5000);
-		Actions actions2 = new Actions(driver);
-		WebElement elementTarget2 = driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[2]/div[1]"));
-		actions2.moveToElement(elementTarget2);
-		WebElement Target2 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[19]/div[1]/input[1]"));
-		actions2.scrollToElement(Target2);
-		actions2.perform();
-		Thread.sleep(3000);
-		// -- Type dropdownn CLick--//
-		driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[15]/div[1]/div[1]/ng-select[1]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		// -- Recovered CLick--//							
-		WebElement Lien = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[9]/span[1]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Lien);
-		Thread.sleep(3000);
-		Thread.sleep(5000);
-		WebElement element1 = driver.findElement(By.xpath("//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//span[text()='more_vertz']"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//		//-- Tree dot--//
-//		driver.findElement(By.xpath("//span[contains(text(),'more_vertz')]")).click();
-		Thread.sleep(2000);
-		// -- Apply All click--//
-		driver.findElement(By.xpath("//body/div[5]/div[1]/ul[1]/li[1]/div[1]/span[1]")).click();
-		// -- Yes Click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		WebElement Error = driver
-				.findElement(By.xpath("//div[contains(text(),'Apply/Apply All work only with same Posting Curren')]"));
-		String ErrorText = Error.getText();
-		System.out.println(ErrorText);
-		 Assert.assertEquals(ErrorText, "Apply/Apply All work only with same Posting Currency");
-		//-- Take screenshot and save it to a file--//
-			File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FG_CF_058_1.png";
-			//-- save the screenshot --//
-			File destinationFile1 = new File(Location1);
-			// Move the screenshot file to the specified destination
-			try {
-				org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
-				System.out.println(" FG_CF_058_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
-			} catch (IOException e) {
-				System.out.println("FG_CF_058_1 Failed to save screenshot: " + e.getMessage());
-			}
+//		// -- SHow filter click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Show Filter')]")).click();
+//		Thread.sleep(5000);
+//		// --TXN CCY dropdown CLick--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// --AED CLick--//
+//		driver.findElement(By.xpath("//div[contains(text(),'AED')]")).click();
+//		Actions actions11 = new Actions(driver);
+//		WebElement elementTarget11 = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//		actions11.moveToElement(elementTarget11);
+//		WebElement Target11 = driver.findElement(By.xpath("//div[contains(text(),'EUR')]"));
+//		actions11.scrollToElement(Target11);
+//		actions11.perform();
+//		Target11.click();
+//		// -- Query CLick--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		WebElement modalElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[3]/div[1]")));
+//		modalElement.click(); 
+//		Thread.sleep(5000);
+//		WebElement Next = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[3]/div[1]/span[2]/ul[1]/li[2]/button[1]/i[1]"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Next);
+//		WebElement Next1 = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[3]/div[1]/span[2]/ul[1]/li[2]/button[1]/i[1]"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Next1);
+//		// -- Next page--//
+//		Thread.sleep(5000);
+//		Actions actions2 = new Actions(driver);
+//		WebElement elementTarget2 = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[2]/div[1]"));
+//		actions2.moveToElement(elementTarget2);
+//		WebElement Target2 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[19]/div[1]/input[1]"));
+//		actions2.scrollToElement(Target2);
+//		actions2.perform();
+//		Thread.sleep(3000);
+//		// -- Type dropdownn CLick--//
+//		driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[15]/div[1]/div[1]/ng-select[1]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		// -- Recovered CLick--//							
+//		WebElement Lien = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[9]/span[1]"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Lien);
+//		Thread.sleep(3000);
+//		Thread.sleep(5000);
+//		WebElement element1 = driver.findElement(By.xpath("//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//span[text()='more_vertz']"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+////		//-- Tree dot--//
+////		driver.findElement(By.xpath("//span[contains(text(),'more_vertz')]")).click();
+//		Thread.sleep(2000);
+//		// -- Apply All click--//
+//		driver.findElement(By.xpath("//body/div[5]/div[1]/ul[1]/li[1]/div[1]/span[1]")).click();
+//		// -- Yes Click--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+//		Thread.sleep(2000);
+//		WebElement Error = driver
+//				.findElement(By.xpath("//div[contains(text(),'Apply/Apply All work only with same Posting Curren')]"));
+//		String ErrorText = Error.getText();
+//		System.out.println(ErrorText);
+//		 Assert.assertEquals(ErrorText, "Apply/Apply All work only with same Posting Currency");
+//		//-- Take screenshot and save it to a file--//
+//			File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//			String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FG_CF_058_1.png";
+//			//-- save the screenshot --//
+//			File destinationFile1 = new File(Location1);
+//			// Move the screenshot file to the specified destination
+//			try {
+//				org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
+//				System.out.println(" FG_CF_058_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
+//			} catch (IOException e) {
+//				System.out.println("FG_CF_058_1 Failed to save screenshot: " + e.getMessage());
+//			}
 		 Thread.sleep(10000);
 		 //-- CLose Click--//
 		 driver.findElement(By.xpath("//i[contains(text(),'close')]")).click();
@@ -1700,7 +1694,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 			System.out.println("FG_CF_065 Failed to save screenshot: " + e.getMessage());
 		}
 	}
-	@Test(dataProvider = "loginCredentials", priority = 19)
+	@Test(dataProvider = "loginCredentials", priority = 19)/////////////------------------Need to change for Different Posting Currency---------- all datas removed------///////
 	@TestDescription("Re_Flagging - 1.If in the particular sheet it contain only Same posting currency -Apply all funtionlity will work 2.If in a particular sheet multiple currency is present - Error message will be thrown")
 	public void FG_CF_059(String username, String password) throws InterruptedException {
 		String ScreenName = "Variance Flagging";
@@ -1841,61 +1835,61 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		} catch (IOException e) {
 			System.out.println("FG_CF_059 Failed to save screenshot: " + e.getMessage());
 		}
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//i[contains(text(),'chevron_right')]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//i[contains(text(),'chevron_right')]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//i[contains(text(),'chevron_right')]"))
-				.click();
-		Thread.sleep(5000);
-		Actions actions11 = new Actions(driver);
-		WebElement elementTarget1 = driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[2]/div[1]"));
-		actions11.moveToElement(elementTarget1);
-		WebElement Target1 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[19]/div[1]/input[1]"));
-		actions11.scrollToElement(Target1);
-		actions11.perform();
-		Thread.sleep(4000);
-		WebElement LCY1 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[17]/input[1]"));
-		LCY1.click();
-		LCY1.sendKeys("1");
-		Thread.sleep(4000);
-		 try {
-			    WebElement moreVertzIcon = driver.findElement(By.xpath(
-			        "//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[20]/div[1]/div[1]/a[1]/span[1]"));
-			    moreVertzIcon.click();  // Normal click
-			} catch (Exception e) {
-			    WebElement moreVertzIcon = driver.findElement(By.xpath(
-			        "//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[20]/div[1]/div[1]/a[1]/span[1]"));
-			    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", moreVertzIcon);
-			}
-		// --- Apply all--//
-		driver.findElement(By.xpath("//body/div[5]/div[1]/ul[1]/li[1]/div[1]/span[1]")).click();
-		// -- Yes Click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		Thread.sleep(2000);
-		WebElement Error = driver
-				.findElement(By.xpath("//div[contains(text(),'Apply/Apply All work only with same Posting Curren')]"));
-		String ErrorText = Error.getText();
-		System.out.println(ErrorText);
-		Assert.assertEquals(ErrorText, "Apply/Apply All work only with same Posting Currency");
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FG_CF_059_1.png";
-		// -- save the screenshot --//
-		File destinationFile1 = new File(Location1);
-		// Move the screenshot file to the specified destination
-		try {
-			org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
-			System.out.println(" FG_CF_059_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
-		} catch (IOException e) {
-			System.out.println("FG_CF_059_1 Failed to save screenshot: " + e.getMessage());
-		}
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//i[contains(text(),'chevron_right')]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//i[contains(text(),'chevron_right')]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1][contains(@class, 'd-block exceptionPopup')]//i[contains(text(),'chevron_right')]"))
+//				.click();
+//		Thread.sleep(5000);
+//		Actions actions11 = new Actions(driver);
+//		WebElement elementTarget1 = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[2]/div[1]"));
+//		actions11.moveToElement(elementTarget1);
+//		WebElement Target1 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[19]/div[1]/input[1]"));
+//		actions11.scrollToElement(Target1);
+//		actions11.perform();
+//		Thread.sleep(4000);
+//		WebElement LCY1 = driver.findElement(By.xpath("//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[17]/input[1]"));
+//		LCY1.click();
+//		LCY1.sendKeys("1");
+//		Thread.sleep(4000);
+//		 try {
+//			    WebElement moreVertzIcon = driver.findElement(By.xpath(
+//			        "//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[20]/div[1]/div[1]/a[1]/span[1]"));
+//			    moreVertzIcon.click();  // Normal click
+//			} catch (Exception e) {
+//			    WebElement moreVertzIcon = driver.findElement(By.xpath(
+//			        "//body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[20]/div[1]/div[1]/a[1]/span[1]"));
+//			    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", moreVertzIcon);
+//			}
+//		// --- Apply all--//
+//		driver.findElement(By.xpath("//body/div[5]/div[1]/ul[1]/li[1]/div[1]/span[1]")).click();
+//		// -- Yes Click--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+//		Thread.sleep(2000);
+//		WebElement Error = driver
+//				.findElement(By.xpath("//div[contains(text(),'Apply/Apply All work only with same Posting Curren')]"));
+//		String ErrorText = Error.getText();
+//		System.out.println(ErrorText);
+//		Assert.assertEquals(ErrorText, "Apply/Apply All work only with same Posting Currency");
+//		//-- Take screenshot and save it to a file--//
+//		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FG_CF_059_1.png";
+//		// -- save the screenshot --//
+//		File destinationFile1 = new File(Location1);
+//		// Move the screenshot file to the specified destination
+//		try {
+//			org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
+//			System.out.println(" FG_CF_059_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
+//		} catch (IOException e) {
+//			System.out.println("FG_CF_059_1 Failed to save screenshot: " + e.getMessage());
+//		}
 		Thread.sleep(10000);
 		// -- CLose Click--//
 		driver.findElement(By.xpath("//i[contains(text(),'close')]")).click();
@@ -2198,9 +2192,9 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
 		Thread.sleep(2000);
 		//-- Search send keys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("EUR");
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("USD");
 		//-- CLick--//
-		driver.findElement(By.xpath("//div[contains(text(),'EUR')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'USD')]")).click();
 		// -- Query Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
 		Thread.sleep(5000);
@@ -2393,9 +2387,9 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
 		Thread.sleep(2000);
 		//-- Search send keys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("EUR");
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("USD");
 		//-- CLick--//
-		driver.findElement(By.xpath("//div[contains(text(),'EUR')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'USD')]")).click();
 		// -- Query Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
 		Thread.sleep(5000);
@@ -2415,8 +2409,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		//-- Type dropdown--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[15]/div[1]/div[1]/ng-select[1]/div[1]/span[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'Partial Recovery')]")).click();
-		
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
 		String Given = "5";
 		String Actual = Num;
 		String Greater = "100";
@@ -2553,7 +2546,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		// -- Apply Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(2000);
-		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'REFLAG')]"));
+		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'REflag')]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
 		WebElement Edit = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
@@ -2590,9 +2583,9 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
 		Thread.sleep(2000);
 		//-- Search send keys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("EUR");
+		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[11]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("USD");
 		//-- CLick--//
-		driver.findElement(By.xpath("//div[contains(text(),'EUR')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'USD')]")).click();
 		// -- Query Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
 		Thread.sleep(5000);
@@ -2607,16 +2600,16 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		actions.scrollToElement(Target);
 		actions.perform();
 		Thread.sleep(2000);
-		//-- Type dropdown--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[15]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(2000);
-		Actions actions1 = new Actions(driver);
-		WebElement elementTarget1 = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
-		actions1.moveToElement(elementTarget1);
-		WebElement Target1 = driver.findElement(By.xpath("//span[contains(text(),'Technical Issue')]"));
-		actions1.scrollToElement(Target1);
-		actions1.perform();
-		Target1.click();
+//		//-- Type dropdown--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[15]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		Actions actions1 = new Actions(driver);
+//		WebElement elementTarget1 = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
+//		actions1.moveToElement(elementTarget1);
+//		WebElement Target1 = driver.findElement(By.xpath("//span[contains(text(),'Technical Issue')]"));
+//		actions1.scrollToElement(Target1);
+//		actions1.perform();
+//		Target1.click();
 		String Given = "5";
 		String Actual = Num;
 		String Greater = "100";
@@ -2752,7 +2745,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		// -- Apply Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(2000);
-		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'REFLAG')]"));
+		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'REflag')]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
 		WebElement Edit = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));
@@ -2955,7 +2948,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		// -- Apply Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(2000);
-		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'REFLAG')]"));
+		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'REflag')]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
 		WebElement Edit = driver.findElement(By.xpath("//i[contains(text(),'mode_edit')]"));

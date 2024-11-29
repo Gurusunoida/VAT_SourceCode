@@ -23,43 +23,38 @@ public class RA_AlphaNumTab extends BaseClass {
 	}
 
 	private Login LoginPage;
+	private POM_General General;
+	private POM_RA AlphaNumTab;
 
 	@BeforeMethod
 	public void setUpLogin() {
 		LoginPage = new Login(driver);
-	}
-	
-	private POM_General General;
-	public void GeneralClick() {
 		General = new POM_General(driver);
-	}
-
-	private POM_RA AlphaNumTab;
-
-	@BeforeMethod
-	public void AlphaNumTab() {
 		AlphaNumTab = new POM_RA(driver);
 	}
+	
+	
 
-	String AlphaTab = "909";
-	String AlphaSubTab = "VAT_Test_909";
-	String AlphaTab1 = "1409";
-	String AlphaSubTab1 = "VAT_Test_1409";
+
+	String AlphaTab = "917";
+	String AlphaSubTab = "VAT_Test_917";
+	String AlphaTab1 = "1417";
+	String AlphaSubTab1 = "VAT_Test_1417";
 	String AlphaTabSpecial = "900@<>";
 	String AlphaSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab = "309";
-	String NumSubTab = "VAT_Test_309";
+	String NumTab = "317";
+	String NumSubTab = "VAT_Test_317";
 	String NumTabSpecial = "900@<>";
 	String NumSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab1 = "509";
-	String NumSubTab1 = "VAT_Test_509";
+	String NumTab1 = "517";
+	String NumSubTab1 = "VAT_Test_517";
 	String AlphaTabReject = "80";
 	String AlphasubReject = "VAT_Reject";
 	String NumTabReject = "70";
 	String NumSubTabReject = "VAT_Reject";
-	String AlphaTabApprove = "166";
+	String AlphaTabApprove = "174";
 	String AlphaSubAprove = "VAT_Approve";
-	String NumTabApprove = "406";
+	String NumTabApprove = "414";
 	String NumSubTabApprove = "VAT_Approve";
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
@@ -188,7 +183,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		Thread.sleep(2000);
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\ALP_TAB_004_ALP_TAB_003.png";
+		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\ALP_TAB_004_ALP_TAB_003_1.png";
 		// -- save the screenshot --//
 		File destinationFile1 = new File(Location1);
 		// Move the screenshot file to the specified destination
@@ -901,7 +896,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
 				AlphaNumTab.AlphaNumTab();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		for (int ALPHA_NUM = 1; ALPHA_NUM <= 4; ALPHA_NUM++) {
 			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 			// -- Alpha Tabl send keys--//
@@ -1239,6 +1234,18 @@ public class RA_AlphaNumTab extends BaseClass {
 		// -- Yes click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
 		Thread.sleep(2000);
+		// -- Take screenshot and save it to a file--//
+				File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\ALP_NUM_027_1.png";
+				// -- save the screenshot --//
+				File destinationFile1 = new File(Location1);
+				// Move the screenshot file to the specified destination
+				try {
+					org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
+					System.out.println(" ALP_NUM_027_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
+				} catch (IOException e) {
+					System.out.println("ALP_NUM_027_1 Failed to save screenshot: " + e.getMessage());
+				}
 		WebElement Text1 = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String NumApprove = Text1.getText();
 		System.out.println(NumApprove);

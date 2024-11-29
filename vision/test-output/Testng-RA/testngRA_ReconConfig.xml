@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="visionRA.Test.ListenersRA"></listener>
+		<listener class-name="Vision_RA.Test.ListenersRA"></listener>
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="visionRA.Test.RA_ReconConfiguration"/>
+      <class name="Vision_RA.Test.RA_ReconConfiguration"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

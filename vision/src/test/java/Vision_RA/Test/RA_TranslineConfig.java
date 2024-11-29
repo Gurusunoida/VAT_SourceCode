@@ -3,7 +3,6 @@ package Vision_RA.Test;
 import java.io.File;
 import java.io.IOException;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -17,39 +16,30 @@ import Package_PageObject.Login;
 import Package_PageObject.POM_General;
 import Package_PageObject.POM_RA;
 
+public class RA_TranslineConfig extends BaseClass {
 
-
-public class RA_TranslineConfig  extends BaseClass{
-	
 	@DataProvider(name = "loginCredentials")
-    public Object[][] getUserNameList() {
-        return new Object[][] {
-            {"RA", "Vision@123"},
-        };
-    }
-	
+	public Object[][] getUserNameList() {
+		return new Object[][] { { "RA", "Vision@123" }, };
+	}
+
 	private Login LoginPage;
-	 @BeforeMethod
-	    public void setUpLogin() {
-	        LoginPage = new Login(driver); 
-	    }
-	
-	 private POM_RA TranslineConfig;
-	 @BeforeMethod
-	    public void TranslineClick() {
-		 TranslineConfig = new POM_RA(driver);
-	 }
-	 
-	 private POM_General General;
-		public void GeneralClick() {
-			General = new POM_General(driver);
-		}
+	private POM_RA TranslineConfig;
+	private POM_General General;
+
+	@BeforeMethod
+	public void setUpLogin() {
+		LoginPage = new Login(driver);
+		TranslineConfig = new POM_RA(driver);
+		General = new POM_General(driver);
+	}
+
 	String Transline_ID = "VAT_Auto";
-	String Transline_ID1 = "VAT_01";///--- Need to Change ----////
-	String Transline_DESC= "VAT_Desc";
-	String Transline_ID2 = "VAT_04";///--- Need to Change ----////
-	String Transline_DESC2= "VAT_Desc4";
-	String Transline_DESC1= "VAT_Desc1";
+	String Transline_ID1 = "VAT_01";/// --- Need to Change ----////
+	String Transline_DESC = "VAT_Desc";
+	String Transline_ID2 = "VAT_04";/// --- Need to Change ----////
+	String Transline_DESC2 = "VAT_Desc4";
+	String Transline_DESC1 = "VAT_Desc1";
 	String Filter_Branchoperation = "Branch Operation";
 	String VAT = "VAT";
 	String Approved = "Approved";
@@ -57,20 +47,19 @@ public class RA_TranslineConfig  extends BaseClass{
 	String Type = "Product";
 	String applicationURL = "http://202.83.25.244:8001/";
 	String Transline_ID3 = "VAT_Duplicate";
-	String Transline_DESC3= "VAT_Desc3";
+	String Transline_DESC3 = "VAT_Desc3";
 	String VAT1 = "VAT1604";
 
-	
 	@Test(dataProvider = "loginCredentials", priority = 1)
 	@TestDescription("Proper Trans line configuration has to be selected with all promt has to be shown in the screen")
 	public void VAT_TAS_DC_001(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_001";
-        String notes = "Proper Trans line configuration has to be selected with all promt has to be shown in the screen";
-        ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper Trans line configuration has to be selected with all promt has to be shown in the screen";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -82,11 +71,11 @@ public class RA_TranslineConfig  extends BaseClass{
 	public void VAT_TAS_DC_002(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_002";
-        String notes = "Proper screen for feeding the data has to be populated";
-        ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper screen for feeding the data has to be populated";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -144,11 +133,11 @@ public class RA_TranslineConfig  extends BaseClass{
 	public void VAT_TAS_DC_003(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_003";
-	    String notes = "proper dropdown of column,criteria,value & addding of extra  filtration";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "proper dropdown of column,criteria,value & addding of extra  filtration";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -158,7 +147,7 @@ public class RA_TranslineConfig  extends BaseClass{
 		// --Filter Cloumn Dropdown--//
 		General.FilterColumnclick();
 		// --Filter Column dropdown--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]")).click();																								
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]")).click();
 		Thread.sleep(4000);
 		// --Filter Value Sendkeys--//
 		driver.findElement(By.xpath(
@@ -427,7 +416,7 @@ public class RA_TranslineConfig  extends BaseClass{
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 		// --- Add in Trans line Config--//
 		General.ADD();
 		Thread.sleep(4000);
@@ -686,8 +675,10 @@ public class RA_TranslineConfig  extends BaseClass{
 				.click();
 		Thread.sleep(4000);
 		// --extraction frequency Select--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
 		Thread.sleep(4000);	
+		//-- Description send keys--//
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]")).sendKeys("ABC");
 		//-- Nav to Business Line Configurationm--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(5000);
@@ -870,6 +861,18 @@ public class RA_TranslineConfig  extends BaseClass{
 		//-- save Button--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
 		Thread.sleep(4000);
+		//-- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\VAT_TAS_DC_007.png";
+		//-- save the screenshot --//
+		File destinationFile = new File(Location);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+			System.out.println(" VAT_TAS_DC_007 Screenshot saved to: " + destinationFile.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("VAT_TAS_DC_007 Failed to save screenshot: " + e.getMessage());
+		}
 	}
 	@Test(dataProvider = "loginCredentials", priority = 20)
 	@TestDescription("When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ")
@@ -909,7 +912,7 @@ public class RA_TranslineConfig  extends BaseClass{
 		//-- Service line type dropdown Select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Asset')]")).click();
 		//-- Transline group dropdown click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[2]")).click();
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]")).click();
 		Thread.sleep(4000);
 		//-- Transline group dropdown select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Branch Operations')]")).click();
@@ -933,21 +936,21 @@ public class RA_TranslineConfig  extends BaseClass{
 		Thread.sleep(4000);
 		// Channels dropdown select--//
 		driver.findElement(By.xpath("//span[contains(text(),'ALL')]")).click();
-		//service dropdown--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(4000);
-		//--Service dropdown select--//
-		driver.findElement(By.xpath("//span[contains(text(),'SBA - Savings Account')]")).click();
-		//--service description-//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(4000);
-		//-- Service description select--//
-		driver.findElement(By.xpath("//span[contains(text(),'06001 - Savings Account')]")).click();
-		//-- Currency dropdown--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(4000);
-		//-- Currency select--//
-		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
+//		//service dropdown--//------------------OLD DROPDOWN is Removed-----------------
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(4000);
+//		//--Service dropdown select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'SBA - Savings Account')]")).click();
+//		//--service description-//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(4000);
+//		//-- Service description select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'06001 - Savings Account')]")).click();
+//		//-- Currency dropdown--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(4000);
+//		//-- Currency select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
 		//save button click--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
 		Thread.sleep(1000);
@@ -1021,7 +1024,7 @@ public class RA_TranslineConfig  extends BaseClass{
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
 		//save button--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		WebElement Transline_save_Text=driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String proftext = Transline_save_Text.getText();
 		System.out.printf("VAT_TAS_DC_025-"+proftext);
@@ -1031,7 +1034,7 @@ public class RA_TranslineConfig  extends BaseClass{
 	@TestDescription("Duplicate Key Should Popup")
 	public void VAT_TAS_DC_028(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
-		String testCaseId = "TAS_DC_001";
+		String testCaseId = "VAT_TAS_DC_028";
 	    String notes = "Duplicate Key Should Popup";
 	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
 	    LoginPage.loginUsername(username);
@@ -1049,7 +1052,7 @@ public class RA_TranslineConfig  extends BaseClass{
 				//-- Filter Column select--//
 				driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
 				//-- Value sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys(VAT);
+				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT_3_2603");
 				//-- Add Filter click--//
 				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
 				//-- Column click--//
@@ -1083,7 +1086,7 @@ public class RA_TranslineConfig  extends BaseClass{
 				Thread.sleep(4000);
 		//--save Button--//
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		WebElement Duplicate=driver.findElement(By.xpath("//p[contains(text(),'- Failed - Duplicate key ')]"));
 		String proftext = Duplicate.getText();
 		System.out.printf("VAT_TAS_DC_028-"+proftext);
@@ -1373,6 +1376,5 @@ public class RA_TranslineConfig  extends BaseClass{
 					System.out.println("VAT_TAS_DC_021 Failed to save screenshot: " + e.getMessage());
 				}		
 	}
-	
-	
+
 }

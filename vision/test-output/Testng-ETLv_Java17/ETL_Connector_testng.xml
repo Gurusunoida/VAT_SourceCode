@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Vision_ETL_v1.ETL_Connector"/>
+      <class name="Vision_ETL_v2.ETL_Connector_v1"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

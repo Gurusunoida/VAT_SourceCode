@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>54/5/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Nov 01 18:17:18 IST 2024</td>
+<td>Started on:</td><td>Fri Nov 29 10:19:59 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>36 seconds (36333 ms)</td>
+<tr><td>Total time:</td><td>4466 seconds (4466481 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,384 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_007()'><b>VAT_BUS_DC_007</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span _ngcontent-ymy-c211=&quot;&quot; title=&quot;...&quot;&gt;Business Line Configuration&lt;/span&gt; is not clickable at point (471, 69). Other element would receive the click: &lt;div _ngcontent-ymy-c150=&quot;&quot; id=&quot;loader_1&quot; class=&quot;loader&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5165631db8d179c1443fdb851c3514c5, clickElement {id=f.27EB4C75EF1F25B7863CC308828702A0.d.6237FC8AF8BDAD05F07D38C2D18F8113.e.105}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63532}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63532/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (5165631db8d179c1443fdb851c3514c5)] -&gt; xpath: //span[contains(text(),&apos;Business Line Configuration&apos;)]]
+Session ID: 5165631db8d179c1443fdb851c3514c5
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_007(RA_BusinessLineConfig.java:1670)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1058123217", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1058123217'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span _ngcontent-ymy-c211=&quot;&quot; title=&quot;...&quot;&gt;Business Line Configuration&lt;/span&gt; is not clickable at point (471, 69). Other element would receive the click: &lt;div _ngcontent-ymy-c150=&quot;&quot; id=&quot;loader_1&quot; class=&quot;loader&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5165631db8d179c1443fdb851c3514c5, clickElement {id=f.27EB4C75EF1F25B7863CC308828702A0.d.6237FC8AF8BDAD05F07D38C2D18F8113.e.105}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63532}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63532/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (5165631db8d179c1443fdb851c3514c5)] -&gt; xpath: //span[contains(text(),&apos;Business Line Configuration&apos;)]]
+Session ID: 5165631db8d179c1443fdb851c3514c5
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_007(RA_BusinessLineConfig.java:1670)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>29</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_028()'><b>VAT_FEE_DC_028</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-value-label&quot;&gt;...&lt;/span&gt; is not clickable at point (365, 292). Other element would receive the click: &lt;input role=&quot;combobox&quot; type=&quot;text&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;ab70ac3e14b1&quot; aria-expanded=&quot;true&quot; aria-owns=&quot;ab70ac3e14b1&quot; aria-activedescendant=&quot;ab70ac3e14b1-2&quot;&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [42a6a9cd48f012df1168e4f890fd713c, clickElement {id=f.B615EDA11943F8F642CBE835CDFDFBA6.d.7AA8A49F6D2865ED46CFCC187DCCAAFE.e.191}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64983}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64983/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (42a6a9cd48f012df1168e4f890fd713c)] -&gt; xpath: //span[contains(text(),&apos;Range&apos;)]]
+Session ID: 42a6a9cd48f012df1168e4f890fd713c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_028(RA_FeesConfig.java:1579)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1506047692", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1506047692'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-value-label&quot;&gt;...&lt;/span&gt; is not clickable at point (365, 292). Other element would receive the click: &lt;input role=&quot;combobox&quot; type=&quot;text&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;ab70ac3e14b1&quot; aria-expanded=&quot;true&quot; aria-owns=&quot;ab70ac3e14b1&quot; aria-activedescendant=&quot;ab70ac3e14b1-2&quot;&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [42a6a9cd48f012df1168e4f890fd713c, clickElement {id=f.B615EDA11943F8F642CBE835CDFDFBA6.d.7AA8A49F6D2865ED46CFCC187DCCAAFE.e.191}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64983}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64983/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (42a6a9cd48f012df1168e4f890fd713c)] -&gt; xpath: //span[contains(text(),&apos;Range&apos;)]]
+Session ID: 42a6a9cd48f012df1168e4f890fd713c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_028(RA_FeesConfig.java:1579)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>49</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_029()'><b>VAT_FEE_DC_029</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-value-label&quot;&gt;...&lt;/span&gt; is not clickable at point (365, 292). Other element would receive the click: &lt;input role=&quot;combobox&quot; type=&quot;text&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;aebd33b39442&quot; aria-expanded=&quot;true&quot; aria-owns=&quot;aebd33b39442&quot; aria-activedescendant=&quot;aebd33b39442-2&quot;&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14b46fa5936b79d01476d04e5d118dfd, clickElement {id=f.985220B9BE5A4E04D6372E8F7A44057C.d.9F94828C04F05C97E243DFD602D4A272.e.208}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65069}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65069/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (14b46fa5936b79d01476d04e5d118dfd)] -&gt; xpath: //span[contains(text(),&apos;Range&apos;)]]
+Session ID: 14b46fa5936b79d01476d04e5d118dfd
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_029(RA_FeesConfig.java:1677)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2054147987", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2054147987'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-value-label&quot;&gt;...&lt;/span&gt; is not clickable at point (365, 292). Other element would receive the click: &lt;input role=&quot;combobox&quot; type=&quot;text&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;aebd33b39442&quot; aria-expanded=&quot;true&quot; aria-owns=&quot;aebd33b39442&quot; aria-activedescendant=&quot;aebd33b39442-2&quot;&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [14b46fa5936b79d01476d04e5d118dfd, clickElement {id=f.985220B9BE5A4E04D6372E8F7A44057C.d.9F94828C04F05C97E243DFD602D4A272.e.208}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65069}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65069/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (14b46fa5936b79d01476d04e5d118dfd)] -&gt; xpath: //span[contains(text(),&apos;Range&apos;)]]
+Session ID: 14b46fa5936b79d01476d04e5d118dfd
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_029(RA_FeesConfig.java:1677)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>46</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_032()'><b>VAT_FEE_DC_032</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-arrow-wrapper&quot;&gt;...&lt;/span&gt; is not clickable at point (1085, 289). Other element would receive the click: &lt;ngb-modal-window role=&quot;dialog&quot; tabindex=&quot;-1&quot; aria-modal=&quot;true&quot; class=&quot;d-block fade genericPopup modal show&quot;&gt;...&lt;/ngb-modal-window&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c609dae1d99626f16ed472c33e883abb, clickElement {id=f.FE67CADA7312F90C5C8BAB957A415E77.d.BCE6C851EC3F3CF90E92CE23DDFC472D.e.194}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65154/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c609dae1d99626f16ed472c33e883abb)] -&gt; xpath: //body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]]
+Session ID: c609dae1d99626f16ed472c33e883abb
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_032(RA_FeesConfig.java:1769)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2084553392", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2084553392'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-arrow-wrapper&quot;&gt;...&lt;/span&gt; is not clickable at point (1085, 289). Other element would receive the click: &lt;ngb-modal-window role=&quot;dialog&quot; tabindex=&quot;-1&quot; aria-modal=&quot;true&quot; class=&quot;d-block fade genericPopup modal show&quot;&gt;...&lt;/ngb-modal-window&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c609dae1d99626f16ed472c33e883abb, clickElement {id=f.FE67CADA7312F90C5C8BAB957A415E77.d.BCE6C851EC3F3CF90E92CE23DDFC472D.e.194}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65154/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c609dae1d99626f16ed472c33e883abb)] -&gt; xpath: //body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]/span[2]]
+Session ID: c609dae1d99626f16ed472c33e883abb
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_032(RA_FeesConfig.java:1769)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>47</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_034()'><b>VAT_FEE_DC_034</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-value-label&quot;&gt;...&lt;/span&gt; is not clickable at point (365, 292). Other element would receive the click: &lt;input role=&quot;combobox&quot; type=&quot;text&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;a552d02963a9&quot; aria-expanded=&quot;true&quot; aria-owns=&quot;a552d02963a9&quot; aria-activedescendant=&quot;a552d02963a9-2&quot;&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [79fa6e1e9e9fb607e254655f3c6919ce, clickElement {id=f.1ABBE40624E4A82E146D87A5271E0032.d.55CB63AC1F630A85EA95CBDB06782F4C.e.191}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65232}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65232/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (79fa6e1e9e9fb607e254655f3c6919ce)] -&gt; xpath: //span[contains(text(),&apos;Range&apos;)]]
+Session ID: 79fa6e1e9e9fb607e254655f3c6919ce
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_034(RA_FeesConfig.java:1830)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace521522010", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace521522010'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;ng-value-label&quot;&gt;...&lt;/span&gt; is not clickable at point (365, 292). Other element would receive the click: &lt;input role=&quot;combobox&quot; type=&quot;text&quot; autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;a552d02963a9&quot; aria-expanded=&quot;true&quot; aria-owns=&quot;a552d02963a9&quot; aria-activedescendant=&quot;a552d02963a9-2&quot;&gt;
+  (Session info: chrome=130.0.6723.117)
+Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [79fa6e1e9e9fb607e254655f3c6919ce, clickElement {id=f.1ABBE40624E4A82E146D87A5271E0032.d.55CB63AC1F630A85EA95CBDB06782F4C.e.191}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.117, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\Welcome\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65232}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65232/devtoo..., se:cdpVersion: 130.0.6723.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (79fa6e1e9e9fb607e254655f3c6919ce)] -&gt; xpath: //span[contains(text(),&apos;Range&apos;)]]
+Session ID: 79fa6e1e9e9fb607e254655f3c6919ce
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_034(RA_FeesConfig.java:1830)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>48</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,10 +453,275 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Vision_RA.Test.RA_AlphaNumTab.ALP_TAB_002()'><b>ALP_TAB_002</b><br>Test class: Vision_RA.Test.RA_AlphaNumTab<br>Parameters: RA, Vision@123</td>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_005()'><b>VAT_BUS_DC_005</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
 <td></td>
-<td>29</td>
-<td>Vision_RA.Test.RA_AlphaNumTab@6aeb35e6</td></tr>
+<td>88</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_002()'><b>VAT_FEE_DC_002</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>77</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_016()'><b>VAT_TAS_DC_016</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>71</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_002()'><b>VAT_BUS_DC_002</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>40</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_013()'><b>VAT_BUS_DC_013</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>46</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_012()'><b>VAT_BUS_DC_012</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>90</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_029()'><b>VAT_TAS_DC_029</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>102</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_002()'><b>VAT_TAS_DC_002</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>58</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_004()'><b>VAT_BUS_DC_004</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>73</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_005()'><b>VAT_FEE_DC_005</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>202</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_023()'><b>VAT_TAS_DC_023</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>37</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_003()'><b>VAT_TAS_DC_003</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>24</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_025()'><b>VAT_TAS_DC_025</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>64</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_001()'><b>VAT_BUS_DC_001</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>34</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_008()'><b>VAT_TAS_DC_008</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>27</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_021()'><b>VAT_BUS_DC_021</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>31</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_004()'><b>VAT_TAS_DC_004</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>20</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_016()'><b>VAT_BUS_DC_016</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: System, Vision@123</td>
+<td></td>
+<td>44</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_009()'><b>VAT_TAS_DC_009</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>32</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_006()'><b>VAT_TAS_DC_006</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>25</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_001()'><b>VAT_FEE_DC_001</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>67</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_002_01()'><b>VAT_FEE_DC_002_01</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>75</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_006()'><b>VAT_FEE_DC_006</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>226</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_021()'><b>VAT_TAS_DC_021</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>100</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_003()'><b>VAT_FEE_DC_003</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>77</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_019()'><b>VAT_BUS_DC_019</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>37</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_004()'><b>VAT_FEE_DC_004</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>199</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_006()'><b>VAT_BUS_DC_006</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>122</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_017()'><b>VAT_BUS_DC_017</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: System, Vision@123</td>
+<td></td>
+<td>88</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_001()'><b>VAT_TAS_DC_001</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>12</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_009()'><b>VAT_BUS_DC_009</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>142</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_019()'><b>VAT_TAS_DC_019</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>49</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_008()'><b>VAT_BUS_DC_008</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>192</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_010()'><b>VAT_TAS_DC_010</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>38</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_007()'><b>VAT_FEE_DC_007</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>245</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_031()'><b>VAT_TAS_DC_031</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>32</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_007()'><b>VAT_TAS_DC_007</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>30</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_022()'><b>VAT_FEE_DC_022</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>59</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_020()'><b>VAT_BUS_DC_020</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: System, Vision@123</td>
+<td></td>
+<td>57</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_015()'><b>VAT_BUS_DC_015</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: System, Vision@123</td>
+<td></td>
+<td>33</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_014()'><b>VAT_BUS_DC_014</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>44</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_045()'><b>VAT_FEE_DC_045</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>62</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_015()'><b>VAT_TAS_DC_015</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>68</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_FeesConfig.VAT_FEE_DC_013()'><b>VAT_FEE_DC_013</b><br>Test class: Vision_RA.Test.RA_FeesConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>110</td>
+<td>Vision_RA.Test.RA_FeesConfig@45b4c3a9</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_012()'><b>VAT_TAS_DC_012</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>33</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_024()'><b>VAT_TAS_DC_024</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>62</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_013()'><b>VAT_TAS_DC_013</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>32</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_028()'><b>VAT_TAS_DC_028</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>42</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_011()'><b>VAT_TAS_DC_011</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>46</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_005()'><b>VAT_TAS_DC_005</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>21</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_010()'><b>VAT_BUS_DC_010</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>37</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_026()'><b>VAT_TAS_DC_026</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>87</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_TranslineConfig.VAT_TAS_DC_017()'><b>VAT_TAS_DC_017</b><br>Test class: Vision_RA.Test.RA_TranslineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>81</td>
+<td>Vision_RA.Test.RA_TranslineConfig@45c7e403</td></tr>
+<tr>
+<td title='Vision_RA.Test.RA_BusinessLineConfig.VAT_BUS_DC_003()'><b>VAT_BUS_DC_003</b><br>Test class: Vision_RA.Test.RA_BusinessLineConfig<br>Parameters: RA, Vision@123</td>
+<td></td>
+<td>57</td>
+<td>Vision_RA.Test.RA_BusinessLineConfig@1190200a</td></tr>
 </table><p>
 </body>
 </html>

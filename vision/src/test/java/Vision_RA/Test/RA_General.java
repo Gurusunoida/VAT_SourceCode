@@ -31,20 +31,15 @@ public class RA_General extends BaseClass {
 	String Approved = "Approved";
 	String Businessline_ID = "VAT_Auto";
 	String Businessline_DESC = "VAT_Business";
-	String VAT_UserSetup = "VAT006";
+	String VAT_UserSetup = "VAT009";
 	String Password = "Vision@123";
 
 	private Login LoginPage;
+	private POM_General RA_General;
 
 	@BeforeMethod
 	public void setUpLogin() {
 		LoginPage = new Login(driver);
-	}
-
-	private POM_General RA_General;
-
-	@BeforeMethod
-	public void RA() {
 		RA_General = new POM_General(driver);
 	}
 
@@ -109,6 +104,18 @@ public class RA_General extends BaseClass {
 		String Text = TexttoDisplay.getText();
 		System.out.println(Text);
 		Thread.sleep(2000);
+		 //-- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\RA_GL_006.png";
+		//-- save the screenshot --//
+		File destinationFile = new File(Location);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+			System.out.println(" RA_GL_006 Screenshot saved to: " + destinationFile.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("RA_GL_006 Failed to save screenshot: " + e.getMessage());
+		}
 	}
 	 @Test( priority = 2, dataProvider = "loginCredentials")
 	 @TestDescription("Proper Report option should display")

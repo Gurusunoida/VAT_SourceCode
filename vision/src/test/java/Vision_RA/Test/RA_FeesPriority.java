@@ -23,18 +23,14 @@ public class RA_FeesPriority extends BaseClass {
 	String VAT = "VAT1604";
 
 	private Login LoginPage;
+	private POM_General RA_General;
 
 	@BeforeMethod
 	public void setUpLogin() {
 		LoginPage = new Login(driver);
+		RA_General = new POM_General(driver);
 	}
 	
-	private POM_General RA_General;
-	@BeforeMethod
-	public void General() {
-		RA_General = new POM_General(driver);
-		
-	}
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
 	@TestDescription("Verify Records  ,By default First record should be displayed in Screen")
@@ -221,13 +217,13 @@ public class RA_FeesPriority extends BaseClass {
 		Thread.sleep(5000);
 		// -- Add row--//
 		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/a[1]/div[1]"))
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/div[1]/a[2]/div[1]"))
 				.click();
 		Thread.sleep(5000);// -- Fees Config Button Click--//
 		WebElement Text = driver.findElement(By.xpath("//label[contains(text(),'FEES8')]"));
 		String FEES1 = Text.getText();
 		System.out.println(FEES1);
-		String notes = "" + Text;
+		String notes = "If Detail priority doesnt contains any Configuration for Fee attribute column it has to consider Alias name from Default priority." + FEES1;
 		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
 		if (DefaultText.equals(FEES1)) {
 			System.out.println("Both texts are equal.");

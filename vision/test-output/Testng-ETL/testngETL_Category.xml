@@ -3,7 +3,7 @@
 <suite name="ETL_CATEGORY">
   <test thread-count="5" name="Category-Test">
     <classes>
-      <class name="visionETL.Test.ETL_Category"/>
+      <class name="Vision_ETL_v1.ETL_Category_v1"/>
     </classes>
   </test> <!-- Category-Test -->
 </suite> <!-- ETL_CATEGORY -->

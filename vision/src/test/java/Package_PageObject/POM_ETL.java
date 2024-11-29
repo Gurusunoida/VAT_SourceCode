@@ -32,6 +32,9 @@ public class POM_ETL extends Base_PageObject{
 	@FindBy(xpath = "//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[2]/a[1]/span[1]")
 	WebElement cConnectorScript;
 	
+//	@FindBy(xpath = "//li[@class='nav-item ng-star-inserted']//a[@class='nav-link']//span[@class='sidebar-normal' and contains(text(),'ETL Connector Script')]")
+//	WebElement cConnectorScript;
+	
 	@FindBy(xpath = "//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[3]/a[1]/span[1]")
 	WebElement cConnectorQuery;
 	

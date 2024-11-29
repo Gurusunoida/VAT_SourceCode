@@ -4,7 +4,7 @@
 	<parameter name="ApplicationURL" value="http://10.16.1.101:8001/"/>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="visionRA.Test.RA_FeesConfig"/>
+      <class name="Vision_RA.Test.RA_FeesConfig"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

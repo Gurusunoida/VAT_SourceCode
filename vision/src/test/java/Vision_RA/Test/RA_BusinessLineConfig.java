@@ -24,22 +24,17 @@ public class RA_BusinessLineConfig extends BaseClass {
 	String Businessline_DESC = "VAT_Business";
 	
 	private Login LoginPage;
+	 private POM_RA Businessline;
+	 private POM_RA TranslineConfig;
+	 
 	 @BeforeMethod
 	    public void setUpLogin() {
 	        LoginPage = new Login(driver); 
+	        Businessline =new POM_RA(driver);
+	        TranslineConfig = new POM_RA(driver);
 	    }
 	 
-	 private POM_RA Businessline;
-	 @BeforeMethod
-	    public void Businessline() {
-		 Businessline =new POM_RA(driver);
-	 }
-	 
-	 private POM_RA TranslineConfig;
-	 @BeforeMethod
-	    public void TranslineClick() {
-		 TranslineConfig = new POM_RA(driver);
-	 }	
+	
 
 	@Test(dataProvider = "dataProvider1", priority = 1)
 	@TestDescription("Proper data has to be feeded in alpha numerical number")
@@ -954,12 +949,12 @@ Thread.sleep(4000);
 				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
 				.click();
 		Thread.sleep(4000);
-		// Column select--//
+		// Column select--//		
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]/span[1]")).click();
 		// -- Value send keys--//
 		driver.findElement(By.xpath(
 				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys("VAT");
+				.sendKeys("VAT1604");
 		// -- Apply button--/
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(5000);
@@ -980,7 +975,7 @@ Thread.sleep(4000);
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/input[1]"))
-				.sendKeys("<>");
+				.sendKeys("<>!@<>");
 		// -- save button--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[2]/div[1]/div[1]/button[1]"))
@@ -1075,7 +1070,13 @@ Thread.sleep(4000);
 				.click();
 		Thread.sleep(7000);
 		 // --- TransLine Config--//
-     	TranslineConfig.Transline();
+//     	TranslineConfig.Transline();
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]")).click();
+		Thread.sleep(2000);
 				Thread.sleep(4000);
 				// -- Filter click--//
 				driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
@@ -1573,7 +1574,7 @@ Thread.sleep(4000);
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
 		WebElement BusConfig = driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[5]/a[6]/i[1]"));
+				"//i[contains(text(),'fact_check')]"));
 		BusConfig.click();
 		Thread.sleep(5000);
 	}
