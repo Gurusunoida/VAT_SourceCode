@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="ApplicationURL" value="http://202.83.25.244:8001/"/>
-  <test thread-count="5" parallel="classes" name="Test(failed)">
+  <listeners>
+    <listener class-name="Vision_RA.Test.ListenersRA"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Vision_RA.Test.RA_TranslineConfig">
+      <class name="Vision_RA.Test.RA_General">
         <methods>
           <include name="setUp"/>
-          <include name="VAT_TAS_DC_019" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="setUpLogin"/>
+          <include name="RA_GL_005" invocation-numbers="0"/>
+          <include name="RA_GL_015" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Vision_RA.Test.RA_TranslineConfig -->
+      </class> <!-- Vision_RA.Test.RA_General -->
+      <class name="Vision_RA.Test.RA_FeesConfig">
+        <methods>
+          <include name="setUp"/>
+          <include name="VAT_FEE_DC_040" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setUpLogin"/>
+          <include name="VAT_FEE_DC_037" invocation-numbers="0"/>
+          <include name="VAT_FEE_DC_042" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_FeesConfig -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -12,7 +12,6 @@
 		 <class name="Vision_RA.Test.RA_General"/>
 		 <class name="Vision_RA.Test.RA_AlphaNumTab"></class>	
 		 <class name="Vision_RA.Test.RA_ReconConfiguration"></class>
-		 <class name="Vision_RA.Test.RA_VarianceFlaggingNewScreen"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

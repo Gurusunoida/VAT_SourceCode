@@ -33,6 +33,20 @@ public class POM_General extends Base_PageObject{
 	@FindBy(xpath = "//body/app-root[1]/app-main-container[1]/div[1]/div[2]/app-top-bar[1]/nav[1]/div[1]/div[2]/div[1]/div[1]/span[4]/b[1]")
 	WebElement hBusinessDropdown;
 	
+	@FindBy(xpath = "//button[contains(text(),'No')]")
+	WebElement nNoButton;
+	
+	@FindBy(xpath = "//button[contains(text(),'Yes')]")
+	WebElement yYesButton;
+	
+	public void NoButton() {
+		nNoButton.click();
+	}
+	
+	public void YesButton() {
+		yYesButton.click();
+	}
+	
 	
 	public void BusinessDropdown() {
 		hBusinessDropdown.click();

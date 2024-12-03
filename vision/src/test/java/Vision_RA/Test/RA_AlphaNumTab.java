@@ -36,25 +36,25 @@ public class RA_AlphaNumTab extends BaseClass {
 	
 
 
-	String AlphaTab = "917";
-	String AlphaSubTab = "VAT_Test_917";
-	String AlphaTab1 = "1417";
-	String AlphaSubTab1 = "VAT_Test_1417";
+	String AlphaTab = "918";
+	String AlphaSubTab = "VAT_Test_918";
+	String AlphaTab1 = "1418";
+	String AlphaSubTab1 = "VAT_Test_1418";
 	String AlphaTabSpecial = "900@<>";
 	String AlphaSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab = "317";
-	String NumSubTab = "VAT_Test_317";
+	String NumTab = "318";
+	String NumSubTab = "VAT_Test_318";
 	String NumTabSpecial = "900@<>";
 	String NumSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab1 = "517";
-	String NumSubTab1 = "VAT_Test_517";
+	String NumTab1 = "518";
+	String NumSubTab1 = "VAT_Test_518";
 	String AlphaTabReject = "80";
 	String AlphasubReject = "VAT_Reject";
 	String NumTabReject = "70";
 	String NumSubTabReject = "VAT_Reject";
-	String AlphaTabApprove = "174";
+	String AlphaTabApprove = "175";
 	String AlphaSubAprove = "VAT_Approve";
-	String NumTabApprove = "414";
+	String NumTabApprove = "415";
 	String NumSubTabApprove = "VAT_Approve";
 
 	@Test(dataProvider = "loginCredentials", priority = 1)

@@ -6,117 +6,63 @@
   </listeners>
   <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="Vision_RA.Test.RA_BusinessLineConfig">
-        <methods>
-          <include name="VAT_BUS_DC_012" invocation-numbers="0"/>
-          <include name="setUp"/>
-          <include name="Businessline"/>
-          <include name="TranslineClick"/>
-          <include name="tearDown"/>
-          <include name="setUpLogin"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_BusinessLineConfig -->
-      <class name="Vision_RA.Test.RA_FeesConfig">
-        <methods>
-          <include name="setUp"/>
-          <include name="VAT_FEE_DC_040" invocation-numbers="0"/>
-          <include name="TranslineClick"/>
-          <include name="tearDown"/>
-          <include name="setUpLogin"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_FeesConfig -->
-      <class name="Vision_RA.Test.RA_ReconConfiguration">
-        <methods>
-          <include name="RA_RC_011" invocation-numbers="0"/>
-          <include name="setUp"/>
-          <include name="RA_RC_015" invocation-numbers="0"/>
-          <include name="RA_RC_014" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="setUpLogin"/>
-          <include name="RA_RC_012" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_ReconConfiguration -->
-      <class name="Vision_RA.Test.RA_General">
-        <methods>
-          <include name="setUp"/>
-          <include name="RA"/>
-          <include name="tearDown"/>
-          <include name="setUpLogin"/>
-          <include name="RA_GL_018" invocation-numbers="0"/>
-          <include name="RA_GL_005" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_General -->
       <class name="Vision_RA.Test.RA_TranslineConfig">
         <methods>
           <include name="setUp"/>
-          <include name="VAT_TAS_DC_003" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_025" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_021" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_016" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_019" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_017" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_012" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_015" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_013" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_011" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_031" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_010" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_005" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_008" invocation-numbers="0"/>
-          <include name="TranslineClick"/>
-          <include name="VAT_TAS_DC_006" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_028" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_023" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_026" invocation-numbers="0"/>
+          <include name="TAS_DC_008"/>
+          <include name="TAS_DC_007"/>
+          <include name="TAS_DC_029"/>
+          <include name="TAS_DC_005"/>
+          <include name="TAS_DC_002"/>
+          <include name="TAS_DC_024"/>
+          <include name="TAS_DC_021"/>
+          <include name="TAS_DC_004"/>
+          <include name="TAS_DC_026"/>
+          <include name="TAS_DC_009"/>
+          <include name="TAS_DC_006"/>
+          <include name="TAS_DC_028"/>
+          <include name="TAS_DC_003"/>
+          <include name="TAS_DC_025"/>
+          <include name="TAS_DC_001"/>
+          <include name="TAS_DC_023"/>
+          <include name="TAS_DC_019"/>
+          <include name="TAS_DC_011"/>
+          <include name="TAS_DC_016"/>
+          <include name="TAS_DC_038"/>
+          <include name="TAS_DC_013"/>
+          <include name="TAS_DC_035"/>
+          <include name="TAS_DC_010"/>
+          <include name="TAS_DC_015"/>
+          <include name="TAS_DC_037"/>
           <include name="tearDown"/>
-          <include name="VAT_TAS_DC_007" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_029" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_002" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_024" invocation-numbers="0"/>
-          <include name="VAT_TAS_DC_009" invocation-numbers="0"/>
+          <include name="TAS_DC_017"/>
+          <include name="TAS_DC_036"/>
+          <include name="TAS_DC_012"/>
+          <include name="TAS_DC_031"/>
           <include name="setUpLogin"/>
         </methods>
       </class> <!-- Vision_RA.Test.RA_TranslineConfig -->
-      <class name="Vision_RA.Test.RA_VarianceFlaggingNewScreen">
-        <methods>
-          <include name="setUp"/>
-          <include name="VarianceFlagging"/>
-          <include name="setUpLogin"/>
-          <include name="FG_CF_070" invocation-numbers="0"/>
-          <include name="FG_CF_071" invocation-numbers="0"/>
-          <include name="Setup"/>
-          <include name="FG_CF_058" invocation-numbers="0"/>
-          <include name="FG_CF_069" invocation-numbers="0"/>
-          <include name="FG_CF_048" invocation-numbers="0"/>
-          <include name="FG_CF_059" invocation-numbers="0"/>
-          <include name="FG_CF_068" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="FG_CF_053" invocation-numbers="0"/>
-          <include name="RA"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_VarianceFlaggingNewScreen -->
       <class name="Vision_RA.Test.RA_AlphaNumTab">
         <methods>
           <include name="setUp"/>
-          <include name="ALP_NUM_025" invocation-numbers="0"/>
-          <include name="ALP_NUM_016" invocation-numbers="0"/>
-          <include name="ALP_NUM_027" invocation-numbers="0"/>
-          <include name="ALP_TAB_007" invocation-numbers="0"/>
-          <include name="ALP_TAB_006" invocation-numbers="0"/>
-          <include name="ALP_TAB_009" invocation-numbers="0"/>
-          <include name="ALP_TAB_008" invocation-numbers="0"/>
-          <include name="ALP_TAB_010" invocation-numbers="0"/>
-          <include name="ALP_TAB_004_ALP_TAB_003" invocation-numbers="0"/>
-          <include name="ALP_TAB_014" invocation-numbers="0"/>
+          <include name="ALP_NUM_025"/>
+          <include name="ALP_NUM_016"/>
+          <include name="ALP_NUM_027"/>
+          <include name="ALP_TAB_007"/>
+          <include name="ALP_TAB_006"/>
+          <include name="ALP_TAB_009"/>
+          <include name="ALP_TAB_008"/>
+          <include name="ALP_TAB_010"/>
+          <include name="ALP_TAB_004_ALP_TAB_003"/>
+          <include name="ALP_TAB_014"/>
           <include name="tearDown"/>
-          <include name="ALP_TAB_002" invocation-numbers="0"/>
-          <include name="AlphaNumTab"/>
-          <include name="ALP_NUM_020" invocation-numbers="0"/>
+          <include name="ALP_TAB_002"/>
+          <include name="ALP_NUM_020"/>
           <include name="setUpLogin"/>
-          <include name="ALP_NUM_024" invocation-numbers="0"/>
-          <include name="ALP_NUM_015" invocation-numbers="0"/>
-          <include name="ALP_NUM_026" invocation-numbers="0"/>
-          <include name="ALP_NUM_023" invocation-numbers="0"/>
+          <include name="ALP_NUM_024"/>
+          <include name="ALP_NUM_015"/>
+          <include name="ALP_NUM_026"/>
+          <include name="ALP_NUM_023"/>
         </methods>
       </class> <!-- Vision_RA.Test.RA_AlphaNumTab -->
     </classes>

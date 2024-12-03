@@ -25,7 +25,7 @@ import java.util.Map;
 public class ListenersRA implements ITestListener {
 
 	private static final String REPORTS_PATH = System.getProperty("user.dir") + File.separator + "Reports"
-			+ File.separator + "VAT_RA_Report_29Nov-2024.html";
+			+ File.separator + "VAT_RA_Report 03-Dec-2024(Transline POM & Single Approval).html";
 	private static final String SCREENSHOTS_DIR = System.getProperty("user.dir") + File.separator + "Screenshots"
 			+ File.separator;
 	private static final String SCREENSHOT_PATH = System.getProperty("user.dir") + File.separator + "test-output"
@@ -52,7 +52,7 @@ public class ListenersRA implements ITestListener {
 			e.printStackTrace();
 		}
 		reporter.config().setDocumentTitle("VAT_Report_RA");
-		reporter.config().setReportName("RA_Report-ITSA");
+		reporter.config().setReportName("RA_Report");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 		extent.setSystemInfo("Date", "08-Nov-2024");
