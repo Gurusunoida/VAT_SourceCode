@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import Package_PageObject.Login;
 import Package_PageObject.POM_General;
 import Package_PageObject.POM_RA;
+import Package_PageObject.POM_RA_AlphaNumtab;
 
 public class RA_AlphaNumTab extends BaseClass {
 	@DataProvider(name = "loginCredentials")
@@ -24,37 +25,39 @@ public class RA_AlphaNumTab extends BaseClass {
 
 	private Login LoginPage;
 	private POM_General General;
-	private POM_RA AlphaNumTab;
+	private POM_RA RA;
+	private POM_RA_AlphaNumtab AlphaNumTab;
 
 	@BeforeMethod
 	public void setUpLogin() {
 		LoginPage = new Login(driver);
 		General = new POM_General(driver);
-		AlphaNumTab = new POM_RA(driver);
+		RA = new POM_RA(driver);
+		AlphaNumTab = new POM_RA_AlphaNumtab(driver);
 	}
 	
 	
 
 
-	String AlphaTab = "918";
-	String AlphaSubTab = "VAT_Test_918";
-	String AlphaTab1 = "1418";
-	String AlphaSubTab1 = "VAT_Test_1418";
+	String AlphaTab = "920";
+	String AlphaSubTab = "VAT_Test_920";
+	String AlphaTab1 = "1420";
+	String AlphaSubTab1 = "VAT_Test_1420";
 	String AlphaTabSpecial = "900@<>";
 	String AlphaSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab = "318";
-	String NumSubTab = "VAT_Test_318";
+	String NumTab = "320";
+	String NumSubTab = "VAT_Test_320";
 	String NumTabSpecial = "900@<>";
 	String NumSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab1 = "518";
-	String NumSubTab1 = "VAT_Test_518";
+	String NumTab1 = "520";
+	String NumSubTab1 = "VAT_Test_520";
 	String AlphaTabReject = "80";
 	String AlphasubReject = "VAT_Reject";
 	String NumTabReject = "70";
 	String NumSubTabReject = "VAT_Reject";
-	String AlphaTabApprove = "175";
+	String AlphaTabApprove = "177";
 	String AlphaSubAprove = "VAT_Approve";
-	String NumTabApprove = "415";
+	String NumTabApprove = "417";
 	String NumSubTabApprove = "VAT_Approve";
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
@@ -67,7 +70,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// -- AlphaNUmTab--//
-		AlphaNumTab.AlphaNumTab();
+		RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Filter click--//
 		General.FILTER();
@@ -128,7 +131,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// -- AlphaNUmTab--//
-		AlphaNumTab.AlphaNumTab();
+		RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Filter click--//
 		General.FILTER();
@@ -213,19 +216,21 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// -- AlphaNUmTab--//
-		AlphaNumTab.AlphaNumTab();
+		RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Add Click--//
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Alpha Tabl send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys("2333");
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys("2333");
+		AlphaNumTab.AlphaTabID("2333");
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys("Test");
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys("Test");
+		AlphaNumTab.AlphaTabDesc("Test");
 		Thread.sleep(2000);
 		// --Alpha Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
@@ -234,7 +239,8 @@ public class RA_AlphaNumTab extends BaseClass {
 		// -- Description--send keys--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTab);
 		// -- Cleaar click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Clear')]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Clear')]")).click();
+		AlphaNumTab.AlphaTabClear();
 		Thread.sleep(2000);
 		// -- Yes click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
@@ -264,19 +270,21 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Add Click--//
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Alpha Tabl send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys("2333");
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys("2333");
+		AlphaNumTab.AlphaTabID("2333");
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys("Test");
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys("Test");
+		AlphaNumTab.AlphaTabDesc("Test");
 		Thread.sleep(2000);
 		// --Alpha Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
@@ -310,7 +318,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Filter click--//
 		General.FILTER();
@@ -349,19 +357,21 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Add Click--//
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Alpha Tabl send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(AlphaTab);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(AlphaTab);
+		AlphaNumTab.AlphaTabID(AlphaTab);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(AlphaTab);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(AlphaTab);
+		AlphaNumTab.AlphaTabDesc(AlphaTab);
 		Thread.sleep(2000);
 		// --Alpha Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
@@ -403,26 +413,29 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Add Click--//
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Alpha Tab send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(AlphaTabSpecial);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(AlphaTabSpecial);
+		AlphaNumTab.AlphaTabID(AlphaTabSpecial);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(AlphaTabSpecial);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(AlphaTabSpecial);
+		AlphaNumTab.AlphaTabDesc(AlphaTabSpecial);
 		Thread.sleep(2000);
 		// --Alpha Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		ALPHASUBTAB.click();
-		ALPHASUBTAB.sendKeys(AlphaSubTabSpecial);
+		AlphaNumTab.AlphaSubTabID(AlphaTabSpecial);
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTabSpecial);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTabSpecial);
+		AlphaNumTab.AlphaSubTabDesc(AlphaSubTabSpecial);
 		Thread.sleep(2000);
 		// -- Save Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
@@ -454,26 +467,30 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Add Click--//
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Alpha Tabl send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(AlphaTab1);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(AlphaTab1);
+		AlphaNumTab.AlphaTabID(AlphaTab1);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(AlphaTab1);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(AlphaTab1);
+		AlphaNumTab.AlphaTabDesc(AlphaTab1);
 		Thread.sleep(2000);
 		// --Alpha Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		ALPHASUBTAB.click();
-		ALPHASUBTAB.sendKeys(AlphaSubTab1);
+//		ALPHASUBTAB.sendKeys(AlphaSubTab1);
+		AlphaNumTab.AlphaSubTabID(AlphaSubTab1);
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTab1);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTab1);
+		AlphaNumTab.AlphaSubTabDesc(AlphaSubTab1);
 		Thread.sleep(2000);
 		// -- Save Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
@@ -508,7 +525,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Num tab click--//
 		driver.findElement(By.xpath(
@@ -519,23 +536,27 @@ public class RA_AlphaNumTab extends BaseClass {
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Num Tab send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(NumTab);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(NumTab);
+		AlphaNumTab.NumTabID(NumTab);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(NumSubTab);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(NumSubTab);
+		AlphaNumTab.NumTabDesc(NumTab);
 		Thread.sleep(2000);
 		// --Num Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		ALPHASUBTAB.click();
 		ALPHASUBTAB.sendKeys(NumTab);
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(NumSubTab);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(NumSubTab);
+		AlphaNumTab.NumSubTabDesc(NumTab);
 		Thread.sleep(2000);
 		// -- Save Click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+		AlphaNumTab.AlphaTabSave();
 		Thread.sleep(2000);
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -567,7 +588,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Num tab click--//
 		driver.findElement(By.xpath(
@@ -578,23 +599,27 @@ public class RA_AlphaNumTab extends BaseClass {
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Num Tab send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(NumTabSpecial);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(NumTabSpecial);
+		AlphaNumTab.NumTabID(NumTabSpecial);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(NumSubTabSpecial);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(NumSubTabSpecial);
+		AlphaNumTab.NumTabDesc(NumTabSpecial);
 		Thread.sleep(2000);
 		// --Num Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		ALPHASUBTAB.click();
 		ALPHASUBTAB.sendKeys(NumTabSpecial);
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(NumSubTabSpecial);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(NumSubTabSpecial);
+		AlphaNumTab.NumSubTabDesc(NumTabSpecial);
 		Thread.sleep(2000);
 		// -- Save Click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+		AlphaNumTab.AlphaTabSave();
 		Thread.sleep(2000);
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -623,7 +648,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Num tab click--//
 		driver.findElement(By.xpath(
@@ -634,23 +659,27 @@ public class RA_AlphaNumTab extends BaseClass {
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Num Tab send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(NumTab1);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(NumTab1);
+		AlphaNumTab.NumTabID(NumTab1);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(NumSubTab1);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(NumSubTab1);
+		AlphaNumTab.NumTabDesc(NumTab1);
 		Thread.sleep(2000);
 		// --Num Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		ALPHASUBTAB.click();
 		ALPHASUBTAB.sendKeys(NumTab1);
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(NumSubTab1);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(NumSubTab1);
+		AlphaNumTab.AlphaSubTabDesc(NumTab1);
 		Thread.sleep(2000);
 		// -- Save Click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+		AlphaNumTab.AlphaTabSave();
 		Thread.sleep(2000);
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -683,7 +712,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Num tab click--//
 		driver.findElement(By.xpath(
@@ -755,7 +784,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Num tab click--//
 		driver.findElement(By.xpath(
@@ -766,23 +795,27 @@ public class RA_AlphaNumTab extends BaseClass {
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Num Tab send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys("300");
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys("300");
+		AlphaNumTab.NumTabID("300");
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys("Test_300");
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-numtab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys("Test_300");
+		AlphaNumTab.NumTabDesc("Test_300");
 		Thread.sleep(2000);
 		// --Num Sub tab send keys--//
 		WebElement NumSUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		NumSUBTAB.click();
 		NumSUBTAB.sendKeys("300");
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys("Test_300");
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys("Test_300");
+		AlphaNumTab.NumSubTabDesc("Test_300");
 		Thread.sleep(2000);
 		// -- Save Click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
+		AlphaNumTab.AlphaTabSave();
 		Thread.sleep(7000);
 		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
 		Thread.sleep(5000);
@@ -840,26 +873,29 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Add Click--//
 		General.ADD();
 		Thread.sleep(3000);
 		// -- Alpha Tabl send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
-				.sendKeys(AlphaTab);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"))
+//				.sendKeys(AlphaTab);
+		AlphaNumTab.AlphaTabID(AlphaTab);
 		// -- description send keys--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
-				.sendKeys(AlphaTab);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-alphanumtab[1]/div[1]/div[1]/div[1]/div[1]/app-alphatab[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/input[1]"))
+//				.sendKeys(AlphaTab);
+		AlphaNumTab.AlphaTabDesc(AlphaTab);
 		Thread.sleep(2000);
 		// --Alpha Sub tab send keys--//
 		WebElement ALPHASUBTAB = driver.findElement(By.xpath("//tbody/tr[1]/td[10]/div[1]/div[1]/input[1]"));
 		ALPHASUBTAB.click();
 		ALPHASUBTAB.sendKeys(AlphaSubTab);
 		// -- Description--send keys--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTab);
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[11]/div[1]/div[1]/input[1]")).sendKeys(AlphaSubTab);
+		AlphaNumTab.AlphaSubTabDesc(AlphaSubTab);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[contains(text(),'Clear')]")).click();
 		// --yes click--//
@@ -895,7 +931,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(7000);
 		for (int ALPHA_NUM = 1; ALPHA_NUM <= 4; ALPHA_NUM++) {
 			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
@@ -1051,7 +1087,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		//-- AlphaNUmTab--//
-				AlphaNumTab.AlphaNumTab();
+				RA.AlphaNumTab();
 		Thread.sleep(5000);
 		for (int ALPHA_NUM = 5; ALPHA_NUM <= 6; ALPHA_NUM++) {
 			General.ADD();
@@ -1131,7 +1167,7 @@ public class RA_AlphaNumTab extends BaseClass {
 				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
 				.click();
 		Thread.sleep(7000);
-		AlphaNumTab.AlphaNumTab();
+		RA.AlphaNumTab();
 		Thread.sleep(5000);
 		// -- Filter click--//
 		General.FILTER();

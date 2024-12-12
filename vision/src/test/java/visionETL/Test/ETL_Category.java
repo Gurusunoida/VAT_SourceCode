@@ -22,8 +22,8 @@ import Package_PageObject.POM_General;
 
 public class ETL_Category extends BaseClass{
 	
-	String CATEGORY = "VAT_CATAUTO_30";
-	String ChannelType = "VATChannel11";
+	String CATEGORY = "VAT_CATAUTO_31";
+	String ChannelType = "VATChannel12";
 	 private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 		ExtentTest currentTest = test.get();
 	

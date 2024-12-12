@@ -28,7 +28,6 @@ public class RA_TranslineConfig extends BaseClass {
 	private POM_RA TranslineConfig;
 	private POM_General General;
 	private POM_Transline Trans;
-	
 
 	@BeforeMethod
 	public void setUpLogin() {
@@ -170,11 +169,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_004(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_004";
-	    String notes = "refresh the whole screen";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "refresh the whole screen";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -190,11 +189,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_005(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_005";
-	    String notes = "Proper drop down of country Name";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of country Name";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -206,7 +205,7 @@ public class RA_TranslineConfig extends BaseClass {
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
 				.click();
-		Thread.sleep(4000); 
+		Thread.sleep(4000);
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 6)
@@ -214,11 +213,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_006(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_006";
-	    String notes = "Proper drop down of Le book";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of Le book";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -238,11 +237,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_008(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_008";
-	    String notes = "successfully  accepting Alpha Numerical";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "successfully  accepting Alpha Numerical";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -263,11 +262,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_009(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_009";
-	    String notes = "Proper drop down of Product line";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of Product line";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -290,11 +289,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_010(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_010";
-	    String notes = "Proper drop down of  Trans line type & group";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of  Trans line type & group";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -319,16 +318,17 @@ public class RA_TranslineConfig extends BaseClass {
 		driver.findElement(By.xpath("//span[contains(text(),'Loan (A) Product')]")).click();
 		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 10)
 	@TestDescription("Proper drop down of Business vertical")
 	public void TAS_DC_011(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_011";
-	    String notes = "Proper drop down of Business vertical";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of Business vertical";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -363,16 +363,17 @@ public class RA_TranslineConfig extends BaseClass {
 				.click();
 		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 11)
 	@TestDescription("Successfully requirement is fulfilled")
 	public void TAS_DC_012(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_012";
-	    String notes = "Successfully requirement is fulfilled";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Successfully requirement is fulfilled";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -389,16 +390,17 @@ public class RA_TranslineConfig extends BaseClass {
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
 		Thread.sleep(4000);
 	}
-	@Test(dataProvider = "loginCredentials", priority = 12)   
+
+	@Test(dataProvider = "loginCredentials", priority = 12)
 	@TestDescription("Successfully able to select  extraction day")
 	public void TAS_DC_013(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_013";
-	    String notes = "Successfully able to select  extraction day";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Successfully able to select  extraction day";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -406,22 +408,25 @@ public class RA_TranslineConfig extends BaseClass {
 		// --- Add in Trans line Config--//
 		General.ADD();
 		Thread.sleep(7000);
-		//--Extraction Day--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[2]/ng-select[1]/div[1]/span[1]")).click();
+		// --Extraction Day--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[2]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]")).click();
-		Thread.sleep(4000);	
+		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 13)
 	@TestDescription("Proper drop down of  product type")
 	public void TAS_DC_015(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_015";
-	    String notes = "Proper drop down of  product type";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of  product type";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -485,11 +490,11 @@ public class RA_TranslineConfig extends BaseClass {
 	public void TAS_DC_016(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_016";
-	    String notes = "Proper drop down of  product  Discription";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of  product  Discription";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -542,29 +547,30 @@ public class RA_TranslineConfig extends BaseClass {
 		// --extraction frequency Select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
 		Thread.sleep(4000);
-		//--Product Type Dropdown--///
+		// --Product Type Dropdown--///
 		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//--Product Type Dropdown Select--///
+		// --Product Type Dropdown Select--///
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
 		Thread.sleep(4000);
-		//--Product Description Dropdown--///
+		// --Product Description Dropdown--///
 		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//--Product Description Dropdown Select--///
+		// --Product Description Dropdown Select--///
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
 		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 15)
 	@TestDescription("Proper drop down of  Currency")
 	public void TAS_DC_017(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_001";
-	    String notes = "Proper drop down of  Currency";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Proper drop down of  Currency";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -636,33 +642,40 @@ public class RA_TranslineConfig extends BaseClass {
 		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
 		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 16)
 	@TestDescription("Data should not be changed when we click on to No in notification button ")
 	public void TAS_DC_019(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_019";
-	    String notes = "Data should not be changed when we click on to No in notification button ";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Data should not be changed when we click on to No in notification button ";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
 		Thread.sleep(4000);
-		//-- Filter click--//
+		// -- Filter click--//
 		General.FILTER();
-		//-- Filter column click--//
+		// -- Filter column click--//
 		General.FilterColumnclick();
 		Thread.sleep(4000);
-		//-- Filter Column select--//
+		// -- Filter Column select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		//-- Value sendkeys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys(VAT);
-		//-- Add Filter click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
-		//-- Column click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		// -- Value sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys(VAT);
+		// -- Add Filter click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]"))
+				.click();
+		// -- Column click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+				.click();
 		Actions actions = new Actions(driver);
 		WebElement elementTarget = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
 		actions.moveToElement(elementTarget);
@@ -670,16 +683,20 @@ public class RA_TranslineConfig extends BaseClass {
 		actions.scrollToElement(Target);
 		actions.perform();
 		Target.click();
-		//-- Value Sendkeys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys(Approved);
-		//-- Apply click--//
+		// -- Value Sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys(Approved);
+		// -- Apply click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(4000);
-		//--Edit Button--//
-		WebElement elementToHoverM = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[3]/span[1]/span[1]"));
+		// --Edit Button--//
+		WebElement elementToHoverM = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[3]/span[1]/span[1]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
-		WebElement Edit = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"));
+		WebElement Edit = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"));
 		Edit.click();
 		Thread.sleep(4000);
 		// --extraction frequency dropdown--//
@@ -689,28 +706,33 @@ public class RA_TranslineConfig extends BaseClass {
 		Thread.sleep(4000);
 		// --extraction frequency Select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		Thread.sleep(4000);	
-		//-- Description send keys--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]")).sendKeys("ABC");
-		//-- Nav to Business Line Configurationm--//
+		Thread.sleep(4000);
+		// -- Description send keys--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
+				.sendKeys("ABC");
+		// -- Nav to Business Line Configurationm--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[contains(text(),'No')]")).click();
 		Thread.sleep(4000);
-		//-- Nav Back to trans line config--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/span[1]")).click();
-		Thread.sleep(4000);	
+		// -- Nav Back to trans line config--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/span[1]"))
+				.click();
+		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 17)
 	@TestDescription("The record count should be correct while filtering ")
 	public void TAS_DC_023(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_023";
-	    String notes = "The record count should be correct while filtering ";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "The record count should be correct while filtering ";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -750,16 +772,17 @@ public class RA_TranslineConfig extends BaseClass {
 				.click();
 		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 18)
 	@TestDescription("Popup sholud display that invalid Transline Description")
 	public void TAS_DC_026(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_026";
-	    String notes = "Popup sholud display that invalid Transline Description";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Popup sholud display that invalid Transline Description";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -830,13 +853,15 @@ public class RA_TranslineConfig extends BaseClass {
 		// --Currency Select--//
 		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
 		Thread.sleep(4000);
-		//-- Save Button--//
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		// -- Save Button--//
+		driver.findElement(By.xpath(
+				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_026.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
 		try {
@@ -846,16 +871,17 @@ public class RA_TranslineConfig extends BaseClass {
 			System.out.println("TAS_DC_026 Failed to save screenshot: " + e.getMessage());
 		}
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 19)
 	@TestDescription("Validate Alpha Numerical")
 	public void TAS_DC_007(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_007";
-	    String notes = "Validate Alpha Numerical ";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Validate Alpha Numerical ";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -875,13 +901,15 @@ public class RA_TranslineConfig extends BaseClass {
 //				.sendKeys(Transline_DESC);
 		Trans.TranslineDesc(Transline_DESC);
 		Thread.sleep(4000);
-		//-- save Button--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		// -- save Button--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_007.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
 		try {
@@ -891,16 +919,17 @@ public class RA_TranslineConfig extends BaseClass {
 			System.out.println("TAS_DC_007 Failed to save screenshot: " + e.getMessage());
 		}
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 20)
 	@TestDescription("When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ")
 	public void TAS_DC_024(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_024";
-	    String notes = "When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -920,38 +949,54 @@ public class RA_TranslineConfig extends BaseClass {
 //				.sendKeys("Transline_DESC1");
 		Trans.TranslineDesc(Transline_DESC1);
 		Thread.sleep(4000);
-		//--Transline type dropdown click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		// --Transline type dropdown click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]"))
+				.click();
 		Thread.sleep(4000);
-		//--Transline type dropdown select(Service type)--//
+		// --Transline type dropdown select(Service type)--//
 		driver.findElement(By.xpath("//span[contains(text(),'Service')]")).click();
-		//-- Service line type dropdown click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]")).click();
+		// -- Service line type dropdown click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Service line type dropdown Select--//
+		// -- Service line type dropdown Select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Asset')]")).click();
-		//-- Transline group dropdown click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]")).click();
+		// -- Transline group dropdown click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Transline group dropdown select--//
+		// -- Transline group dropdown select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Branch Operations')]")).click();
-		//-- Business vertical dropdown click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+		// -- Business vertical dropdown click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Business vertical dropdown select--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]")).click();
-		//-- Extraction frequency--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]")).click();
+		// -- Business vertical dropdown select--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]"))
+				.click();
+		// -- Extraction frequency--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Extraction frequency select--//
+		// -- Extraction frequency select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Daily')]")).click();
-		//-- Department  dropdown clik--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[5]/ng-select[1]/div[1]/span[1]")).click();
+		// -- Department dropdown clik--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[5]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Department select--//
+		// -- Department select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Treasury')]")).click();
 		// Channels dropdown click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[4]/ng-select[1]/div[1]/span[1]")).click();
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[4]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
 		// Channels dropdown select--//
 		driver.findElement(By.xpath("//span[contains(text(),'ALL')]")).click();
@@ -970,26 +1015,29 @@ public class RA_TranslineConfig extends BaseClass {
 //		Thread.sleep(4000);
 //		//-- Currency select--//
 //		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
-		//save button click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		// save button click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		Thread.sleep(1000);
-		Thread.sleep(4000);	
-		WebElement Transline_save_Text=driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
+		Thread.sleep(4000);
+		WebElement Transline_save_Text = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String proftext = Transline_save_Text.getText();
 		Thread.sleep(1000);
-		System.out.printf(proftext+"-VAT_TAS_DC_024");
-		Thread.sleep(4000);	
+		System.out.printf(proftext + "-VAT_TAS_DC_024");
+		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 21)
 	@TestDescription("If the changes is applyed the header should show the related type what have mentioned (product / service)")
 	public void TAS_DC_025(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_025";
-	    String notes = "If the changes is applyed the header should show the related type what have mentioned (product / service)";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "If the changes is applyed the header should show the related type what have mentioned (product / service)";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -1009,113 +1057,144 @@ public class RA_TranslineConfig extends BaseClass {
 //				.sendKeys(Transline_DESC2);
 		Trans.TranslineDesc(Transline_DESC2);
 		Thread.sleep(4000);
-		//-- Product line type--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]")).click();
+		// -- Product line type--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Product line select--//
+		// -- Product line select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Asset')]")).click();
-		//-- Transline group dropdown--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[2]")).click();
+		// -- Transline group dropdown--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[2]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Transline group dropdown select--//
+		// -- Transline group dropdown select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		//-- Business line vertical--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+		// -- Business line vertical--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Business line vertical select--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]")).click();
-		//-- Extraction frequency--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]")).click();
+		// -- Business line vertical select--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]"))
+				.click();
+		// -- Extraction frequency--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(4000);
-		//-- Extraction frequency select--//
+		// -- Extraction frequency select--//
 		driver.findElement(By.xpath("//span[contains(text(),'Daily')]")).click();
-		//-- Producct type dropdown--//
+		// -- Producct type dropdown--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- Producct type dropdown select--//
+		// -- Producct type dropdown select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		//-- Product description--//
+		// -- Product description--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- Product description select--//
+		// -- Product description select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[7]")).click();
-		//-- Currency dropdown--//
+		// -- Currency dropdown--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- Currency select--//
+		// -- Currency select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
-		//save button--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		// save button--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		Thread.sleep(3000);
-		WebElement Transline_save_Text=driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
+		WebElement Transline_save_Text = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
 		String proftext = Transline_save_Text.getText();
-		System.out.printf("VAT_TAS_DC_025-"+proftext);
-		Thread.sleep(4000);	
+		System.out.printf("VAT_TAS_DC_025-" + proftext);
+		Thread.sleep(4000);
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 22)
 	@TestDescription("Duplicate Key Should Popup")
 	public void TAS_DC_028(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_028";
-	    String notes = "Duplicate Key Should Popup";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Duplicate Key Should Popup";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
 		Thread.sleep(4000);
-		//-- Filter click--//
+		// -- Filter click--//
 		General.FILTER();
-				//-- Filter column click--//
+		// -- Filter column click--//
 		General.FilterColumnclick();
-				Thread.sleep(4000);
-				//-- Filter Column select--//
-				driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-				//-- Value sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT_3_2603");
-				//-- Add Filter click--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
-				//-- Column click--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-				Actions actions = new Actions(driver);
-				WebElement elementTarget = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
-				actions.moveToElement(elementTarget);
-				WebElement Target = driver.findElement(By.xpath("//span[contains(text(),'Fee Config Record Indicator')]"));
-				actions.scrollToElement(Target);
-				actions.perform();
-				Target.click();
-				//-- Value Sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys(Approved);
-				//-- Add Filter click--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
-				//-- Column click--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-				//-- Column select --//
-				driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
-				//-- Value sendkeys--//
-				driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys(Type);
-				//-- Apply click--//
-				driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-				Thread.sleep(4000);
-				//--Edit Button--//
-				WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'VAT_3_2603 / VAT_3_260324')]"));
-				Actions actionsClick = new Actions(driver);
-				actionsClick.moveToElement(elementToHoverM).perform();
-				WebElement Copy = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[2]/i[1]"));
-				Copy.click();
-				Thread.sleep(4000);
-		//--save Button--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		Thread.sleep(4000);
+		// -- Filter Column select--//
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
+		// -- Value sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys("VAT_3_2603");
+		// -- Add Filter click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]"))
+				.click();
+		// -- Column click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+				.click();
+		Actions actions = new Actions(driver);
+		WebElement elementTarget = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
+		actions.moveToElement(elementTarget);
+		WebElement Target = driver.findElement(By.xpath("//span[contains(text(),'Fee Config Record Indicator')]"));
+		actions.scrollToElement(Target);
+		actions.perform();
+		Target.click();
+		// -- Value Sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys(Approved);
+		// -- Add Filter click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]"))
+				.click();
+		// -- Column click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+				.click();
+		// -- Column select --//
+		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
+		// -- Value sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys(Type);
+		// -- Apply click--//
+		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+		Thread.sleep(4000);
+		// --Edit Button--//
+		WebElement elementToHoverM = driver
+				.findElement(By.xpath("//span[contains(text(),'VAT_3_2603 / VAT_3_260324')]"));
+		Actions actionsClick = new Actions(driver);
+		actionsClick.moveToElement(elementToHoverM).perform();
+		WebElement Copy = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[2]/i[1]"));
+		Copy.click();
+		Thread.sleep(4000);
+		// --save Button--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		Thread.sleep(5000);
-		WebElement Duplicate=driver.findElement(By.xpath("//p[contains(text(),'- Failed - Duplicate key ')]"));
+		WebElement Duplicate = driver.findElement(By.xpath("//p[contains(text(),'- Failed - Duplicate key ')]"));
 		String proftext = Duplicate.getText();
-		System.out.printf("VAT_TAS_DC_028-"+proftext);
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		System.out.printf("VAT_TAS_DC_028-" + proftext);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_028.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile1 = new File(Location1);
 		// Move the screenshot file to the specified destination
 		try {
@@ -1125,16 +1204,17 @@ public class RA_TranslineConfig extends BaseClass {
 			System.out.println("TAS_DC_028 Failed to save screenshot: " + e.getMessage());
 		}
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 23)
 	@TestDescription("In Line trigger should pop that data is Duplicate. after changing the Trigger should disappear")
 	public void TAS_DC_029(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_029";
-	    String notes = "In Line trigger should pop that data is Duplicate. after changing the Trigger should disappear";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "In Line trigger should pop that data is Duplicate. after changing the Trigger should disappear";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -1176,9 +1256,7 @@ public class RA_TranslineConfig extends BaseClass {
 				.click();
 		Thread.sleep(4000);
 		// --Business Vertical Select--//
-		driver.findElement(By.xpath(
-				"//div[contains(text(),'Select All')]"))
-				.click();
+		driver.findElement(By.xpath("//div[contains(text(),'Select All')]")).click();
 		// --extraction frequency dropdown--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]"))
@@ -1193,39 +1271,41 @@ public class RA_TranslineConfig extends BaseClass {
 		// --Product Type Dropdown Select--///
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
 		Thread.sleep(4000);
-		//-- Product description --//
-		driver. findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		// -- Product description --//
+		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- product description select--//
+		// -- product description select--//
 		driver.findElement(By.xpath("//span[contains(text(),'ALL - All')]")).click();
 		Thread.sleep(4000);
-		//-- Currency click--//
+		// -- Currency click--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- currency select--//
+		// -- currency select--//
 		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
-		//-- add row Click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]/div[1]")).click();
+		// -- add row Click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]/div[1]"))
+				.click();
 		// --Product Type Dropdown--//
 		driver.findElement(By.xpath("//tbody/tr[2]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
 		// --Product Type Dropdown Select--///
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		//-- Product description click--//
+		// -- Product description click--//
 		driver.findElement(By.xpath("//tbody/tr[2]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- Product description select--//
+		// -- Product description select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		//-- Currency click--//
+		// -- Currency click--//
 		driver.findElement(By.xpath("//tbody/tr[2]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- Currency select--//
+		// -- Currency select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]")).click();
 		Thread.sleep(4000);
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_029.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
 		try {
@@ -1233,97 +1313,111 @@ public class RA_TranslineConfig extends BaseClass {
 			System.out.println(" TAS_DC_029 Screenshot saved to: " + destinationFile.getAbsolutePath());
 		} catch (IOException e) {
 			System.out.println("TAS_DC_029 Failed to save screenshot: " + e.getMessage());
-		}	
-		//-- Currency click--//
+		}
+		// -- Currency click--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
 		Thread.sleep(4000);
-		//-- Currency select--//
+		// -- Currency select--//
 		driver.findElement(By.xpath("//span[contains(text(),'ACU')]")).click();
 		Thread.sleep(4000);
-		//-- Take screenshot and save it to a file--//
-				File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_029_1.png";
-				//-- save the screenshot --//
-				File destinationFile1 = new File(Location1);
-				// Move the screenshot file to the specified destination
-				try {
-					org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
-					System.out.println(" TAS_DC_029_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
-				} catch (IOException e) {
-					System.out.println("TAS_DC_029_1 Failed to save screenshot: " + e.getMessage());
-				}	
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_029_1.png";
+		// -- save the screenshot --//
+		File destinationFile1 = new File(Location1);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
+			System.out.println(" TAS_DC_029_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("TAS_DC_029_1 Failed to save screenshot: " + e.getMessage());
+		}
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 24)
 	@TestDescription("Duplicate Key Should Popup")
 	public void TAS_DC_031(String username, String password) throws InterruptedException {
 		String ScreenName = "Transline Configuration";
 		String testCaseId = "TAS_DC_031";
-	    String notes = "Duplicate Key Should Popup";
-	    ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-	    LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Duplicate Key Should Popup";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
 		Thread.sleep(5000);
-		//-- Filter click--//
+		// -- Filter click--//
 		General.FILTER();
-		//-- Column click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		// -- Column click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+				.click();
 		Thread.sleep(4000);
-		//--column select--//
+		// --column select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
-		//-- Value sendkeys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("Service");
-		//-- Add filter--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]")).click();
-		//-- Column click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		//-- column select--//
+		// -- Value sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys("Service");
+		// -- Add filter--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/div[1]/div[1]/span[1]"))
+				.click();
+		// -- Column click--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+				.click();
+		// -- column select--//
 		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		//-- Value sendkeys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT");
+		// -- Value sendkeys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+				.sendKeys("VAT");
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(4000);
-		WebElement elementToHoverM = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[3]/span[1]/span[1]"));
+		WebElement elementToHoverM = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[3]/span[1]/span[1]"));
 		Actions actionsCopy = new Actions(driver);
 		actionsCopy.moveToElement(elementToHoverM).perform();
-		WebElement Copy = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[2]/i[1]"));
+		WebElement Copy = driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[2]/i[1]"));
 		Copy.click();
 		Thread.sleep(4000);
-		//-- save click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+		// -- save click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+				.click();
 		Thread.sleep(3000);
-		//-- Take screenshot and save it to a file--//
-				File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_031.png";
-				//-- save the screenshot --//
-				File destinationFile = new File(Location);
-				// Move the screenshot file to the specified destination
-				try {
-					org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
-					System.out.println(" TAS_DC_031 Screenshot saved to: " + destinationFile.getAbsolutePath());
-				} catch (IOException e) {
-					System.out.println("TAS_DC_031 Failed to save screenshot: " + e.getMessage());
-				}	
-				// Add screenshot to the report
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\TAS_DC_031.png";
+		// -- save the screenshot --//
+		File destinationFile = new File(Location);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+			System.out.println(" TAS_DC_031 Screenshot saved to: " + destinationFile.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("TAS_DC_031 Failed to save screenshot: " + e.getMessage());
+		}
+		// Add screenshot to the report
 		WebElement Duplicate = driver.findElement(By.xpath("//p[contains(text(),'- Failed - Duplicate key ')]"));
 		String Text = Duplicate.getText();
-		System.out.println(Text); 
+		System.out.println(Text);
 	}
-	
 
 	@Test(dataProvider = "loginCredentials", priority = 25)
 	@TestDescription("Click on to rate effective date	,New record has be created if we edit last modified  data")
 	public void TAS_DC_021(String username, String password) throws InterruptedException {
 		String ScreenName = "Fees Configuration";
 		String testCaseId = "TAS_DC_021";
-        String notes = "Click on to rate effective date	,New record has be created if we edit last modified  data";
-        ListenersRA.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(username);
-        LoginPage.loginPassword(password);
-        LoginPage.LoginClick();
+		String notes = "Click on to rate effective date	,New record has be created if we edit last modified  data";
+		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
 		Thread.sleep(7000);
 		// --- TransLine Config--//
 		TranslineConfig.Transline();
@@ -1350,19 +1444,23 @@ public class RA_TranslineConfig extends BaseClass {
 		// -- Apply click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(5000);
-		//-- Edit click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]")).click();
+		// -- Edit click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"))
+				.click();
 		Thread.sleep(8000);
 		// -- Business Line Config click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
 		Thread.sleep(5000);
-		//--- Old data click--//
-		driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[7]")).click();
+		// --- Old data click--//
+		driver.findElement(By.xpath(
+				"//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[7]"))
+				.click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
 		Thread.sleep(7000);
 		Thread.sleep(5000);// -- Fees Config Button Click--//
-		//-- All click--//
+		// -- All click--//
 		driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
 		Thread.sleep(3000);
 		WebElement elementToHoverM = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/input[1]"));
@@ -1372,46 +1470,53 @@ public class RA_TranslineConfig extends BaseClass {
 		Fees_config.click();
 		Thread.sleep(2000);
 		Actions actions = new Actions(driver);
-		WebElement elementTarget = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+		WebElement elementTarget = driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
 		actions.moveToElement(elementTarget);
 		Thread.sleep(5000);
-		WebElement Target = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+		WebElement Target = driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
 		Thread.sleep(3000);
 		actions.scrollToElement(Target);
 		actions.perform();
 		Target.click();
 		Thread.sleep(5000);
-		//-- Time reduce--//
+		// -- Time reduce--//
 		driver.findElement(By.xpath("(//button[@type='button'][normalize-space()='10'])[3]")).click();
 		Thread.sleep(2000);
-		//-- Fees/percentage send keys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("12");
+		// -- Fees/percentage send keys--//
+		driver.findElement(By.xpath(
+				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]"))
+				.sendKeys("12");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
 		Thread.sleep(5000);
 //		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		//-- Modify click--//		
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]")).click();
+		// -- Modify click--//
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]"))
+				.click();
 		Thread.sleep(5000);
-		//-- prefeerential click--//
+		// -- prefeerential click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Preferential')]")).click();
 		Thread.sleep(5000);
-				//-- All click--//
-				driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
-				Thread.sleep(3000);
-				//-- Take screenshot and save it to a file--//
-				File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_021.png";
-				//-- save the screenshot --//
-				File destinationFile = new File(Location);
-				// Move the screenshot file to the specified destination
-				try {
-					org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
-					System.out.println(" TAS_DC_021 Screenshot saved to: " + destinationFile.getAbsolutePath());
-				} catch (IOException e) {
-					System.out.println("TAS_DC_021 Failed to save screenshot: " + e.getMessage());
-				}		
+		// -- All click--//
+		driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
+		Thread.sleep(3000);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_021.png";
+		// -- save the screenshot --//
+		File destinationFile = new File(Location);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+			System.out.println(" TAS_DC_021 Screenshot saved to: " + destinationFile.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("TAS_DC_021 Failed to save screenshot: " + e.getMessage());
+		}
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 26)
 	@TestDescription("Click on Transline screen and change Transline type to Service,Without selecting Service line type , transline group and business vertical can be selected")
 	public void TAS_DC_035(String username, String password) throws InterruptedException {
@@ -1435,10 +1540,10 @@ public class RA_TranslineConfig extends BaseClass {
 		Trans.TranslineGroupService();
 		Thread.sleep(2000);
 		Trans.GroupBranch();
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_035.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile = new File(Location);
 		// Move the screenshot file to the specified destination
 		try {
@@ -1446,14 +1551,14 @@ public class RA_TranslineConfig extends BaseClass {
 			System.out.println(" TAS_DC_035 Screenshot saved to: " + destinationFile.getAbsolutePath());
 		} catch (IOException e) {
 			System.out.println("TAS_DC_035 Failed to save screenshot: " + e.getMessage());
-		}	
+		}
 		Thread.sleep(2000);
 		Trans.Businessvertical();
 		Thread.sleep(2000);
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_035_1.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile1 = new File(Location1);
 		// Move the screenshot file to the specified destination
 		try {
@@ -1461,9 +1566,9 @@ public class RA_TranslineConfig extends BaseClass {
 			System.out.println(" TAS_DC_035_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
 		} catch (IOException e) {
 			System.out.println("TAS_DC_035_1 Failed to save screenshot: " + e.getMessage());
-		}		
+		}
 	}
-	
+
 	@Test(dataProvider = "loginCredentials", priority = 27)
 	@TestDescription("After changing the Transline type and Transline group values should also change accordingly, Again change transline type to Product")
 	public void TAS_DC_036(String username, String password) throws InterruptedException {
@@ -1487,18 +1592,18 @@ public class RA_TranslineConfig extends BaseClass {
 		Trans.TranslineGroupService();
 		Thread.sleep(2000);
 		Trans.GroupBranch();
-		//-- Take screenshot and save it to a file--//
-				File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_036.png";
-				//-- save the screenshot --//
-				File destinationFile1 = new File(Location1);
-				// Move the screenshot file to the specified destination
-				try {
-					org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
-					System.out.println(" TAS_DC_036 Screenshot saved to: " + destinationFile1.getAbsolutePath());
-				} catch (IOException e) {
-					System.out.println("TAS_DC_036 Failed to save screenshot: " + e.getMessage());
-				}	
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_036.png";
+		// -- save the screenshot --//
+		File destinationFile1 = new File(Location1);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
+			System.out.println(" TAS_DC_036 Screenshot saved to: " + destinationFile1.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("TAS_DC_036 Failed to save screenshot: " + e.getMessage());
+		}
 		Trans.TranslineType();
 		Thread.sleep(2000);
 		Trans.TranslineProduct();
@@ -1509,10 +1614,10 @@ public class RA_TranslineConfig extends BaseClass {
 		Trans.TranslineGroupProduct();
 		Thread.sleep(2000);
 		Trans.GroupProductCASA();
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile11 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location11 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_036_1.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile11 = new File(Location11);
 		// Move the screenshot file to the specified destination
 		try {
@@ -1521,8 +1626,9 @@ public class RA_TranslineConfig extends BaseClass {
 		} catch (IOException e) {
 			System.out.println("TAS_DC_036_1 Failed to save screenshot: " + e.getMessage());
 		}
-		
+
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 28)
 	@TestDescription("User need to select transline type ,New record is creating in Tier of transline configuration screen")
 	public void TAS_DC_037(String username, String password) throws InterruptedException {
@@ -1540,20 +1646,23 @@ public class RA_TranslineConfig extends BaseClass {
 		// --- Add in Trans line Config--//
 		General.ADD();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/span[1]")).click();
-		//-- Take screenshot and save it to a file--//
-				File screenshotFile11 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location11 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_037.png";
-				//-- save the screenshot --//
-				File destinationFile11 = new File(Location11);
-				// Move the screenshot file to the specified destination
-				try {
-					org.apache.commons.io.FileUtils.copyFile(screenshotFile11, destinationFile11);
-					System.out.println(" TAS_DC_037 Screenshot saved to: " + destinationFile11.getAbsolutePath());
-				} catch (IOException e) {
-					System.out.println("TAS_DC_037 Failed to save screenshot: " + e.getMessage());
-				}
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/span[1]"))
+				.click();
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String Location11 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_037.png";
+		// -- save the screenshot --//
+		File destinationFile11 = new File(Location11);
+		// Move the screenshot file to the specified destination
+		try {
+			org.apache.commons.io.FileUtils.copyFile(screenshotFile11, destinationFile11);
+			System.out.println(" TAS_DC_037 Screenshot saved to: " + destinationFile11.getAbsolutePath());
+		} catch (IOException e) {
+			System.out.println("TAS_DC_037 Failed to save screenshot: " + e.getMessage());
+		}
 	}
+
 	@Test(dataProvider = "loginCredentials", priority = 29)
 	@TestDescription("Dependent filter is removed , Inline Trigger is should appear for dependent")
 	public void TAS_DC_038(String username, String password) throws InterruptedException {
@@ -1571,12 +1680,14 @@ public class RA_TranslineConfig extends BaseClass {
 		// --- Add in Trans line Config--//
 		General.ADD();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]")).click();
+		driver.findElement(By.xpath(
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]"))
+				.click();
 		Thread.sleep(2000);
-		//-- Take screenshot and save it to a file--//
-		File screenshotFile11 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// -- Take screenshot and save it to a file--//
+		File screenshotFile11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String Location11 = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_038.png";
-		//-- save the screenshot --//
+		// -- save the screenshot --//
 		File destinationFile11 = new File(Location11);
 		// Move the screenshot file to the specified destination
 		try {
@@ -1585,9 +1696,7 @@ public class RA_TranslineConfig extends BaseClass {
 		} catch (IOException e) {
 			System.out.println("TAS_DC_038 Failed to save screenshot: " + e.getMessage());
 		}
-		
+
 	}
 
 }
-
-

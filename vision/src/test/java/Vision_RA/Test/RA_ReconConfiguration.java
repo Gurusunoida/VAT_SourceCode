@@ -14,6 +14,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Package_PageObject.Login;
+import Package_PageObject.POM_RA;
 
 public class RA_ReconConfiguration extends BaseClass {
 	@DataProvider(name = "loginCredentials")
@@ -22,10 +23,12 @@ public class RA_ReconConfiguration extends BaseClass {
 	}
 
 	private Login LoginPage;
+	private POM_RA recon;
 
 	@BeforeMethod
 	public void setUpLogin() {
 		LoginPage = new Login(driver);
+		recon = new POM_RA(driver);
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
@@ -48,20 +51,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Take screenshot and save it to a file--//
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -99,20 +103,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -164,20 +169,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -228,20 +234,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -295,20 +302,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -372,20 +380,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -446,20 +455,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -529,20 +539,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -625,20 +636,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -711,20 +723,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -808,20 +821,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -877,20 +891,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -955,20 +970,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Rule ID dropdown click--//
 		driver.findElement(By.xpath(
@@ -1470,20 +1486,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Relationship click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Relationship')]")).click();
@@ -1545,20 +1562,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Filter Click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Filter')]")).click();
@@ -1628,20 +1646,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		Actions actions = new Actions(driver);
 		WebElement elementTarget = driver.findElement(By.xpath(
@@ -1715,20 +1734,21 @@ public class RA_ReconConfiguration extends BaseClass {
 		LoginPage.loginPassword(password);
 		LoginPage.LoginClick();
 		Thread.sleep(7000);
-		// -- User click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- RA Admin click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(3000);
-		// -- recon config click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
+//		// -- User click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- RA Admin click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		// -- recon config click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+		recon.Recon();
 		Thread.sleep(5000);
 		// -- Show Query Click--//
 		driver.findElement(By.xpath("//span[contains(text(),'Show Query')]")).click();

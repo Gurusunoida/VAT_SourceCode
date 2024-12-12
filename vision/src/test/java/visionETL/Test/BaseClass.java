@@ -16,7 +16,7 @@ public abstract class BaseClass {
     public void setUp() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://10.16.1.101:2000/");
+        driver.get("http://10.16.1.18:5600/");
         
     }
 
