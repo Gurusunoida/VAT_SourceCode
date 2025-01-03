@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public abstract class BaseClass {
 
@@ -14,9 +16,11 @@ public abstract class BaseClass {
     
     @BeforeMethod
     public void setUp() throws InterruptedException {
+    	
+    	 WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://10.16.1.18:5600/");
+        driver.get("http://202.83.25.244:9010/");
         
     }
 

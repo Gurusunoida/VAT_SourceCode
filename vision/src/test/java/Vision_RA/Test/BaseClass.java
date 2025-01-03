@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import Package_PageObject.Login;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public abstract class BaseClass  {
@@ -20,9 +21,9 @@ public abstract class BaseClass  {
     
     @BeforeMethod
     public void setUp() {
-    	
+   
+    	WebDriverManager.chromedriver().setup();
     	logger = LogManager.getLogger(this.getClass());
-    	
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://202.83.25.244:8001/");
