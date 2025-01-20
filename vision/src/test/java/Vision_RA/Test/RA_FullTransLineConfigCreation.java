@@ -9,49 +9,123 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class RA_FullTransLineConfigCreation {
-	WebDriver driver;
+import Package_PageObject.Login;
+import Package_PageObject.POM_RA_BusinessLine;
+import Package_PageObject.POM_General;
+import Package_PageObject.POM_RA;
+import Package_PageObject.POM_RA_FeesConfig;
+import Package_PageObject.POM_Transline;
 
-	@Parameters("ApplicationURL")
+public class RA_FullTransLineConfigCreation extends BaseClass {
+
+	String ID = "VAT_Full";
+	String RULE_PRIORITY = "1";
+	String GraceDays = "1";
+
+	private Login LoginPage;
+	private POM_RA RA;
+	private POM_General General;
+	private POM_Transline Trans;
+	private POM_RA_BusinessLine BusinessLine;
+	private POM_RA_FeesConfig Fees;
+
 	@BeforeMethod
-	public void setUp(String applicationURL) throws InterruptedException {
-		driver = new ChromeDriver();
-		driver.get(applicationURL);
-		driver.manage().window().maximize();
-	}
-
-	@AfterMethod
-	public void closeDriver() {
-		if (driver != null) {
-			driver.quit();
-		}
+	public void setUpLogin() {
+		LoginPage = new Login(driver);
+		RA = new POM_RA(driver);
+		General = new POM_General(driver);
+		Trans = new POM_Transline(driver);
+		BusinessLine = new POM_RA_BusinessLine(driver);
 	}
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
-	public void VAT_TTBF01(String username, String password) throws InterruptedException {
+	public void VAT_TBF01(String username, String password) throws InterruptedException {
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(username);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(password);
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+		LoginPage.loginUsername(username);
+		LoginPage.loginPassword(password);
+		LoginPage.LoginClick();
+		Thread.sleep(7000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- Master Configuration tab Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- MAster Config Dropdown Click
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
+//				.click();
+//		Thread.sleep(2000);
+		// --- TransLine Config--//
+		RA.Transline();
+		Thread.sleep(4000);
+		General.ADD();
+		Trans.TranslineID(ID);
+		Trans.TranslineDesc(ID);
+		Trans.ProductlineType();
+		Trans.ProductSelectAsset();
+		Trans.TranslineGroupProduct();
+		Trans.GroupProductCASA();
+		Trans.Businessvertical();
 		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(username);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(password);
+				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]"))
+				.click();
 		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);// -- Master Configuration tab Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]"))
-				.click();
-		Thread.sleep(2000);// -- MAster Config Dropdown Click
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/ul[1]/li[1]/ul[1]/li[1]/a[1]/span[1]"))
-				.click();
-		Thread.sleep(2000);// --- TransLine Config
+		Trans.ExtractionFreqClick();
+		Trans.ExtractioDaily();
+		Trans.ProductTypGridClick();
+		Trans.ProductTypeGridSelectFD();
+		Trans.ProductDescClick();
+		Trans.Currency();
+		Thread.sleep(2000);
+		Trans.TranslineSave();
+		Trans.SuccessToaster();
+		Thread.sleep(8000);
+		RA.Businessline();
+		BusinessLine.BusinessLineID(ID);
+		BusinessLine.BusinesslineDesc(ID);
+		BusinessLine.BusinessLineType();
+		BusinessLine.BusinessLineTypeExpense();
+		BusinessLine.IEType();
+		BusinessLine.IESelect();
+		BusinessLine.ServiceTypeclick();
+		BusinessLine.ServiceTypeSelect();
+		BusinessLine.ServiceDescClick();
+		BusinessLine.ServideDesSelect();
+		BusinessLine.CurrencyClick();
+		BusinessLine.CurrencySelect();
+		BusinessLine.GLCode();
+		BusinessLine.GLSelect();
+		BusinessLine.AccountClick();
+		BusinessLine.AccountSelect();
+		BusinessLine.ReconClick();
+		BusinessLine.RulePriority(RULE_PRIORITY);
+		BusinessLine.RuleID_Dropdown();
+		BusinessLine.RuleSelect();
+		BusinessLine.ReconTypeDropdown();
+		BusinessLine.ReconTypeSelect();
+		BusinessLine.ReconMethodDropdown();
+		BusinessLine.ReconMethodSelect();
+		BusinessLine.GraceDays(GraceDays);
+		BusinessLine.BusinesslineSave();
+		Trans.SuccessToaster();
+		Thread.sleep(8000);
+		RA.FeesConfig();
+		Fees.FeeTypeClick();
+		Fees.FeeTypeSelectFlat();
+		
+
 //		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
 //		Thread.sleep(2000);// --- Add in Trans line Config
 //		driver.findElement(By.xpath(
@@ -269,159 +343,159 @@ public class RA_FullTransLineConfigCreation {
 //		Thread.sleep(3000);
 //		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
 //		Thread.sleep(5000);// Approve Popup for Yes--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[5]/a[1]/i[1]"))
-				.click();
-		Thread.sleep(2000);// edit button--//
-		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
-		Thread.sleep(2000);// --fees congig--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000);// --fee type dropdown--//
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"))
-				.click();
-		Thread.sleep(2000);// --fee type select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]"))
-				.click();
-		Thread.sleep(2000);// -- fee basis dropdown--//
-		driver.findElement(By.xpath("//span[contains(text(),'Percentage')]")).click();// -- fee basis select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[1]/button[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/a[2]/div[1]"))
-				.click();// -- add button--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000); // -- Channel type dropdown--//
-		driver.findElement(By.xpath("//span[contains(text(),'Mobile Banking')]")).click();// --- Channel type select--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000);// channel code dropdown--//
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]"))
-				.click();// -- channel code dropdown select--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000);// --buusiness vertical dropdown--//
-		driver.findElement(By.xpath("//span[contains(text(),'Treasury')]")).click();// -- business vertical select--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]"))
-				.click();// --customer id click--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//tbody/tr[7]/td[2]")).click();// -- customer id// select--//																				
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[6]/div[1]/input[1]"))
-				.click();// -- contract id click--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//td[contains(text(),'0205428840906')]")).click();// -- contract id select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[8]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();// --product type dropdown--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'Loan Account')]")).click();// --product type dropdown
-																						// select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[9]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();// -- product description dropdown--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'03001 - Home Mortgage Loan')]")).click();// -- product
-																										// description
-																										// dropdown
-																										// select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[18]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();// -- transaction currency--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
-				.click();// -- transaction currency select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000); // -- posting currency--//
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]"))
-				.click();
-		Thread.sleep(2000);// -- posting currency select--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000);// -- currency conversion type --//
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]"))
-				.click();// -- currency converssiont select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[3]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(2000); // -- look up amount type--//
-		driver.findElement(By.xpath("//span[contains(text(),'Expected Amt')]")).click();
-		Thread.sleep(2000);// -- look up amount type select--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[4]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();
-		Thread.sleep(3000);// -- percentage amount type--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		Thread.sleep(2000);// -- percentage amount type select--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[5]/div[1]/input[1]"))
-				.clear();// -- Interest basis--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[5]/div[1]/input[1]"))
-				.sendKeys("200");// -- Interest basis--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[6]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();// -- round of basis dropdown--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]"))
-				.click();// -- round of basis dropdown select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[9]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
-				.click();// -- fee basis dropdown--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]"))
-				.click();// -- fee basis select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
-				.clear();// -- min fee amount--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
-				.sendKeys("0.00");// -- min fee amount--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
-				.clear();// -- max fee amount--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
-				.sendKeys("1234567890");// -- max fee amount--//
-		//-- Fee Amount/ Percentage--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).click();
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).clear();
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("123");
-		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-		//-- Save Button--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[1]/button[1]")).click();
-		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[5]/a[1]/i[1]"))
+//				.click();
+//		Thread.sleep(2000);// edit button--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
+//		Thread.sleep(2000);// --fees congig--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000);// --fee type dropdown--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"))
+//				.click();
+//		Thread.sleep(2000);// --fee type select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[4]/ng-select[1]/div[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- fee basis dropdown--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Percentage')]")).click();// -- fee basis select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[1]/button[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/a[2]/div[1]"))
+//				.click();// -- add button--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000); // -- Channel type dropdown--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Mobile Banking')]")).click();// --- Channel type select--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000);// channel code dropdown--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]"))
+//				.click();// -- channel code dropdown select--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000);// --buusiness vertical dropdown--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Treasury')]")).click();// -- business vertical select--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]"))
+//				.click();// --customer id click--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//tbody/tr[7]/td[2]")).click();// -- customer id// select--//																				
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[6]/div[1]/input[1]"))
+//				.click();// -- contract id click--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//td[contains(text(),'0205428840906')]")).click();// -- contract id select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[8]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();// --product type dropdown--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//span[contains(text(),'Loan Account')]")).click();// --product type dropdown
+//																						// select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[9]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();// -- product description dropdown--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//span[contains(text(),'03001 - Home Mortgage Loan')]")).click();// -- product
+//																										// description
+//																										// dropdown
+//																										// select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[18]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();// -- transaction currency--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"))
+//				.click();// -- transaction currency select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[1]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000); // -- posting currency--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]"))
+//				.click();
+//		Thread.sleep(2000);// -- posting currency select--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000);// -- currency conversion type --//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]"))
+//				.click();// -- currency converssiont select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[3]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(2000); // -- look up amount type--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Expected Amt')]")).click();
+//		Thread.sleep(2000);// -- look up amount type select--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[4]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();
+//		Thread.sleep(3000);// -- percentage amount type--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
+//		Thread.sleep(2000);// -- percentage amount type select--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[5]/div[1]/input[1]"))
+//				.clear();// -- Interest basis--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[5]/div[1]/input[1]"))
+//				.sendKeys("200");// -- Interest basis--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[6]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();// -- round of basis dropdown--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]"))
+//				.click();// -- round of basis dropdown select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[9]/ng-select[1]/div[1]/div[1]/div[3]/input[1]"))
+//				.click();// -- fee basis dropdown--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]"))
+//				.click();// -- fee basis select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
+//				.clear();// -- min fee amount--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[11]/div[1]/input[1]"))
+//				.sendKeys("0.00");// -- min fee amount--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
+//				.clear();// -- max fee amount--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[12]/div[1]/div[1]/input[1]"))
+//				.sendKeys("1234567890");// -- max fee amount--//
+//		//-- Fee Amount/ Percentage--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).click();
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).clear();
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]")).sendKeys("123");
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		//-- Save Button--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[1]/button[1]")).click();
+//		Thread.sleep(5000);
 	}
 
 	@DataProvider(name = "loginCredentials")

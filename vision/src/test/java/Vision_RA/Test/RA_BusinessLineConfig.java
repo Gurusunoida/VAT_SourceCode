@@ -14,7 +14,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Package_PageObject.Login;
-import Package_PageObject.POM_BusinessLine;
+import Package_PageObject.POM_RA_BusinessLine;
 import Package_PageObject.POM_General;
 import Package_PageObject.POM_RA;
 import Package_PageObject.POM_Transline;
@@ -29,7 +29,7 @@ public class RA_BusinessLineConfig extends BaseClass {
 	
 	 private Login LoginPage;
 	 private POM_RA TranslineConfig;
-	 private POM_BusinessLine Bus;
+	 private POM_RA_BusinessLine Bus;
 	 private POM_General General;
 	 
 	 
@@ -38,7 +38,7 @@ public class RA_BusinessLineConfig extends BaseClass {
 	        LoginPage = new Login(driver); 
 	        General = new POM_General(driver);
 	        TranslineConfig = new POM_RA(driver);
-	        Bus = new POM_BusinessLine(driver);
+	        Bus = new POM_RA_BusinessLine(driver);
 	    }
 	
 

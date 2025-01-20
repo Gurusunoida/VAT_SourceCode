@@ -2,6 +2,7 @@ package Package_PageObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class POM_Transline extends Base_PageObject {
@@ -82,6 +83,82 @@ public class POM_Transline extends Base_PageObject {
 	// -- Save--//
 	@FindBy(xpath = "//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]")
 	WebElement sSave;
+	
+	
+	//-- Extraction frequency--//
+	@FindBy(xpath = "//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]")
+	WebElement extractionFreq;
+	
+	//--Extraction select--//
+	@FindBy(xpath = "//span[contains(text(),'Daily')]")
+	WebElement extractionSelect;
+	
+	//-- Product Type grid--//
+	@FindBy(xpath = "//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")
+	WebElement producttypeGridClick;
+	
+	//-- Product Type grid Select--//
+	@FindBy(xpath = "//span[contains(text(),'FDA - Fixed Deposit')]")
+	WebElement producttypeGridSelectFD;
+	
+	//-- Product Desc Grid--//
+	@FindBy(xpath = "//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")
+	WebElement productDescGridClick;
+	
+	//-- Product Desc Select--//
+	@FindBy(xpath = "//span[contains(text(),'ALL - All')]")
+	WebElement productDescSelectAll;
+	
+	//-- Currency Click--//
+	@FindBy(xpath = "//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")
+	WebElement currencyClick;
+	
+	//-- Currency Select--//
+	@FindBy(xpath = "/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")
+	WebElement CurrencySelectAll;
+	
+	//-- Success Toaster--//
+	@FindBy(xpath = "//div[contains(text(),'- Successful')]")
+	WebElement successToaster;
+	
+	public void SuccessToaster() {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(successToaster).perform();
+		String SuccessText = successToaster.getText();
+		System.out.println(SuccessText);
+	}
+	
+	public void Currency() {
+		currencyClick.click();
+		CurrencySelectAll.click();
+	}
+	
+	
+	public void ProductTypGridClick() {
+		producttypeGridClick.click();
+	}
+	
+	public void ProductTypeGridSelectFD() {
+		producttypeGridSelectFD.click();
+	}
+	
+	public void ProductDescClick() {
+		productDescGridClick.click();
+		productDescSelectAll.click();
+	}
+	
+	
+	
+	
+	public void ExtractionFreqClick() {
+		extractionFreq.click();
+	}
+	
+	public void ExtractioDaily() {
+		extractionSelect.click();
+	}
+	
+	
 
 	public void TranslineSave() {
 		sSave.click();

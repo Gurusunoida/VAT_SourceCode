@@ -12,10 +12,10 @@ public class POM_FTPLogin extends Base_PageObject {
     }
 
     
-    @FindBy(xpath = "//input[@placeholder='User Name']")
+    @FindBy(xpath = "//body/app-root[1]/app-login[1]/div[1]/div[1]/div[2]/div[1]/div[2]/form[1]/div[1]/input[1]")
     private WebElement usernameField;
 
-    @FindBy(xpath = "//input[@placeholder='Password']")
+    @FindBy(xpath = "//body/app-root[1]/app-login[1]/div[1]/div[1]/div[2]/div[1]/div[2]/form[1]/div[2]/input[1]")
     private WebElement passwordField;
 
     @FindBy(xpath = "//span[contains(text(),'Login')]")

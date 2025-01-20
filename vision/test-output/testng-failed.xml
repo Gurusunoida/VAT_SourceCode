@@ -3,14 +3,14 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Vision_FTP.FTP_Groups">
+      <class name="Vision_FTP.FTP_Groups_Copy">
         <methods>
-          <include name="login"/>
-          <include name="FTP_GR_006" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="setup"/>
           <include name="setUp"/>
+          <include name="FTP_GR_002" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Vision_FTP.FTP_Groups -->
+      </class> <!-- Vision_FTP.FTP_Groups_Copy -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

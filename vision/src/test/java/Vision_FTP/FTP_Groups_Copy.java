@@ -11,7 +11,7 @@ import org.apache.commons.io.FileUtils;
 import Package_PageObject.POM_FTPLogin;
 import Package_PageObject.POM_FTP_Groups;
 
-public class FTP_Groups extends FTP_BaseClass {
+public class FTP_Groups_Copy extends FTP_BaseClass_Copy {
 
     private POM_FTPLogin login;
     private POM_FTP_Groups FTP;

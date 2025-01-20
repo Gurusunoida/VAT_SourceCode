@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class POM_BusinessLine extends Base_PageObject {
+public class POM_RA_BusinessLine extends Base_PageObject {
 
-	public POM_BusinessLine(WebDriver driver) {
+	public POM_RA_BusinessLine(WebDriver driver) {
 		super(driver);
 	}
 
@@ -49,7 +49,7 @@ public class POM_BusinessLine extends Base_PageObject {
 	WebElement sServiceType;
 
 	// -- Service Select--//
-	@FindBy(xpath = "/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")
+	@FindBy(xpath = "//span[contains(text(),'All')]")
 	WebElement sServiceSelect;
 
 	// -- Service Description click--//
@@ -140,11 +140,11 @@ public class POM_BusinessLine extends Base_PageObject {
 		gracedays.sendKeys(Days);
 	}
 
-	public void ReconSelect() {
+	public void ReconTypeSelect() {
 		rReconSelect.click();
 	}
 
-	public void ReconDropdown() {
+	public void ReconTypeDropdown() {
 		rReconTypedropdown.click();
 	}
 

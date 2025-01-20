@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Vision_FTP.FTP_Groups"/>
+      <class name="Vision_FTP.FTP_Groups_Copy"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

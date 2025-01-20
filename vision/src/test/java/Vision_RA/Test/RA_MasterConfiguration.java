@@ -14,7 +14,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Package_PageObject.Login;
-import Package_PageObject.POM_BusinessLine;
+import Package_PageObject.POM_RA_BusinessLine;
 import Package_PageObject.POM_General;
 import Package_PageObject.POM_RA;
 import Package_PageObject.POM_Transline;
@@ -36,7 +36,7 @@ public class RA_MasterConfiguration extends BaseClass {
 	private POM_RA TranslineConfig;
 	private POM_General General;
 	private POM_Transline Trans;
-	private POM_BusinessLine Bus;
+	private POM_RA_BusinessLine Bus;
 
 	@BeforeMethod
 	public void setUpLogin() {
@@ -44,7 +44,7 @@ public class RA_MasterConfiguration extends BaseClass {
 		TranslineConfig = new POM_RA(driver);
 		General = new POM_General(driver);
 		Trans = new POM_Transline(driver);
-		Bus = new POM_BusinessLine(driver);
+		Bus = new POM_RA_BusinessLine(driver);
 	}
 
 	@TestDescription("The display of the alert message would help users understand that the record has been modified.")
@@ -563,9 +563,9 @@ public class RA_MasterConfiguration extends BaseClass {
 		Bus.RuleID_Dropdown();
 		Thread.sleep(2000);
 		Bus.RuleSelect();
-		Bus.ReconDropdown();
+		Bus.ReconTypeDropdown();
 		Thread.sleep(2000);
-		Bus.ReconSelect();
+		Bus.ReconTypeSelect();
 		Bus.ReconMethodDropdown();
 		Thread.sleep(2000);
 		Bus.ReconMethodSelect();
@@ -745,9 +745,9 @@ public class RA_MasterConfiguration extends BaseClass {
 		Bus.RuleID_Dropdown();
 		Thread.sleep(2000);
 		Bus.RuleSelect();
-		Bus.ReconDropdown();
+		Bus.ReconTypeDropdown();
 		Thread.sleep(2000);
-		Bus.ReconSelect();
+		Bus.ReconTypeSelect();
 		Bus.ReconMethodDropdown();
 		Thread.sleep(2000);
 		Bus.ReconMethodSelect();
