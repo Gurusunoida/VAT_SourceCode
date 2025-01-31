@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ETL">
+	<listeners>
+		<listener class-name="visionETL.Test.ListenersETL"></listener>
+	</listeners>
+  <test thread-count="5" name="Connector_Category-Test">
+    <classes>
+		<class name="visionETL.Test.ETLConnector"/>
+      <class name="visionETL.Test.ETL_Category"/>
+    </classes>
+  </test> <!-- Category-Test -->
+</suite> <!-- ETL_CATEGORY -->

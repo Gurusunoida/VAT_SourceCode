@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="visionETL.Test.Java17.ListenersETL"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Vision_FTP.FTP_Groups_Copy">
+      <class name="visionETL.Test.Java17.ETLConnector">
         <methods>
+          <include name="ETL_CC_022" invocation-numbers="0"/>
+          <include name="setUpLogin"/>
           <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="ETL_CC_027" invocation-numbers="0"/>
+          <include name="ETL_CC_038" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="FTP_GR_002" invocation-numbers="0"/>
+          <include name="ETL_CC_026" invocation-numbers="0"/>
+          <include name="ETL_CC_043" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Vision_FTP.FTP_Groups_Copy -->
+      </class> <!-- visionETL.Test.Java17.ETLConnector -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

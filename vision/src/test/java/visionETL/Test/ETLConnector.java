@@ -30,8 +30,8 @@ import Package_PageObject.POM_ETL;
 public class ETLConnector extends BaseClass{
 	
 	
-	String Script= "VAT31";
-	String Connector_SendKeys = "VAT_Auto_test31";
+	String Script= "VAT32";
+	String Connector_SendKeys = "VAT_Auto_test32";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");

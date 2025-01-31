@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import Package_PageObject.Base_PageObject;
+
 public class POM_ETL extends Base_PageObject {
 
 	public POM_ETL(WebDriver driver) {

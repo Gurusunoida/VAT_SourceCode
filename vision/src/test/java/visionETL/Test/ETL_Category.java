@@ -22,15 +22,15 @@ import Package_PageObject.POM_General;
 
 public class ETL_Category extends BaseClass{
 	
-	String CATEGORY = "VAT_CATAUTO_31";
-	String ChannelType = "VATChannel12";
+	String CATEGORY = "VAT_CATAUTO_32";
+	String ChannelType = "VATChannel13";
 	 private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 		ExtentTest currentTest = test.get();
 	
 		@DataProvider(name = "getUserNameList")
 	    public Object[][] getUserNameList() {
 	        return new Object[][] {
-	            {"vision", "Vision@123"},
+	            {"RA", "Vision@123"},
 	        };
 	    }
 		private Login LoginPage;
