@@ -1000,21 +1000,21 @@ public class RA_TranslineConfig extends BaseClass {
 		Thread.sleep(4000);
 		// Channels dropdown select--//
 		driver.findElement(By.xpath("//span[contains(text(),'ALL')]")).click();
-//		//service dropdown--//------------------OLD DROPDOWN is Removed-----------------
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(4000);
-//		//--Service dropdown select--//
-//		driver.findElement(By.xpath("//span[contains(text(),'SBA - Savings Account')]")).click();
-//		//--service description-//
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(4000);
-//		//-- Service description select--//
-//		driver.findElement(By.xpath("//span[contains(text(),'06001 - Savings Account')]")).click();
-//		//-- Currency dropdown--//
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-//		Thread.sleep(4000);
-//		//-- Currency select--//
-//		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
+		//service dropdown--//------------------OLD DROPDOWN is Removed-----------------
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(4000);
+		//--Service dropdown select--//
+		driver.findElement(By.xpath("//span[contains(text(),'SBA - Savings Account')]")).click();
+		//--service description-//
+		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(4000);
+		//-- Service description select--//
+		driver.findElement(By.xpath("//span[contains(text(),'06001 - Savings Account')]")).click();
+		//-- Currency dropdown--//
+		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+		Thread.sleep(4000);
+		//-- Currency select--//
+		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
 		// save button click--//
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))

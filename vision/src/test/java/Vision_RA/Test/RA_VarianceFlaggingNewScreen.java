@@ -127,9 +127,9 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		//-- Column click--//
 		RA_General.FilterColumnclick();
 		Thread.sleep(2000);
-		Actions actions = new Actions(driver);
+		Actions actions = new Actions(driver);				
 		WebElement elementTarget = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]"));
-		actions.moveToElement(elementTarget);
+		actions.moveToElement(elementTarget);			
 		WebElement Target = driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[10]/span[1]"));
 		actions.scrollToElement(Target);
 		actions.perform();
@@ -254,7 +254,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("VAT_Auto_Reject");
 		//-- Apply CLick--//
 		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'VAT_Auto_Reject')]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
@@ -676,15 +676,15 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		driver.findElement(By.xpath("//tbody/tr[5]/td[17]/input[1]")).sendKeys(Title);
 		//-- Take screenshot and save it to a file--//
 				File screenshotFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FG_CF_046_1.png";
+				String Location1 = "D:\\Source code\\vision\\test-output\\Screenshot\\RA\\FG_CF_046_2.png";
 				//-- save the screenshot --//
 				File destinationFile1 = new File(Location1);
 				// Move the screenshot file to the specified destination
 				try {
 					org.apache.commons.io.FileUtils.copyFile(screenshotFile1, destinationFile1);
-					System.out.println(" FG_CF_046_1 Screenshot saved to: " + destinationFile1.getAbsolutePath());
+					System.out.println(" FG_CF_046_2 Screenshot saved to: " + destinationFile1.getAbsolutePath());
 				} catch (IOException e) {
-					System.out.println("FG_CF_046_1 Failed to save screenshot: " + e.getMessage());
+					System.out.println("FG_CF_046_2 Failed to save screenshot: " + e.getMessage());
 				}
 				Thread.sleep(2000);
 	}
@@ -788,6 +788,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 			System.out.println("The Number is  Equal");
 		}
 		driver.findElement(By.xpath("//tbody/tr[4]/td[17]/input[1]")).sendKeys(Given);
+		driver.findElement(By.xpath("//tbody/tr[4]/td[16]/input[1]")).sendKeys("1");
 		//-- Save click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 		//-- Yes click--//
@@ -1474,6 +1475,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		Thread.sleep(2000);
 		// -- Select --//
 		driver.findElement(By.xpath("//span[contains(text(),'Lien')]")).click();
+		driver.findElement(By.xpath("//tbody/tr[1]/td[16]/input[1]")).sendKeys("1");
 		// -- Amount LCY Send keys--//
 		driver.findElement(By.xpath("//tbody/tr[1]/td[17]/input[1]")).sendKeys("5");
 		Thread.sleep(5000);
@@ -2907,7 +2909,7 @@ public class RA_VarianceFlaggingNewScreen extends BaseClass {
 		Thread.sleep(2000);
 	}
 	@Test(dataProvider = "loginCredentials", priority = 25)
-	@TestDescription("REFLSG-If the leakage count is 0 , automatically the exception count should become 0.")
+	@TestDescription("REFLAG-If the leakage count is 0 , automatically the exception count should become 0.")
 	public void FG_CF_074(String username, String password) throws InterruptedException {
 		String ScreenName = "Variance Flagging";
 		String testCaseId = "FG_CF_074";

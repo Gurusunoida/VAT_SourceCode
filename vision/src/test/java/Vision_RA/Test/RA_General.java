@@ -31,7 +31,7 @@ public class RA_General extends BaseClass {
 	String Approved = "Approved";
 	String Businessline_ID = "VAT_Auto";
 	String Businessline_DESC = "VAT_Business";
-	String VAT_UserSetup = "VAT009";
+	String VAT_UserSetup = "VAT011";
 	String Password = "Vision@123";
 
 	private Login LoginPage;
@@ -97,10 +97,15 @@ public class RA_General extends BaseClass {
 		Thread.sleep(2000);
 		// --Business date To Select--//
 		driver.findElement(By.xpath("//div[normalize-space()='1']")).click();
+		//-- Posting currency Click--//
+		driver. findElement(By.xpath("//ng-multiselect-dropdown[@data-label='Posting Currency']//div[@class='multiselect-dropdown']//div//span[@class='dropdown-btn']//span//span[@class='dropdown-down']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[normalize-space()='ACU']")).click();
+		Thread.sleep(2000);
 		//-- Query Click--//
 		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
 		Thread.sleep(2000);
-		WebElement TexttoDisplay = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]"));
+		WebElement TexttoDisplay = driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]"	));
 		String Text = TexttoDisplay.getText();
 		System.out.println(Text);
 		Thread.sleep(2000);

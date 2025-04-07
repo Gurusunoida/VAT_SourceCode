@@ -7,10 +7,10 @@
 	<test thread-count="3" name="Test">
 		<classes>
 			<class name="visionETL.Test.ETLConnector" />
-			<class name="visionETL.Test.ETLCategory" />
+			<class name="visionETL.Test.ETL_Category" />
 			<class name="visionETL.Test.ETLFeedConfiguration" />
 			<class name="visionETL.Test.ETLLandingPage" />
-			<class name="visionETL.Test.ETLGeneral" />
+			<class name="visionETL.Test.ETL_General" />
 		</classes>
 	</test>
 </suite> <!--Suite -->

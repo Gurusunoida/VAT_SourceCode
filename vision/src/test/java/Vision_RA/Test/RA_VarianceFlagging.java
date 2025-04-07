@@ -15,9 +15,9 @@ public class RA_VarianceFlagging {
 
 		
 	String VarFilterValue = "VAT";
-	String VarDesc = "VAT_Test";
+	String VarDesc = "VAT_Test1";
 	WebDriver driver;
-	String Variance_flaghing_Add ="Vat_VarianceFlagging01";
+	String Variance_flaghing_Add ="Vat_VarianceFlagging02";
 
 	@Parameters("ApplicationURL")
 	@BeforeMethod

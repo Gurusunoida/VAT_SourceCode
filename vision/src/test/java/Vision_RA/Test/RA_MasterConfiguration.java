@@ -22,14 +22,14 @@ import Package_PageObject.POM_Transline;
 public class RA_MasterConfiguration extends BaseClass {
 
 	String VAT = "VAT";
-	String TranslineID= "VAT_Sing1";
-	String TranslineDesc = "VAT_SingleApprove1_DESC";
-	String BusinessLineID = "VAT_Sing1";
-	String BusinessLineDesc = "VAT_SingleApprove1_DESC";
-	String TranslineID1= "VAT_Sing2";
-	String TranslineDesc1 = "VAT_SingleApprove2_DESC";
-	String BusinessLineID1 = "VAT_Sing2";
-	String BusinessLineDesc1 = "VAT_SingleApprove2_DESC";
+	String TranslineID= "VAT_Sing2";
+	String TranslineDesc = "VAT_SingleApprove2_DESC";
+	String BusinessLineID = "VAT_Sing2";
+	String BusinessLineDesc = "VAT_SingleApprove2_DESC";
+	String TranslineID1= "VAT_Sing3";
+	String TranslineDesc1 = "VAT_SingleApprove3_DESC";
+	String BusinessLineID1 = "VAT_Sing3";
+	String BusinessLineDesc1 = "VAT_SingleApprove3_DESC";
 	
 	
 	private Login LoginPage;

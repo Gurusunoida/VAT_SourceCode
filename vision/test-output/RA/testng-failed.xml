@@ -1,70 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="classes" name="Failed suite [RA]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [RA]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="Vision_RA.Test.ListenersRA"/>
   </listeners>
-  <test thread-count="5" parallel="classes" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="Vision_RA.Test.RA_BusinessLineConfig">
+        <methods>
+          <include name="setUp"/>
+          <include name="BUS_DC_021" invocation-numbers="0"/>
+          <include name="setUpLogin"/>
+          <include name="BUS_DC_020" invocation-numbers="0"/>
+          <include name="BUS_DC_014" invocation-numbers="0"/>
+          <include name="BUS_DC_024" invocation-numbers="0"/>
+          <include name="BUS_DC_012" invocation-numbers="0"/>
+          <include name="BUS_DC_006" invocation-numbers="0"/>
+          <include name="BUS_DC_017" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="BUS_DC_008" invocation-numbers="0"/>
+          <include name="BUS_DC_005" invocation-numbers="0"/>
+          <include name="BUS_DC_016" invocation-numbers="0"/>
+          <include name="BUS_DC_009" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_BusinessLineConfig -->
+      <class name="Vision_RA.Test.RA_MasterConfiguration">
+        <methods>
+          <include name="RA_MC_015" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="RA_MC_005" invocation-numbers="0"/>
+          <include name="setUpLogin"/>
+          <include name="RA_MC_014" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="RA_MC_017" invocation-numbers="0"/>
+          <include name="RA_MC_007" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_MasterConfiguration -->
+      <class name="Vision_RA.Test.RA_FeesConfig">
+        <methods>
+          <include name="setUp"/>
+          <include name="VAT_FEE_DC_014" invocation-numbers="0"/>
+          <include name="VAT_FEE_DC_040" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setUpLogin"/>
+          <include name="VAT_FEE_DC_037" invocation-numbers="0"/>
+          <include name="VAT_FEE_DC_042" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_FeesConfig -->
       <class name="Vision_RA.Test.RA_TranslineConfig">
         <methods>
           <include name="setUp"/>
-          <include name="TAS_DC_008"/>
-          <include name="TAS_DC_007"/>
-          <include name="TAS_DC_029"/>
-          <include name="TAS_DC_005"/>
-          <include name="TAS_DC_002"/>
-          <include name="TAS_DC_024"/>
-          <include name="TAS_DC_021"/>
-          <include name="TAS_DC_004"/>
-          <include name="TAS_DC_026"/>
-          <include name="TAS_DC_009"/>
-          <include name="TAS_DC_006"/>
-          <include name="TAS_DC_028"/>
-          <include name="TAS_DC_003"/>
-          <include name="TAS_DC_025"/>
-          <include name="TAS_DC_001"/>
-          <include name="TAS_DC_023"/>
-          <include name="TAS_DC_019"/>
-          <include name="TAS_DC_011"/>
-          <include name="TAS_DC_016"/>
-          <include name="TAS_DC_038"/>
-          <include name="TAS_DC_013"/>
-          <include name="TAS_DC_035"/>
-          <include name="TAS_DC_010"/>
-          <include name="TAS_DC_015"/>
-          <include name="TAS_DC_037"/>
+          <include name="TAS_DC_024" invocation-numbers="0"/>
+          <include name="TAS_DC_035" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="TAS_DC_017"/>
-          <include name="TAS_DC_036"/>
-          <include name="TAS_DC_012"/>
-          <include name="TAS_DC_031"/>
+          <include name="TAS_DC_036" invocation-numbers="0"/>
           <include name="setUpLogin"/>
         </methods>
       </class> <!-- Vision_RA.Test.RA_TranslineConfig -->
-      <class name="Vision_RA.Test.RA_AlphaNumTab">
+      <class name="Vision_RA.Test.RA_ReconConfiguration">
         <methods>
           <include name="setUp"/>
-          <include name="ALP_NUM_025"/>
-          <include name="ALP_NUM_016"/>
-          <include name="ALP_NUM_027"/>
-          <include name="ALP_TAB_007"/>
-          <include name="ALP_TAB_006"/>
-          <include name="ALP_TAB_009"/>
-          <include name="ALP_TAB_008"/>
-          <include name="ALP_TAB_010"/>
-          <include name="ALP_TAB_004_ALP_TAB_003"/>
-          <include name="ALP_TAB_014"/>
           <include name="tearDown"/>
-          <include name="ALP_TAB_002"/>
-          <include name="ALP_NUM_020"/>
           <include name="setUpLogin"/>
-          <include name="ALP_NUM_024"/>
-          <include name="ALP_NUM_015"/>
-          <include name="ALP_NUM_026"/>
-          <include name="ALP_NUM_023"/>
+          <include name="RA_RC_019" invocation-numbers="0"/>
+          <include name="RA_RC_018" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Vision_RA.Test.RA_AlphaNumTab -->
+      </class> <!-- Vision_RA.Test.RA_ReconConfiguration -->
+      <class name="Vision_RA.Test.RA_General">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setUpLogin"/>
+          <include name="RA_GL_018" invocation-numbers="0"/>
+          <include name="RA_GL_005" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_General -->
+      <class name="Vision_RA.Test.RA_FeesPriority">
+        <methods>
+          <include name="setUp"/>
+          <include name="setUpLogin"/>
+          <include name="tearDown"/>
+          <include name="FES_PRI_004" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_FeesPriority -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [RA] -->

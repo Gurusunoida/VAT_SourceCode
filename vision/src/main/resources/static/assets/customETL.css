@@ -18,7 +18,7 @@ body {
 
 /* Keep existing styles */
 .nav-logo .logo {
-    background-image: url('./RA.png')!important;
+    background-image: url('./ETL.png')!important;
     background-size: cover !important;
 }
 
@@ -89,7 +89,7 @@ body {
 }
 
 .header::before {
-    content: "QA_VAT_ReportRA";
+    content: "QA_VAT_ReportETL";
     position: absolute;
     left: 50%;
     top: 50%;

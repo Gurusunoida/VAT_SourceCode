@@ -6,32 +6,65 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="visionETL.Test.ETLFeedConfiguration">
+      <class name="visionETL.Test.ETL_Category">
         <methods>
-          <include name="POM_Setup"/>
-          <include name="ETL_FC_032" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- visionETL.Test.ETLFeedConfiguration -->
-      <class name="visionETL.Test.ETL_ProfileSetup">
-        <methods>
-          <include name="setUpLogin"/>
-          <include name="tearDown"/>
+          <include name="ETL_CT_023" invocation-numbers="0"/>
           <include name="ETL"/>
-          <include name="ProfileSetup"/>
-          <include name="ETL_PS_001" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setUpLogin"/>
+          <include name="ETL_CT_010" invocation-numbers="0"/>
+          <include name="Connector"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- visionETL.Test.ETL_ProfileSetup -->
+      </class> <!-- visionETL.Test.ETL_Category -->
       <class name="visionETL.Test.ETL_General">
         <methods>
-          <include name="ETL_DC_001" invocation-numbers="1 2"/>
           <include name="setUpLogin"/>
           <include name="tearDown"/>
+          <include name="ETL_DC_016"/>
+          <include name="ETL_DC_020"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- visionETL.Test.ETL_General -->
+      <class name="visionETL.Test.ETLFeedConfiguration">
+        <methods>
+          <include name="POM_Setup"/>
+          <include name="ETL_FC_041" invocation-numbers="0"/>
+          <include name="ETL_FC_032" invocation-numbers="0"/>
+          <include name="ETL_FC_043" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="ETL_FC_042" invocation-numbers="0"/>
+          <include name="ETL_FC_044" invocation-numbers="0"/>
+          <include name="ETL_FC_046" invocation-numbers="0"/>
+          <include name="ETL_FC_004" invocation-numbers="0"/>
+          <include name="ETL_FC_026" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- visionETL.Test.ETLFeedConfiguration -->
+      <class name="visionETL.Test.ETLConnector">
+        <methods>
+          <include name="ETL_CC_043" invocation-numbers="0"/>
+          <include name="ETL_CC_047" invocation-numbers="0"/>
+          <include name="ETL"/>
+          <include name="tearDown"/>
+          <include name="Connector"/>
+          <include name="ETL_CC_038" invocation-numbers="0"/>
+          <include name="ETL_CC_049" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="setUpLogin"/>
+        </methods>
+      </class> <!-- visionETL.Test.ETLConnector -->
+      <class name="visionETL.Test.ETLLandingPage">
+        <methods>
+          <include name="ETL_LP_133" invocation-numbers="0"/>
+          <include name="ETL_LP_046" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="ETL_LP_033" invocation-numbers="0"/>
+          <include name="setUpLogin"/>
+          <include name="ETL_LP_027" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- visionETL.Test.ETLLandingPage -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [SuiteETL] -->

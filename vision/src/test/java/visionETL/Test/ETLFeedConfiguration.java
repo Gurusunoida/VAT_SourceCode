@@ -1930,7 +1930,7 @@ public class ETLFeedConfiguration extends BaseClass {
 		} catch (IOException e) {
 			System.out.println("ETL_FC_044 Failed to save screenshot: " + e.getMessage());
 		}
-		//currentTest.log(Status.FAIL, notes);
+		currentTest.log(Status.FAIL, notes);
 	}
 
 	@Test(priority = 33, dataProvider = "getUserNameList") // ---Fail Testcases After fix it will get pass--//

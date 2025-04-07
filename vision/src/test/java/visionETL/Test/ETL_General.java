@@ -28,79 +28,79 @@ public class ETL_General extends BaseClass{
 	        LoginPage = new Login(driver); 
 	    }
 
-	  @Test(dataProvider = "loginCredentials", priority = 0)
-	  @TestDescription("Login")
-	  public void ETL_DC_001(String username, String password) throws InterruptedException {
-		  String ScreenName = "General_TestCases(All Screen)";
-			String baseTestCaseId = "ETL_DC_001";
-			String notes;
-			String testCaseId;
-			// --1st set--//
-			if ("RA".equals(username) && "Vision@123".equals(password)) {
-				testCaseId = baseTestCaseId + "_A"; 
-				notes = "Valid login credentials 'RA'. Testing successful login.";
-			} 
-			//-- 2nd set--//
-			else if ("RA".equals(username) && "vision@123".equals(password)) {
-				testCaseId = baseTestCaseId + "_B"; 
-				notes = "Invalid password case 'RA'. Testing failure message.";
-			}
-			// --3rd set--//
-			else if ("QW".equals(username) && "Vision@123".equals(password)) {
-				Thread.sleep(5000);
-				testCaseId = baseTestCaseId + "_C"; 
-				notes = "Login should fail for username 'QW' with password 'Vision@123'.";
-			} 
-			//-- Default--//
-			else {
-				testCaseId = baseTestCaseId; 
-				notes = "Login test for other credentials.";
-			}
-			ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
-			LoginPage.loginUsername(username);
-			LoginPage.loginPassword(password);
-			LoginPage.LoginClick();
-			Thread.sleep(5000);
-			boolean loginSuccessful;
-			try {
-				loginSuccessful = true;
-			} catch (TimeoutException e) {
-				loginSuccessful = false;
-			}
-
-			if ("QW".equals(username) && "Vision@123".equals(password)) {
-				// --Handle the 3rd set specifically--//
-				WebElement errorText = driver
-						.findElement(By.xpath("//span[contains(text(),'The username and password entered do not match')]"));
-				String loginText = errorText.getText();
-				System.out.println(loginText);
-				if (loginSuccessful) {
-					notes = "Login should fail for username 'QW' with password 'Vision@123', but it passed.";
-					Assert.fail("Login should fail for username 'QW' with password 'Vision@123'.");
-				} else {
-					notes = "Login failed as expected for username 'QW'.";
-				}
-			} else if ("RA".equals(username) && "Vision@123".equals(password)) {
-				notes = "Valid login credentials 'RA'. Testing successful login.";
-				Assert.assertTrue(loginSuccessful, "Login failed for valid credentials.");
-			} else if ("RA".equals(username) && "vision@123".equals(password)) {
-				notes = "Invalid password case 'RA'. Testing failure message.";
-				Assert.fail("Login should fail for username 'RA' with password 'vision@123'.");
-			} else {
-				notes = "Login test for other credentials.";
-			}
-			// --Take screenshot and save it to a file--//
-			File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_001.png";
-			File destinationFile = new File(location);
-
-			try {
-				org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
-				System.out.println("ETL_DC_001 Screenshot saved to: " + destinationFile.getAbsolutePath());
-			} catch (IOException e) {
-				System.out.println("ETL_DC_001 Failed to save screenshot: " + e.getMessage());
-			}
-	  }
+//	  @Test(dataProvider = "loginCredentials", priority = 0)
+//	  @TestDescription("Login")
+//	  public void ETL_DC_001(String username, String password) throws InterruptedException {
+//		  String ScreenName = "General_TestCases(All Screen)";
+//			String baseTestCaseId = "ETL_DC_001";
+//			String notes;
+//			String testCaseId;
+//			// --1st set--//
+//			if ("RA".equals(username) && "Vision@123".equals(password)) {
+//				testCaseId = baseTestCaseId + "_A"; 
+//				notes = "Valid login credentials 'RA'. Testing successful login.";
+//			} 
+//			//-- 2nd set--//
+//			else if ("RA".equals(username) && "vision@123".equals(password)) {
+//				testCaseId = baseTestCaseId + "_B"; 
+//				notes = "Invalid password case 'RA'. Testing failure message.";
+//			}
+//			// --3rd set--//
+//			else if ("QW".equals(username) && "Vision@123".equals(password)) {
+//				Thread.sleep(5000);
+//				testCaseId = baseTestCaseId + "_C"; 
+//				notes = "Login should fail for username 'QW' with password 'Vision@123'.";
+//			} 
+//			//-- Default--//
+//			else {
+//				testCaseId = baseTestCaseId; 
+//				notes = "Login test for other credentials.";
+//			}
+//			ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
+//			LoginPage.loginUsername(username);
+//			LoginPage.loginPassword(password);
+//			LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			boolean loginSuccessful;
+//			try {
+//				loginSuccessful = true;
+//			} catch (TimeoutException e) {
+//				loginSuccessful = false;
+//			}
+//
+//			if ("QW".equals(username) && "Vision@123".equals(password)) {
+//				// --Handle the 3rd set specifically--//
+//				WebElement errorText = driver
+//						.findElement(By.xpath("//span[contains(text(),'The username and password entered do not match')]"));
+//				String loginText = errorText.getText();
+//				System.out.println(loginText);
+//				if (loginSuccessful) {
+//					notes = "Login should fail for username 'QW' with password 'Vision@123', but it passed.";
+//					Assert.fail("Login should fail for username 'QW' with password 'Vision@123'.");
+//				} else {
+//					notes = "Login failed as expected for username 'QW'.";
+//				}
+//			} else if ("RA".equals(username) && "Vision@123".equals(password)) {
+//				notes = "Valid login credentials 'RA'. Testing successful login.";
+//				Assert.assertTrue(loginSuccessful, "Login failed for valid credentials.");
+//			} else if ("RA".equals(username) && "vision@123".equals(password)) {
+//				notes = "Invalid password case 'RA'. Testing failure message.";
+//				Assert.fail("Login should fail for username 'RA' with password 'vision@123'.");
+//			} else {
+//				notes = "Login test for other credentials.";
+//			}
+//			// --Take screenshot and save it to a file--//
+//			File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//			String location = "D:\\Source code\\vision\\test-output\\Screenshot\\ETL\\ETL_DC_001.png";
+//			File destinationFile = new File(location);
+//
+//			try {
+//				org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+//				System.out.println("ETL_DC_001 Screenshot saved to: " + destinationFile.getAbsolutePath());
+//			} catch (IOException e) {
+//				System.out.println("ETL_DC_001 Failed to save screenshot: " + e.getMessage());
+//			}
+//	  }
 	  @Test( priority = 1)
 	  @TestDescription("The clear information remove should show in the filter process ")
 	  public void ETL_DC_010() throws InterruptedException {
@@ -420,10 +420,10 @@ public class ETL_General extends BaseClass{
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
 			Thread.sleep(2000);
-			WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[19]/td[8]/div[1]/span[1]"));
+			WebElement elementToHover = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[16]/td[3]/div[1]/span[1]"));
 			Actions actionsHover = new Actions(driver);
 			actionsHover.moveToElement(elementToHover).perform();
-			WebElement Details = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[19]/td[9]/div[2]/a[4]/i[1]"));
+			WebElement Details = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-feed-list[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[16]/td[9]/div[2]/a[4]/i[1]"));
 			actionsHover.moveToElement(Details).perform();
 			Thread.sleep(4000);
 	}
@@ -446,7 +446,7 @@ public class ETL_General extends BaseClass{
 			Thread.sleep(3000);
 			//-- Country--//
 			driver.findElement(By.xpath(
-					"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+					"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
 					.click();
 			Thread.sleep(2000);
 			//-- Country Select--//
@@ -558,7 +558,7 @@ public class ETL_General extends BaseClass{
 		Thread.sleep(5000);
 			//--Feed configuration click--//
 			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]")).click();
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			//-- Filter click--///
 			driver.findElement(By.xpath("//i[contains(text(),'filter_alt')]")).click();
 			//-- Column click--//
@@ -645,679 +645,679 @@ public class ETL_General extends BaseClass{
 			driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
 			Thread.sleep(3000);	
 	}
-	@Test( priority = 15)
-	@TestDescription("Feed should be successfully completed")
-	  public void ETL_DC_034() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_034";
-        String notes = "Feed should be successfully completed";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_1");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_1 - VAT_Category_1']")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01347368");
-			//-- Feed Click--//
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_1");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_1 - VAT_Category_1')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);	
-	}
-	@Test( priority = 16)
-	@TestDescription("If the rediness , pre and post is feeded and feed should be give successful status")
-	  public void ETL_DC_035() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_035";
-        String notes = "If the rediness , pre and post is feeded and feed should be give successful status";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01836605");
-			//-- Feed Click--//
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			Thread.sleep(670000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(11000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);		
-	}
-	@Test( priority = 17)
-	@TestDescription("If the rediness , pre and post is feeded and if Readiness is error the feed should be given in error status")
-	  public void ETL_DC_036() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_036";
-        String notes = "If the rediness , pre and post is feeded and if Readiness is error the feed should be given in error status";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01526601");
-			//-- Feed Click--//
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			Thread.sleep(670000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);
-			//--Error click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(1000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);		
-	}
-	@Test( priority = 18)
-	@TestDescription("If the rediness , pre and post is feeded and if pre is error the feed should be given in error status")
-	  public void ETL_DC_037() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_037";
-        String notes = "If the rediness , pre and post is feeded and if pre is error the feed should be given in error status";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01150112");
-			//-- Feed Click--//
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			Thread.sleep(670000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);
-			//--Error click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(1000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);		
-	}
-	@Test( priority = 19)
-	@TestDescription("If the feed is initiated with readiness script the feed should get successful")
-	  public void ETL_DC_039() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_039";
-        String notes = "If the feed is initiated with readiness script the feed should get successful";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01869802");
-			//-- Feed Click--//							
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);	
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(1000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);		
-	}
-	@Test( priority = 20)
-	@TestDescription("If the feed is initiated with readiness script and if the readiness is error the feed should get error")
-	  public void ETL_DC_040() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_040";
-        String notes = "If the feed is initiated with readiness script and if the readiness is error the feed should get error";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01805721");
-			//-- Feed Click--//							
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);	
-			//--Error click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
-			Thread.sleep(2000);	
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(1000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);		
-	}
-	@Test( priority = 21)
-	@TestDescription("If the feed is initiated with pre script and if the pre script is error the feed should get error")
-	  public void ETL_DC_042() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_042";
-        String notes = "If the feed is initiated with pre script and if the pre script is error the feed should get error";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_01");
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01368987");
-			//-- Feed Click--//							
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_01");
-			Actions actions = new Actions(driver);
-			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-			actions.moveToElement(elementTarget);
-			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_01 - vat_01')]"));
-			actions.scrollToElement(Target);
-			actions.perform();
-			Target.click();	
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);	
-			//--Error click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
-			Thread.sleep(2000);	
-			//--Filter click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[1]/div[1]/a[1]/span[1]/i[1]")).click();
-			Thread.sleep(2000);	
-			//--Column click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);	
-			//--Column select--//
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='Feed ID - Name']")).click();
-			//-- Value send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("AE01368987");
-			//-- Apply click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-			Thread.sleep(2000);	
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(1000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);			
-	}
-	@Test( priority = 22 )
-	@TestDescription("If the feed is initiated with post script the feed should get successful")
-	  public void ETL_DC_043() throws InterruptedException {
-		String ScreenName = "General_TestCases(All Screen)";
-		String testCaseId = "ETL_DC_043";
-        String notes = "If the feed is initiated with post script the feed should get successful";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername("RA");
-        LoginPage.loginPassword("Vision@123");
-        LoginPage.LoginClick();
-			Thread.sleep(5000);
-			//-- Operation click--//
-			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-			Thread.sleep(2000);
-			//-- Add click--//
-			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-			Thread.sleep(2000);
-			//-- Country click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-			//-- Le Book click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
-			Thread.sleep(2000);
-			//-- Feed Category Click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-			Thread.sleep(2000);
-			//-- Send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_22");
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-			//-- Feed name send keys--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01251806");
-			//-- Feed Click--//							
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
-			Thread.sleep(2000);
-			//-- Next schedule date click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//-- Time reduce click--//
-			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-			//--Ignore click--//
-			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
-			Thread.sleep(2000);
-			//-- Submit click--//
-			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-			Thread.sleep(10000);
-			//--category close--//
-			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
-			Thread.sleep(2000);
-			//-- All Category Click--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
-			Thread.sleep(2000);
-			//-- Category Select--//
-			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_22");
-			driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_22 - VAT_Category_22')]")).click();
-			//-- Run click--//
-			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-			Thread.sleep(2000);		
-			//-- Details of Feed--//
-			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
-			Status.click();
-			Thread.sleep(1000);
-			Thread.sleep(5000);
-			String Text = Status.getText();
-			Status .getText();
-			System.out.println("Feed Status: " + Text);
-			Thread.sleep(2000);	
-	}
+//	@Test( priority = 15)
+//	@TestDescription("Feed should be successfully completed")
+//	  public void ETL_DC_034() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_034";
+//        String notes = "Feed should be successfully completed";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_1");
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_1 - VAT_Category_1']")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01347368");
+//			//-- Feed Click--//
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_1");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_1 - VAT_Category_1')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);	
+//	}
+//	@Test( priority = 16)
+//	@TestDescription("If the rediness , pre and post is feeded and feed should be give successful status")
+//	  public void ETL_DC_035() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_035";
+//        String notes = "If the rediness , pre and post is feeded and feed should be give successful status";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01836605");
+//			//-- Feed Click--//
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			Thread.sleep(670000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(11000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);		
+//	}
+//	@Test( priority = 17)
+//	@TestDescription("If the rediness , pre and post is feeded and if Readiness is error the feed should be given in error status")
+//	  public void ETL_DC_036() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_036";
+//        String notes = "If the rediness , pre and post is feeded and if Readiness is error the feed should be given in error status";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01526601");
+//			//-- Feed Click--//
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			Thread.sleep(670000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);
+//			//--Error click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(1000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);		
+//	}
+//	@Test( priority = 18)
+//	@TestDescription("If the rediness , pre and post is feeded and if pre is error the feed should be given in error status")
+//	  public void ETL_DC_037() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_037";
+//        String notes = "If the rediness , pre and post is feeded and if pre is error the feed should be given in error status";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01150112");
+//			//-- Feed Click--//
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			Thread.sleep(670000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);
+//			//--Error click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(1000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);		
+//	}
+//	@Test( priority = 19)
+//	@TestDescription("If the feed is initiated with readiness script the feed should get successful")
+//	  public void ETL_DC_039() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_039";
+//        String notes = "If the feed is initiated with readiness script the feed should get successful";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01869802");
+//			//-- Feed Click--//							
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);	
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(1000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);		
+//	}
+//	@Test( priority = 20)
+//	@TestDescription("If the feed is initiated with readiness script and if the readiness is error the feed should get error")
+//	  public void ETL_DC_040() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_040";
+//        String notes = "If the feed is initiated with readiness script and if the readiness is error the feed should get error";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='VAT_CATEGORY_20 - VAT_Category_20']")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01805721");
+//			//-- Feed Click--//							
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_20");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_20 - VAT_Category_20')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);	
+//			//--Error click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
+//			Thread.sleep(2000);	
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(1000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);		
+//	}
+//	@Test( priority = 21)
+//	@TestDescription("If the feed is initiated with pre script and if the pre script is error the feed should get error")
+//	  public void ETL_DC_042() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_042";
+//        String notes = "If the feed is initiated with pre script and if the pre script is error the feed should get error";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_01");
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01368987");
+//			//-- Feed Click--//							
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_01");
+//			Actions actions = new Actions(driver);
+//			WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//			actions.moveToElement(elementTarget);
+//			WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_01 - vat_01')]"));
+//			actions.scrollToElement(Target);
+//			actions.perform();
+//			Target.click();	
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);	
+//			//--Error click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[7]/span[1]")).click();
+//			Thread.sleep(2000);	
+//			//--Filter click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[1]/div[1]/a[1]/span[1]/i[1]")).click();
+//			Thread.sleep(2000);	
+//			//--Column click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);	
+//			//--Column select--//
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='Feed ID - Name']")).click();
+//			//-- Value send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]")).sendKeys("AE01368987");
+//			//-- Apply click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//			Thread.sleep(2000);	
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(1000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);			
+//	}
+//	@Test( priority = 22 )
+//	@TestDescription("If the feed is initiated with post script the feed should get successful")
+//	  public void ETL_DC_043() throws InterruptedException {
+//		String ScreenName = "General_TestCases(All Screen)";
+//		String testCaseId = "ETL_DC_043";
+//        String notes = "If the feed is initiated with post script the feed should get successful";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername("RA");
+//        LoginPage.loginPassword("Vision@123");
+//        LoginPage.LoginClick();
+//			Thread.sleep(5000);
+//			//-- Operation click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//			Thread.sleep(2000);
+//			//-- Add click--//
+//			driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//			Thread.sleep(2000);
+//			//-- Country click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//			//-- Le Book click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted']")).click();
+//			Thread.sleep(2000);
+//			//-- Feed Category Click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//			Thread.sleep(2000);
+//			//-- Send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_22");
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//			//-- Feed name send keys--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]")).sendKeys("AE01251806");
+//			//-- Feed Click--//							
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Next schedule date click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//-- Time reduce click--//
+//			driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//			//--Ignore click--//
+//			driver.findElement(By.xpath("//label[contains(text(),'Ignore')]")).click();
+//			Thread.sleep(2000);
+//			//-- Submit click--//
+//			driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//			Thread.sleep(10000);
+//			//--category close--//
+//			driver.findElement(By.xpath("(//a[contains(text(),'x')])[5]")).click();
+//			Thread.sleep(2000);
+//			//-- All Category Click--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]")).click();
+//			Thread.sleep(2000);
+//			//-- Category Select--//
+//			driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_22");
+//			driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_22 - VAT_Category_22')]")).click();
+//			//-- Run click--//
+//			driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//			Thread.sleep(5000);
+//			driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//			Thread.sleep(2000);		
+//			//-- Details of Feed--//
+//			WebElement Status = driver.findElement(By.xpath("//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-operationdashboard[1]/div[1]/div[1]/div[1]/div[2]/app-smart-table[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/span[1]"));
+//			Status.click();
+//			Thread.sleep(1000);
+//			Thread.sleep(5000);
+//			String Text = Status.getText();
+//			Status .getText();
+//			System.out.println("Feed Status: " + Text);
+//			Thread.sleep(2000);	
+//	}
 	
 	  @DataProvider(name = "loginCredentials")
 	  public Object[][] provideLoginData() {

@@ -317,11 +317,11 @@ public class ETLLandingPage extends BaseClass{
 		Thread.sleep(10000);
 	}
 	@Test(priority = 13, dataProvider = "getUserNameList", enabled = false)
-	@TestDescription("Sort Option should perform Process Date,Entity,,Feed,Feed Category,current Status")
+	@TestDescription("Sort Option should perform Process Date,Entity,Feed,Feed Category,current Status")
 	public void ETL_LP_036(String loginName, String loginPwd) throws InterruptedException {
 		String ScreenName = "Landing Page";
 		String testCaseId = "ETL_LP_036";
-        String notes = "Sort Option should perform Process Date,Entity,,Feed,Feed Category,current Status";
+        String notes = "Sort Option should perform Process Date,Entity,Feed,Feed Category,current Status";
         ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
         LoginPage.loginUsername(loginName);
         LoginPage.loginPassword(loginPwd);
@@ -477,131 +477,131 @@ public class ETLLandingPage extends BaseClass{
 				.click();//--Entity Close
 		Thread.sleep(2000);
 	}
-	@Test(priority = 18, dataProvider = "getUserNameList")
-	@TestDescription("Should reorder the inbuild data")
-	public void ETL_LP_043(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_043";
-        String notes = "Should reorder the inbuild data";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
-				.click();//--EOD Status
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
-				.click();//--EOD Status Reset
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
-				.click();//--EOD stat 
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
-				.click();//--EOD stat Reset
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
-				.click();//--Table Statistics
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
-				.click();//--Table Statistics Reset
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
-				.click();//--Errored Feeds
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
-				.click();//--Errored Feeds Reset
-		Thread.sleep(2000);	
-	}
-	@Test(priority = 19, dataProvider = "getUserNameList")//--- When Widget is Changed this testcase will get Failed----//
-	@TestDescription("The rearranged widget should be saved")
-	public void ETL_LP_044(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_044";
-        String notes = "The rearranged widget should be saved";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/i[1]"))
-				.click();//--Close widget
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//span[contains(text(),'add_circle_outline')]"))
-				.click();//--Add Widget
-		Thread.sleep(10000);
-		driver.findElement(By
-				.xpath("//span[contains(text(),'EOD Volume Trend')]"))
-				.click();//--Choose Widget
-		Thread.sleep(10000);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/i[1]"))
-				.click();//--Close widget
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//span[contains(text(),'add_circle_outline')]"))
-				.click();//--Add Widget
-		Thread.sleep(3000);
-		driver.findElement(By
-				.xpath("//span[contains(text(),'EOD Error/Terminated')]"))
-				.click();//--Choose Widget
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//i[contains(text(),'more_horiz')]"))
-				.click();//--Three horizontal click to Save(Widget Menu)
-		Thread.sleep(2000);
-		driver.findElement(By
-				.xpath("//span[contains(text(),'Save')]"))
-				.click();//--Save
-		Thread.sleep(10000);
-	}
-	@Test(priority = 20, dataProvider = "getUserNameList")
-	@TestDescription("Click the three vertical dot and click the max function in the drop down for all stats screen	The function should be get maximized ")
-	public void ETL_LP_045(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_045";
-        String notes = "Click the three vertical dot and click the max function in the drop down for all stats screen	The function should be get maximized ";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		//--First Widget for Max screen
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
-		Thread.sleep(2000);//--Max Screen End
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		//--Second Widget for Max screen
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
-		Thread.sleep(2000);//--Max Screen End
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		//--Third Widget for Max screen
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
-		Thread.sleep(2000);//--Max Screen End
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		//--Fourth Widget for Max screen
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
-		Thread.sleep(2000);//--Max Screen End
-	}
+//	@Test(priority = 18, dataProvider = "getUserNameList")
+//	@TestDescription("Should reorder the inbuild data")
+//	public void ETL_LP_043(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_043";
+//        String notes = "Should reorder the inbuild data";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
+//				.click();//--EOD Status
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
+//				.click();//--EOD Status Reset
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
+//				.click();//--EOD stat 
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
+//				.click();//--EOD stat Reset
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
+//				.click();//--Table Statistics
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
+//				.click();//--Table Statistics Reset
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"))
+//				.click();//--Errored Feeds
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/div[1]/span[1]"))
+//				.click();//--Errored Feeds Reset
+//		Thread.sleep(2000);	
+//	}
+//	@Test(priority = 19, dataProvider = "getUserNameList")//--- When Widget is Changed this testcase will get Failed----//
+//	@TestDescription("The rearranged widget should be saved")
+//	public void ETL_LP_044(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_044";
+//        String notes = "The rearranged widget should be saved";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/i[1]"))
+//				.click();//--Close widget
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//span[contains(text(),'add_circle_outline')]"))
+//				.click();//--Add Widget
+//		Thread.sleep(10000);
+//		driver.findElement(By
+//				.xpath("//span[contains(text(),'EOD Volume Trend')]"))
+//				.click();//--Choose Widget
+//		Thread.sleep(10000);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/i[1]"))
+//				.click();//--Close widget
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//span[contains(text(),'add_circle_outline')]"))
+//				.click();//--Add Widget
+//		Thread.sleep(3000);
+//		driver.findElement(By
+//				.xpath("//span[contains(text(),'EOD Error/Terminated')]"))
+//				.click();//--Choose Widget
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//i[contains(text(),'more_horiz')]"))
+//				.click();//--Three horizontal click to Save(Widget Menu)
+//		Thread.sleep(2000);
+//		driver.findElement(By
+//				.xpath("//span[contains(text(),'Save')]"))
+//				.click();//--Save
+//		Thread.sleep(10000);
+//	}
+//	@Test(priority = 20, dataProvider = "getUserNameList")
+//	@TestDescription("Click the three vertical dot and click the max function in the drop down for all stats screen	The function should be get maximized ")
+//	public void ETL_LP_045(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_045";
+//        String notes = "Click the three vertical dot and click the max function in the drop down for all stats screen	The function should be get maximized ";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		//--First Widget for Max screen
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
+//		Thread.sleep(2000);//--Max Screen End
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		//--Second Widget for Max screen
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
+//		Thread.sleep(2000);//--Max Screen End
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		//--Third Widget for Max screen
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
+//		Thread.sleep(2000);//--Max Screen End
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		//--Fourth Widget for Max screen
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[4]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		driver.findElement(By.xpath("//span[contains(text(),'Minimize')]")).click();
+//		Thread.sleep(2000);//--Max Screen End
+//	}
 	@Test(priority = 21, dataProvider = "getUserNameList")
 	@TestDescription("The reload should return back the widgets what has been closed ")
 	public void ETL_LP_046(String loginName, String loginPwd) throws InterruptedException {
@@ -645,58 +645,58 @@ public class ETLLandingPage extends BaseClass{
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/p[1]/b[1]")).click();
 		Thread.sleep(1000);//--Close Connector
 	}
-	@Test(priority = 23, dataProvider = "getUserNameList")
-	@TestDescription("The chart should be appear what has been selected ")
-	public void ETL_LP_048(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_048";
-        String notes = "The chart should be appear what has been selected ";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		WebElement elementToHover = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
-	    // Create an instance of Actions class
-	    Actions actions = new Actions(driver);
-	    // Perform mouse hover action on the element
-	    actions.moveToElement(elementToHover).perform();
-	    WebElement threeDot = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
-	    threeDot.click();
-		Thread.sleep(2000);//-- Three dot Click in Volume Trend--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/div[1]/span[1]")).click();
-		Thread.sleep(2000);//--Chart Type Click--//
-		driver.findElement(By.xpath("//div[contains(text(),'Stack Column 2D Line')]")).click();//-- Chart Type Select--//
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		Thread.sleep(2000);//-- Three dot Click in Volume Trend--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/div[1]/span[1]")).click();
-		driver.findElement(By.xpath("//div[contains(text(),'In Billions')]")).click();
-		Thread.sleep(10000);
-	}
-	@Test(priority = 24, dataProvider = "getUserNameList")
-	@TestDescription("The Changed value in Scaling should be displayed in graph")
-	public void ETL_LP_049(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_049";
-        String notes = "The Changed value in Scaling should be displayed in graph";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		WebElement elementToHover = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
-	    // Create an instance of Actions class
-	    Actions actions = new Actions(driver);
-	    // Perform mouse hover action on the element
-	    actions.moveToElement(elementToHover).perform();
-	    WebElement threeDot = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
-	    threeDot.click();
-		Thread.sleep(2000);//-- Three dot Click in Volume Trend--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/div[1]/span[1]")).click();//-- Scaling Click--//
-		driver.findElement(By.xpath("//div[contains(text(),'In Billions')]")).click();//-- Scaling Select--//
-		Thread.sleep(10000);
-	}
+//	@Test(priority = 23, dataProvider = "getUserNameList")
+//	@TestDescription("The chart should be appear what has been selected ")
+//	public void ETL_LP_048(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_048";
+//        String notes = "The chart should be appear what has been selected ";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		WebElement elementToHover = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
+//	    // Create an instance of Actions class
+//	    Actions actions = new Actions(driver);
+//	    // Perform mouse hover action on the element
+//	    actions.moveToElement(elementToHover).perform();
+//	    WebElement threeDot = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
+//	    threeDot.click();
+//		Thread.sleep(2000);//-- Three dot Click in Volume Trend--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/div[1]/span[1]")).click();
+//		Thread.sleep(2000);//--Chart Type Click--//
+//		driver.findElement(By.xpath("//div[contains(text(),'Stack Column 2D Line')]")).click();//-- Chart Type Select--//
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		Thread.sleep(2000);//-- Three dot Click in Volume Trend--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/div[1]/span[1]")).click();
+//		driver.findElement(By.xpath("//div[contains(text(),'In Billions')]")).click();
+//		Thread.sleep(10000);
+//	}
+//	@Test(priority = 24, dataProvider = "getUserNameList")
+//	@TestDescription("The Changed value in Scaling should be displayed in graph")
+//	public void ETL_LP_049(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_049";
+//        String notes = "The Changed value in Scaling should be displayed in graph";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		WebElement elementToHover = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
+//	    // Create an instance of Actions class
+//	    Actions actions = new Actions(driver);
+//	    // Perform mouse hover action on the element
+//	    actions.moveToElement(elementToHover).perform();
+//	    WebElement threeDot = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]"));
+//	    threeDot.click();
+//		Thread.sleep(2000);//-- Three dot Click in Volume Trend--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/div[1]/span[1]")).click();//-- Scaling Click--//
+//		driver.findElement(By.xpath("//div[contains(text(),'In Billions')]")).click();//-- Scaling Select--//
+//		Thread.sleep(10000);
+//	}
 	@Test(priority = 25, dataProvider = "getUserNameList")
 	@TestDescription("If the cursor is placed on top of the user profile in the opened help tab, it should display in a pop-up on top, not hidden behind the help tab.")
 	public void ETL_LP_006(String loginName, String loginPwd) throws InterruptedException {
@@ -734,59 +734,59 @@ public class ETLLandingPage extends BaseClass{
 		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/app-top-bar[1]/div[1]/div[1]/span[3]")).click();
 		Thread.sleep(2000);
 	}
-	@Test(priority = 27, dataProvider = "getUserNameList")
-	@TestDescription("Sort function should be freezed like Filter")
-	public void ETL_LP_030(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_030";
-        String notes = "Sort function should be freezed like Filter";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(7000);
-		//-- Three dot in Volume Trend--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
-		//-- Sort Button Click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/div[1]/span[1]")).click();
-		Thread.sleep(3000);
-	}
-	@Test(priority = 28, dataProvider = "getUserNameList")
-	@TestDescription("Widget should be changed acoordingly")
-	public void ETL_LP_034(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_034";
-        String notes = "Widget should be changed acoordingly";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		//-- Settings Button--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/app-top-bar[1]/nav[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/i[1]")).click();
-		driver.findElement(By.xpath("//span[contains(text(),'Templates')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/img[1]")).click();
-		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/span[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/span[2]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/span[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/span[2]")).click();
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/span[1]/span[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/span[2]")).click();
-		driver.findElement(By.xpath("//span[contains(text(),'add_circle_outline')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'RA Builds')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//i[contains(text(),'more_horiz')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[contains(text(),'Save')]")).click();
-		Thread.sleep(4000);	
-	}
+//	@Test(priority = 27, dataProvider = "getUserNameList")
+//	@TestDescription("Sort function should be freezed like Filter")
+//	public void ETL_LP_030(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_030";
+//        String notes = "Sort function should be freezed like Filter";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(7000);
+//		//-- Three dot in Volume Trend--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/a[1]/span[1]/i[1]")).click();
+//		//-- Sort Button Click--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/div[1]/span[1]")).click();
+//		Thread.sleep(3000);
+//	}
+//	@Test(priority = 28, dataProvider = "getUserNameList")
+//	@TestDescription("Widget should be changed acoordingly")
+//	public void ETL_LP_034(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_034";
+//        String notes = "Widget should be changed acoordingly";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		//-- Settings Button--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/app-top-bar[1]/nav[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/i[1]")).click();
+//		driver.findElement(By.xpath("//span[contains(text(),'Templates')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[4]/img[1]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/span[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/span[2]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/span[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/span[2]")).click();
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/span[1]/span[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/span[2]")).click();
+//		driver.findElement(By.xpath("//span[contains(text(),'add_circle_outline')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//span[contains(text(),'RA Builds')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//i[contains(text(),'more_horiz')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//span[contains(text(),'Save')]")).click();
+//		Thread.sleep(4000);	
+//	}
 	@Test(priority = 29, dataProvider = "getUserNameList")
 	@TestDescription("The function should be clickable and should show the details ")
 	public void ETL_LP_037(String loginName, String loginPwd) throws InterruptedException {
@@ -978,44 +978,44 @@ public class ETLLandingPage extends BaseClass{
 			Login.sendKeys(Keys.ENTER);
 		Thread.sleep(10000);
 	}
-	@Test(priority = 34, dataProvider = "getUserNameList")
-	@TestDescription("Added widgets should be saved accordingly")
-	public void ETL_LP_070(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_070";
-        String notes = "Added widgets should be saved accordingly";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-        LoginPage.loginUsername(loginName);
-        LoginPage.loginPassword(loginPwd);
-        LoginPage.LoginClick();
-		Thread.sleep(10000);
-		//-- 1st dashboard close--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/i[1]")).click();
-		//-- Add click--//
-		driver.findElement(By.xpath("//span[contains(text(),'add_circle_outline')]")).click();
-		Thread.sleep(2000);
-		//-- Dashboard Select --//
-		driver.findElement(By.xpath("//div[@class='ps ps--active-y']//div[@class='ps-content']//div//span[contains(text(),'EOD Volume Trend')]")).click();
-		//-- Close--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/i[1]")).click();
-		//-- Add click--//
-		driver.findElement(By.xpath("//span[contains(text(),'add_circle_outline')]")).click();
-		//-- Dashboard select--//
-		driver.findElement(By.xpath("//span[normalize-space()='EOD Error/Terminated']")).click();
-		//-- Widget Menu click--//
-		driver.findElement(By.xpath("//i[contains(text(),'more_horiz')]")).click();
-		//-- Save click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Save')]")).click();
-		Thread.sleep(2000);
-		//-- Referesh Click--//
-		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-		Thread.sleep(2000);
-		//-- Operation click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//span[contains(text(),'Dashboard')]")).click();
-		Thread.sleep(3000);
-	}
+//	@Test(priority = 34, dataProvider = "getUserNameList")
+//	@TestDescription("Added widgets should be saved accordingly")
+//	public void ETL_LP_070(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_070";
+//        String notes = "Added widgets should be saved accordingly";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//        LoginPage.loginUsername(loginName);
+//        LoginPage.loginPassword(loginPwd);
+//        LoginPage.LoginClick();
+//		Thread.sleep(10000);
+//		//-- 1st dashboard close--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[1]/div[1]/div[1]/div[2]/i[1]")).click();
+//		//-- Add click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'add_circle_outline')]")).click();
+//		Thread.sleep(2000);
+//		//-- Dashboard Select --//
+//		driver.findElement(By.xpath("//div[@class='ps ps--active-y']//div[@class='ps-content']//div//span[contains(text(),'EOD Volume Trend')]")).click();
+//		//-- Close--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/app-template-gridster[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/gridster[1]/gridster-item[2]/div[1]/div[1]/div[2]/i[1]")).click();
+//		//-- Add click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'add_circle_outline')]")).click();
+//		//-- Dashboard select--//
+//		driver.findElement(By.xpath("//span[normalize-space()='EOD Error/Terminated']")).click();
+//		//-- Widget Menu click--//
+//		driver.findElement(By.xpath("//i[contains(text(),'more_horiz')]")).click();
+//		//-- Save click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Save')]")).click();
+//		Thread.sleep(2000);
+//		//-- Referesh Click--//
+//		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//		Thread.sleep(2000);
+//		//-- Operation click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//span[contains(text(),'Dashboard')]")).click();
+//		Thread.sleep(3000);
+//	}
 //	@Test(priority = 35, dataProvider = "getUserNameList")
 //	@TestDescription("While initiating feed(Adhoc) instead of Save button Submit should be appeared")
 //	public void ETL_LP_116(String loginName, String loginPwd) throws InterruptedException {
@@ -1228,7 +1228,12 @@ public class ETLLandingPage extends BaseClass{
 		Thread.sleep(3000);
 	}
 	@Test(priority = 40, dataProvider = "getUserNameList")
+	@TestDescription("The refreshed terminated page should be displayed")
 	public void ETL_LP_033(String loginName, String loginPwd) throws InterruptedException {
+		String ScreenName = "Landing Page";
+		String testCaseId = "ETL_LP_033";
+        String notes = "The refreshed terminated page should be displayed";
+        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
 				.sendKeys(loginName);
