@@ -89,7 +89,7 @@ body {
 }
 
 .header::before {
-    content: "QA_VAT_ReportETL";
+    content: "ETL VAT Report";
     position: absolute;
     left: 50%;
     top: 50%;

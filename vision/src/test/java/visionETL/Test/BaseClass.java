@@ -20,8 +20,9 @@ public abstract class BaseClass {
     	 WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://202.83.25.244:9010/");
-        
+        //driver.get("http://10.16.1.101:3400/");
+        driver.get("http://10.16.1.58:4880/");
+        Thread.sleep(10000);
     }
 
     @AfterMethod

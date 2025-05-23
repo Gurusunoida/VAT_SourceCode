@@ -31,7 +31,7 @@ public class RA_General extends BaseClass {
 	String Approved = "Approved";
 	String Businessline_ID = "VAT_Auto";
 	String Businessline_DESC = "VAT_Business";
-	String VAT_UserSetup = "VAT011";
+	String VAT_UserSetup = "VAT012";
 	String Password = "Vision@123";
 
 	private Login LoginPage;

@@ -39,25 +39,25 @@ public class RA_AlphaNumTab extends BaseClass {
 	
 
 
-	String AlphaTab = "923";
-	String AlphaSubTab = "VAT_Test_923";
-	String AlphaTab1 = "1423";
-	String AlphaSubTab1 = "VAT_Test_1423";
+	String AlphaTab = "925";
+	String AlphaSubTab = "VAT_Test_925";
+	String AlphaTab1 = "1425";
+	String AlphaSubTab1 = "VAT_Test_1425";
 	String AlphaTabSpecial = "900@<>";
 	String AlphaSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab = "323";
-	String NumSubTab = "VAT_Test_323";
+	String NumTab = "325";
+	String NumSubTab = "VAT_Test_325";
 	String NumTabSpecial = "900@<>";
 	String NumSubTabSpecial = "VAT_Test_81@<>";
-	String NumTab1 = "523";
-	String NumSubTab1 = "VAT_Test_523";
+	String NumTab1 = "525";
+	String NumSubTab1 = "VAT_Test_525";
 	String AlphaTabReject = "80";
 	String AlphasubReject = "VAT_Reject";
 	String NumTabReject = "70";
 	String NumSubTabReject = "VAT_Reject";
-	String AlphaTabApprove = "180";
+	String AlphaTabApprove = "182";
 	String AlphaSubAprove = "VAT_Approve";
-	String NumTabApprove = "420";
+	String NumTabApprove = "422";
 	String NumSubTabApprove = "VAT_Approve";
 
 	@Test(dataProvider = "loginCredentials", priority = 1)
@@ -153,6 +153,7 @@ public class RA_AlphaNumTab extends BaseClass {
 		WebElement elementToHoverM = driver.findElement(By.xpath("//span[contains(text(),'VAT_KCB003')]"));
 		Actions actionsClick = new Actions(driver);
 		actionsClick.moveToElement(elementToHoverM).perform();
+		Thread.sleep(3000);
 		// -- Delete Click--//
 		WebElement AlphaTab = driver.findElement(By.xpath("//tbody/tr[1]/td[5]/div[2]/a[4]/i[1]"));
 		AlphaTab.click();

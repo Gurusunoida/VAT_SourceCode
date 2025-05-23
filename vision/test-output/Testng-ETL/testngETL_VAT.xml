@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SuiteETL">
+<suite name="SuiteETL(ENBD)">
 	<listeners>
 		<listener class-name="visionETL.Test.ListenersETL"></listener>
 	</listeners>
-	<test thread-count="3" name="Test">
+	<test thread-count="3" name="ETL">
 		<classes>
 			<class name="visionETL.Test.ETLConnector" />
 			<class name="visionETL.Test.ETL_Category" />
-			<class name="visionETL.Test.ETLFeedConfiguration" />
+			<class name="visionETL.Test.ETLFeedConfiguration" /> 
 			<class name="visionETL.Test.ETLLandingPage" />
-			<class name="visionETL.Test.ETL_General" />
+			<class name="visionETL.Test.ETL_General" />	
 		</classes>
 	</test>
 </suite> <!--Suite -->

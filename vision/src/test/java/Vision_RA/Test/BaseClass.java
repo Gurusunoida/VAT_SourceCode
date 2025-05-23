@@ -26,7 +26,8 @@ public abstract class BaseClass  {
     	logger = LogManager.getLogger(this.getClass());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://202.83.25.244:8001/");
+//        driver.get("http://202.83.25.244:8001/");
+        driver.get("http://10.16.1.235:4200/");
         
     }
 

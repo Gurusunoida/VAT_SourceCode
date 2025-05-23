@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Failed suite [Failed suite [VisionBI_AdvanceFTP]]]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Vision_BI.Listeners_FTP"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)(failed)(failed)">
+    <classes>
+      <class name="Vision_BI.AdvanceFTP">
+        <methods>
+          <include name="FTP_GR_037" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="FTP_GR_060" invocation-numbers="0"/>
+          <include name="FTP_GR_061" invocation-numbers="0"/>
+          <include name="ChromesetUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Vision_BI.AdvanceFTP -->
+    </classes>
+  </test> <!-- Test(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [VisionBI_AdvanceFTP]]] -->

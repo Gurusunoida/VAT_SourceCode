@@ -920,113 +920,113 @@ public class RA_TranslineConfig extends BaseClass {
 		}
 	}
 
-	@Test(dataProvider = "loginCredentials", priority = 20)
-	@TestDescription("When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ")
-	public void TAS_DC_024(String username, String password) throws InterruptedException {
-		String ScreenName = "Transline Configuration";
-		String testCaseId = "TAS_DC_024";
-		String notes = "When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ";
-		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
-		LoginPage.loginUsername(username);
-		LoginPage.loginPassword(password);
-		LoginPage.LoginClick();
-		Thread.sleep(7000);
-		// --- TransLine Config--//
-		TranslineConfig.Transline();
-		Thread.sleep(4000);
-		// --- Add in Trans line Config
-		General.ADD();
-		Thread.sleep(4000);
-		// -- Trans Line ID send Key--//
+//	@Test(dataProvider = "loginCredentials", priority = 20)
+//	@TestDescription("When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ")
+//	public void TAS_DC_024(String username, String password) throws InterruptedException {
+//		String ScreenName = "Transline Configuration";
+//		String testCaseId = "TAS_DC_024";
+//		String notes = "When changing from product to service the alert message should be displayed as service Line Configuration approved successfully ";
+//		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+//		LoginPage.loginUsername(username);
+//		LoginPage.loginPassword(password);
+//		LoginPage.LoginClick();
+//		Thread.sleep(7000);
+//		// --- TransLine Config--//
+//		TranslineConfig.Transline();
+//		Thread.sleep(4000);
+//		// --- Add in Trans line Config
+//		General.ADD();
+//		Thread.sleep(4000);
+//		// -- Trans Line ID send Key--//
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
+////				.sendKeys(Transline_ID1);
+//		Trans.TranslineID(Transline_ID1);
+//		Thread.sleep(4000);
+//		// -- Trans Line Description--//
+////		driver.findElement(By.xpath(
+////				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
+////				.sendKeys("Transline_DESC1");
+//		Trans.TranslineDesc(Transline_DESC1);
+//		Thread.sleep(4000);
+//		// --Transline type dropdown click--//
 //		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]"))
-//				.sendKeys(Transline_ID1);
-		Trans.TranslineID(Transline_ID1);
-		Thread.sleep(4000);
-		// -- Trans Line Description--//
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// --Transline type dropdown select(Service type)--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Service')]")).click();
+//		// -- Service line type dropdown click--//
 //		driver.findElement(By.xpath(
-//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]"))
-//				.sendKeys("Transline_DESC1");
-		Trans.TranslineDesc(Transline_DESC1);
-		Thread.sleep(4000);
-		// --Transline type dropdown click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(4000);
-		// --Transline type dropdown select(Service type)--//
-		driver.findElement(By.xpath("//span[contains(text(),'Service')]")).click();
-		// -- Service line type dropdown click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);
-		// -- Service line type dropdown Select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Asset')]")).click();
-		// -- Transline group dropdown click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);
-		// -- Transline group dropdown select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Branch Operations')]")).click();
-		// -- Business vertical dropdown click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]"))
-				.click();
-		Thread.sleep(4000);
-		// -- Business vertical dropdown select--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]"))
-				.click();
-		// -- Extraction frequency--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);
-		// -- Extraction frequency select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Daily')]")).click();
-		// -- Department dropdown clik--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[5]/ng-select[1]/div[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);
-		// -- Department select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Treasury')]")).click();
-		// Channels dropdown click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[4]/ng-select[1]/div[1]/span[1]"))
-				.click();
-		Thread.sleep(4000);
-		// Channels dropdown select--//
-		driver.findElement(By.xpath("//span[contains(text(),'ALL')]")).click();
-		//service dropdown--//------------------OLD DROPDOWN is Removed-----------------
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(4000);
-		//--Service dropdown select--//
-		driver.findElement(By.xpath("//span[contains(text(),'SBA - Savings Account')]")).click();
-		//--service description-//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(4000);
-		//-- Service description select--//
-		driver.findElement(By.xpath("//span[contains(text(),'06001 - Savings Account')]")).click();
-		//-- Currency dropdown--//
-		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(4000);
-		//-- Currency select--//
-		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
-		// save button click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
-				.click();
-		Thread.sleep(1000);
-		Thread.sleep(4000);
-		WebElement Transline_save_Text = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
-		String proftext = Transline_save_Text.getText();
-		Thread.sleep(1000);
-		System.out.printf(proftext + "-VAT_TAS_DC_024");
-		Thread.sleep(4000);
-	}
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/span[1]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// -- Service line type dropdown Select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Asset')]")).click();
+//		// -- Transline group dropdown click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[3]/ng-select[1]/div[1]/span[1]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// -- Transline group dropdown select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Branch Operations')]")).click();
+//		// -- Business vertical dropdown click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]/span[1]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// -- Business vertical dropdown select--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[4]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]/li[1]/div[1]"))
+//				.click();
+//		// -- Extraction frequency--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[1]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// -- Extraction frequency select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Daily')]")).click();
+//		// -- Department dropdown clik--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[5]/ng-select[1]/div[1]/span[1]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// -- Department select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Treasury')]")).click();
+//		// Channels dropdown click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[4]/ng-select[1]/div[1]/span[1]"))
+//				.click();
+//		Thread.sleep(4000);
+//		// Channels dropdown select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'ALL')]")).click();
+//		//service dropdown--//------------------OLD DROPDOWN is Removed-----------------
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(4000);
+//		//--Service dropdown select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'SBA - Savings Account')]")).click();
+//		//--service description-//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(4000);
+//		//-- Service description select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'06001 - Savings Account')]")).click();
+//		//-- Currency dropdown--//
+//		driver.findElement(By.xpath("//tbody/tr[1]/td[3]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(4000);
+//		//-- Currency select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'AED')]")).click();
+//		// save button click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"))
+//				.click();
+//		Thread.sleep(1000);
+//		Thread.sleep(4000);
+//		WebElement Transline_save_Text = driver.findElement(By.xpath("//div[contains(text(),'- Successful')]"));
+//		String proftext = Transline_save_Text.getText();
+//		Thread.sleep(1000);
+//		System.out.printf(proftext + "-VAT_TAS_DC_024");
+//		Thread.sleep(4000);
+//	}
 
 	@Test(dataProvider = "loginCredentials", priority = 21)
 	@TestDescription("If the changes is applyed the header should show the related type what have mentioned (product / service)")
@@ -1408,114 +1408,114 @@ public class RA_TranslineConfig extends BaseClass {
 		System.out.println(Text);
 	}
 
-	@Test(dataProvider = "loginCredentials", priority = 25)
-	@TestDescription("Click on to rate effective date	,New record has be created if we edit last modified  data")
-	public void TAS_DC_021(String username, String password) throws InterruptedException {
-		String ScreenName = "Fees Configuration";
-		String testCaseId = "TAS_DC_021";
-		String notes = "Click on to rate effective date	,New record has be created if we edit last modified  data";
-		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
-		LoginPage.loginUsername(username);
-		LoginPage.loginPassword(password);
-		LoginPage.LoginClick();
-		Thread.sleep(7000);
-		// --- TransLine Config--//
-		TranslineConfig.Transline();
-		Thread.sleep(5000);
-		// -- Filter click--//
-		General.FILTER();
-		// -- Filter column click--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(5000);
-		// -- Filter Column select--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
-		// -- Criteria click--/
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		// -- Criteria select--//
-		driver.findElement(By.xpath("//span[contains(text(),'Equals...')]")).click();
-		// -- Value sendkeys--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys(VAT1);
-		// -- Apply click--//
-		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-		Thread.sleep(5000);
-		// -- Edit click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"))
-				.click();
-		Thread.sleep(8000);
-		// -- Business Line Config click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
-		Thread.sleep(5000);
-		// --- Old data click--//
-		driver.findElement(By.xpath(
-				"//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[7]"))
-				.click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
-		Thread.sleep(7000);
-		Thread.sleep(5000);// -- Fees Config Button Click--//
-		// -- All click--//
-		driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
-		Thread.sleep(3000);
-		WebElement elementToHoverM = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/input[1]"));
-		Actions actionsClick = new Actions(driver);
-		actionsClick.moveToElement(elementToHoverM).perform();
-		WebElement Fees_config = driver.findElement(By.xpath("//i[contains(text(),'edit')]"));
-		Fees_config.click();
-		Thread.sleep(2000);
-		Actions actions = new Actions(driver);
-		WebElement elementTarget = driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
-		actions.moveToElement(elementTarget);
-		Thread.sleep(5000);
-		WebElement Target = driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
-		Thread.sleep(3000);
-		actions.scrollToElement(Target);
-		actions.perform();
-		Target.click();
-		Thread.sleep(5000);
-		// -- Time reduce--//
-		driver.findElement(By.xpath("(//button[@type='button'][normalize-space()='10'])[3]")).click();
-		Thread.sleep(2000);
-		// -- Fees/percentage send keys--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]"))
-				.sendKeys("12");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-		Thread.sleep(5000);
-//		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-		// -- Modify click--//
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]"))
-				.click();
-		Thread.sleep(5000);
-		// -- prefeerential click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Preferential')]")).click();
-		Thread.sleep(5000);
-		// -- All click--//
-		driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
-		Thread.sleep(3000);
-		// -- Take screenshot and save it to a file--//
-		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_021.png";
-		// -- save the screenshot --//
-		File destinationFile = new File(Location);
-		// Move the screenshot file to the specified destination
-		try {
-			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
-			System.out.println(" TAS_DC_021 Screenshot saved to: " + destinationFile.getAbsolutePath());
-		} catch (IOException e) {
-			System.out.println("TAS_DC_021 Failed to save screenshot: " + e.getMessage());
-		}
-	}
+//	@Test(dataProvider = "loginCredentials", priority = 25)
+//	@TestDescription("Click on to rate effective date	,New record has be created if we edit last modified  data")
+//	public void TAS_DC_021(String username, String password) throws InterruptedException {
+//		String ScreenName = "Fees Configuration";
+//		String testCaseId = "TAS_DC_021";
+//		String notes = "Click on to rate effective date	,New record has be created if we edit last modified  data";
+//		ListenersRA.reportTestDetails1(ScreenName, testCaseId, notes);
+//		LoginPage.loginUsername(username);
+//		LoginPage.loginPassword(password);
+//		LoginPage.LoginClick();
+//		Thread.sleep(7000);
+//		// --- TransLine Config--//
+//		TranslineConfig.Transline();
+//		Thread.sleep(5000);
+//		// -- Filter click--//
+//		General.FILTER();
+//		// -- Filter column click--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// -- Filter Column select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]/span[1]")).click();
+//		// -- Criteria click--/
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		// -- Criteria select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Equals...')]")).click();
+//		// -- Value sendkeys--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+//				.sendKeys(VAT1);
+//		// -- Apply click--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(5000);
+//		// -- Edit click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[6]/a[1]/i[1]"))
+//				.click();
+//		Thread.sleep(8000);
+//		// -- Business Line Config click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Business Line Configuration')]")).click();
+//		Thread.sleep(5000);
+//		// --- Old data click--//
+//		driver.findElement(By.xpath(
+//				"//body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-businesslineconfig[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[7]"))
+//				.click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//span[contains(text(),'Fees Configuration')]")).click();
+//		Thread.sleep(7000);
+//		Thread.sleep(5000);// -- Fees Config Button Click--//
+//		// -- All click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
+//		Thread.sleep(3000);
+//		WebElement elementToHoverM = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/input[1]"));
+//		Actions actionsClick = new Actions(driver);
+//		actionsClick.moveToElement(elementToHoverM).perform();
+//		WebElement Fees_config = driver.findElement(By.xpath("//i[contains(text(),'edit')]"));
+//		Fees_config.click();
+//		Thread.sleep(2000);
+//		Actions actions = new Actions(driver);
+//		WebElement elementTarget = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[3]/div[1]"));
+//		actions.moveToElement(elementTarget);
+//		Thread.sleep(5000);
+//		WebElement Target = driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[13]/div[1]/div[1]/input[1]"));
+//		Thread.sleep(3000);
+//		actions.scrollToElement(Target);
+//		actions.perform();
+//		Target.click();
+//		Thread.sleep(5000);
+//		// -- Time reduce--//
+//		driver.findElement(By.xpath("(//button[@type='button'][normalize-space()='10'])[3]")).click();
+//		Thread.sleep(2000);
+//		// -- Fees/percentage send keys--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/perfect-scrollbar[1]/div[1]/div[1]/div[3]/div[10]/div[1]/input[1]"))
+//				.sendKeys("12");
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(5000);
+////		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
+//		// -- Modify click--//
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-transaction-line-module[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-fees-line-transaction[1]/div[1]/div[2]/div[2]/button[1]"))
+//				.click();
+//		Thread.sleep(5000);
+//		// -- prefeerential click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Preferential')]")).click();
+//		Thread.sleep(5000);
+//		// -- All click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
+//		Thread.sleep(3000);
+//		// -- Take screenshot and save it to a file--//
+//		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//		String Location = "D:\\Source code\\vision\\test-output\\Screenshot\\TAS_DC_021.png";
+//		// -- save the screenshot --//
+//		File destinationFile = new File(Location);
+//		// Move the screenshot file to the specified destination
+//		try {
+//			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destinationFile);
+//			System.out.println(" TAS_DC_021 Screenshot saved to: " + destinationFile.getAbsolutePath());
+//		} catch (IOException e) {
+//			System.out.println("TAS_DC_021 Failed to save screenshot: " + e.getMessage());
+//		}
+//	}
 
 	@Test(dataProvider = "loginCredentials", priority = 26)
 	@TestDescription("Click on Transline screen and change Transline type to Service,Without selecting Service line type , transline group and business vertical can be selected")

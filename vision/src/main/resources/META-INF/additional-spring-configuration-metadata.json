@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "ftp_URL",
+    "type": "java.lang.String",
+    "description": "A description for 'ftp_URL'"
+  },
+  {
+    "name": "loginID1",
+    "type": "java.lang.String",
+    "description": "A description for 'loginID1'"
+  },
+  {
+    "name": "etl_URL",
+    "type": "java.lang.String",
+    "description": "A description for 'etl_URL'"
+  }
+]}

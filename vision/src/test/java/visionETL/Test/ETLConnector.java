@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -30,8 +31,8 @@ import Package_PageObject.POM_ETL;
 public class ETLConnector extends BaseClass{
 	
 	
-	String Script= "VAT32";
-	String Connector_SendKeys = "VAT_Auto_test32";
+	String Script= "VAT34";
+	String Connector_SendKeys = "VAT_Auto_test34";
 	String IP = "10.16.1.38";
 	String port_int = "52866";
 	String FilePath = ("D:\\Guru prasad documents\\sel.tz.reconfile.csv");
@@ -61,6 +62,7 @@ public class ETLConnector extends BaseClass{
 	    public Object[][] getUserNameList() {
 	        return new Object[][] {
 	            {"RA", "Vision@123"},
+//	        	{"RA", "Sunoida@123"},
 	        };
 	    }
 	
@@ -75,9 +77,9 @@ public class ETLConnector extends BaseClass{
         LoginPage.loginUsername(loginName);
         LoginPage.loginPassword(loginPwd);
         LoginPage.LoginClick();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		ETLConnector.ConnectorScript();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(
 				"//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-etl-script[1]/div[1]/div[1]/div[1]/div[1]/app-smart-table[1]/div[2]/div[1]/span[2]/select[1]"))
 				.click();
@@ -195,6 +197,8 @@ public class ETLConnector extends BaseClass{
         LoginPage.loginPassword(loginPwd);
         LoginPage.LoginClick();
 		Thread.sleep(5000);
+		Thread.sleep(5000);
+		
 		ETLConnector.Connector();
 		Thread.sleep(5000);
 		ETL_General.FILTER();
@@ -1885,7 +1889,7 @@ public class ETLConnector extends BaseClass{
 		// -- Yes CLick--//
 		driver.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
 		Thread.sleep(3000);
-		
+		//-- Success Message-- should add--///
 	}
 
 	@Test(priority = 36, dataProvider = "getUserNameList")

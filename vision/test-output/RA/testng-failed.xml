@@ -6,40 +6,9 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Vision_RA.Test.RA_BusinessLineConfig">
-        <methods>
-          <include name="setUp"/>
-          <include name="BUS_DC_021" invocation-numbers="0"/>
-          <include name="setUpLogin"/>
-          <include name="BUS_DC_020" invocation-numbers="0"/>
-          <include name="BUS_DC_014" invocation-numbers="0"/>
-          <include name="BUS_DC_024" invocation-numbers="0"/>
-          <include name="BUS_DC_012" invocation-numbers="0"/>
-          <include name="BUS_DC_006" invocation-numbers="0"/>
-          <include name="BUS_DC_017" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="BUS_DC_008" invocation-numbers="0"/>
-          <include name="BUS_DC_005" invocation-numbers="0"/>
-          <include name="BUS_DC_016" invocation-numbers="0"/>
-          <include name="BUS_DC_009" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_BusinessLineConfig -->
-      <class name="Vision_RA.Test.RA_MasterConfiguration">
-        <methods>
-          <include name="RA_MC_015" invocation-numbers="0"/>
-          <include name="setUp"/>
-          <include name="RA_MC_005" invocation-numbers="0"/>
-          <include name="setUpLogin"/>
-          <include name="RA_MC_014" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="RA_MC_017" invocation-numbers="0"/>
-          <include name="RA_MC_007" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_MasterConfiguration -->
       <class name="Vision_RA.Test.RA_FeesConfig">
         <methods>
           <include name="setUp"/>
-          <include name="VAT_FEE_DC_014" invocation-numbers="0"/>
           <include name="VAT_FEE_DC_040" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="setUpLogin"/>
@@ -47,25 +16,6 @@
           <include name="VAT_FEE_DC_042" invocation-numbers="0"/>
         </methods>
       </class> <!-- Vision_RA.Test.RA_FeesConfig -->
-      <class name="Vision_RA.Test.RA_TranslineConfig">
-        <methods>
-          <include name="setUp"/>
-          <include name="TAS_DC_024" invocation-numbers="0"/>
-          <include name="TAS_DC_035" invocation-numbers="0"/>
-          <include name="tearDown"/>
-          <include name="TAS_DC_036" invocation-numbers="0"/>
-          <include name="setUpLogin"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_TranslineConfig -->
-      <class name="Vision_RA.Test.RA_ReconConfiguration">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="setUpLogin"/>
-          <include name="RA_RC_019" invocation-numbers="0"/>
-          <include name="RA_RC_018" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- Vision_RA.Test.RA_ReconConfiguration -->
       <class name="Vision_RA.Test.RA_General">
         <methods>
           <include name="setUp"/>
@@ -73,16 +23,28 @@
           <include name="setUpLogin"/>
           <include name="RA_GL_018" invocation-numbers="0"/>
           <include name="RA_GL_005" invocation-numbers="0"/>
+          <include name="RA_GL_015" invocation-numbers="0"/>
         </methods>
       </class> <!-- Vision_RA.Test.RA_General -->
-      <class name="Vision_RA.Test.RA_FeesPriority">
+      <class name="Vision_RA.Test.RA_AlphaNumTab">
         <methods>
           <include name="setUp"/>
+          <include name="ALP_TAB_004_ALP_TAB_003" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setUpLogin"/>
+        </methods>
+      </class> <!-- Vision_RA.Test.RA_AlphaNumTab -->
+      <class name="Vision_RA.Test.RA_MasterConfiguration">
+        <methods>
+          <include name="setUp"/>
+          <include name="RA_MC_005" invocation-numbers="0"/>
+          <include name="RA_MC_016" invocation-numbers="0"/>
           <include name="setUpLogin"/>
           <include name="tearDown"/>
-          <include name="FES_PRI_004" invocation-numbers="0"/>
+          <include name="RA_MC_017" invocation-numbers="0"/>
+          <include name="RA_MC_007" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Vision_RA.Test.RA_FeesPriority -->
+      </class> <!-- Vision_RA.Test.RA_MasterConfiguration -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [RA] -->

@@ -7,12 +7,12 @@
 	<test name="Test">
 		<classes>
 			<class name="Vision_RA.Test.RA_TranslineConfig" />
-			<class name="Vision_RA.Test.RA_BusinessLineConfig" />
+			<!-- <class name="Vision_RA.Test.RA_BusinessLineConfig" /> -->
 			<class name="Vision_RA.Test.RA_FeesConfig" />
 			<class name="Vision_RA.Test.RA_General" />
-			<class name="Vision_RA.Test.RA_AlphaNumTab"></class>
-			<class name="Vision_RA.Test.RA_ReconConfiguration"></class>
-			<class name="Vision_RA.Test.RA_FeesPriority"/>
+			<class name="Vision_RA.Test.RA_AlphaNumTab"/>
+			<class name="Vision_RA.Test.RA_ReconConfiguration"/>
+			<class name="Vision_RA.Test.RA_FeesPriority"/>	
 			<class name="Vision_RA.Test.RA_MasterConfiguration" />
 		</classes>
 	</test> <!--

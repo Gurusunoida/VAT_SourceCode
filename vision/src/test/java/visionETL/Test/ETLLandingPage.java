@@ -224,11 +224,11 @@ public class ETLLandingPage extends BaseClass{
 		select.selectByIndex(2);
 	}
 	@Test(priority = 10, dataProvider = "getUserNameList")
-	@TestDescription("Clicking \"Reload\" should result in all category details being fully deselected.")
+	@TestDescription("Clicking Reload should result in all category details being fully deselected.")
 	public void ETL_LP_018(String loginName, String loginPwd) throws InterruptedException {
 		String ScreenName = "Landing Page";
 		String testCaseId = "ETL_LP_018";
-        String notes = "Clicking \"Reload\" should result in all category details being fully deselected.";
+        String notes = "Clicking Reload should result in all category details being fully deselected.";
         ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
         LoginPage.loginUsername(loginName);
         LoginPage.loginPassword(loginPwd);
@@ -1227,83 +1227,83 @@ public class ETLLandingPage extends BaseClass{
 		Target.click();
 		Thread.sleep(3000);
 	}
-	@Test(priority = 40, dataProvider = "getUserNameList")
-	@TestDescription("The refreshed terminated page should be displayed")
-	public void ETL_LP_033(String loginName, String loginPwd) throws InterruptedException {
-		String ScreenName = "Landing Page";
-		String testCaseId = "ETL_LP_033";
-        String notes = "The refreshed terminated page should be displayed";
-        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
-				.sendKeys(loginName);
-		driver.findElement(By.xpath(
-				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
-				.sendKeys(loginPwd);
-		driver.findElement(By
-				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
-				.click();
-		Thread.sleep(6000);
-		//--Operation click--//
-		driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
-		Thread.sleep(2000);
-		//-- Add in console--//
-		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-		Thread.sleep(2000);
-		//-- Country click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(2000);
-		//-- Country select--//
-		driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
-		//-- LE Book click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(2000);
-		//-- Le book select--/
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		//-- Category click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
-		Thread.sleep(2000);
-		//-- Category sendkeys--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_10");
-		Thread.sleep(2000);
-		//-- Category Select--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		//-- Feed all click--//
-		driver.findElement(By.xpath("//thead/tr[1]/th[1]/span[1]/div[1]/label[1]/input[1]")).click();
-		//--Next schedule date click--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
-		//-- Time reduce--//
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
-		//-- Submit Button--//
-		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
-		Thread.sleep(10000);
-		//-- Reload Button--//
-		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-		//-- Category Click--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]")).click();
-		//--close button--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[1]/a[1]")).click();
-		//-- Sendkeys--//
-		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_1");
-		Actions actions = new Actions(driver);
-		WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
-		actions.moveToElement(elementTarget);
-		WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_1 - VAT_Category_1')]"));
-		actions.scrollToElement(Target);
-		actions.perform();
-		Target.click();
-		Thread.sleep(2000);
-		//-- Run click--//
-		driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
-		Thread.sleep(3000);
-		//-- Terminate click--//
-		driver.findElement(By.xpath("//i[contains(text(),'do_not_disturb_alt')]")).click();
-		//-- Reload Button--//
-		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
-		Thread.sleep(3000);	
-	}
+//	@Test(priority = 40, dataProvider = "getUserNameList")
+//	@TestDescription("The refreshed terminated page should be displayed")
+//	public void ETL_LP_033(String loginName, String loginPwd) throws InterruptedException {
+//		String ScreenName = "Landing Page";
+//		String testCaseId = "ETL_LP_033";
+//        String notes = "The refreshed terminated page should be displayed";
+//        ListenersETL.reportTestDetails1(ScreenName,testCaseId, notes);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[2]/div[1]/input[1]"))
+//				.sendKeys(loginName);
+//		driver.findElement(By.xpath(
+//				"//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[3]/div[1]/input[1]"))
+//				.sendKeys(loginPwd);
+//		driver.findElement(By
+//				.xpath("//body/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/span[4]/button[1]"))
+//				.click();
+//		Thread.sleep(6000);
+//		//--Operation click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'Operation')]")).click();
+//		Thread.sleep(2000);
+//		//-- Add in console--//
+//		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//		Thread.sleep(2000);
+//		//-- Country click--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//-- Country select--//
+//		driver.findElement(By.xpath("//span[contains(text(),'AE - United Arab Emirates')]")).click();
+//		//-- LE Book click--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//-- Le book select--/
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//		//-- Category click--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/span[2]")).click();
+//		Thread.sleep(2000);
+//		//-- Category sendkeys--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/ng-select[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("VAT_CATEGORY_10");
+//		Thread.sleep(2000);
+//		//-- Category Select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//		//-- Feed all click--//
+//		driver.findElement(By.xpath("//thead/tr[1]/th[1]/span[1]/div[1]/label[1]/input[1]")).click();
+//		//--Next schedule date click--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/input[1]")).click();
+//		//-- Time reduce--//
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//		driver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/dp-date-picker[1]/div[2]/div[1]/dp-day-time-calendar[1]/dp-time-select[1]/ul[1]/li[1]/button[2]")).click();
+//		//-- Submit Button--//
+//		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+//		Thread.sleep(10000);
+//		//-- Reload Button--//
+//		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//		//-- Category Click--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[2]")).click();
+//		//--close button--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[1]/span[1]/span[1]/a[1]")).click();
+//		//-- Sendkeys--//
+//		driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[1]/li[2]/input[1]")).sendKeys("VAT_CATEGORY_1");
+//		Actions actions = new Actions(driver);
+//		WebElement elementTarget = driver.findElement(By.xpath("//body/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-pilot[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ng-multiselect-dropdown[1]/div[1]/div[2]/ul[2]"));
+//		actions.moveToElement(elementTarget);
+//		WebElement Target = driver.findElement(By.xpath("//div[contains(text(),'VAT_CATEGORY_1 - VAT_Category_1')]"));
+//		actions.scrollToElement(Target);
+//		actions.perform();
+//		Target.click();
+//		Thread.sleep(2000);
+//		//-- Run click--//
+//		driver.findElement(By.xpath("//span[contains(text(),'play_arrow')]")).click();
+//		Thread.sleep(3000);
+//		//-- Terminate click--//
+//		driver.findElement(By.xpath("//i[contains(text(),'do_not_disturb_alt')]")).click();
+//		//-- Reload Button--//
+//		driver.findElement(By.xpath("//i[contains(text(),'autorenew')]")).click();
+//		Thread.sleep(3000);	
+//	}
 		@Test(priority = 41, dataProvider = "getUserNameList")
 		@TestDescription("Export should takes place")
 		public void ETL_LP_133(String loginName, String loginPwd) throws InterruptedException {

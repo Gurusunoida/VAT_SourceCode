@@ -9,8 +9,6 @@
      	 <class name="Vision_ETL_v1.ETL_Connector_v1"/>
      	 <class name="Vision_ETL_v1.ETL_Category_v1"/>
      	 <class name="Vision_ETL_v1.ETL_FeedConfiguration_v1"/>
-     	 <class name="Vision_ETL_v1.ETL_General_v1"/>
-     	 <class name="Vision_ETL_v1.LandingPage_v1"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

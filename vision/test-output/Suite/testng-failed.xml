@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Vision_BI.Listeners_FTP"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Vision_FTP.FTP_Groups">
+      <class name="Vision_BI.AdvanceFTP">
         <methods>
-          <include name="setup"/>
+          <include name="FTP_GR_090" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="FTP_GR_025" invocation-numbers="0"/>
+          <include name="FTP_GR_066" invocation-numbers="0"/>
+          <include name="FTP_GR_088" invocation-numbers="0"/>
+          <include name="FTP_GR_067" invocation-numbers="0"/>
+          <include name="FTP_GR_089" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="FTP_GR_065" invocation-numbers="0"/>
+          <include name="FTP_GR_087" invocation-numbers="0"/>
+          <include name="FTP_GR_062" invocation-numbers="0"/>
+          <include name="FTP_GR_085" invocation-numbers="0"/>
+          <include name="FTP_GR_060" invocation-numbers="0"/>
+          <include name="FTP_GR_061" invocation-numbers="0"/>
           <include name="ChromesetUp"/>
-          <include name="FTP_GR_057" invocation-numbers="0"/>
+          <include name="FTP_GR_070" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Vision_FTP.FTP_Groups -->
+      </class> <!-- Vision_BI.AdvanceFTP -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

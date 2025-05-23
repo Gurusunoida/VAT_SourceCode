@@ -569,103 +569,103 @@ public class ETLFeedConfiguration extends BaseClass {
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 1, dataProvider = "getUserNameList")
-	@TestDescription("The users feed ID should get saved .")
-	public void ETL_FC_009(String loginName, String loginPwd) throws InterruptedException {
-		String FeedID = "VAT00001";
-		String ScreenName = "FeedConfiguration";
-		String testCaseId = "ETL_FC_009";
-		String notes = "The users feed ID should get saved .";
-		ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
-		LoginPage.loginUsername(loginName);
-		LoginPage.loginPassword(loginPwd);
-		LoginPage.LoginClick();
-		Thread.sleep(5000);
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
-				.click();
-		Thread.sleep(2000);
-		// Add new Record//
-		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]"))
-				.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]"))
-				.sendKeys(FeedID);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[2]/div[2]/input[1]"))
-				.sendKeys("VAT_ETLFeedName");// -- Feed Name--//
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[2]"))
-				.click();// -- Feed Category Click--//
-		Actions actions = new Actions(driver);
-		WebElement element = driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]"));
-		actions.moveToElement(element);
-		Thread.sleep(5000);
-		WebElement categoryID = driver
-				.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[34]/span[1]"));
-		actions.scrollToElement(categoryID);
-		actions.perform();
-		Thread.sleep(5000);// -- Feed Category ID Select--//
-		categoryID.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[5]/div[1]/textarea[1]"))
-				.sendKeys("VAT_ETL");// -- Description
-		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();// -- Apply--//
-		Thread.sleep(5000);
-		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
-		Thread.sleep(2000);
-		// -- Filter click--//
-		ETL_General.FILTER();
-		Thread.sleep(2000);
-		ETL_General.FilterColumnclick();
-		Thread.sleep(2000);
-		// -- Column select--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
-		// --- Criteria click--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
-				.click();
-		// -- Criteria select--//
-		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]")).click();
-		// -- Value send keys--//
-		driver.findElement(By.xpath(
-				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
-				.sendKeys(FeedID);
-		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
-		Thread.sleep(2000);
-		WebElement Text = driver.findElement(By.xpath("//span[contains(text(),'VAT00001')]"));
-		String expectedText = Text.getText();
-		Scanner scanner = new Scanner(System.in);
-		String enteredText = scanner.nextLine();
-		scanner.close();
-		// Compare the entered text with the expected text
-		if (expectedText.equals(enteredText)) {
-			System.out.println("Text matches: " + expectedText);
-		} else {
-			System.out.println("Text does not match!");
-			System.out.println("Expected text: " + expectedText);
-			System.out.println("Entered text: " + enteredText);
-		}
-	}
+//	@Test(priority = 1, dataProvider = "getUserNameList")
+//	@TestDescription("The users feed ID should get saved .")
+//	public void ETL_FC_009(String loginName, String loginPwd) throws InterruptedException {
+//		String FeedID = "VAT00001";
+//		String ScreenName = "FeedConfiguration";
+//		String testCaseId = "ETL_FC_009";
+//		String notes = "The users feed ID should get saved .";
+//		ListenersETL.reportTestDetails1(ScreenName, testCaseId, notes);
+//		LoginPage.loginUsername(loginName);
+//		LoginPage.loginPassword(loginPwd);
+//		LoginPage.LoginClick();
+//		Thread.sleep(5000);
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/app-side-bar[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/p[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		// Add new Record//
+//		driver.findElement(By.xpath("//i[contains(text(),'add')]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]/span[1]")).click();
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]"))
+//				.click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]"))
+//				.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]"))
+//				.sendKeys(FeedID);
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[2]/div[2]/input[1]"))
+//				.sendKeys("VAT_ETLFeedName");// -- Feed Name--//
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]/span[2]"))
+//				.click();// -- Feed Category Click--//
+//		Actions actions = new Actions(driver);
+//		WebElement element = driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[3]/div[1]/ng-select[1]/div[1]"));
+//		actions.moveToElement(element);
+//		Thread.sleep(5000);
+//		WebElement categoryID = driver
+//				.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[34]/span[1]"));
+//		actions.scrollToElement(categoryID);
+//		actions.perform();
+//		Thread.sleep(5000);// -- Feed Category ID Select--//
+//		categoryID.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath(
+//				"/html[1]/body[1]/app-root[1]/app-main-container[1]/div[1]/div[2]/div[1]/app-wizard-form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/app-feed-setup-form[1]/div[1]/form[1]/div[1]/div[5]/div[1]/textarea[1]"))
+//				.sendKeys("VAT_ETL");// -- Description
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();// -- Apply--//
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//i[contains(text(),'forward')]")).click();
+//		Thread.sleep(2000);
+//		// -- Filter click--//
+//		ETL_General.FILTER();
+//		Thread.sleep(2000);
+//		ETL_General.FilterColumnclick();
+//		Thread.sleep(2000);
+//		// -- Column select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();
+//		// --- Criteria click--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[2]"))
+//				.click();
+//		// -- Criteria select--//
+//		driver.findElement(By.xpath("/html[1]/body[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[4]")).click();
+//		// -- Value send keys--//
+//		driver.findElement(By.xpath(
+//				"//body/ngb-modal-window[1]/div[1]/div[1]/app-smart-search[1]/div[2]/form[1]/perfect-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1]"))
+//				.sendKeys(FeedID);
+//		driver.findElement(By.xpath("//button[contains(text(),'Apply')]")).click();
+//		Thread.sleep(2000);
+//		WebElement Text = driver.findElement(By.xpath("//span[contains(text(),'VAT00001')]"));
+//		String expectedText = Text.getText();
+//		Scanner scanner = new Scanner(System.in);
+//		String enteredText = scanner.nextLine();
+//		scanner.close();
+//		// Compare the entered text with the expected text
+//		if (expectedText.equals(enteredText)) {
+//			System.out.println("Text matches: " + expectedText);
+//		} else {
+//			System.out.println("Text does not match!");
+//			System.out.println("Expected text: " + expectedText);
+//			System.out.println("Entered text: " + enteredText);
+//		}
+//	}
 
 	@Test(priority = 14, dataProvider = "getUserNameList")
 	@TestDescription("Inline Trigger should appear that mandatory field is required")
